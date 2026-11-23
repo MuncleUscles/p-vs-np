@@ -7,7 +7,7 @@ Use Node 22.22+, Python 3.12, and Git. The GitHub CLI examples below also requir
 ```sh
 git clone --branch main https://github.com/MuncleUscles/p-vs-np.git pnp-config
 git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git open-math-tools
-git -C open-math-tools checkout 081deae33cd628ddd6b1ec258f1e421525dace6d
+git -C open-math-tools checkout f46a90f29eba87595cf12d970aef72fd5163eea2
 npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_TOOLS="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
@@ -45,7 +45,7 @@ The literal commit above is this guide's reviewed release. After an upgrade, ref
    }
    ```
 
-   New definitions have `{ "name": "Name", "type": "TYPE EXPRESSION", "value": "VALUE EXPRESSION" }`. Supply up to eight sequential, nonrecursive definitions as expressions. The trusted wrapper isolates their namespace and checks for name collisions with the pinned environment. The proof begins with `by` followed by a newline. Use the bounded Lean 4.19 Core expression and tactic grammar in the [exact pinned checker](https://github.com/MuncleUscles/open-mathematics/blob/081deae33cd628ddd6b1ec258f1e421525dace6d/lean/open_check.py) and its [imported word, namespace and punctuation lists](https://github.com/MuncleUscles/open-mathematics/blob/081deae33cd628ddd6b1ec258f1e421525dace6d/lean/problem_check.py). These files are also available inside your trusted tools checkout.
+   New definitions have `{ "name": "Name", "type": "TYPE EXPRESSION", "value": "VALUE EXPRESSION" }`. Supply up to eight sequential, nonrecursive definitions as expressions. The trusted wrapper isolates their namespace and checks for name collisions with the pinned environment. The proof begins with `by` followed by a newline. Use the bounded Lean 4.19 Core expression and tactic grammar in the [exact pinned checker](https://github.com/MuncleUscles/open-mathematics/blob/f46a90f29eba87595cf12d970aef72fd5163eea2/lean/open_check.py) and its [imported word, namespace and punctuation lists](https://github.com/MuncleUscles/open-mathematics/blob/f46a90f29eba87595cf12d970aef72fd5163eea2/lean/problem_check.py). These files are also available inside your trusted tools checkout.
 
    Practical grammar guide: use constructive `Nat`, `Bool`, `List`, `Option`, `Prod` and proposition logic; ordinary binders, `fun`, `if` and `match`; tactics such as `intro`, `exact`, `apply`, `constructor`, `cases`, `induction`, `simp`, `simpa`, `rw`, `rfl` and `omega`. Use simple ASCII local names such as `h1`, without apostrophes. `trivial` and the `^` operator are not supported by this grammar. The only permitted axioms are `propext` and `Quot.sound`: no `Classical` or choice-based proof. Commands, comments, strings, imports, `sorry`, native evaluation and unsafe code are rejected. This is a restricted expression format, not a full Lean source file; kernel checking and axiom auditing establish proof validity.
 

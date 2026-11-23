@@ -6,7 +6,7 @@
   "configBranch": "main",
   "protocol": {
     "repository": "MuncleUscles/open-mathematics",
-    "commit": "081deae33cd628ddd6b1ec258f1e421525dace6d"
+    "commit": "f46a90f29eba87595cf12d970aef72fd5163eea2"
   },
   "policy": {
     "path": ".open-math/open-policy.json",
