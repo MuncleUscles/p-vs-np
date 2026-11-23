@@ -15,7 +15,7 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Finite-support witnesses for satisfiable CNFs using assignment locality",
-      "status": "submitted",
+      "status": "rejected",
       "points": "0",
       "impact": null,
       "dependencies": [
@@ -23,9 +23,18 @@
       ],
       "report": "reports/pr-8-c9ee3e5efe6b-979433977845.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45186393763",
-      "updatedAt": "2026-11-23T13:46:31.736Z",
+      "updatedAt": "2026-11-23T13:53:28.695Z",
       "commentId": 7102888070,
-      "needsResume": true
+      "needsResume": false,
+      "reason": "The verified statement is a correct, standard finite-support normalization fact for the imported CNF definitions, not a result about computational complexity. However, its marginal work is a routine specialization of the already credited assignment-locality theorem: set absent variables to false, apply locality to preserve evaluation, and discard the extra condition for the converse. It supplies no additional certificate representation, size bound, verification algorithm, or substantive extension beyond that specialization. Compared with PR #7 and the historical namespace and renaming results, this is not an independently useful new component sufficient to justify a separate budget under the rule against trivial fragmentation. The disclosed reuse and direct dependency are honest; neither the credited locality argument nor the historical infrastructure is being treated as new work. Kernel verification establishes the submitted theorem but does not establish incremental research merit. No additional award is warranted.",
+      "recovery": {
+        "mode": "operator-deterministic-finalization",
+        "cause": "The worker could not reload its 1064248-byte report through GitHub Contents API after successful adjudication.",
+        "failedRun": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45186393763",
+        "originalClaimPreserved": true,
+        "originalAdjudicationPreserved": true,
+        "newMeritReview": false
+      }
     },
     {
       "id": "pr-7-672f1fa46a61-0d05d194a602",
