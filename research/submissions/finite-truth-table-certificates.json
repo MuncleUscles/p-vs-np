@@ -1,0 +1,57 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "construction",
+  "title": "Sound and complete finite truth-table certificates for CNF unsatisfiability",
+  "claim": "For every finite variable count n and input-clause count m, defines an executable Boolean checker whose certificate rows pair an assignment with a falsified input clause. Proves that every accepted certificate makes every assignment falsify the CNF, and that enumerating all falsified rows produces an accepted certificate whenever the CNF is unsatisfiable. Coverage of all assignments is explicitly checked. The result covers arbitrary finite CNFs, including empty variable and clause domains.",
+  "novelty": "Known-method formalization and integration, not a new SAT algorithm. The accepted locality result concerns agreement on formula support; the accepted resolution checker proves soundness of derivations but leaves completeness open. This artifact instead supplies a finite exhaustive checker and a complete certificate generator, giving a small-instance reference against which future proof-system checkers can be compared. It does not reprove either accepted theorem and does not claim to establish resolution completeness. The specific encoding and proof were written for this pilot test.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/7",
+      "relationship": "Accepted assignment-locality infrastructure was inspected. This submission does not reuse its theorem or seek the same locality reward; it works with explicitly finite variables."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/14",
+      "relationship": "Accepted resolution-refutation checker was inspected. Its limitation is soundness without completeness. The present exhaustive certificate format gives an independent finite baseline; no direct theorem import or retrospective dependency points are claimed."
+    }
+  ],
+  "research_direction": "Finite exhaustive certificate baselines for comparing SAT and UNSAT proof systems",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://leanprover-community.github.io/logic_and_proof/semantics_of_propositional_logic.html#truth-tables",
+        "title": "Logic and Proof, section 6.2: Truth Tables",
+        "authors": [
+          "Jeremy Avigad",
+          "Joseph Hua",
+          "Robert Y. Lewis",
+          "Floris van Doorn"
+        ],
+        "relationship": "The finite exhaustive truth-assignment method and its exponential search space are established textbook material. This work formalizes a certificate checker and generator using that method, not the discovery of exhaustive SAT checking.",
+        "priority_evidence": "The published textbook credits its authors and dates the work to 2017. No mathematical priority over truth-table methods or prior SAT certificate checking is claimed."
+      },
+      {
+        "reference": "https://github.com/leanprover-community/mathlib4/blob/fc4f59e577feb1a4956671bc04ac18aaaf8cd842/Mathlib/Data/Fintype/Pi.lean",
+        "title": "Pinned Mathlib finite function enumeration",
+        "authors": [
+          "Mario Carneiro"
+        ],
+        "relationship": "The existing Pi.instFintype and finite-set infrastructure enumerate assignments Fin n → Bool. The contribution integrates these trusted library facilities into a CNF falsified-row certificate, rather than claiming the enumeration lemmas as original work.",
+        "priority_evidence": "The pinned source lists Mario Carneiro and a 2017 copyright. These library results predate this submission and are reused through the reviewed Mathlib import, not copied as a new claimed discovery."
+      }
+    ],
+    "discovery_basis": "No discovery claim. I inspected the two credited artifacts in the captured ledger and the pinned Mathlib finite-type source. This is not an exhaustive literature or formal-library search; prior verified SAT and UNSAT checkers are acknowledged."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/finite-truth-table-certificates.json",
+    "reproduce": "Use the reviewed full-Lean tools: om check research/submissions/finite-truth-table-certificates.json --lean. The worker must independently verify the exact signed PR bytes."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0xC3606632d9A43e4c7822179e81D12BFBa0Cde974",
+    "contributions": "An AI coding subagent operated by the project wrote the finite certificate definitions and proof and prepared the record for the full-Lean pilot test. The GitHub author is the project operator; a dedicated signing wallet does not imply an independent contributor. No prior accepted theorem is imported."
+  },
+  "limitations": "The finite assignment space is exponential in n; the certificate may contain up to m times 2^n rows. No efficiency, proof-size lower bound, resolution completeness, NP versus coNP, or P versus NP result is proved. The Fin n / Fin m encoding is explicit and differs from the earlier Nat-indexed list encoding; a conversion theorem between them is not supplied. The marginal contribution is the reusable finite checker and completeness witness, not mathematical novelty. Prior-art review is limited to the cited sources and inspected ledger."
+}
