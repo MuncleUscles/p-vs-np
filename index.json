@@ -3,6 +3,29 @@
   "repository": "MuncleUscles/p-vs-np",
   "entries": [
     {
+      "id": "pr-14-f176c6bf9567-7bd5213f14ba",
+      "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+      "chainId": 61999,
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 14,
+      "head": "f176c6bf9567df7201a5c08aa898d1c90d797a4d",
+      "wallet": "0x9749f3ae9865a4723105D4c518696aF6397A6067",
+      "policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+      "protocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "Verified resolution refutation checker for list-based CNFs",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-14-f176c6bf9567-7bd5213f14ba.json",
+      "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45218787676",
+      "updatedAt": "2026-11-23T16:39:36.648Z",
+      "commentId": 7107446086,
+      "needsResume": true
+    },
+    {
       "id": "pr-9-327123f9d1b4-2c91a42f97f7",
       "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
       "chainId": 61999,
@@ -205,7 +228,7 @@
   ],
   "deployment": {
     "protocolVersion": 5,
-    "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+    "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
     "problem": "p-vs-np",
     "repository": "MuncleUscles/p-vs-np",
     "branch": "research",
