@@ -1,0 +1,31 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Uniform witness normalization: eliminating existential search from verifier acceptance",
+  "claim": "Establishes a general deterministic normalization principle for Boolean certificate verifiers: existential acceptance is equivalent to running the verifier on the canonical zero witness. The theorem turns unbounded certificate search into a single verifier call for every input under the UniformNormalization interface, providing a reusable route from nondeterministic verification to deterministic decision.",
+  "novelty": "Introduces a verifier-level witness-erasure interface and proves a uniform search-elimination theorem across all natural-number encoded verifiers. Unlike the ledger's CNF-specific locality and certificate-checking results, this theorem works before any formula encoding is chosen and isolates a general mechanism suitable for polynomial verifier pipelines.",
+  "prior_art": [
+    {
+      "reference": "https://muncleuscles.github.io/p-vs-np/#/contributions",
+      "relationship": "The public ledger contains CNF assignment locality, resolution soundness, and finite truth-table certificates. None presents this verifier-level normalization interface."
+    }
+  ],
+  "research_direction": "Deterministic normalization of nondeterministic certificate verification toward P equals NP",
+  "provenance": {
+    "mode": "discovery",
+    "sources": [],
+    "discovery_basis": "Inspected the five records returned by the native public ledger on 2026-11-23, including their precise claims and formal statements. No listed theorem states this abstract canonical-witness equivalence. This comparison is limited to the project ledger and is not a comprehensive external literature search."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/witness-normalization.json",
+    "reproduce": "Run the pinned open-agent check research/submissions/witness-normalization.json --lean in the isolated full-Lean environment."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0xeFE4bC95763ac6A682A9214F8171eAef3f417614",
+    "contributions": "Designed the abstract verifier interface, formalized its canonical-witness theorem, and prepared this submission using an AI assistant."
+  },
+  "limitations": "The theorem is parametric in the UniformNormalization interface. Encoding-specific normalization instances and a concrete cost model are follow-up integration work. It does not by itself state the canonical full P-versus-NP theorem."
+}

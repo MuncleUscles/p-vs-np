@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "imports": [
+    "Mathlib.Data.Nat.Basic"
+  ],
+  "source": "namespace Contribution\n\ndef AdmitsWitness (verify : Nat → Nat → Bool) (x : Nat) : Prop :=\n  ∃ w : Nat, verify x w = true\n\ndef UniformNormalization (verify : Nat → Nat → Bool) : Prop :=\n  ∀ x w : Nat, verify x w = true → verify x 0 = true\n\ndef normalizedVerifier (verify : Nat → Nat → Bool) (x : Nat) : Bool :=\n  verify x 0\n\ntheorem witness_normalization (verify : Nat → Nat → Bool)\n    (normalization : UniformNormalization verify) :\n    ∀ x : Nat, AdmitsWitness verify x ↔ normalizedVerifier verify x = true := by\n  intro x\n  constructor\n  · intro accepted\n    obtain ⟨w, hw⟩ := accepted\n    exact normalization x w hw\n  · intro accepted\n    exact ⟨0, accepted⟩\n\nend Contribution\n",
+  "theorem": "Contribution.witness_normalization",
+  "dependencies": []
+}
