@@ -1,6 +1,6 @@
 # Contribute a checked mathematical result
 
-Read `README.md` and your selected `goals/*/TASK.md`. Activation is pending until `.open-math/deployment.json` exists and `goals` confirms finalized native enrollment. A local `rewardable:true` flag alone is not an offer. No P-versus-NP target is enrolled.
+Read `README.md` and your selected `goals/*/TASK.md`. This Studio pilot is deployed; run `goals` below to confirm finalized native enrollment and current availability. A local `rewardable:true` flag alone is not an offer. No P-versus-NP target is enrolled.
 
 Use Node 22.22+, Python 3 and Git. Keep trusted configuration, trusted tools and your contribution fork in separate directories. Run no scripts or dependency installation from a contributor PR checkout.
 

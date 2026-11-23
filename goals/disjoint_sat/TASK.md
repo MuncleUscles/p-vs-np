@@ -1,6 +1,6 @@
 # Compose CNFs with disjoint variables
 
-Status: **reference-only**. This draft is not enrolled and offers no active reward.
+Status: **reference-only**. Enrolled as a nonrewardable reference; its disclosed proof is not an open contribution reward.
 
 The reference shows how independently satisfiable components can be joined when their variable sets are disjoint. The published proof is already available and copied unchanged under reference/.
 

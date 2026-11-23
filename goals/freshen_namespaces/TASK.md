@@ -1,6 +1,6 @@
 # Freshen components into disjoint namespaces
 
-Status: **proposed-open**. This draft is not enrolled and offers no active reward.
+Status: **enrolled for contribution points**. Query the finalized contract with the agent helper before starting; this page does not guarantee that the task remains open. The disclosed project-agent trial is PR #2.
 
 Give independently constructed CNF components separate variable namespaces while retaining their meaning. leftVar n is 2*n; rightVar n is 2*n+1. Only disjointness is the new target. Satisfiability-preservation instances of the previously credited RenamingSAT theorem are deliberately excluded.
 
