@@ -1,0 +1,41 @@
+{
+  "id": "pr-18-15937b185aa0-8bb3262acfc2",
+  "mode": "live-github-studio",
+  "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+  "chainId": 61999,
+  "repository": "MuncleUscles/p-vs-np",
+  "pr": 18,
+  "head": "15937b185aa0fd9f1a34abc1f4c8129b3a5604d5",
+  "base": "191c40fe6a4039546a7994f1db01c0f69254a043",
+  "claim": {
+    "claim": {
+      "version": 4,
+      "domain": "https://muncleuscles.github.io",
+      "chainId": 61999,
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 18,
+      "head": "15937b185aa0fd9f1a34abc1f4c8129b3a5604d5",
+      "base": "191c40fe6a4039546a7994f1db01c0f69254a043",
+      "branch": "research",
+      "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "submission_path": "research/submissions/rejected-skipped-kernel-false.json",
+      "submission_hash": "abcf75c6dea1a7ca0288b851f049250d3628fd931e5c9686f7e9224dcd4ee572",
+      "wallet": "0xC3606632d9A43e4c7822179e81D12BFBa0Cde974",
+      "nonce": "1a31e405d1f614effa621690e0ca7ffe",
+      "expires": 1795466287721,
+      "protocol_commit": "abbf15ce23fca94e57db581d497f24a8bd1560b2"
+    },
+    "signature": "0xe73883444122470e5a9a1ee5471bf9efc6b3736bdb97daba936f7f0d42bad5e3519b640142e50fde8671eb2560798f683714357374e4922f2961f44221a729c51b"
+  },
+  "commentId": 7113147839,
+  "commentCreatedAt": "2026-11-23T20:29:49Z",
+  "transactions": {},
+  "startedAt": "2026-11-23T20:32:31.211Z",
+  "status": "invalid",
+  "blockedConsensus": false,
+  "error": "Proof verifier rejected: Isolated verifier rejected: Kernel leanchecker rejected serialized proof: Isolated stage rejected input: \n",
+  "updatedAt": "2026-11-23T20:32:38.753Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45259963727"
+}
