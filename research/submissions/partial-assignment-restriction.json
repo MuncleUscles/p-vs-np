@@ -1,0 +1,77 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "algorithm",
+  "title": "Verified CNF restriction under arbitrary partial assignments",
+  "claim": "For every partial assignment p : Nat → Option Bool and formula in the credited list-based CNF representation, the explicit simplifier drops clauses satisfied by p and removes assigned literals from surviving clauses. The combined theorem proves that residual variables are original and unassigned, clause count does not increase, evaluation equals the original under the constructed extending assignment, residual satisfiability is equivalent to existence of a compatible original model, an empty residual clause certifies absence of such a model, and applying the same restriction twice changes nothing.",
+  "novelty": "This adds an actual syntactic simplifier and its complete stated correctness interface to the credited locality foundation, rather than merely normalizing a witness. It generalizes the previously proposed one-variable restriction specification to arbitrary partial assignments and includes variable, size, extension, conflict-certificate and idempotence invariants in one cohesive artifact. These are established SAT techniques, not a new complexity result or a discovery claim. The previous finite-support trial was rejected and is not being resubmitted; none of its uncredited theorem is imported.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/7",
+      "relationship": "Direct credited prerequisite: CNF definitions, Boolean evaluation, variable collection and assignment-locality theorem. Its exact bundle is imported and its theorem is used to transfer residual evaluation to the extended assignment. The locality result is not claimed again as new work."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/blob/758d9b3b559dc882a3680c60bd3969c4f9f444df/goals/cnf_restriction/TASK.md",
+      "relationship": "Earlier public, then-unsolved one-variable CNF restriction specification and known restriction semantics. The new artifact supplies its own two-filter implementation for arbitrary partial assignments and proves the stated full interface. It does not claim the restriction idea as original or depend on a curator task award."
+    },
+    {
+      "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+      "relationship": "Uses established constructive List membership, Boolean all/any, filtering and mapping lemmas. Those library facts are prior work, not this contribution."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/8",
+      "relationship": "Previous controlled finite-support submission received zero for trivial fragmentation of locality. This artifact has a different transformation and correctness statement, uses no theorem from that rejected contribution, and requests no retry of its verdict."
+    }
+  ],
+  "research_direction": "Verified SAT simplification, partial assignments and checkable conflict certificates",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://github.com/MuncleUscles/p-vs-np/pull/7",
+        "title": "Credited assignment locality for CNF evaluation",
+        "authors": [
+          "Open Mathematics project contributors"
+        ],
+        "relationship": "Imports exact definitions and uses the credited theorem only where the residual variable invariant makes assignment extension evaluation-preserving. Upstream attribution is a separate decision within this result's fixed budget.",
+        "priority_evidence": "Credited record pr-7-672f1fa46a61-0d05d194a602 pins raw bundle SHA-256 2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00. Its original contribution remains separate; no independent discovery is asserted here."
+      },
+      {
+        "reference": "https://github.com/MuncleUscles/p-vs-np/blob/758d9b3b559dc882a3680c60bd3969c4f9f444df/goals/cnf_restriction/TASK.md",
+        "title": "Previously published one-variable CNF restriction specification",
+        "authors": [
+          "Open Mathematics project contributors"
+        ],
+        "relationship": "Prior specification motivating a concrete SAT simplification component. The arbitrary-partial-assignment implementation and bundled proof here were constructed for this submission; no proof of the proposed target was copied from that task page.",
+        "priority_evidence": "The immutable prior repository commit predates this submission. Restriction and unit-propagation semantics were already identified there as established mathematics, with Logic and Mechanized Reasoning listed as background."
+      },
+      {
+        "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+        "title": "Lean 4.19 Core List lemmas",
+        "authors": [
+          "Lean contributors"
+        ],
+        "relationship": "Constructive list filter/map membership and Boolean fold facts support the new proof. Core library facts and established SAT semantics are explicitly prior work.",
+        "priority_evidence": "Pinned Lean v4.19.0 predates the pilot. No global novelty, priority, first-formalization or exhaustive literature-search claim is made."
+      }
+    ],
+    "discovery_basis": "This is disclosed project-agent work on known mathematical infrastructure. The credited locality bundle, local prior restriction specification, pinned Core lemmas, and the actual rejected finite-support verdict were inspected. The new proof and transformation were constructed as a cohesive independent component, not a renamed retry. No exhaustive external literature search was performed."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/partial-assignment-restriction.json",
+    "reproduce": "Run the trusted pinned open-agent check research/submissions/partial-assignment-restriction.json --lean. It resolves the exact credited locality artifact and checks the full dependency closure in the isolated Lean 4.19 container. GitHub evidence must independently bind the submitted commit."
+  },
+  "dependencies": [
+    {
+      "id": "pr-7-672f1fa46a61-0d05d194a602",
+      "use": "After proving that the syntactically restricted CNF contains only variables left unassigned by p, the proof calls the exact locality theorem to transfer evaluation from an arbitrary residual assignment to ExtendedAssignment p a. This is used in the full evaluation identity and construction of a compatible satisfying original model.",
+      "importance": "The dependency supplies the reusable semantic transport step connecting the new syntactic variable invariant to model extension. The substantial new work is restriction correctness and its cohesive invariants. Locality remains replaceable known infrastructure, so the contract must judge any attribution rather than treating a reference as automatic impact."
+    }
+  ],
+  "attribution": {
+    "wallet": "0x98EcFf400eEac1317fc72D989e51BEdEff0067D8",
+    "contributions": "The project mathematics agent designed this restriction component and wrote its proof; a helper agent checked Core lemma names and proof architecture. The same project and GitHub account control this pilot wallet and upstream wallet 0x24cE571092c1Cb9921E3c1de72a5E4597f606799. Different wallets imply no independent-controller bonus."
+  },
+  "limitations": "The theorem concerns exact submitted list-CNF definitions and a partial assignment represented as a function. It proves a clause-count bound, not a runtime or total encoding-size complexity bound. The empty-clause conflict certificate is sound but not a complete unsatisfiability procedure. No iterative unit propagation, DPLL completeness, polynomial-time SAT solver, lower bound, or resolution of P versus NP is claimed. This contribution has not been adjudicated and may receive zero. Any upstream allocation and returned reserve share this result's fixed budget; common control cannot enlarge it. Previously credited or rejected artifacts keep their existing outcomes."
+}
