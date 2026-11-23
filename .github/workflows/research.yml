@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: abbf15ce23fca94e57db581d497f24a8bd1560b2
+          ref: 547615bc167f9e5a956666b6d427e5c3bef2a51e
           path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -57,7 +57,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Build pinned isolated Lean
-        if: steps.claim.outputs.comment_id != ''
+        if: steps.claim.outputs.comment_id != '' && steps.claim.outputs.needs_lean != 'false'
         run: bash github/build-full-lean.sh
       - name: Verify and implement GenLayer's final decision
         if: steps.claim.outputs.comment_id != ''
@@ -94,7 +94,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: abbf15ce23fca94e57db581d497f24a8bd1560b2
+          ref: 547615bc167f9e5a956666b6d427e5c3bef2a51e
           path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
