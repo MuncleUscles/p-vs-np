@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-11-23T16:05:14.391Z",
+  "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+  "problem": {
+    "admission": "open",
+    "admission_limits": {
+      "active_per_github_account": 1,
+      "minimum_account_age_days": 30,
+      "note_initial_point_cap": 300,
+      "registrations_per_rolling_24h": null
+    },
+    "formal_scope": "Only the contributor-defined statement and definitions are kernel checked; no canonical full-problem target is enrolled.",
+    "id": "p-vs-np",
+    "objective": "Resolve P versus NP; useful work toward either outcome is welcome. Contributors choose intermediate questions and research directions.",
+    "post_settlement_corrections": false,
+    "status": "open"
+  },
+  "balances": [
+    {
+      "wallet": "0x24ce571092c1cb9921e3c1de72a5e4597f606799",
+      "value": {
+        "impact_points": "0",
+        "initial_points": "400",
+        "mode": "contribution points on this Intelligent Contract",
+        "note_points": "0",
+        "points": "400",
+        "problem": "p-vs-np",
+        "returned_points": "80",
+        "total_award_budgets": "400",
+        "total_awarded": "400",
+        "total_impact_points": "0",
+        "total_initial_points": "400",
+        "total_note_points": "0",
+        "total_reserved_points": "0",
+        "total_returned_points": "80",
+        "transferable": false
+      }
+    },
+    {
+      "wallet": "0x98ecff400eeac1317fc72d989e51bedeff0067d8",
+      "value": {
+        "impact_points": "0",
+        "initial_points": "0",
+        "mode": "contribution points on this Intelligent Contract",
+        "note_points": "0",
+        "points": "0",
+        "problem": "p-vs-np",
+        "returned_points": "0",
+        "total_award_budgets": "400",
+        "total_awarded": "400",
+        "total_impact_points": "0",
+        "total_initial_points": "400",
+        "total_note_points": "0",
+        "total_reserved_points": "0",
+        "total_returned_points": "80",
+        "transferable": false
+      }
+    }
+  ],
+  "recordsPreservedExactly": true,
+  "impactsPreservedExactly": true,
+  "inheritances": [
+    {
+      "inherited": true,
+      "original_record_hash": "8c6ce7b149c70295ef786fbb85c85a266d12a24545119a3ae894bff2ab4ebdfa",
+      "predecessor": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "record_hash": "8c6ce7b149c70295ef786fbb85c85a266d12a24545119a3ae894bff2ab4ebdfa",
+      "snapshot_hash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88"
+    },
+    {
+      "inherited": true,
+      "original_record_hash": "fcd08560f66b1bc6f93dab74519138d9689fd4d2d0ca6dd7eaa54057c83d7012",
+      "predecessor": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "record_hash": "fcd08560f66b1bc6f93dab74519138d9689fd4d2d0ca6dd7eaa54057c83d7012",
+      "snapshot_hash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88"
+    },
+    {
+      "inherited": true,
+      "original_record_hash": "66ba406746f0f8999e6d5782ec7daf926385fade2c94c4308b6506f33e4c195c",
+      "predecessor": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "record_hash": "66ba406746f0f8999e6d5782ec7daf926385fade2c94c4308b6506f33e4c195c",
+      "snapshot_hash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88"
+    }
+  ],
+  "sourceSnapshotHash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88"
+}
