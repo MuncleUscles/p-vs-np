@@ -1,0 +1,10 @@
+{
+  "repository": "brilliant-hq/pequalnp-proofs",
+  "pr": 979,
+  "commit": "42765bad82112b0ea3e275713780ab49db8074ec",
+  "path": "lean/PEqualNP/Outside/L_meta_727.lean",
+  "theorem": "PEqualNP.Outside.L_meta_727",
+  "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_meta_727 : \u2200 (n t : \u2115) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (v : Fin n), (\u2203 S : Finset (Fin n), (\u2200 a b : Fin n, G.Adj a b \u2192 a \u2208 S \u2228 b \u2208 S) \u2227 S.card = t) \u2192 (\u2200 T : Finset (Fin n), (\u2200 c d : Fin n, G.Adj c d \u2192 c \u2208 T \u2228 d \u2208 T) \u2192 t \u2264 T.card) \u2192 t < (Finset.univ.filter (fun u : Fin n => G.Adj v u)).card \u2192 \u2200 U : Finset (Fin n), (\u2200 e f : Fin n, G.Adj e f \u2192 e \u2208 U \u2228 f \u2208 U) \u2192 U.card = t \u2192 v \u2208 U",
+  "origin": "formalization",
+  "attributionBasis": "The merged source PR identifies its submitter as fededevi (GitHub numeric account 5583580). This is evidence of the submitted formalization, not original mathematical discovery, real-world identity, wallet control or global priority. Local adaptation is independently checked and separately assessed."
+}
