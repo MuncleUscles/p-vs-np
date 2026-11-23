@@ -1,0 +1,50 @@
+{
+  "protocolVersion": 5,
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "branch": "research",
+  "chainId": 61999,
+  "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+  "codeHash": "5960faa03c81106ec306cebcc269b489711d16bfd619e84c31116467523dbf94",
+  "protocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+  "deploymentTx": "0xc7cab2fbcbc58caff3463c575465b49e08b3ea2fab5e7e688b46738019b9e5e4",
+  "deployedAt": "2026-11-23T13:01:57.146Z",
+  "origin": "https://muncleuscles.github.io",
+  "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
+  "executor": "0x06BAb7179c48F0dcd1afC93C48d3D22C5a6377f2",
+  "windowSeconds": 300,
+  "minimumGitHubAccountAgeDays": 30,
+  "appId": 15368,
+  "verifierAppId": 15368,
+  "policyHash": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+  "legacyLedgers": [
+    {
+      "chain_id": 61999,
+      "address": "0x6acF1e29790B2eE45c01184fFaa8F84f06ba9AAc",
+      "reserved_statement_hashes": [
+        "a1c9f09b2f83e97ca50c0f7c0849e3743fb27127c8d07cc11694582c8ca85893",
+        "ca48fc7bcbb37f52d5e12d5048243cd3ce8dd423c8e80447041d85acab17b67c"
+      ],
+      "reserved_proposition_hashes": [
+        "48e70a52545b5a518ad840270393552bd116ec76dbc7ea993eb1f4a4479c1669",
+        "e5d84afec4b99875df6df5493100a245bb810c2bd9e4d2ae697aa2730ff01342"
+      ],
+      "description": "Historical v3: CNF variable renaming and renaming-satisfiability preservation, 800 separate points; no balance import."
+    },
+    {
+      "chain_id": 61999,
+      "address": "0xa0bF4a7600D7A10Adb2d5F9737FDA78B760FF975",
+      "reserved_statement_hashes": [
+        "b45cc5bc9e11720ae19ee1717dcb68bdaf67cbc96b35faa404626086c296652e"
+      ],
+      "reserved_proposition_hashes": [
+        "affc019d2d1a043ae650e14a99789198f8a38f1ef99ac44f0206298bbd37b519"
+      ],
+      "description": "Historical v4: parity-disjoint CNF variable namespaces, 300 separate points; no balance import."
+    }
+  ],
+  "mode": "live-native-open-research-v5",
+  "review": "https://github.com/MuncleUscles/open-mathematics/pull/21",
+  "evidence": "https://github.com/MuncleUscles/p-vs-np/tree/evidence",
+  "scope": "This deployment record confirms the source and native configuration. Individual submission outcomes are established by finalized native records and public evidence reports."
+}

@@ -1,4 +1,4 @@
-name: Research adjudication
+name: Open research adjudication
 on:
   issue_comment:
     types: [created]
@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: 743c345d8b5768c46ffa53b38d8f239e30069d46
+          ref: 0ab8a70f1321113f045f0226c44b7fa0db883528
           path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -53,7 +53,7 @@ jobs:
       - run: npm ci --ignore-scripts
       - name: Select a valid signed claim
         id: claim
-        run: node github/problem-select.mjs
+        run: node github/open-select.mjs
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Build pinned isolated Lean
@@ -61,7 +61,7 @@ jobs:
         run: bash github/build-verifier.sh
       - name: Verify and implement GenLayer's final decision
         if: steps.claim.outputs.comment_id != ''
-        run: node github/problem-worker.mjs
+        run: node github/open-worker.mjs
         env:
           CLAIM_COMMENT_ID: ${{ steps.claim.outputs.comment_id }}
           GITHUB_TOKEN: ${{ github.token }}

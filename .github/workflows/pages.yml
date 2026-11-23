@@ -1,4 +1,4 @@
-name: Problem dashboard
+name: Open research dashboard
 on:
   push:
     branches: [main]
@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: 743c345d8b5768c46ffa53b38d8f239e30069d46
+          ref: 0ab8a70f1321113f045f0226c44b7fa0db883528
           path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -41,7 +41,7 @@ jobs:
           cache: npm
           cache-dependency-path: protocol/package-lock.json
       - run: npm ci --ignore-scripts
-      - run: node scripts/build-problem-site.mjs ../problem ../site
+      - run: node scripts/build-open-site.mjs ../problem ../site
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         with:

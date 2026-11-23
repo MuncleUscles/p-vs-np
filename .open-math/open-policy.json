@@ -1,0 +1,14 @@
+{
+  "version": 5,
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "branch": "research",
+  "objective": "Resolve P versus NP; useful work toward either outcome is welcome. Contributors choose intermediate questions and research directions.",
+  "toolchain": "lean4:4.19.0",
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "admission": "open",
+  "notes": "Research notes are reviewed arguments, not kernel-verified results. Evidence must support the scope actually claimed."
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 5,
+  "id": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "branch": "research",
+  "configBranch": "main",
+  "protocol": {
+    "repository": "MuncleUscles/open-mathematics",
+    "commit": "0ab8a70f1321113f045f0226c44b7fa0db883528"
+  },
+  "policy": {
+    "path": ".open-math/open-policy.json",
+    "sha256": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656"
+  }
+}
