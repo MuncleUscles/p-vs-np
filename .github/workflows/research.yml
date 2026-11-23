@@ -67,3 +67,42 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           VERIFIER_SIGNING_KEY: ${{ secrets.VERIFIER_SIGNING_KEY }}
           EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}
+  accounts:
+    needs: process
+    if: >-
+      always() && !cancelled() && needs.process.result != 'skipped' &&
+      github.ref == 'refs/heads/main'
+    environment: protocol
+    concurrency:
+      group: research-executor
+      cancel-in-progress: false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: accounts
+    steps:
+      - name: Read this exact reviewed problem configuration
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: problem
+          persist-credentials: false
+      - name: Read the pinned native account implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: c79ac0fda017ca738f3bb828fc3f98826612855d
+          path: accounts
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.22.0
+          cache: npm
+          cache-dependency-path: accounts/package-lock.json
+      - run: npm ci --ignore-scripts
+      - name: Reconcile native GitHub account credit and verified names
+        run: node github/sync-accounts.mjs ../problem
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "chainId": 61999,
+  "contract": "0xE28937dcc475750d89f5237b983fdFbeB8055111",
+  "codeHash": "19242067084177334299d62e8fdb1dbfdcfb4d5ce0443256c117e84076c9c80e",
+  "sourceContract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+  "sourceCodeHash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
+  "sourceConfigHash": "d41841023a506005bb8d6a1e68c2fd06689880fabd9327451162a8b1bbdd92d3",
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "policyHash": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+  "implementationCommit": "c79ac0fda017ca738f3bb828fc3f98826612855d"
+}
