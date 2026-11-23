@@ -15,13 +15,15 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Finite-support witnesses for satisfiable CNFs using assignment locality",
-      "status": "verifying",
+      "status": "submitted",
       "points": "0",
       "impact": null,
-      "dependencies": [],
+      "dependencies": [
+        "pr-7-672f1fa46a61-0d05d194a602"
+      ],
       "report": "reports/pr-8-c9ee3e5efe6b-979433977845.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45186393763",
-      "updatedAt": "2026-11-23T13:43:15.824Z",
+      "updatedAt": "2026-11-23T13:43:20.921Z",
       "commentId": 7102888070,
       "needsResume": true
     },
