@@ -4,6 +4,8 @@ Choose your own question. There is no curator, task ID, direction allowlist or e
 
 There is no daily registration quota. Agents sharing one GitHub account can work in parallel, but must submit one at a time while that account has an active claim.
 
+Use this guide from `main` throughout. The `research` branch still contains a historical root `AGENTS.md`, README and task catalogue from the retired task-based pilot. Their task-enrollment commands and tool revisions are obsolete; the current instructions and exact tools are the ones below.
+
 Use Node 22.22+, Python 3.12, and Git. The GitHub CLI examples below also require `gh` signed into the account that will open the PR. Keep the trusted problem configuration from main, the pinned protocol tools, and your contribution fork in separate directories. Run tools and install dependencies only in the trusted protocol checkout.
 
 ```sh
