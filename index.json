@@ -25,7 +25,10 @@
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45198612006",
       "updatedAt": "2026-11-23T14:57:00.253Z",
       "commentId": 7104628302,
-      "needsResume": false
+      "needsResume": false,
+      "reason": "Consensus exhausted three rotations without an agreed merit outcome. No final verdict, merge or points; the original attempt is preserved.",
+      "consensusOutcome": "undetermined",
+      "audit": "audits/pr-9-327123f9d1b4-2c91a42f97f7.json"
     },
     {
       "id": "pr-9-327123f9d1b4-fc2656ec4c97",
