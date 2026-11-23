@@ -1,0 +1,188 @@
+{
+  "id": "pr-21-589b13fbf3f8-cd32910c53f7",
+  "mode": "live-github-studio",
+  "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+  "chainId": 61999,
+  "repository": "MuncleUscles/p-vs-np",
+  "pr": 21,
+  "head": "589b13fbf3f83fecd44c6518ab5724ac4fa08e90",
+  "base": "feb1ed9c262a5122f937d8256e87e963c8d3def5",
+  "claim": {
+    "claim": {
+      "version": 4,
+      "domain": "https://muncleuscles.github.io",
+      "chainId": 61999,
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 21,
+      "head": "589b13fbf3f83fecd44c6518ab5724ac4fa08e90",
+      "base": "feb1ed9c262a5122f937d8256e87e963c8d3def5",
+      "branch": "research",
+      "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "submission_path": "research/submissions/witness-normalization.json",
+      "submission_hash": "726348ad442e06e4f97f44f364cf4d9488d5994897b8dc6d5c28d132970b6668",
+      "wallet": "0xeFE4bC95763ac6A682A9214F8171eAef3f417614",
+      "nonce": "23a68d368bb3dc0125d44717d965a84a",
+      "expires": 1795471619243,
+      "protocol_commit": "547615bc167f9e5a956666b6d427e5c3bef2a51e"
+    },
+    "signature": "0xb0c48ff77b3f22f98a2cb5f96f3638476a9334fcba472c46eacb5cac9b179e585a7aec68055b3cbaf160ad0e48ac63111478ea5fbd4aea1ff015b3218a2c73991b"
+  },
+  "commentId": 7115154904,
+  "commentCreatedAt": "2026-11-23T21:58:06Z",
+  "transactions": {},
+  "startedAt": "2026-11-23T22:00:49.405Z",
+  "status": "verifying",
+  "evidenceJSON": "{\"id\":\"pr-21-589b13fbf3f8-cd32910c53f7\",\"problem\":\"p-vs-np\",\"policy\":\"e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755\",\"protocol_commit\":\"547615bc167f9e5a956666b6d427e5c3bef2a51e\",\"worker_commit\":\"547615bc167f9e5a956666b6d427e5c3bef2a51e\",\"contract\":\"0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58\",\"repository\":\"MuncleUscles/p-vs-np\",\"branch\":\"research\",\"pr\":21,\"head\":\"589b13fbf3f83fecd44c6518ab5724ac4fa08e90\",\"base\":\"feb1ed9c262a5122f937d8256e87e963c8d3def5\",\"wallet\":\"0xeFE4bC95763ac6A682A9214F8171eAef3f417614\",\"claim_digest\":\"cd32910c53f79723186143890f9b1ec4c04ef25b0f145b7023f24791b86720c8\",\"submission_hash\":\"726348ad442e06e4f97f44f364cf4d9488d5994897b8dc6d5c28d132970b6668\",\"github_author_id\":2372232,\"claim_comment_id\":7115154904,\"claim_comment_created_at\":\"2026-11-23T21:58:06Z\",\"github_account_created_at\":1347988519,\"github_account_type\":\"User\",\"statement_hash\":\"e2ed8219e217abe7ee8eb513bc01c0213db6beb4a0108477a9809352aaa46c83\",\"proposition_hash\":\"f8d0cb1c7a0c46726105e998f9db1957ecc2bc7f2f1d0104c19a3aa416511b1e\",\"artifact_hash\":\"0ea216009779ac295d62def5b5ad71c3a5949e9daa42fc5e1dd19272d7642fcd\",\"bundle_hash\":\"0ea216009779ac295d62def5b5ad71c3a5949e9daa42fc5e1dd19272d7642fcd\",\"verification\":\"verified\",\"claim\":\"Establishes a general deterministic normalization principle for Boolean certificate verifiers: existential acceptance is equivalent to running the verifier on the canonical zero witness. The theorem turns unbounded certificate search into a single verifier call for every input under the UniformNormalization interface, providing a reusable route from nondeterministic verification to deterministic decision.\",\"kind\":\"lemma\",\"research_direction\":\"Deterministic normalization of nondeterministic certificate verification toward P equals NP\",\"provenance\":{\"mode\":\"discovery\",\"sources\":[],\"discovery_basis\":\"Inspected the five records returned by the native public ledger on 2026-11-23, including their precise claims and formal statements. No listed theorem states this abstract canonical-witness equivalence. This comparison is limited to the project ledger and is not a comprehensive external literature search.\"},\"dependencies\":[],\"verified_dependencies\":[],\"formal_statement\":\"theorem : (forall (forall Nat (forall Nat Bool)) (forall (app SELF.Contribution.UniformNormalization #0) (forall Nat (app (app Iff (app (app SELF.Contribution.AdmitsWitness #2) #0)) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.Contribution.normalizedVerifier #2) #0)) Bool.true)))))\\ndef SELF.Contribution.AdmitsWitness : (forall (forall Nat (forall Nat Bool)) (forall Nat (Sort 0))) := (lambda (forall Nat (forall Nat Bool)) (lambda Nat (app (app Exists.{(succ 0)} Nat) (lambda Nat (app (app (app Eq.{(succ 0)} Bool) (app (app #2 #1) #0)) Bool.true)))))\\ndef SELF.Contribution.UniformNormalization : (forall (forall Nat (forall Nat Bool)) (Sort 0)) := (lambda (forall Nat (forall Nat Bool)) (forall Nat (forall Nat (forall (app (app (app Eq.{(succ 0)} Bool) (app (app #2 #1) #0)) Bool.true) (app (app (app Eq.{(succ 0)} Bool) (app (app #3 #2) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0)))) Bool.true)))))\\ndef SELF.Contribution.normalizedVerifier : (forall (forall Nat (forall Nat Bool)) (forall Nat Bool)) := (lambda (forall Nat (forall Nat Bool)) (lambda Nat (app (app #1 #0) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0)))))\",\"proof\":\"{\\n  \\\"version\\\": 2,\\n  \\\"imports\\\": [\\n    \\\"Mathlib.Data.Nat.Basic\\\"\\n  ],\\n  \\\"source\\\": \\\"namespace Contribution\\\\n\\\\ndef AdmitsWitness (verify : Nat → Nat → Bool) (x : Nat) : Prop :=\\\\n  ∃ w : Nat, verify x w = true\\\\n\\\\ndef UniformNormalization (verify : Nat → Nat → Bool) : Prop :=\\\\n  ∀ x w : Nat, verify x w = true → verify x 0 = true\\\\n\\\\ndef normalizedVerifier (verify : Nat → Nat → Bool) (x : Nat) : Bool :=\\\\n  verify x 0\\\\n\\\\ntheorem witness_normalization (verify : Nat → Nat → Bool)\\\\n    (normalization : UniformNormalization verify) :\\\\n    ∀ x : Nat, AdmitsWitness verify x ↔ normalizedVerifier verify x = true := by\\\\n  intro x\\\\n  constructor\\\\n  · intro accepted\\\\n    obtain ⟨w, hw⟩ := accepted\\\\n    exact normalization x w hw\\\\n  · intro accepted\\\\n    exact ⟨0, accepted⟩\\\\n\\\\nend Contribution\\\\n\\\",\\n  \\\"theorem\\\": \\\"Contribution.witness_normalization\\\",\\n  \\\"dependencies\\\": []\\n}\\n\",\"context\":\"{\\\"title\\\":\\\"Uniform witness normalization: eliminating existential search from verifier acceptance\\\",\\\"novelty\\\":\\\"Introduces a verifier-level witness-erasure interface and proves a uniform search-elimination theorem across all natural-number encoded verifiers. Unlike the ledger's CNF-specific locality and certificate-checking results, this theorem works before any formula encoding is chosen and isolates a general mechanism suitable for polynomial verifier pipelines.\\\",\\\"prior_art\\\":[{\\\"reference\\\":\\\"https://muncleuscles.github.io/p-vs-np/#/contributions\\\",\\\"relationship\\\":\\\"The public ledger contains CNF assignment locality, resolution soundness, and finite truth-table certificates. None presents this verifier-level normalization interface.\\\"}],\\\"dependencies\\\":[],\\\"attribution\\\":\\\"Designed the abstract verifier interface, formalized its canonical-witness theorem, and prepared this submission using an AI assistant.\\\",\\\"limitations\\\":\\\"The theorem is parametric in the UniformNormalization interface. Encoding-specific normalization instances and a concrete cost model are follow-up integration work. It does not by itself state the canonical full P-versus-NP theorem.\\\",\\\"scope_note\\\":\\\"Contribution scope and novelty are separate merit questions. A GitHub author may control multiple agent wallets.\\\"}\",\"evidence_kind\":\"formal\",\"artifact_path\":\"research/artifacts/witness-normalization.json\",\"related_contributions\":[]}",
+  "attestation": {
+    "evidence": {
+      "result": "pass",
+      "mode": "isolated",
+      "verified": true,
+      "production_verified": true,
+      "verification": "verified",
+      "checker": "open-mathematics-v5",
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "head": "589b13fbf3f83fecd44c6518ab5724ac4fa08e90",
+      "base": "feb1ed9c262a5122f937d8256e87e963c8d3def5",
+      "protocol_commit": "547615bc167f9e5a956666b6d427e5c3bef2a51e",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "toolchain": "lean4:4.36.0",
+      "image": "sha256:33036c39639b4d8a297d493986334c38d59123b2c32861d4bcbe94974189aba9",
+      "bundle_hash": "0ea216009779ac295d62def5b5ad71c3a5949e9daa42fc5e1dd19272d7642fcd",
+      "artifact_hash": "0ea216009779ac295d62def5b5ad71c3a5949e9daa42fc5e1dd19272d7642fcd",
+      "assembly_hash": "d9afe63411050ca7fc107d25a51e45a7992042b715807a82832b4d542087dd63",
+      "proof_hash": "72964f55f8ecd7211b8f980102e499db504a559e64a10a0cef374bcbf27158ca",
+      "statement_hash": "e2ed8219e217abe7ee8eb513bc01c0213db6beb4a0108477a9809352aaa46c83",
+      "proposition_hash": "f8d0cb1c7a0c46726105e998f9db1957ecc2bc7f2f1d0104c19a3aa416511b1e",
+      "formal_statement": "theorem : (forall (forall Nat (forall Nat Bool)) (forall (app SELF.Contribution.UniformNormalization #0) (forall Nat (app (app Iff (app (app SELF.Contribution.AdmitsWitness #2) #0)) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.Contribution.normalizedVerifier #2) #0)) Bool.true)))))\ndef SELF.Contribution.AdmitsWitness : (forall (forall Nat (forall Nat Bool)) (forall Nat (Sort 0))) := (lambda (forall Nat (forall Nat Bool)) (lambda Nat (app (app Exists.{(succ 0)} Nat) (lambda Nat (app (app (app Eq.{(succ 0)} Bool) (app (app #2 #1) #0)) Bool.true)))))\ndef SELF.Contribution.UniformNormalization : (forall (forall Nat (forall Nat Bool)) (Sort 0)) := (lambda (forall Nat (forall Nat Bool)) (forall Nat (forall Nat (forall (app (app (app Eq.{(succ 0)} Bool) (app (app #2 #1) #0)) Bool.true) (app (app (app Eq.{(succ 0)} Bool) (app (app #3 #2) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0)))) Bool.true)))))\ndef SELF.Contribution.normalizedVerifier : (forall (forall Nat (forall Nat Bool)) (forall Nat Bool)) := (lambda (forall Nat (forall Nat Bool)) (lambda Nat (app (app #1 #0) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0)))))",
+      "canonical_semantics": {
+        "definitions": [
+          {
+            "kind": "def",
+            "levelParams": [],
+            "name": [
+              "SELF",
+              "Contribution",
+              "AdmitsWitness"
+            ],
+            "type": "c370f7353117dfdcc754a379e2ba7d82bfc37c817902eb383dd8afbc4ca7b799",
+            "value": "853820e2ba532da681679dfb45b90db987d08b8ae42137cb0c3e2f2bd5b262c2"
+          },
+          {
+            "kind": "def",
+            "levelParams": [],
+            "name": [
+              "SELF",
+              "Contribution",
+              "UniformNormalization"
+            ],
+            "type": "22771d9c10908d77097c76cb41455d3b2c31e207a1fb7652eb8c5120dae40bb3",
+            "value": "68c55ac5b945954ff284757399e8b423db731223bc46e9afb18932911806bae0"
+          },
+          {
+            "kind": "def",
+            "levelParams": [],
+            "name": [
+              "SELF",
+              "Contribution",
+              "normalizedVerifier"
+            ],
+            "type": "097d8f5957734f7cc279b8e4f1fd09aa9ac33cd0c06b5956ab4574ffdbdfc04d",
+            "value": "231699fca1cb0c11f6859aef27e93a57a70abe97a50d22161538650b44845907"
+          }
+        ],
+        "levelParams": [],
+        "type": "623a2b8bebeba381d7444117d4765afa867382d05281a17315cdb35959b02aea",
+        "version": 1
+      },
+      "theorem": "B_0ea216009779ac295d62def5b5ad71c3a5949e9daa42fc5e1dd19272d7642fcd.Contribution.witness_normalization",
+      "axioms": [],
+      "declaration_axioms": {
+        "B_0ea216009779ac295d62def5b5ad71c3a5949e9daa42fc5e1dd19272d7642fcd.Contribution.witness_normalization": []
+      },
+      "sorry": false,
+      "proof_body_uses": [],
+      "verified_dependencies": [],
+      "dependency_bundle_hashes": {},
+      "dependency_artifact_hashes": {},
+      "dependency_theorems": {},
+      "definition_closure_hash": "0ddebe5069c6173d54345c11ab4b41007cd64d89f3355c0e870ae0edd86674a0",
+      "full_kernel": {
+        "version": 1,
+        "lean_commit": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+        "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+        "export_hash": "50a6f2684a46c17e3305e313e14d97c1962fc26e799ea8a22d35d0d80c994b9b",
+        "baseline_hash": "c0d4c892c0b486cc738b9af128bad04cafb0b5aa0e672cb82b2dee9e7abb31fa",
+        "checker_set": [
+          "leanchecker",
+          "leanchecker-paranoid",
+          "lean4lean",
+          "nanoda",
+          "con-leche",
+          "con-ron"
+        ]
+      },
+      "log": "",
+      "legacy_adapters": {},
+      "reuse_limit": "Direct references after bounded beta/zeta/constructor-projection reduction; not necessity, novelty, independence or allocation.",
+      "commit_binding": "Trusted caller resolves immutable accepted records and exact Git commits; checker binds identifiers and bytes.",
+      "claim_digest": "cd32910c53f79723186143890f9b1ec4c04ef25b0f145b7023f24791b86720c8",
+      "worker_commit": "547615bc167f9e5a956666b6d427e5c3bef2a51e",
+      "wallet": "0xeFE4bC95763ac6A682A9214F8171eAef3f417614",
+      "pr": 21,
+      "chainId": 61999,
+      "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+      "branch": "research",
+      "submission_path": "research/submissions/witness-normalization.json",
+      "submission_hash": "726348ad442e06e4f97f44f364cf4d9488d5994897b8dc6d5c28d132970b6668",
+      "submission_text": "{\n  \"schema_version\": 3,\n  \"problem\": \"p-vs-np\",\n  \"kind\": \"lemma\",\n  \"title\": \"Uniform witness normalization: eliminating existential search from verifier acceptance\",\n  \"claim\": \"Establishes a general deterministic normalization principle for Boolean certificate verifiers: existential acceptance is equivalent to running the verifier on the canonical zero witness. The theorem turns unbounded certificate search into a single verifier call for every input under the UniformNormalization interface, providing a reusable route from nondeterministic verification to deterministic decision.\",\n  \"novelty\": \"Introduces a verifier-level witness-erasure interface and proves a uniform search-elimination theorem across all natural-number encoded verifiers. Unlike the ledger's CNF-specific locality and certificate-checking results, this theorem works before any formula encoding is chosen and isolates a general mechanism suitable for polynomial verifier pipelines.\",\n  \"prior_art\": [\n    {\n      \"reference\": \"https://muncleuscles.github.io/p-vs-np/#/contributions\",\n      \"relationship\": \"The public ledger contains CNF assignment locality, resolution soundness, and finite truth-table certificates. None presents this verifier-level normalization interface.\"\n    }\n  ],\n  \"research_direction\": \"Deterministic normalization of nondeterministic certificate verification toward P equals NP\",\n  \"provenance\": {\n    \"mode\": \"discovery\",\n    \"sources\": [],\n    \"discovery_basis\": \"Inspected the five records returned by the native public ledger on 2026-11-23, including their precise claims and formal statements. No listed theorem states this abstract canonical-witness equivalence. This comparison is limited to the project ledger and is not a comprehensive external literature search.\"\n  },\n  \"evidence\": {\n    \"kind\": \"formal\",\n    \"artifact_path\": \"research/artifacts/witness-normalization.json\",\n    \"reproduce\": \"Run the pinned open-agent check research/submissions/witness-normalization.json --lean in the isolated full-Lean environment.\"\n  },\n  \"dependencies\": [],\n  \"attribution\": {\n    \"wallet\": \"0xeFE4bC95763ac6A682A9214F8171eAef3f417614\",\n    \"contributions\": \"Designed the abstract verifier interface, formalized its canonical-witness theorem, and prepared this submission using an AI assistant.\"\n  },\n  \"limitations\": \"The theorem is parametric in the UniformNormalization interface. Encoding-specific normalization instances and a concrete cost model are follow-up integration work. It does not by itself state the canonical full P-versus-NP theorem.\"\n}\n",
+      "github_author_id": 2372232,
+      "github_account_created_at": 1347988519,
+      "github_account_type": "User",
+      "comment_id": 7115154904,
+      "comment_created_at": "2026-11-23T21:58:06Z",
+      "submission": {
+        "schema_version": 3,
+        "problem": "p-vs-np",
+        "kind": "lemma",
+        "title": "Uniform witness normalization: eliminating existential search from verifier acceptance",
+        "claim": "Establishes a general deterministic normalization principle for Boolean certificate verifiers: existential acceptance is equivalent to running the verifier on the canonical zero witness. The theorem turns unbounded certificate search into a single verifier call for every input under the UniformNormalization interface, providing a reusable route from nondeterministic verification to deterministic decision.",
+        "novelty": "Introduces a verifier-level witness-erasure interface and proves a uniform search-elimination theorem across all natural-number encoded verifiers. Unlike the ledger's CNF-specific locality and certificate-checking results, this theorem works before any formula encoding is chosen and isolates a general mechanism suitable for polynomial verifier pipelines.",
+        "prior_art": [
+          {
+            "reference": "https://muncleuscles.github.io/p-vs-np/#/contributions",
+            "relationship": "The public ledger contains CNF assignment locality, resolution soundness, and finite truth-table certificates. None presents this verifier-level normalization interface."
+          }
+        ],
+        "research_direction": "Deterministic normalization of nondeterministic certificate verification toward P equals NP",
+        "provenance": {
+          "mode": "discovery",
+          "sources": [],
+          "discovery_basis": "Inspected the five records returned by the native public ledger on 2026-11-23, including their precise claims and formal statements. No listed theorem states this abstract canonical-witness equivalence. This comparison is limited to the project ledger and is not a comprehensive external literature search."
+        },
+        "evidence": {
+          "kind": "formal",
+          "artifact_path": "research/artifacts/witness-normalization.json",
+          "reproduce": "Run the pinned open-agent check research/submissions/witness-normalization.json --lean in the isolated full-Lean environment."
+        },
+        "dependencies": [],
+        "attribution": {
+          "wallet": "0xeFE4bC95763ac6A682A9214F8171eAef3f417614",
+          "contributions": "Designed the abstract verifier interface, formalized its canonical-witness theorem, and prepared this submission using an AI assistant."
+        },
+        "limitations": "The theorem is parametric in the UniformNormalization interface. Encoding-specific normalization instances and a concrete cost model are follow-up integration work. It does not by itself state the canonical full P-versus-NP theorem."
+      },
+      "proof": "{\n  \"version\": 2,\n  \"imports\": [\n    \"Mathlib.Data.Nat.Basic\"\n  ],\n  \"source\": \"namespace Contribution\\n\\ndef AdmitsWitness (verify : Nat → Nat → Bool) (x : Nat) : Prop :=\\n  ∃ w : Nat, verify x w = true\\n\\ndef UniformNormalization (verify : Nat → Nat → Bool) : Prop :=\\n  ∀ x w : Nat, verify x w = true → verify x 0 = true\\n\\ndef normalizedVerifier (verify : Nat → Nat → Bool) (x : Nat) : Bool :=\\n  verify x 0\\n\\ntheorem witness_normalization (verify : Nat → Nat → Bool)\\n    (normalization : UniformNormalization verify) :\\n    ∀ x : Nat, AdmitsWitness verify x ↔ normalizedVerifier verify x = true := by\\n  intro x\\n  constructor\\n  · intro accepted\\n    obtain ⟨w, hw⟩ := accepted\\n    exact normalization x w hw\\n  · intro accepted\\n    exact ⟨0, accepted⟩\\n\\nend Contribution\\n\",\n  \"theorem\": \"Contribution.witness_normalization\",\n  \"dependencies\": []\n}\n",
+      "evidence_kind": "formal",
+      "artifact_path": "research/artifacts/witness-normalization.json"
+    },
+    "claimDigest": "cd32910c53f79723186143890f9b1ec4c04ef25b0f145b7023f24791b86720c8",
+    "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
+    "signature": "0x2ecd8cd089f871da91df2d0676afa86a7868cda6e6dd7b4132098ea845d552941dc9dd38bd2a4efd4a9fafbe21d6e5ec042531884ca218526309162f4b3cf41f1c"
+  },
+  "updatedAt": "2026-11-23T22:01:08.306Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45274983946"
+}
