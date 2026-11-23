@@ -39,7 +39,8 @@
         "method": "register",
         "argsSha256": "58308d73c78e0bd7e33979d6b67cd8baaac12543907d8087fcb1953db3d2b105",
         "independent": false
-      }
+      },
+      "hash": "0x46123220f54de01bf91ac71c676d315e0ef308a98c889a7042e6d852bc0c0156"
     }
   },
   "startedAt": "2026-11-23T13:42:21.528Z",
@@ -208,6 +209,6 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0x00701a23929b01c49c1be39e62ee7d4ebf27f8cf6bd2c93d9aecd1e945e9513a77cf91f095c15840b208c5315913d76dab9264942ffaebf21e95e9cf22234b391b"
   },
-  "updatedAt": "2026-11-23T13:42:37.467Z",
+  "updatedAt": "2026-11-23T13:42:40.977Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45186393763"
 }
