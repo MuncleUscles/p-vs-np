@@ -1,6 +1,37 @@
 {
-  "mode": "pilot-pending-activation",
+  "mode": "live-github-studio",
   "repository": "MuncleUscles/p-vs-np",
   "contract": "0x49574F0Eb49aabD1E53f091f339E32b21b4100DC",
-  "entries": []
+  "entries": [
+    {
+      "id": "pr-2-61854232ab90-f856dcae0aa5",
+      "pr": 2,
+      "head": "61854232ab906ce088df7c7f8cc9a875465fc122",
+      "wallet": "0x24cE571092c1Cb9921E3c1de72a5E4597f606799",
+      "goal": "freshen_namespaces",
+      "policy": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+      "goalHash": "d52297e2452e8d94693f893ed7108c84108c429735fe08e3b9dd382a5012fc41",
+      "problemCommit": "2835b70ede542e2a838e355129344459d52eac08",
+      "protocolCommit": "f110daf9030e499d51f72c405f08a787785c3142",
+      "title": "Parity-disjoint variable namespaces for arbitrary CNF components",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-2-61854232ab90-f856dcae0aa5.json",
+      "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45155321688",
+      "updatedAt": "2026-11-23T10:22:24.582Z",
+      "commentId": 7097818354,
+      "needsResume": true
+    }
+  ],
+  "deployment": {
+    "protocolVersion": 4,
+    "contract": "0x49574F0Eb49aabD1E53f091f339E32b21b4100DC",
+    "problem": "p-vs-np",
+    "repository": "MuncleUscles/p-vs-np",
+    "branch": "research",
+    "chainId": 61999,
+    "windowSeconds": 300
+  }
 }
