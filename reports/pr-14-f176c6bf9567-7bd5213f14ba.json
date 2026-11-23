@@ -51383,7 +51383,7 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0xfc083d7cff8359682edd274d2fca0bcf8d2f7554433169d69786b1f39d40750d527c074837c5e74e7ac31669ed998ab047c098a3106c08fc3b352664e567f9391b"
   },
-  "updatedAt": "2026-11-23T16:50:38.310Z",
+  "updatedAt": "2026-11-23T16:50:43.374Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45218787676",
   "record": {
     "adjudication_finished_round": 0,
@@ -51501,5 +51501,21 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "191c40fe6a4039546a7994f1db01c0f69254a043"
+  },
+  "impact": {
+    "allocations": [],
+    "band_points": 26,
+    "budget": 80,
+    "challenge_reviews": [],
+    "challenges": [],
+    "deadline": 0,
+    "downstream": "pr-14-f176c6bf9567-7bd5213f14ba",
+    "eligible": [],
+    "paid_points": "0",
+    "reason": "No verified direct dependency; the unused reserve returns to the result's contributor.",
+    "returned_points": "80",
+    "round": 0,
+    "source_digest": "b83b9bac95b5d1cfcd957806198805cc99e2eb27830dc789dc2281f3f3c7f268",
+    "status": "settled"
   }
 }
