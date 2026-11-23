@@ -1,0 +1,31 @@
+{
+  "protocolVersion": 4,
+  "mode": "pilot-pending-activation",
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "branch": "research",
+  "chainId": 61999,
+  "network": "studionet",
+  "origin": "https://muncleuscles.github.io",
+  "contract": "0x49574F0Eb49aabD1E53f091f339E32b21b4100DC",
+  "codeHash": "e19318e843cfab96fe53b6b2f07889f3326c482ef31df8e567c7122dccaae5c6",
+  "curator": "0x5Bd746Da72AB9E1E4d62311d7BcaF89DbF448B27",
+  "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
+  "executor": "0x06BAb7179c48F0dcd1afC93C48d3D22C5a6377f2",
+  "windowSeconds": 300,
+  "appId": 15368,
+  "verifierAppId": 15368,
+  "legacyLedger": {
+    "chain_id": 61999,
+    "address": "0x6acF1e29790B2eE45c01184fFaa8F84f06ba9AAc",
+    "reserved_statement_hashes": [
+      "a1c9f09b2f83e97ca50c0f7c0849e3743fb27127c8d07cc11694582c8ca85893",
+      "ca48fc7bcbb37f52d5e12d5048243cd3ce8dd423c8e80447041d85acab17b67c"
+    ],
+    "reserved_proposition_hashes": [
+      "48e70a52545b5a518ad840270393552bd116ec76dbc7ea993eb1f4a4479c1669",
+      "e5d84afec4b99875df6df5493100a245bb810c2bd9e4d2ae697aa2730ff01342"
+    ]
+  },
+  "deployTx": "0xbc710a122a406d59c27664b12b95c21cf0de63da0f85f9c4a72b9170db5e1a61"
+}
