@@ -15,15 +15,24 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Verified CNF restriction under arbitrary partial assignments",
-      "status": "registration-pending",
+      "status": "invalid",
       "points": "0",
       "impact": null,
       "dependencies": [],
       "report": "reports/pr-9-327123f9d1b4-fc2656ec4c97.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45192985573",
-      "updatedAt": "2026-11-23T14:20:55.050Z",
+      "updatedAt": "2026-11-23T14:41:21.840Z",
       "commentId": 7103826539,
-      "needsResume": true
+      "needsResume": false,
+      "reason": "The exact signed outer transaction failed before native admission during the Studio fee upgrade. The original claim, evidence and intent-only journal are preserved. This is a transport failure, not a mathematical rejection.",
+      "recovery": {
+        "mode": "proven-pre-admission-transport-failure",
+        "outerHash": "0xc73c319bc449a0984984a58b336a669319f063db323a4cbe75b4b106dedd29ec",
+        "reason": "FeesDistributionMissing",
+        "originalIntentPreserved": true,
+        "nativeAdmission": false,
+        "meritReview": false
+      }
     },
     {
       "id": "pr-8-c9ee3e5efe6b-979433977845",
