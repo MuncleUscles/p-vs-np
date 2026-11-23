@@ -58252,7 +58252,7 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0xd340af253b7aa0bc70491b6607468fc86ff5212b48bdb2938d6cb69cf87d763d05626cc4742c1c7103dd38d9671142d386f3bd0840b61e73416499386e8139961c"
   },
-  "updatedAt": "2026-11-23T14:54:04.469Z",
+  "updatedAt": "2026-11-23T14:57:00.253Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45198612006",
   "record": {
     "adjudication_finished_round": -1,
@@ -58343,5 +58343,7 @@
     "round": 0,
     "status": "submitted",
     "verdict": null
-  }
+  },
+  "blockedConsensus": true,
+  "error": "Transaction UNDETERMINED: 0x69f5b2798fa15f589eb73d16c672c60cc8b07e9fad10699986e3b99b427c9607"
 }
