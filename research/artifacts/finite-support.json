@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "definitions": [
+    {
+      "name": "CNF",
+      "type": "Type",
+      "value": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF"
+    },
+    {
+      "name": "Satisfiable",
+      "type": "CNF → Prop",
+      "value": "fun f => ∃ a : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF a f = true"
+    }
+  ],
+  "statement": "∀ (f : CNF), Satisfiable f ↔ ∃ b : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF b f = true ∧ (∀ n : Nat, n ∉ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → b n = false)",
+  "proof": "by\n  intro f\n  constructor\n  · intro h\n    obtain ⟨a, ha⟩ := h\n    let b : Nat → Bool := fun n => if n ∈ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f then a n else false\n    have same : ∀ n : Nat, n ∈ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → a n = b n := by\n      intro n hn\n      simp [b, hn]\n    have equal := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result f a b same\n    refine ⟨b, ?_, ?_⟩\n    · rw [← equal]\n      exact ha\n    · intro n hn\n      simp [b, hn]\n  · intro h\n    obtain ⟨b, hb, hout⟩ := h\n    exact ⟨b, hb⟩\n",
+  "dependencies": [
+    {
+      "id": "pr-7-672f1fa46a61-0d05d194a602",
+      "bundle_hash": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+    }
+  ]
+}
