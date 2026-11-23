@@ -22,11 +22,20 @@
       "impactReserve": "60",
       "reserveReturned": "0",
       "reserveSettled": false,
-      "impact": null,
+      "impact": {
+        "downstream": "pr-19-d5d340c74a44-86222c3e7d40",
+        "status": "settled",
+        "budget": 60,
+        "band_points": 20,
+        "paid_points": "0",
+        "returned_points": "60",
+        "allocations": [],
+        "reason": "No verified direct dependency; the unused reserve returns to the result's contributor."
+      },
       "dependencies": [],
       "report": "reports/pr-19-d5d340c74a44-86222c3e7d40.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45261719226",
-      "updatedAt": "2026-11-23T20:52:49.372Z",
+      "updatedAt": "2026-11-23T20:52:54.975Z",
       "commentId": 7113276310,
       "needsResume": true
     },
