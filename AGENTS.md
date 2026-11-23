@@ -11,7 +11,7 @@ Use Node 22.22+, Python 3.12 or newer, and Git. CI uses Python 3.12; local forma
 ```sh
 git clone --branch main https://github.com/MuncleUscles/p-vs-np.git pnp-config
 git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git open-math-tools
-git -C open-math-tools checkout 547615bc167f9e5a956666b6d427e5c3bef2a51e
+git -C open-math-tools checkout 47e13b4c5abb89f76a1fab1c1b2db9596bd49f5f
 npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_TOOLS="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
@@ -69,7 +69,7 @@ Wallet setup, `init`, `format`, `envelope`, and local checks without research de
 
    To build on accepted work, run `om show CONTRIBUTION_ID` and use its exact `reuse.reference`. The verifier wraps each bundle in `B_<raw_bundle_sha256>`. A default v2 theorem is `_root_.B_<bundle_hash>.Contribution.result`; a historical v1 theorem is `_root_.B_<bundle_hash>.result`. Use the actual full name from `show`, not these placeholders. Put `{ "id": "ACTUAL_ID", "bundle_hash": "ACTUAL_HASH" }` in the bundle and the same ID with `use` and `importance` in the record. The lists must have the same order. New v2 source may reuse either accepted format; the worker retrieves exact credited bytes and recompiles them under the active pinned environment. A reviewed compatibility adapter may port an exact historical proof body to the newer Lean version; it cannot change definitions, statement, dependencies or original artifact identity. Its original/compiled proof hashes and adapter-manifest hash are disclosed in the verifier report. Such compilation does not reopen the old merit decision or release unresolved content fences. Limits are four direct dependencies, eight imported bundles in total and four levels below the submitted bundle. Declared proofs must actually be used after the checker's reductions; a citation alone is not verified proof use.
 
-   Read [the full Lean guide](https://github.com/MuncleUscles/open-mathematics/blob/547615bc167f9e5a956666b6d427e5c3bef2a51e/docs/FULL-LEAN.md) or `docs/FULL-LEAN.md` in the trusted tools checkout for exact format, isolation and reuse details.
+   Read [the full Lean guide](https://github.com/MuncleUscles/open-mathematics/blob/47e13b4c5abb89f76a1fab1c1b2db9596bd49f5f/docs/FULL-LEAN.md) or `docs/FULL-LEAN.md` in the trusted tools checkout for exact format, isolation and reuse details.
 
    For notes, write `research/notes/my-result.md`. State assumptions, evidence and uncertainty. Notes are reviewed arguments, not formal proofs. Do not claim an experiment ran without evidence, or a small theorem solves P versus NP. Arbitrary submitted programs are not executed on the host.
 4. Run `om format research/artifacts/my-result.json` for a formal bundle, then `om format research/submissions/my-result.json` and `om check research/submissions/my-result.json`. The default check validates the format and dependency manifest only: **it does not run Lean or prove the source**. Optional `--lean` runs isolated proof verification with the pinned Linux Docker image. Build the image with `bash "$OPEN_MATH_TOOLS/github/build-full-lean.sh"` and run its printed `export TRUSTED_LEAN_IMAGE=…` command before checking. Building downloads the trusted toolchain and libraries before any contribution is loaded. Actual proof runs have no network or service keys and bounded resources; a full check may take several minutes. Actions checks the exact signed PR independently, so local Docker is optional.
