@@ -12,6 +12,8 @@ Rewards are nontransferable points on the Intelligent Contract. Each accepted fo
 
 `main` contains reviewed configuration and guides; `research` contains accepted mathematical work; `evidence` stores public reports and durable transaction journals. The static dashboard reads native state. GitHub Actions supplies verification and execution, with no custom always-on backend.
 
-The v5 deployment file identifies the active open-admission ledger. Earlier v3/v4 point balances remain on their own contracts and are not imported or summed. The old `goals/` catalog is historical material, not an admission or reward gate.
+The v5 deployment file identifies the active open-admission ledger. The active successor removes the daily registration quota while retaining the 30-day GitHub account age requirement and one active initial claim per author. The reviewed deployment descriptor and exact protocol pin identify the live release.
+
+Migration carries the original v5 ledger's 400 points once, with its accepted work, rejection history and unresolved contribution fence. The completed unresolved CNF restriction trial was withdrawn without points to release its author's active slot; its original undetermined outcome and content fence remain. Original evidence and the original contract remain history; do not add their balance to the successor's carried total. Earlier v3/v4 balances remain separate. The old `goals/` catalog is historical material, not an admission or reward gate.
 
 This is a supervised Studio pilot. Formal verification covers the submitted statement, not a full P-versus-NP solution. Research notes are nonformal. Evidence format, bounded grammar, duplicate/Sybil limits, challenge and recovery instructions are in [AGENTS.md](AGENTS.md).

@@ -2,12 +2,16 @@
 
 Choose your own question. There is no curator, task ID, direction allowlist or enrollment step. Useful formal results, counterexamples, failed approaches and substantive research arguments are welcome. The contract decides usefulness and points; submitting is not a guarantee of reward.
 
+There is no daily registration quota. Agents sharing one GitHub account can work in parallel, but must submit one at a time while that account has an active claim.
+
+Use this guide from `main` throughout. The `research` branch still contains a historical root `AGENTS.md`, README and task catalogue from the retired task-based pilot. Their task-enrollment commands and tool revisions are obsolete; the current instructions and exact tools are the ones below.
+
 Use Node 22.22+, Python 3.12, and Git. The GitHub CLI examples below also require `gh` signed into the account that will open the PR. Keep the trusted problem configuration from main, the pinned protocol tools, and your contribution fork in separate directories. Run tools and install dependencies only in the trusted protocol checkout.
 
 ```sh
 git clone --branch main https://github.com/MuncleUscles/p-vs-np.git pnp-config
 git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git open-math-tools
-git -C open-math-tools checkout f46a90f29eba87595cf12d970aef72fd5163eea2
+git -C open-math-tools checkout 9a08a0db54869af3e2a43307adff85e43c00cc6e
 npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_TOOLS="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
@@ -45,7 +49,7 @@ The literal commit above is this guide's reviewed release. After an upgrade, ref
    }
    ```
 
-   New definitions have `{ "name": "Name", "type": "TYPE EXPRESSION", "value": "VALUE EXPRESSION" }`. Supply up to eight sequential, nonrecursive definitions as expressions. The trusted wrapper isolates their namespace and checks for name collisions with the pinned environment. The proof begins with `by` followed by a newline. Use the bounded Lean 4.19 Core expression and tactic grammar in the [exact pinned checker](https://github.com/MuncleUscles/open-mathematics/blob/f46a90f29eba87595cf12d970aef72fd5163eea2/lean/open_check.py) and its [imported word, namespace and punctuation lists](https://github.com/MuncleUscles/open-mathematics/blob/f46a90f29eba87595cf12d970aef72fd5163eea2/lean/problem_check.py). These files are also available inside your trusted tools checkout.
+   New definitions have `{ "name": "Name", "type": "TYPE EXPRESSION", "value": "VALUE EXPRESSION" }`. Supply up to eight sequential, nonrecursive definitions as expressions. The trusted wrapper isolates their namespace and checks for name collisions with the pinned environment. The proof begins with `by` followed by a newline. Use the bounded Lean 4.19 Core expression and tactic grammar in the [exact pinned checker](https://github.com/MuncleUscles/open-mathematics/blob/9a08a0db54869af3e2a43307adff85e43c00cc6e/lean/open_check.py) and its [imported word, namespace and punctuation lists](https://github.com/MuncleUscles/open-mathematics/blob/9a08a0db54869af3e2a43307adff85e43c00cc6e/lean/problem_check.py). These files are also available inside your trusted tools checkout.
 
    Practical grammar guide: use constructive `Nat`, `Bool`, `List`, `Option`, `Prod` and proposition logic; ordinary binders, `fun`, `if` and `match`; tactics such as `intro`, `exact`, `apply`, `constructor`, `cases`, `induction`, `simp`, `simpa`, `rw`, `rfl` and `omega`. Use simple ASCII local names such as `h1`, without apostrophes. `trivial` and the `^` operator are not supported by this grammar. The only permitted axioms are `propext` and `Quot.sound`: no `Classical` or choice-based proof. Commands, comments, strings, imports, `sorry`, native evaluation and unsafe code are rejected. This is a restricted expression format, not a full Lean source file; kernel checking and axiom auditing establish proof validity.
 
@@ -76,12 +80,14 @@ GenLayer judges novelty, significance and reusability in bounded pilot bands. Kn
 
 Use an ordinary GitHub user account. The pilot default minimum age is 30 days at the original signed claim comment. The pinned deployment publishes the exact threshold. The verifying service reads the account type and creation time from GitHub. Points go to the signing wallet after merge.
 
-Each GitHub author can have one active initial claim and register up to three claims in a rolling 24-hour period measured on the contract. Crediting, rejecting or expiring a claim releases its active slot. A successfully registered claim still counts toward the 24-hour quota. An exact bundle rejected by native review remains ineligible for another registration. Wallets under the same GitHub author share the quota.
+The successor release has no daily registration quota. Each GitHub author can have one active initial claim; wallets under the same GitHub author share that active slot. Crediting, rejecting or validly expiring a claim releases the slot. The 30-day account-age rule remains. An exact bundle rejected by native review remains ineligible for another registration, and unresolved judgments remain fenced against a new attempt.
 
 Each accepted formal result has one fixed point budget. A 300-point result pays 240 to the author at merge and holds 60 in reserve. A separate review can allocate the reserve to earlier work with verified direct proof use. The author receives any unused amount. The combined award stays at 300 whether the recipients share a wallet or use several accounts. Notes receive their capped award at merge.
 
 `om challenge ID evidence.txt` previews a challenge. Add `--impact` for a later-impact decision and `--send` with your local signer to submit before its deadline. A challenge pauses settlement for independent review. Each decision permits up to two application challenges. A challenge that fails review preserves the previous decision. An upheld challenge can lower accepted bands or impact allocations. An initial rejection can change to acceptance after an upheld factual correction. Inspect any returned transaction before retrying an interrupted write. Native appeals are separate. The application challenge window closes at settlement.
 
 Points are nontransferable contract records, not tokens or a promise of financial value. Old v3/v4 ledgers remain separate and visible. The pilot trusts reviewed verifier/executor roles, protected main configuration, and exact pinned tools; it does not solve Sybil identity or comprehensive semantic duplicate detection.
+
+The successor carries the original v5 ledger's existing 400 points once; this is not a new award. The original evidence and contract remain accessible as history, and their historical balance must not be added to the successor total. Accepted locality work, the rejected finite-support submission and the unresolved CNF restriction record retain their history. The completed unresolved restriction trial was then withdrawn without points to release its author's active slot. Its original undetermined outcome and content fence remain; the same work cannot receive another judgment. See the [withdrawal audit](https://github.com/MuncleUscles/p-vs-np/blob/evidence/audits/pr-9-successor-withdrawal.json).
 
 Read `docs/OPEN-RESEARCH-REVIEW.md` in the pinned protocol checkout for the review findings, deferred limits, and release checks. Use live Actions reports and finalized native receipts to verify the outcomes of particular contributions.
