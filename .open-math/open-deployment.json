@@ -4,11 +4,11 @@
   "repository": "MuncleUscles/p-vs-np",
   "branch": "research",
   "chainId": 61999,
-  "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
-  "codeHash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
-  "protocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
-  "deploymentTx": "0x5b629c674427b4fc779229e800a0a484a771a0e57ff727bac0d7ccc1e5f46194",
-  "deployedAt": "2026-11-23T16:04:25.195718+00:00",
+  "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+  "codeHash": "d500cf90a3f7e7fa5aeec1b5224d2fbb440f79619432cd3e38814a1c63febe4a",
+  "protocolCommit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "deploymentTx": "0xeea000128cdd4d5b9f19d0fbfe5f2863162dd38d2c63a4dbffe94ad5ecbe597b",
+  "deployedAt": "2026-11-23T20:11:54.860Z",
   "origin": "https://muncleuscles.github.io",
   "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
   "executor": "0x06BAb7179c48F0dcd1afC93C48d3D22C5a6377f2",
@@ -16,7 +16,7 @@
   "minimumGitHubAccountAgeDays": 30,
   "appId": 15368,
   "verifierAppId": 15368,
-  "policyHash": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+  "policyHash": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
   "legacyLedgers": [
     {
       "chain_id": 61999,
@@ -44,57 +44,92 @@
     }
   ],
   "mode": "live-native-open-research-v5",
-  "review": "https://github.com/MuncleUscles/open-mathematics/pull/28",
+  "review": "https://github.com/MuncleUscles/open-mathematics/pull/31",
   "evidence": "https://github.com/MuncleUscles/p-vs-np/tree/evidence",
-  "scope": "Finalized successor deployment verifies and carries the exact predecessor snapshot. Existing points are carried once, not issued again. Original signed evidence and unresolved/rejected content fences are preserved.",
-  "deploymentProtocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
-  "runtimeUpgradeHistory": [
-    {
-      "reason": "Immutable-blob recovery for large evidence reports and a dated finalized-native dashboard snapshot fallback.",
-      "previousProtocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
-      "contractSourceUnchanged": true,
-      "review": "https://github.com/MuncleUscles/open-mathematics/pull/23"
-    },
-    {
-      "reason": "Studio fee-compatible SDK 2.0.0-rc.3 with bounded fee quotes and preserved outer-failure evidence; no contract redeployment or point-ledger change.",
-      "previousProtocolCommit": "4ccd7853753cf7d367e4c758b274ed5e1be655dd",
-      "contractSourceUnchanged": true,
-      "review": "https://github.com/MuncleUscles/open-mathematics/pull/25"
-    },
-    {
-      "reason": "Require explicit accepted consensus and consistent execution outcomes; block missing or conflicting receipt status; bind five rotations in both fee quotes and native transaction options. Existing unresolved claims remain fenced.",
-      "previousProtocolCommit": "081deae33cd628ddd6b1ec258f1e421525dace6d",
-      "contractSourceUnchanged": true,
-      "review": "https://github.com/MuncleUscles/open-mathematics/pull/26"
-    }
-  ],
+  "scope": "Full Lean 4.36 and pinned Mathlib. Exact historical records and 800 points carried once; original judgments and unresolved/rejected content fences retained.",
+  "deploymentProtocolCommit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "runtimeUpgradeHistory": [],
   "predecessor": {
-    "address": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
-    "snapshot_hash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88"
+    "version": 2,
+    "address": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+    "snapshot_hash": "dbf46b414781eee4ee440af546192f21b08e5d5b22e6580286efd5f830b994d7",
+    "source_policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+    "source_config_hash": "d41841023a506005bb8d6a1e68c2fd06689880fabd9327451162a8b1bbdd92d3",
+    "source_code_hash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
+    "records": [
+      {
+        "id": "pr-7-672f1fa46a61-0d05d194a602",
+        "record_hash": "8c6ce7b149c70295ef786fbb85c85a266d12a24545119a3ae894bff2ab4ebdfa",
+        "impact_hash": "8e03dc07408e27b88f4c3341203fc283393901289772630f603c501bc9e82364",
+        "inheritance_hash": "a69cf743411bf2f5e1b4a909964f85e97a69cdc7051f1762e05671e293cb8294",
+        "origin_contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+        "origin_policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656"
+      },
+      {
+        "id": "pr-8-c9ee3e5efe6b-979433977845",
+        "record_hash": "fcd08560f66b1bc6f93dab74519138d9689fd4d2d0ca6dd7eaa54057c83d7012",
+        "impact_hash": "ad38648f8ddb394657e40c1e94c4e01e17dad15685811c382ac7c6d6150ffac5",
+        "inheritance_hash": "1a4202649e993a3b650fdec5268a3999acc509650aaac7e16e168b26f6dd1099",
+        "origin_contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+        "origin_policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656"
+      },
+      {
+        "id": "pr-9-327123f9d1b4-2c91a42f97f7",
+        "record_hash": "6004e524171177c7566c661b9edd0ea8c9e990949a8c99dc786320b426a06ce4",
+        "impact_hash": "07cf2f0c9323b18e4860215a4f186707a85cf21cc21c260a5c1596aa7d20162f",
+        "inheritance_hash": "28e66a013424b63aa73e8c872a9448cc2e48f3e5d14d54441ada1c5cfc1f32d0",
+        "origin_contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+        "origin_policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656"
+      },
+      {
+        "id": "pr-14-f176c6bf9567-7bd5213f14ba",
+        "record_hash": "f6ac10480148e248adee10d55175582a20ecaab95c2897fb765a0e733e25672f",
+        "impact_hash": "408edb30657a73a3a9045667a033509dea69656fa8f4efd25fc1cb6e4cdb9e0c",
+        "inheritance_hash": "a0074497ff4fe100d3ffc6c36fba09f63f08d7e87a3159869cc967988f340cae",
+        "origin_contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+        "origin_policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656"
+      }
+    ],
+    "credited_order": [
+      "pr-7-672f1fa46a61-0d05d194a602",
+      "pr-14-f176c6bf9567-7bd5213f14ba"
+    ],
+    "semantic_fences": [
+      {
+        "id": "pr-7-672f1fa46a61-0d05d194a602",
+        "statement_hash": "f07ad2c0e59562807230655365229b2bdf54d4d1119fcef04592c342bd8fe7e8"
+      },
+      {
+        "id": "pr-8-c9ee3e5efe6b-979433977845",
+        "statement_hash": "bfb21f6ecfefade7e3742b47c0fbc6980adc1ac67813ef633a25ea7c58d24a52"
+      },
+      {
+        "id": "pr-9-327123f9d1b4-2c91a42f97f7",
+        "statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f"
+      },
+      {
+        "id": "pr-14-f176c6bf9567-7bd5213f14ba",
+        "statement_hash": "62293c9a317f6065fb654a69a88e0cf880df5056c516ad9277968af26ba9b614"
+      }
+    ]
   },
   "migration": {
-    "kind": "bounded-finalized-predecessor",
+    "kind": "reviewed-policy-successor-v2",
     "predecessorDeployment": {
-      "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
-      "codeHash": "5960faa03c81106ec306cebcc269b489711d16bfd619e84c31116467523dbf94",
-      "protocolCommit": "f46a90f29eba87595cf12d970aef72fd5163eea2",
-      "deploymentTx": "0xc7cab2fbcbc58caff3463c575465b49e08b3ea2fab5e7e688b46738019b9e5e4"
+      "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+      "codeHash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
+      "protocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
+      "deploymentTx": "0x5b629c674427b4fc779229e800a0a484a771a0e57ff727bac0d7ccc1e5f46194"
     },
-    "carriedPoints": "400",
+    "carriedPoints": "800",
     "newRewards": "0",
-    "snapshotHash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88",
+    "snapshotHash": "dbf46b414781eee4ee440af546192f21b08e5d5b22e6580286efd5f830b994d7",
     "recordIds": [
       "pr-7-672f1fa46a61-0d05d194a602",
       "pr-8-c9ee3e5efe6b-979433977845",
-      "pr-9-327123f9d1b4-2c91a42f97f7"
+      "pr-9-327123f9d1b4-2c91a42f97f7",
+      "pr-14-f176c6bf9567-7bd5213f14ba"
     ],
-    "audit": "https://github.com/MuncleUscles/p-vs-np/blob/evidence/audits/no-daily-cap-migration.json",
-    "withdrawal": {
-      "contribution": "pr-9-327123f9d1b4-2c91a42f97f7",
-      "transaction": "0x8f7d7dbcba7ba6c114ca9a7b90627bba3799f61930dea2b65a520f85ede85e6f",
-      "audit": "https://github.com/MuncleUscles/p-vs-np/blob/evidence/audits/pr-9-successor-withdrawal.json",
-      "originalConsensusOutcome": "undetermined",
-      "creditedPoints": "0"
-    }
+    "audit": ".open-math/receipts/full-lean-migration.json"
   }
 }

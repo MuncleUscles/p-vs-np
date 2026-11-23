@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "protocolCommit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "manifest": {
+    "version": 2,
+    "predecessor": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+    "snapshotHash": "dbf46b414781eee4ee440af546192f21b08e5d5b22e6580286efd5f830b994d7",
+    "sourceCodeHash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
+    "sourceProtocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
+    "sourceConfigHash": "d41841023a506005bb8d6a1e68c2fd06689880fabd9327451162a8b1bbdd92d3",
+    "recordIds": [
+      "pr-7-672f1fa46a61-0d05d194a602",
+      "pr-8-c9ee3e5efe6b-979433977845",
+      "pr-9-327123f9d1b4-2c91a42f97f7",
+      "pr-14-f176c6bf9567-7bd5213f14ba"
+    ],
+    "carriedPoints": "800",
+    "newRewards": "0",
+    "readOnly": true,
+    "sourceCodeVerification": "Reviewed bytes match descriptor; original deployment receipt must independently bind address and source."
+  },
+  "semanticFingerprints": {
+    "version": 1,
+    "complete": true,
+    "protocol_commit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+    "policy_hash": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+    "source_snapshot_sha256": "bde465bfb1d9a6b7688dcf954e337bfb013ed1d10ec218a2cef491ef883bea37",
+    "image": "sha256:ad0f81a002e3940ebb803c6ae6a88438d32682f571eaed705965f9c179bdc249",
+    "semantic_fences": [
+      {
+        "id": "pr-7-672f1fa46a61-0d05d194a602",
+        "statement_hash": "f07ad2c0e59562807230655365229b2bdf54d4d1119fcef04592c342bd8fe7e8"
+      },
+      {
+        "id": "pr-8-c9ee3e5efe6b-979433977845",
+        "statement_hash": "bfb21f6ecfefade7e3742b47c0fbc6980adc1ac67813ef633a25ea7c58d24a52"
+      },
+      {
+        "id": "pr-9-327123f9d1b4-2c91a42f97f7",
+        "statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f"
+      },
+      {
+        "id": "pr-14-f176c6bf9567-7bd5213f14ba",
+        "statement_hash": "62293c9a317f6065fb654a69a88e0cf880df5056c516ad9277968af26ba9b614"
+      }
+    ],
+    "records": [
+      {
+        "id": "pr-7-672f1fa46a61-0d05d194a602",
+        "pr": 7,
+        "source_status": "credited",
+        "original_bundle_hash": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00",
+        "original_proof_hash": "ff9b5d53484acd15c61a71689db26851649fd3fdf1aa78ce7d39f7b078ea9c0d",
+        "old_statement_hash": "c9e53d61523984a2e635ef844b7d6e1a9d3558bfd83a492c6fcdd5d7444d1e8a",
+        "statement_hash": "f07ad2c0e59562807230655365229b2bdf54d4d1119fcef04592c342bd8fe7e8",
+        "theorem": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result",
+        "legacy_adapters": {},
+        "result": "pass",
+        "error": null,
+        "report": ".open-math/receipts/full-lean-fingerprints/pr-7-672f1fa46a61-0d05d194a602-verification.json"
+      },
+      {
+        "id": "pr-8-c9ee3e5efe6b-979433977845",
+        "pr": 8,
+        "source_status": "rejected",
+        "original_bundle_hash": "ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6",
+        "original_proof_hash": "21b66ccd365fd4a351383a694e980714434608c764a8d0e70989bedc99ff4e41",
+        "old_statement_hash": "e7ce9031758663871fdd8d738a3b7338a22d121dac6e6023950443dccbb53533",
+        "statement_hash": "bfb21f6ecfefade7e3742b47c0fbc6980adc1ac67813ef633a25ea7c58d24a52",
+        "theorem": "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.result",
+        "legacy_adapters": {},
+        "result": "pass",
+        "error": null,
+        "report": ".open-math/receipts/full-lean-fingerprints/pr-8-c9ee3e5efe6b-979433977845-verification.json"
+      },
+      {
+        "id": "pr-9-327123f9d1b4-2c91a42f97f7",
+        "pr": 9,
+        "source_status": "expired",
+        "original_bundle_hash": "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a",
+        "original_proof_hash": "cb4187984203ef6afca25ece24c529259587d6e13123dd35b4347da096ca5629",
+        "old_statement_hash": "e555f5a97c9389f191b8451786b1905af83bc49a027eeba16169c4a109991808",
+        "statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f",
+        "theorem": "B_35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a.result",
+        "legacy_adapters": {
+          "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a": {
+            "version": 1,
+            "original_proof_hash": "cb4187984203ef6afca25ece24c529259587d6e13123dd35b4347da096ca5629",
+            "compiled_proof_hash": "62a556b26b111f86a07bcfd96505a55b318b07b34343e5840bc058352f5a4e7a",
+            "reason": "Historical CNF restriction proof: explicitly prove mapped-list length with List.length_map and simplify id after Lean 4.36 changed default simplification. Definitions, theorem statement, dependencies and original artifact identity remain exact.",
+            "manifest_hash": "5e2a0cc959ff42027656800bfe35bcf23f87100128a718e9ccdcd7068f40e216"
+          }
+        },
+        "result": "pass",
+        "error": null,
+        "report": ".open-math/receipts/full-lean-fingerprints/pr-9-327123f9d1b4-2c91a42f97f7-verification.json"
+      },
+      {
+        "id": "pr-14-f176c6bf9567-7bd5213f14ba",
+        "pr": 14,
+        "source_status": "credited",
+        "original_bundle_hash": "bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7",
+        "original_proof_hash": "d6506e6df63f00371706c98a3c50ec4a01565c7a7af4ad402275b4d3850825d2",
+        "old_statement_hash": "337cc2267683696b5f13e3e906717908aff22fb036ca25aef4830c912600ecc3",
+        "statement_hash": "62293c9a317f6065fb654a69a88e0cf880df5056c516ad9277968af26ba9b614",
+        "theorem": "B_bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7.result",
+        "legacy_adapters": {},
+        "result": "pass",
+        "error": null,
+        "report": ".open-math/receipts/full-lean-fingerprints/pr-14-f176c6bf9567-7bd5213f14ba-verification.json"
+      }
+    ],
+    "c_equivalence": {
+      "complete": true,
+      "original_id": "pr-9-327123f9d1b4-2c91a42f97f7",
+      "original_bundle_hash": "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a",
+      "modern_bundle_hash": "dbee42f8d89a175d04abeca232f2b8dd0f20b5bb825d0174e3c1b547b2500202",
+      "original_statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f",
+      "modern_statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f",
+      "canonical_semantics_equal": true,
+      "modern_adapter_map": {},
+      "report": ".open-math/receipts/full-lean-fingerprints/pr-9-327123f9d1b4-2c91a42f97f7-ported-v2-verification.json",
+      "note": "Modern source contains the explicitly reviewed compatible proof; mathematical declarations and dependencies are unchanged.",
+      "binding_scope": "Local format-equivalence proof check only; not a signed PR or commit-source attestation. The report head and base identify the original historical contribution context only. The modern version-2 bundle was not present at that head and was not submitted as a PR."
+    },
+    "artifactManifest": ".open-math/receipts/full-lean-fingerprints/artifact-manifest.json"
+  },
+  "previousDeployment": {
+    "protocolVersion": 5,
+    "problem": "p-vs-np",
+    "repository": "MuncleUscles/p-vs-np",
+    "branch": "research",
+    "chainId": 61999,
+    "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+    "codeHash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
+    "protocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
+    "deploymentTx": "0x5b629c674427b4fc779229e800a0a484a771a0e57ff727bac0d7ccc1e5f46194",
+    "deployedAt": "2026-11-23T16:04:25.195718+00:00",
+    "origin": "https://muncleuscles.github.io",
+    "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
+    "executor": "0x06BAb7179c48F0dcd1afC93C48d3D22C5a6377f2",
+    "windowSeconds": 300,
+    "minimumGitHubAccountAgeDays": 30,
+    "appId": 15368,
+    "verifierAppId": 15368,
+    "policyHash": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+    "legacyLedgers": [
+      {
+        "chain_id": 61999,
+        "address": "0x6acF1e29790B2eE45c01184fFaa8F84f06ba9AAc",
+        "reserved_statement_hashes": [
+          "a1c9f09b2f83e97ca50c0f7c0849e3743fb27127c8d07cc11694582c8ca85893",
+          "ca48fc7bcbb37f52d5e12d5048243cd3ce8dd423c8e80447041d85acab17b67c"
+        ],
+        "reserved_proposition_hashes": [
+          "48e70a52545b5a518ad840270393552bd116ec76dbc7ea993eb1f4a4479c1669",
+          "e5d84afec4b99875df6df5493100a245bb810c2bd9e4d2ae697aa2730ff01342"
+        ],
+        "description": "Historical v3: CNF variable renaming and renaming-satisfiability preservation, 800 separate points; no balance import."
+      },
+      {
+        "chain_id": 61999,
+        "address": "0xa0bF4a7600D7A10Adb2d5F9737FDA78B760FF975",
+        "reserved_statement_hashes": [
+          "b45cc5bc9e11720ae19ee1717dcb68bdaf67cbc96b35faa404626086c296652e"
+        ],
+        "reserved_proposition_hashes": [
+          "affc019d2d1a043ae650e14a99789198f8a38f1ef99ac44f0206298bbd37b519"
+        ],
+        "description": "Historical v4: parity-disjoint CNF variable namespaces, 300 separate points; no balance import."
+      }
+    ],
+    "mode": "live-native-open-research-v5",
+    "review": "https://github.com/MuncleUscles/open-mathematics/pull/28",
+    "evidence": "https://github.com/MuncleUscles/p-vs-np/tree/evidence",
+    "scope": "Finalized successor deployment verifies and carries the exact predecessor snapshot. Existing points are carried once, not issued again. Original signed evidence and unresolved/rejected content fences are preserved.",
+    "deploymentProtocolCommit": "9a08a0db54869af3e2a43307adff85e43c00cc6e",
+    "runtimeUpgradeHistory": [
+      {
+        "reason": "Immutable-blob recovery for large evidence reports and a dated finalized-native dashboard snapshot fallback.",
+        "previousProtocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+        "contractSourceUnchanged": true,
+        "review": "https://github.com/MuncleUscles/open-mathematics/pull/23"
+      },
+      {
+        "reason": "Studio fee-compatible SDK 2.0.0-rc.3 with bounded fee quotes and preserved outer-failure evidence; no contract redeployment or point-ledger change.",
+        "previousProtocolCommit": "4ccd7853753cf7d367e4c758b274ed5e1be655dd",
+        "contractSourceUnchanged": true,
+        "review": "https://github.com/MuncleUscles/open-mathematics/pull/25"
+      },
+      {
+        "reason": "Require explicit accepted consensus and consistent execution outcomes; block missing or conflicting receipt status; bind five rotations in both fee quotes and native transaction options. Existing unresolved claims remain fenced.",
+        "previousProtocolCommit": "081deae33cd628ddd6b1ec258f1e421525dace6d",
+        "contractSourceUnchanged": true,
+        "review": "https://github.com/MuncleUscles/open-mathematics/pull/26"
+      }
+    ],
+    "predecessor": {
+      "address": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "snapshot_hash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88"
+    },
+    "migration": {
+      "kind": "bounded-finalized-predecessor",
+      "predecessorDeployment": {
+        "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+        "codeHash": "5960faa03c81106ec306cebcc269b489711d16bfd619e84c31116467523dbf94",
+        "protocolCommit": "f46a90f29eba87595cf12d970aef72fd5163eea2",
+        "deploymentTx": "0xc7cab2fbcbc58caff3463c575465b49e08b3ea2fab5e7e688b46738019b9e5e4"
+      },
+      "carriedPoints": "400",
+      "newRewards": "0",
+      "snapshotHash": "3d91b53dbf4bf783c9abce91a1ece3fc8ec6f28315bcfbb765af615ebb5d8a88",
+      "recordIds": [
+        "pr-7-672f1fa46a61-0d05d194a602",
+        "pr-8-c9ee3e5efe6b-979433977845",
+        "pr-9-327123f9d1b4-2c91a42f97f7"
+      ],
+      "audit": "https://github.com/MuncleUscles/p-vs-np/blob/evidence/audits/no-daily-cap-migration.json",
+      "withdrawal": {
+        "contribution": "pr-9-327123f9d1b4-2c91a42f97f7",
+        "transaction": "0x8f7d7dbcba7ba6c114ca9a7b90627bba3799f61930dea2b65a520f85ede85e6f",
+        "audit": "https://github.com/MuncleUscles/p-vs-np/blob/evidence/audits/pr-9-successor-withdrawal.json",
+        "originalConsensusOutcome": "undetermined",
+        "creditedPoints": "0"
+      }
+    }
+  },
+  "sourceReceiptAudit": {
+    "contract": "0x412ca0c7Af1D1DcaF2d8eBed952635CbCAf728F1",
+    "hash": "0x5b629c674427b4fc779229e800a0a484a771a0e57ff727bac0d7ccc1e5f46194",
+    "codeHash": "acb7d786c670b7e1e08fa0858923ba3b3789bd01992d7bd79355ac1b7b6b3445",
+    "verified": true
+  },
+  "deployment": {
+    "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+    "hash": "0xeea000128cdd4d5b9f19d0fbfe5f2863162dd38d2c63a4dbffe94ad5ecbe597b",
+    "codeHash": "d500cf90a3f7e7fa5aeec1b5224d2fbb440f79619432cd3e38814a1c63febe4a"
+  }
+}

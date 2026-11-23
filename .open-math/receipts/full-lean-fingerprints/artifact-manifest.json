@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "pathBase": "repository root",
+  "protocolCommit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "policyHash": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+  "image": "sha256:ad0f81a002e3940ebb803c6ae6a88438d32682f571eaed705965f9c179bdc249",
+  "hashAlgorithm": "SHA-256 of exact file bytes; do not parse or reserialize JSON before hashing.",
+  "verificationCommand": "python3 -c 'import hashlib,json,pathlib; r=pathlib.Path(\".\"); m=json.loads((r/\".open-math/receipts/full-lean-fingerprints/artifact-manifest.json\").read_text()); assert all(hashlib.sha256((r/f[\"path\"]).read_bytes()).hexdigest()==f[\"sha256\"] and (r/f[\"path\"]).stat().st_size==f[\"bytes\"] for f in m[\"files\"]); print(\"Verified all published artifact bytes\")'",
+  "scope": "Four historical proof fingerprints and one equivalent version-2 port. These are proof and compatibility checks, not new submissions, new merit decisions or new point awards. The unresolved historical contribution remains fenced.",
+  "originalSourceMapSha256": "0db34da5d467a6efd9a04233ae36f3a8e32e7dc5302cf17b5a20a301083e2547",
+  "files": [
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/policy.json",
+      "sha256": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "bytes": 856,
+      "kind": "verification-policy"
+    },
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/pr-14-f176c6bf9567-7bd5213f14ba-verification.json",
+      "sha256": "cf6b22af17deceb2508170fd7b131c86e6c35ba26356116dc9280bda441314ac",
+      "bytes": 21878,
+      "kind": "verification-report",
+      "bundle_hash": "bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7",
+      "proof_hash": "d6506e6df63f00371706c98a3c50ec4a01565c7a7af4ad402275b4d3850825d2",
+      "statement_hash": "62293c9a317f6065fb654a69a88e0cf880df5056c516ad9277968af26ba9b614",
+      "head": "f176c6bf9567df7201a5c08aa898d1c90d797a4d",
+      "base": "9e2d608db47901d50f6024c97e4854b100164fb2"
+    },
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/pr-7-672f1fa46a61-0d05d194a602-verification.json",
+      "sha256": "18451277a3bfb0bfb61e819ea92948c337d604108015a274d35839659aa34f2a",
+      "bytes": 6193,
+      "kind": "verification-report",
+      "bundle_hash": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00",
+      "proof_hash": "ff9b5d53484acd15c61a71689db26851649fd3fdf1aa78ce7d39f7b078ea9c0d",
+      "statement_hash": "f07ad2c0e59562807230655365229b2bdf54d4d1119fcef04592c342bd8fe7e8",
+      "head": "672f1fa46a61915c393e627de6ec97d7b7e6b22a",
+      "base": "758d9b3b559dc882a3680c60bd3969c4f9f444df"
+    },
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/pr-8-c9ee3e5efe6b-979433977845-verification.json",
+      "sha256": "21dbe1593eee7303f38bf80fa36b34ebf510d6bd3dd59478f2857fb9c98f3021",
+      "bytes": 5113,
+      "kind": "verification-report",
+      "bundle_hash": "ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6",
+      "proof_hash": "21b66ccd365fd4a351383a694e980714434608c764a8d0e70989bedc99ff4e41",
+      "statement_hash": "bfb21f6ecfefade7e3742b47c0fbc6980adc1ac67813ef633a25ea7c58d24a52",
+      "head": "c9ee3e5efe6bcb72a4d0bbecb1f4b6674676d22e",
+      "base": "9e2d608db47901d50f6024c97e4854b100164fb2"
+    },
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/pr-9-327123f9d1b4-2c91a42f97f7-ported-v2-verification.json",
+      "sha256": "5fbb7e1a517039bac903933e729afacc322ec973f9166b7fec2726937fdca00f",
+      "bytes": 10147,
+      "kind": "verification-report",
+      "bundle_hash": "dbee42f8d89a175d04abeca232f2b8dd0f20b5bb825d0174e3c1b547b2500202",
+      "proof_hash": "628661163d9616480a02a93287c46bdf6b63bc621263a4daf5491c65bbface7f",
+      "statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f",
+      "head": "327123f9d1b49b9587ce2b03f1aa812bb6e04024",
+      "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+      "bindingScope": "Local format-equivalence proof check only; not a signed PR or commit-source attestation. The report head and base identify the original historical contribution context only. The modern version-2 bundle was not present at that head and was not submitted as a PR."
+    },
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/pr-9-327123f9d1b4-2c91a42f97f7-ported-v2.json",
+      "sha256": "dbee42f8d89a175d04abeca232f2b8dd0f20b5bb825d0174e3c1b547b2500202",
+      "bytes": 8676,
+      "kind": "ported-v2-bundle"
+    },
+    {
+      "path": ".open-math/receipts/full-lean-fingerprints/pr-9-327123f9d1b4-2c91a42f97f7-verification.json",
+      "sha256": "2e83b90554eb760e7cd7770d6c4f992ca75eda8a9a4a6ba94ef77b8d7c16612e",
+      "bytes": 10798,
+      "kind": "verification-report",
+      "bundle_hash": "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a",
+      "proof_hash": "cb4187984203ef6afca25ece24c529259587d6e13123dd35b4347da096ca5629",
+      "statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f",
+      "head": "327123f9d1b49b9587ce2b03f1aa812bb6e04024",
+      "base": "9e2d608db47901d50f6024c97e4854b100164fb2"
+    }
+  ]
+}

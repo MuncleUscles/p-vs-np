@@ -6,10 +6,10 @@
   "configBranch": "main",
   "protocol": {
     "repository": "MuncleUscles/open-mathematics",
-    "commit": "9a08a0db54869af3e2a43307adff85e43c00cc6e"
+    "commit": "abbf15ce23fca94e57db581d497f24a8bd1560b2"
   },
   "policy": {
     "path": ".open-math/open-policy.json",
-    "sha256": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656"
+    "sha256": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755"
   }
 }
