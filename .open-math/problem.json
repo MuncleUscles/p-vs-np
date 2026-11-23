@@ -6,7 +6,7 @@
   "configBranch": "main",
   "protocol": {
     "repository": "MuncleUscles/open-mathematics",
-    "commit": "f110daf9030e499d51f72c405f08a787785c3142"
+    "commit": "743c345d8b5768c46ffa53b38d8f239e30069d46"
   },
   "directions": [
     "p-equals-np",

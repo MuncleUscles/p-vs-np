@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Preserved first v4 trial failure; no automatic retry or award",
+  "repository": "MuncleUscles/p-vs-np",
+  "pullRequest": "https://github.com/MuncleUscles/p-vs-np/pull/2",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45155321688",
+  "contract": "0x49574F0Eb49aabD1E53f091f339E32b21b4100DC",
+  "protocolCommit": "f110daf9030e499d51f72c405f08a787785c3142",
+  "head": "61854232ab906ce088df7c7f8cc9a875465fc122",
+  "claimCommentId": 7097818354,
+  "recordId": "pr-2-61854232ab90-f856dcae0aa5",
+  "formalVerification": {
+    "production_verified": true,
+    "checker": "open-mathematics-v4",
+    "goal": "freshen_namespaces",
+    "proofHash": "77c40b5aae5d853769203908bd356cfca9d1e09d3b55abe0e8778cc6fde6e6b7",
+    "checkRunId": 137627263109
+  },
+  "registerTransaction": "0x732e61d55bf137947c13ae894868e68d18593809f7311c707e66c0cb347119b4",
+  "adjudication": {
+    "transaction": "0x35f689bbc91f4d55736871994403235d5a4f7a2ccf96f999a1bd3b9cf9c46b0b",
+    "status": "FINALIZED",
+    "consensusResult": "MAJORITY_DISAGREE",
+    "leaderOnly": false,
+    "executionResults": [
+      {
+        "execution": "ERROR",
+        "result": {
+          "raw": "AWludmFsaWQgZXZpZGVuY2UgcmVmZXJlbmNlcw==",
+          "status": "rollback",
+          "payload": "invalid evidence references"
+        }
+      },
+      {
+        "execution": "ERROR",
+        "result": {
+          "raw": "AWludmFsaWQgZXZpZGVuY2UgcmVmZXJlbmNlcw==",
+          "status": "rollback",
+          "payload": "invalid evidence references"
+        }
+      }
+    ]
+  },
+  "finalizedNativeReadback": {
+    "readAt": "2026-11-23T10:27:32.436Z",
+    "contract": "0x49574F0Eb49aabD1E53f091f339E32b21b4100DC",
+    "record": {
+      "status": "submitted",
+      "creditedPoints": "0",
+      "verdict": null
+    },
+    "points": {
+      "historical_initial_points": "0",
+      "impact_points": "0",
+      "initial_points": "0",
+      "mode": "contribution points on the Intelligent Contract",
+      "points": "0",
+      "problem": "p-vs-np",
+      "total_awarded": "0",
+      "total_historical_initial_awarded": "0",
+      "total_impact_points": "0",
+      "transferable": false
+    },
+    "remainingGoal": {
+      "id": "cnf_restriction",
+      "status": "open",
+      "rewardable": true
+    }
+  },
+  "mergeObserved": false,
+  "limitation": "The cleaned receipt does not reveal the original invalid model-generated reference strings; an exact-reference prompt fix needs a new reviewed version and a disclosed regression, not a favorable reroll."
+}

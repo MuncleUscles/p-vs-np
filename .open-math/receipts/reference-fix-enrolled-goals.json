@@ -1,0 +1,85 @@
+{
+  "status": "enrolled",
+  "contract": "0xa0bF4a7600D7A10Adb2d5F9737FDA78B760FF975",
+  "policy": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+  "problemCommit": "2835b70ede542e2a838e355129344459d52eac08",
+  "protocolCommit": "f110daf9030e499d51f72c405f08a787785c3142",
+  "goals": [
+    {
+      "definition_files": [
+        "Definitions.lean",
+        "goals/disjoint_sat.lean"
+      ],
+      "dependency": null,
+      "goal_hash": "7f0113ed2a081250cfe99dd8cb5a72c945e564e1fea41f938f1366301ee28af1",
+      "id": "disjoint_sat",
+      "path": "research/proofs/disjoint_sat.proof",
+      "policy_hash": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+      "problem_commit": "2835b70ede542e2a838e355129344459d52eac08",
+      "proposition_hash": "53061a7d0b82450bac55c825d70a12d8a24b88035453eb905602cac645a9ef09",
+      "protocol_commit": "f110daf9030e499d51f72c405f08a787785c3142",
+      "rewardable": false,
+      "statement": "def DisjointSAT : Prop := \u2200 (f g : CNF), DisjointCNFVars f g \u2192\n  (Satisfiable (List.append f g) \u2194 Satisfiable f \u2227 Satisfiable g)",
+      "statement_hash": "19bef13b0936474f298c451bfd2cf3808eaec0621d7af7efa4ca4dc10166fa23",
+      "status": "reference-only",
+      "theorem": "candidate : DisjointSAT"
+    },
+    {
+      "definition_files": [
+        "Definitions.lean",
+        "goals/freshen_namespaces.lean"
+      ],
+      "dependency": null,
+      "goal_hash": "d52297e2452e8d94693f893ed7108c84108c429735fe08e3b9dd382a5012fc41",
+      "id": "freshen_namespaces",
+      "path": "research/proofs/freshen_namespaces.proof",
+      "policy_hash": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+      "problem_commit": "2835b70ede542e2a838e355129344459d52eac08",
+      "proposition_hash": "affc019d2d1a043ae650e14a99789198f8a38f1ef99ac44f0206298bbd37b519",
+      "protocol_commit": "f110daf9030e499d51f72c405f08a787785c3142",
+      "rewardable": true,
+      "statement": "def FreshenNamespaces : Prop := \u2200 (f g : CNF),\n  DisjointCNFVars (renameCNF leftVar f) (renameCNF rightVar g)",
+      "statement_hash": "b45cc5bc9e11720ae19ee1717dcb68bdaf67cbc96b35faa404626086c296652e",
+      "status": "open",
+      "theorem": "candidate : FreshenNamespaces"
+    },
+    {
+      "definition_files": [
+        "Definitions.lean",
+        "goals/clause_restriction.lean"
+      ],
+      "dependency": null,
+      "goal_hash": "86ee67e7900b50cdfcbb78cfd334d3b694212170622dbfa5ed63919f8f1dcd39",
+      "id": "clause_restriction",
+      "path": "research/proofs/clause_restriction.proof",
+      "policy_hash": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+      "problem_commit": "2835b70ede542e2a838e355129344459d52eac08",
+      "proposition_hash": "cfb0678be989626c361105515c215b59896e2f868440938fa77668a35d0b7ed6",
+      "protocol_commit": "f110daf9030e499d51f72c405f08a787785c3142",
+      "rewardable": false,
+      "statement": "def ClauseRestriction : Prop := \u2200 (a : Nat \u2192 Bool) (x : Nat) (b : Bool) (c : Clause),\n  evalRestrictedClause a (restrictClause x b c) = evalClause (assignVar a x b) c",
+      "statement_hash": "5a833baf6d77d47775e7a7f067f73411a01be1ede0ca69bad8853f1f031bb9de",
+      "status": "reference-only",
+      "theorem": "candidate : ClauseRestriction"
+    },
+    {
+      "definition_files": [
+        "Definitions.lean",
+        "goals/cnf_restriction.lean"
+      ],
+      "dependency": null,
+      "goal_hash": "c80fd07873f9c81d5dab3dcd42f6bcd53130d10a5d7172bf3285057ac0913d4e",
+      "id": "cnf_restriction",
+      "path": "research/proofs/cnf_restriction.proof",
+      "policy_hash": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+      "problem_commit": "2835b70ede542e2a838e355129344459d52eac08",
+      "proposition_hash": "d2be2e7865f3b7771fcce3d016ca765e12b28675493423edd2ac32bb7ae00ee5",
+      "protocol_commit": "f110daf9030e499d51f72c405f08a787785c3142",
+      "rewardable": true,
+      "statement": "def CNFRestriction : Prop := \u2200 (a : Nat \u2192 Bool) (x : Nat) (b : Bool) (f : CNF),\n  evalCNF a (restrictCNF x b f) = evalCNF (assignVar a x b) f",
+      "statement_hash": "60bf7fb03e8b922eb5c7dec20683bf885b47dc67f2511fc900d67941786a1088",
+      "status": "open",
+      "theorem": "candidate : CNFRestriction"
+    }
+  ]
+}
