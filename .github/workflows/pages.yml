@@ -47,7 +47,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: 86a185a594cf6b01bc28e1f2dd8ce0ee3f80895b
+          ref: c79ac0fda017ca738f3bb828fc3f98826612855d
           path: renderer
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
