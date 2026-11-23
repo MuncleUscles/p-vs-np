@@ -1,0 +1,63 @@
+name: Research federation
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Native federation operation
+        required: true
+        type: choice
+        options: [register, attribution, reconcile-impact, verify-author, settle-author]
+      payload:
+        description: Exact native ID, or bounded source/author JSON request
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  process:
+    if: github.ref == 'refs/heads/main'
+    environment: protocol
+    concurrency:
+      group: research-executor
+      cancel-in-progress: false
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: protocol
+    env:
+      OPEN_MATH_PROBLEM_DIR: ${{ github.workspace }}/problem
+    steps:
+      - name: Read this exact reviewed problem configuration
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: problem
+          persist-credentials: false
+      - name: Read the pinned protocol implementation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: 421740e654a18f730a07abb6bb3ed3112f5fef7a
+          path: protocol
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.22.0
+          cache: npm
+          cache-dependency-path: protocol/package-lock.json
+      - run: npm ci --ignore-scripts
+      - name: Process exact federation evidence and native decision
+        run: node github/run-federation.mjs
+        env:
+          FEDERATION_OPERATION: ${{ inputs.operation }}
+          FEDERATION_PAYLOAD: ${{ inputs.payload }}
+          GITHUB_TOKEN: ${{ github.token }}
+          VERIFIER_SIGNING_KEY: ${{ secrets.VERIFIER_SIGNING_KEY }}
+          EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}
+      - name: Refresh registered native account identities
+        if: always() && !cancelled()
+        run: node github/sync-accounts.mjs ../problem
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          EXECUTOR_SIGNING_KEY: ${{ secrets.EXECUTOR_SIGNING_KEY }}
