@@ -1,0 +1,10 @@
+{
+  "transaction": "0xbc710a122a406d59c27664b12b95c21cf0de63da0f85f9c4a72b9170db5e1a61",
+  "contract": "0x49574F0Eb49aabD1E53f091f339E32b21b4100DC",
+  "codeHash": "e19318e843cfab96fe53b6b2f07889f3326c482ef31df8e567c7122dccaae5c6",
+  "codeMatchesReviewed": true,
+  "protocolCommit": "74ed711c860dbce05a7f5f6f5c95c58185c29b0d",
+  "leaderOnly": false,
+  "status": "FINALIZED",
+  "checkedAt": "2026-11-23T10:02:13.956Z"
+}

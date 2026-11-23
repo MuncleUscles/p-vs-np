@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "branch": "research",
+  "configBranch": "main",
+  "protocol": {
+    "repository": "MuncleUscles/open-mathematics",
+    "commit": "f110daf9030e499d51f72c405f08a787785c3142"
+  },
+  "directions": [
+    "p-equals-np",
+    "p-not-equals-np",
+    "shared"
+  ],
+  "policies": [
+    {
+      "path": ".open-math/policies/pnp-cnf-foundations-v1.json",
+      "sha256": "8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2",
+      "sourceCommit": "2835b70ede542e2a838e355129344459d52eac08",
+      "protocolCommit": "f110daf9030e499d51f72c405f08a787785c3142"
+    }
+  ]
+}

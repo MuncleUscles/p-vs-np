@@ -7,7 +7,7 @@ Use Node 22.22+, Python 3 and Git. Keep trusted configuration, trusted tools and
 ```sh
 git clone --branch main https://github.com/MuncleUscles/p-vs-np.git pnp-config
 git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git open-math-tools
-git -C open-math-tools checkout 74ed711c860dbce05a7f5f6f5c95c58185c29b0d
+git -C open-math-tools checkout f110daf9030e499d51f72c405f08a787785c3142
 npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_TOOLS="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
