@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "definitions": [
+    {
+      "name": "Clause",
+      "type": "Type",
+      "value": "List (Nat × Bool)"
+    },
+    {
+      "name": "CNF",
+      "type": "Type",
+      "value": "List Clause"
+    },
+    {
+      "name": "evalLiteral",
+      "type": "(Nat → Bool) → Nat × Bool → Bool",
+      "value": "fun a l => a l.1 == l.2"
+    },
+    {
+      "name": "evalClause",
+      "type": "(Nat → Bool) → Clause → Bool",
+      "value": "fun a c => List.any c (evalLiteral a)"
+    },
+    {
+      "name": "evalCNF",
+      "type": "(Nat → Bool) → CNF → Bool",
+      "value": "fun a f => List.all f (evalClause a)"
+    },
+    {
+      "name": "cnfVars",
+      "type": "CNF → List Nat",
+      "value": "fun f => List.flatMap (fun c => List.map Prod.fst c) f"
+    }
+  ],
+  "statement": "∀ (f : CNF) (a b : Nat → Bool), (∀ n : Nat, n ∈ cnfVars f → a n = b n) → evalCNF a f = evalCNF b f",
+  "proof": "by\n  have transport (f : CNF) (a b : Nat → Bool)\n      (same : ∀ n : Nat, n ∈ cnfVars f → a n = b n) :\n      evalCNF a f = true → evalCNF b f = true := by\n    intro ha\n    apply List.all_eq_true.mpr\n    intro c hc\n    obtain ⟨l, hl, hla⟩ := List.any_eq_true.mp ((List.all_eq_true.mp ha) c hc)\n    apply List.any_eq_true.mpr\n    refine ⟨l, hl, ?_⟩\n    have member : l.1 ∈ cnfVars f :=\n      List.mem_flatMap.mpr ⟨c, hc, List.mem_map.mpr ⟨l, hl, rfl⟩⟩\n    simpa [evalLiteral, ← same l.1 member] using hla\n  intro f a b same\n  apply Bool.eq_iff_iff.mpr\n  constructor\n  · exact transport f a b same\n  · have back : ∀ n : Nat, n ∈ cnfVars f → b n = a n := by\n      intro n hn\n      exact Eq.symm (same n hn)\n    exact transport f b a back\n",
+  "dependencies": []
+}
