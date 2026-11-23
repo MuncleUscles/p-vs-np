@@ -3,6 +3,27 @@
   "repository": "MuncleUscles/p-vs-np",
   "entries": [
     {
+      "id": "pr-6-d8bfcbd3d0ad-40382ab358c1",
+      "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "chainId": 61999,
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 6,
+      "head": "d8bfcbd3d0addf7b3714fec3cd2aa83105e76718",
+      "wallet": "0x24cE571092c1Cb9921E3c1de72a5E4597f606799",
+      "policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+      "protocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+      "title": "Submission PR #6",
+      "status": "invalid",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-6-d8bfcbd3d0ad-40382ab358c1.json",
+      "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45182697596",
+      "updatedAt": "2026-11-23T13:20:05.684Z",
+      "commentId": 7102359461,
+      "needsResume": false
+    },
+    {
       "id": "pr-2-61854232ab90-65281b15d955",
       "pr": 2,
       "head": "61854232ab906ce088df7c7f8cc9a875465fc122",
@@ -52,8 +73,8 @@
     }
   ],
   "deployment": {
-    "protocolVersion": 4,
-    "contract": "0xa0bF4a7600D7A10Adb2d5F9737FDA78B760FF975",
+    "protocolVersion": 5,
+    "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
     "problem": "p-vs-np",
     "repository": "MuncleUscles/p-vs-np",
     "branch": "research",
