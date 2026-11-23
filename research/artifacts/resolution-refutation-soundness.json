@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "definitions": [
+    {
+      "name": "evalLiteral",
+      "type": "(Nat → Bool) → Nat × Bool → Bool",
+      "value": "fun a l => a l.1 == l.2"
+    },
+    {
+      "name": "evalClause",
+      "type": "(Nat → Bool) → List (Nat × Bool) → Bool",
+      "value": "fun a c => List.any c (evalLiteral a)"
+    },
+    {
+      "name": "evalCNF",
+      "type": "(Nat → Bool) → List (List (Nat × Bool)) → Bool",
+      "value": "fun a f => List.all f (evalClause a)"
+    },
+    {
+      "name": "resolve",
+      "type": "Nat → List (Nat × Bool) → List (Nat × Bool) → List (Nat × Bool)",
+      "value": "fun x c d => List.filter (fun l => decide (l ≠ (x, true))) c ++ List.filter (fun l => decide (l ≠ (x, false))) d"
+    },
+    {
+      "name": "resolutionStep",
+      "type": "Option (List (List (Nat × Bool))) → List (Nat × Bool) × List (Nat × Bool) × Nat → Option (List (List (Nat × Bool)))",
+      "value": "fun st s => Option.bind st (fun cs => if s.1 ∈ cs ∧ s.2.1 ∈ cs then some (cs ++ [resolve s.2.2 s.1 s.2.1]) else none)"
+    },
+    {
+      "name": "checkRefutation",
+      "type": "List (List (Nat × Bool)) → List (List (Nat × Bool) × List (Nat × Bool) × Nat) → Bool",
+      "value": "fun f steps => Option.any (fun cs => decide (([] : List (Nat × Bool)) ∈ cs)) (List.foldl resolutionStep (some f) steps)"
+    }
+  ],
+  "statement": "(∀ (f : List (List (Nat × Bool))) (steps : List (List (Nat × Bool) × List (Nat × Bool) × Nat)), checkRefutation f steps = true → ∀ a : Nat → Bool, evalCNF a f = false) ∧ checkRefutation [[(0, true), (1, true)], [(0, true), (1, false)], [(0, false), (1, true)], [(0, false), (1, false)]] [([(0, true), (1, true)], [(0, true), (1, false)], 1), ([(0, false), (1, true)], [(0, false), (1, false)], 1), ([(0, true), (0, true)], [(0, false), (0, false)], 0)] = true",
+  "proof": "by\n  have rsound : ∀ (a : Nat → Bool) (x : Nat) (c d : List (Nat × Bool)), evalClause a c = true → evalClause a d = true → evalClause a (resolve x c d) = true := by\n    intro a x c d hc hd\n    obtain ⟨l, hl, hla⟩ := List.any_eq_true.mp hc\n    obtain ⟨m, hm, hma⟩ := List.any_eq_true.mp hd\n    apply List.any_eq_true.mpr\n    cases hx : a x with\n    | false =>\n      have hne : l ≠ (x, true) := by\n        intro h\n        subst h\n        simp [evalLiteral, hx] at hla\n      exact ⟨l, List.mem_append_left _ (List.mem_filter.mpr ⟨hl, by simpa using hne⟩), hla⟩\n    | true =>\n      have hne : m ≠ (x, false) := by\n        intro h\n        subst h\n        simp [evalLiteral, hx] at hma\n      exact ⟨m, List.mem_append_right _ (List.mem_filter.mpr ⟨hm, by simpa using hne⟩), hma⟩\n  have hnone : ∀ (r : List (List (Nat × Bool) × List (Nat × Bool) × Nat)), List.foldl resolutionStep none r = none := by\n    intro r\n    induction r with\n    | nil => rfl\n    | cons t rest2 ih2 => exact ih2\n  have inv : ∀ (a : Nat → Bool) (steps : List (List (Nat × Bool) × List (Nat × Bool) × Nat)) (cs : List (List (Nat × Bool))), evalCNF a cs = true → ∀ (out : List (List (Nat × Bool))), List.foldl resolutionStep (some cs) steps = some out → evalCNF a out = true := by\n    intro a steps\n    induction steps with\n    | nil =>\n      intro cs hcs out hout\n      simp at hout\n      subst hout\n      exact hcs\n    | cons s rest ih =>\n      intro cs hcs out hout\n      rw [List.foldl_cons] at hout\n      have hstep : resolutionStep (some cs) s = (if s.1 ∈ cs ∧ s.2.1 ∈ cs then some (cs ++ [resolve s.2.2 s.1 s.2.1]) else none) := rfl\n      rw [hstep] at hout\n      cases Decidable.em (s.1 ∈ cs ∧ s.2.1 ∈ cs) with\n      | inl hmem =>\n        rw [if_pos hmem] at hout\n        have hall := List.all_eq_true.mp hcs\n        have hnew : evalCNF a (cs ++ [resolve s.2.2 s.1 s.2.1]) = true := by\n          apply List.all_eq_true.mpr\n          intro c hc\n          cases List.mem_append.mp hc with\n          | inl hin => exact hall c hin\n          | inr hin =>\n            have hceq : c = resolve s.2.2 s.1 s.2.1 := List.mem_singleton.mp hin\n            rw [hceq]\n            exact rsound a s.2.2 s.1 s.2.1 (hall s.1 hmem.1) (hall s.2.1 hmem.2)\n        exact ih (cs ++ [resolve s.2.2 s.1 s.2.1]) hnew out hout\n      | inr hmem =>\n        rw [if_neg hmem, hnone] at hout\n        cases hout\n  constructor\n  · intro f steps hchk a\n    cases hres : List.foldl resolutionStep (some f) steps with\n    | none =>\n      simp [checkRefutation, hres] at hchk\n    | some out =>\n      have hempty : ([] : List (Nat × Bool)) ∈ out := by\n        simpa [checkRefutation, hres] using hchk\n      cases hf : evalCNF a f with\n      | false => rfl\n      | true =>\n        have hout := inv a steps f hf out hres\n        have hc := (List.all_eq_true.mp hout) [] hempty\n        simp [evalClause] at hc\n  · decide\n",
+  "dependencies": []
+}

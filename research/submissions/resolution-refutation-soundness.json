@@ -1,0 +1,87 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Verified resolution refutation checker for list-based CNFs",
+  "claim": "Defines an executable propositional resolution step (resolve on a pivot, appending the resolvent only when both premises are already derived) and a checker that accepts a step list iff it derives the empty clause from the input CNF. Proves soundness: whenever the checker accepts, every Boolean assignment falsifies the CNF. A second conjunct shows the checker is not vacuous: it accepts a three-step refutation of the complete two-variable CNF. This gives the repository its first machine-checked UNSAT certificate format, complementing the credited SAT-side locality result.",
+  "novelty": "First proof-system artifact in this ledger: earlier accepted work covers renaming, namespaces and assignment locality, all about satisfying assignments. This adds a checkable certificate of unsatisfiability. That is the coNP side, where Cook–Reckhow proof systems and resolution lower bounds such as Haken's live. Soundness of resolution and verified UNSAT checkers are well known; the contribution is a self-contained constructive Lean Core formalization in this pinned grammar, reusable as a base for later work (for example, unit propagation as derived resolution, size measures on refutations, or a formal pigeonhole statement). No complexity result is claimed.",
+  "prior_art": [
+    {
+      "reference": "https://doi.org/10.1145/321250.321253",
+      "relationship": "Origin of the resolution rule whose propositional soundness is formalized here."
+    },
+    {
+      "reference": "https://doi.org/10.2307/2273702",
+      "relationship": "Defines propositional proof systems as polynomial-time checkers; NP = coNP iff some system is polynomially bounded. This artifact is such a checker for resolution, with machine-checked soundness."
+    },
+    {
+      "reference": "https://doi.org/10.1016/0304-3975(85)90144-6",
+      "relationship": "Exponential resolution lower bounds for pigeonhole formulas; a verified checker is the object such lower bounds quantify over."
+    },
+    {
+      "reference": "https://doi.org/10.1007/978-3-319-63046-5_15",
+      "relationship": "Prior verified UNSAT certificate checker (Isabelle/HOL, GRAT) for a stronger proof format; this work is a small Lean Core analogue, not a new technique."
+    },
+    {
+      "reference": "https://doi.org/10.1007/978-3-030-72013-1_12",
+      "relationship": "Prior verified checker for LPR proofs, which subsume resolution; no priority over verified certificate checking is claimed."
+    }
+  ],
+  "research_direction": "Propositional proof systems and verified UNSAT certificates (Cook–Reckhow / proof complexity side of P versus NP)",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1145/321250.321253",
+        "title": "A Machine-Oriented Logic Based on the Resolution Principle",
+        "authors": [
+          "J. A. Robinson"
+        ],
+        "relationship": "Origin of the resolution rule whose propositional soundness is formalized here. Prior work, not this contributor's discovery.",
+        "priority_evidence": "Published 1965 in J. ACM."
+      },
+      {
+        "reference": "https://doi.org/10.2307/2273702",
+        "title": "The relative efficiency of propositional proof systems",
+        "authors": [
+          "Stephen A. Cook",
+          "Robert A. Reckhow"
+        ],
+        "relationship": "Defines propositional proof systems as polynomial-time checkers; NP = coNP iff some system is polynomially bounded. This artifact is such a checker for resolution, with machine-checked soundness. Prior work, not this contributor's discovery.",
+        "priority_evidence": "Published 1979 in J. Symbolic Logic."
+      },
+      {
+        "reference": "https://doi.org/10.1007/978-3-319-63046-5_15",
+        "title": "Efficient Verified (UN)SAT Certificate Checking",
+        "authors": [
+          "Peter Lammich"
+        ],
+        "relationship": "Prior verified UNSAT certificate checker (Isabelle/HOL, GRAT) for a stronger proof format; this work is a small Lean Core analogue, not a new technique. Prior work, not this contributor's discovery.",
+        "priority_evidence": "Published 2017 at CADE."
+      },
+      {
+        "reference": "https://doi.org/10.1007/978-3-030-72013-1_12",
+        "title": "cake_lpr: Verified Propagation Redundancy Checking in CakeML",
+        "authors": [
+          "Yong Kiam Tan",
+          "Marijn J. H. Heule",
+          "Magnus O. Myreen"
+        ],
+        "relationship": "Prior verified checker for LPR proofs, which subsume resolution; no priority over verified certificate checking is claimed. Prior work, not this contributor's discovery.",
+        "priority_evidence": "Published 2021 at TACAS."
+      }
+    ],
+    "discovery_basis": "Known mathematics, newly formalized for this repository. Checked the native ledger (om list: renaming, locality, finite-support, restriction) and found no resolution or UNSAT-certificate artifact. Literature search was limited to the cited standard sources; no novelty or first-formalization claim beyond this ledger."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/resolution-refutation-soundness.json",
+    "reproduce": "Run the trusted open-agent check research/submissions/resolution-refutation-soundness.json --lean."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x9749f3ae9865a4723105D4c518696aF6397A6067",
+    "contributions": "Definitions, statement and proof were written by an AI coding agent run by the PR author, then compiled with Lean 4.19.0 (axioms: propext, Quot.sound only) and the pinned grammar check. Disclosure: the PR author account is the repository operator account; the signing wallet is new and dedicated to this submission. No independent-contributor claim. No code from earlier submissions is reused."
+  },
+  "limitations": "Soundness only: completeness of resolution (every unsatisfiable CNF has an accepted refutation) is not proved. Steps cite premise clauses by full content, so certificate size is not optimized and no running-time bound is proved. Resolvents are not deduplicated or checked for tautology. The non-vacuity witness is one small instance. Says nothing about lower bounds, NP versus coNP, or P versus NP."
+}
