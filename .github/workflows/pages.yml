@@ -40,31 +40,17 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: 9a08a0db54869af3e2a43307adff85e43c00cc6e
+          ref: abbf15ce23fca94e57db581d497f24a8bd1560b2
           path: protocol
-          persist-credentials: false
-      - name: Read the reviewed presentation release
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: MuncleUscles/open-mathematics
-          ref: c79ac0fda017ca738f3bb828fc3f98826612855d
-          path: renderer
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.22.0
           cache: npm
-          cache-dependency-path: |
-            protocol/package-lock.json
-            renderer/package-lock.json
-      - name: Install pinned protocol dependencies
-        run: npm ci --ignore-scripts
-      - name: Install presentation dependencies
-        working-directory: renderer
-        run: npm ci --ignore-scripts
-      - name: Build pnp.fun with a snapshot from the pinned protocol
-        working-directory: renderer
-        run: node scripts/build-open-site.mjs ../problem ../site --snapshot --protocol-checkout ../protocol
+          cache-dependency-path: protocol/package-lock.json
+      - run: npm ci --ignore-scripts
+      - name: Build dashboard with a dated finalized-native snapshot
+        run: node scripts/build-open-site.mjs ../problem ../site --snapshot
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         with:

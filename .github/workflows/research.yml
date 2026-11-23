@@ -25,7 +25,7 @@ jobs:
       group: research-executor
       cancel-in-progress: false
     runs-on: ubuntu-24.04
-    timeout-minutes: 35
+    timeout-minutes: 50
     defaults:
       run:
         working-directory: protocol
@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: 9a08a0db54869af3e2a43307adff85e43c00cc6e
+          ref: abbf15ce23fca94e57db581d497f24a8bd1560b2
           path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -58,7 +58,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Build pinned isolated Lean
         if: steps.claim.outputs.comment_id != ''
-        run: bash github/build-verifier.sh
+        run: bash github/build-full-lean.sh
       - name: Verify and implement GenLayer's final decision
         if: steps.claim.outputs.comment_id != ''
         run: node github/open-worker.mjs
@@ -80,7 +80,9 @@ jobs:
     timeout-minutes: 20
     defaults:
       run:
-        working-directory: accounts
+        working-directory: protocol
+    env:
+      OPEN_MATH_PROBLEM_DIR: ${{ github.workspace }}/problem
     steps:
       - name: Read this exact reviewed problem configuration
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -88,20 +90,20 @@ jobs:
           ref: ${{ github.sha }}
           path: problem
           persist-credentials: false
-      - name: Read the pinned native account implementation
+      - name: Read the pinned protocol implementation
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: c79ac0fda017ca738f3bb828fc3f98826612855d
-          path: accounts
+          ref: abbf15ce23fca94e57db581d497f24a8bd1560b2
+          path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.22.0
           cache: npm
-          cache-dependency-path: accounts/package-lock.json
+          cache-dependency-path: protocol/package-lock.json
       - run: npm ci --ignore-scripts
-      - name: Reconcile native GitHub account credit and verified names
+      - name: Reconcile native GitHub identity and points
         run: node github/sync-accounts.mjs ../problem
         env:
           GITHUB_TOKEN: ${{ github.token }}

@@ -11,7 +11,7 @@ Use Node 22.22+, Python 3.12, and Git. The GitHub CLI examples below also requir
 ```sh
 git clone --branch main https://github.com/MuncleUscles/p-vs-np.git pnp-config
 git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git open-math-tools
-git -C open-math-tools checkout 9a08a0db54869af3e2a43307adff85e43c00cc6e
+git -C open-math-tools checkout abbf15ce23fca94e57db581d497f24a8bd1560b2
 npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_TOOLS="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
@@ -37,26 +37,30 @@ The literal commit above is this guide's reviewed release. After an upgrade, ref
    ```
 
    Use `research-note` instead of `formal` for a supported argument without a kernel-checked theorem. Every submission has a required `research/submissions/my-result.json` record plus one matching artifact. Fill all placeholders, including scope, relevance, novelty, prior art, attribution and limitations. Your free-text research direction needs no approval.
-3. For formal evidence, fill `research/artifacts/my-result.json` with exactly:
+3. For formal evidence, the active full-Lean policy accepts ordinary Lean 4.36 source with pinned Mathlib commit `fc4f59e577feb1a4956671bc04ac18aaaf8cd842`. The generated version-2 artifact has exactly:
 
    ```json
    {
-     "version": 1,
-     "definitions": [],
-     "statement": "YOUR PRECISE LEAN PROPOSITION",
-     "proof": "by\n  YOUR PROOF",
+     "version": 2,
+     "imports": ["Mathlib.Data.Int.Basic", "Mathlib.Tactic.Ring"],
+     "source": "namespace Contribution\n\ntheorem result (x y : Int) :\n    (x + y) ^ 2 = x ^ 2 + 2 * x * y + y ^ 2 := by\n  ring\n\nend Contribution\n",
+     "theorem": "Contribution.result",
      "dependencies": []
    }
    ```
 
-   New definitions have `{ "name": "Name", "type": "TYPE EXPRESSION", "value": "VALUE EXPRESSION" }`. Supply up to eight sequential, nonrecursive definitions as expressions. The trusted wrapper isolates their namespace and checks for name collisions with the pinned environment. The proof begins with `by` followed by a newline. Use the bounded Lean 4.19 Core expression and tactic grammar in the [exact pinned checker](https://github.com/MuncleUscles/open-mathematics/blob/9a08a0db54869af3e2a43307adff85e43c00cc6e/lean/open_check.py) and its [imported word, namespace and punctuation lists](https://github.com/MuncleUscles/open-mathematics/blob/9a08a0db54869af3e2a43307adff85e43c00cc6e/lean/problem_check.py). These files are also available inside your trusted tools checkout.
+   This starter is a standard textbook identity demonstrating `ring`, not new mathematics or a claim to points. Replace it with useful work and complete the record. Known results need honest formalization/integration provenance and actual external sources; do not label the example a discovery.
 
-   Practical grammar guide: use constructive `Nat`, `Bool`, `List`, `Option`, `Prod` and proposition logic; ordinary binders, `fun`, `if` and `match`; tactics such as `intro`, `exact`, `apply`, `constructor`, `cases`, `induction`, `simp`, `simpa`, `rw`, `rfl` and `omega`. Use simple ASCII local names such as `h1`, without apostrophes. `trivial` and the `^` operator are not supported by this grammar. The only permitted axioms are `propext` and `Quot.sound`: no `Classical` or choice-based proof. Commands, comments, strings, imports, `sorry`, native evaluation and unsafe code are rejected. This is a restricted expression format, not a full Lean source file; kernel checking and axiom auditing establish proof validity.
+   Ordinary definitions, structures, inductive types, lemmas and tactics are supported inside the isolated pinned environment. Imports go in `imports` (up to eight specific `Mathlib.…` modules), not a new Lake project. The allowed axioms are `propext`, `Classical.choice` and `Quot.sound`. The selected theorem's actual proposition and proof are checked independently against trusted library definitions. Compiler success, arbitrary success output, `sorry` or a custom axiom cannot establish accepted proof evidence. No toolchain, dependency, build-script, workflow or Mathlib-source edits belong in a research PR.
 
-   To build on accepted work, run `om show CONTRIBUTION_ID`. Copy its exact ID and `bundle_hash` into the bundle dependency list, and explain use and importance in the record. Each declared dependency must have a surviving `B_HASH.result` reference in the elaborated proof after the checker's reductions. You can also refer to the dependency's definitions. The worker retrieves and rechecks exact credited bundles. The limits are four direct dependencies, eight imported bundles in total, and four levels below the submitted bundle.
+   To build on accepted work, run `om show CONTRIBUTION_ID` and use its exact `reuse.reference`. The verifier wraps each bundle in `B_<raw_bundle_sha256>`. A default v2 theorem is `_root_.B_<bundle_hash>.Contribution.result`; a historical v1 theorem is `_root_.B_<bundle_hash>.result`. Use the actual full name from `show`, not these placeholders. Put `{ "id": "ACTUAL_ID", "bundle_hash": "ACTUAL_HASH" }` in the bundle and the same ID with `use` and `importance` in the record. The lists must have the same order. New v2 source may reuse either accepted format; the worker retrieves exact credited bytes and recompiles them under the active pinned environment. A reviewed compatibility adapter may port an exact historical proof body to the newer Lean version; it cannot change definitions, statement, dependencies or original artifact identity. Its original/compiled proof hashes and adapter-manifest hash are disclosed in the verifier report. Such compilation does not reopen the old merit decision or release unresolved content fences. Limits are four direct dependencies, eight imported bundles in total and four levels below the submitted bundle. Declared proofs must actually be used after the checker's reductions; a citation alone is not verified proof use.
 
-   For notes, write `research/notes/my-result.md`. State assumptions, evidence and uncertainty. Notes are reviewed arguments, not formal proofs. Do not claim an experiment ran without evidence, or a small theorem solves P versus NP. Arbitrary submitted programs are not executed.
-4. Run `om format research/submissions/my-result.json`, then `om check research/submissions/my-result.json` for format and syntax. Optional `--lean` checks formal evidence with the pinned Linux Docker image. The provided image-build script requires Docker, `sha256sum`, and `tar` with Zstandard support; use a Linux environment for these commands if your host lacks them. Run `bash "$OPEN_MATH_TOOLS/github/build-verifier.sh"` from the trusted tools directory and follow its image export. The Actions verifier checks formal submissions independently, so local Docker is optional. The byte limits are 32,768 for a formal bundle, 12,000 for a note, and 16,000 for a record. The full native evidence also has a 65,536-byte limit after JSON escaping, including context and verifier metadata; passing each file limit does not guarantee the combined evidence fits. Keep prose and formatting concise. The worker checks that aggregate limit before registration; local `check` and `sign` do not yet predict the complete signed-verifier evidence size.
+   Read [the full Lean guide](https://github.com/MuncleUscles/open-mathematics/blob/abbf15ce23fca94e57db581d497f24a8bd1560b2/docs/FULL-LEAN.md) or `docs/FULL-LEAN.md` in the trusted tools checkout for exact format, isolation and reuse details.
+
+   For notes, write `research/notes/my-result.md`. State assumptions, evidence and uncertainty. Notes are reviewed arguments, not formal proofs. Do not claim an experiment ran without evidence, or a small theorem solves P versus NP. Arbitrary submitted programs are not executed on the host.
+4. Run `om format research/artifacts/my-result.json` for a formal bundle, then `om format research/submissions/my-result.json` and `om check research/submissions/my-result.json`. The default check validates the format and dependency manifest only: **it does not run Lean or prove the source**. Optional `--lean` runs isolated proof verification with the pinned Linux Docker image. Build the image with `bash "$OPEN_MATH_TOOLS/github/build-full-lean.sh"` and run its printed `export TRUSTED_LEAN_IMAGE=…` command before checking. Building downloads the trusted toolchain and libraries before any contribution is loaded. Actual proof runs have no network or service keys and bounded resources; a full check may take several minutes. Actions checks the exact signed PR independently, so local Docker is optional.
+
+   The UTF-8 byte limits are 32,768 for a formal bundle (including JSON escaping), 30,000 for its source field, 12,000 for a note, and 16,000 for a record. The verifier also produces the complete notation-free theorem and definition statement, bounded at 32,768 bytes. That generated statement can be larger than your source; it is never truncated. The full native evidence still has a 65,536-byte limit after escaping, including the statement, context and verifier metadata; passing each individual limit does not guarantee the combined evidence fits. Keep prose and formatting concise. The worker checks the aggregate limit before registration; local `check` and `sign` do not yet predict the complete signed-verifier evidence size.
 5. Commit exactly two NEW regular files in one commit: record and matching artifact. No overwrites, extra files, workflow edits, executable bits or symlinks. Push your branch and open a PR targeting **MuncleUscles/p-vs-np:research**. Main is trusted configuration, not research.
 6. Sign the exact published PR locally and post the public envelope as an unedited PR-author comment within nine minutes:
 

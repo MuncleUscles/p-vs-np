@@ -1,0 +1,139 @@
+{
+  "result": "pass",
+  "mode": "isolated",
+  "verified": true,
+  "production_verified": true,
+  "verification": "verified",
+  "checker": "open-mathematics-v5",
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "head": "f176c6bf9567df7201a5c08aa898d1c90d797a4d",
+  "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+  "protocol_commit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+  "toolchain": "lean4:4.36.0",
+  "image": "sha256:ad0f81a002e3940ebb803c6ae6a88438d32682f571eaed705965f9c179bdc249",
+  "bundle_hash": "bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7",
+  "artifact_hash": "bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7",
+  "assembly_hash": "85974df8bb9c051a8d5afe843da489f7107de2184b18caab269b38be6b53ffd5",
+  "proof_hash": "d6506e6df63f00371706c98a3c50ec4a01565c7a7af4ad402275b4d3850825d2",
+  "statement_hash": "62293c9a317f6065fb654a69a88e0cf880df5056c516ad9277968af26ba9b614",
+  "proposition_hash": "b18c774d255c7bd25e7933b0493bfd00a4641973dc85589405da426638fd23ff",
+  "formal_statement": "theorem : (app (app And (forall (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (forall (app List.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) (forall (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.checkRefutation #1) #0)) Bool.true) (forall (forall Nat Bool) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.evalCNF #0) #3)) Bool.false)))))) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.checkRefutation (app (app (app List.cons.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.true)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.true)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app List.cons.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.true)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.false)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app List.cons.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.false)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.true)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app List.cons.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.false)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.false)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app List.nil.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))))))) (app (app (app List.cons.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) (app (app (app (app Prod.mk.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.true)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.true)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app (app Prod.mk.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.true)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.false)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))))) (app (app (app List.cons.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) (app (app (app (app Prod.mk.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.false)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.true)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app (app Prod.mk.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.false)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))) Bool.false)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app OfNat.ofNat.{0} Nat) 1) (app instOfNatNat 1))))) (app (app (app List.cons.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) (app (app (app (app Prod.mk.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.true)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.true)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app (app Prod.mk.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.false)) (app (app (app List.cons.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app Prod.mk.{0,0} Nat) Bool) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))) Bool.false)) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app (app OfNat.ofNat.{0} Nat) 0) (app instOfNatNat 0))))) (app List.nil.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)))))))) Bool.true))\ndef SELF.checkRefutation : (forall (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (forall (app List.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) Bool)) := (lambda (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (lambda (app List.{0} (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) (app (app (app Option.any.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (lambda (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Decidable.decide (app (app (app (app (app Membership.mem.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.instMembership.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #0) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool)))) (app (app (app (app (app List.instDecidableMemOfLawfulBEq.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app List.instBEq.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app instBEqProd.{0,0} Nat) Bool) (app (app instBEqOfDecidableEq.{0} Nat) instDecidableEqNat)) (app (app instBEqOfDecidableEq.{0} Bool) instDecidableEqBool)))) SELF.resolutionStep._proof_1) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))) #0)))) (app (app (app (app (app List.foldl.{0,0} (app Option.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat))) SELF.resolutionStep) (app (app Option.some.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #1)) #0))))\ndef SELF.evalCNF : (forall (forall Nat Bool) (forall (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Bool)) := (lambda (forall Nat Bool) (lambda (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app List.all.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) #0) (app SELF.evalClause #1))))\ndef SELF.evalClause : (forall (forall Nat Bool) (forall (app List.{0} (app (app Prod.{0,0} Nat) Bool)) Bool)) := (lambda (forall Nat Bool) (lambda (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app List.any.{0} (app (app Prod.{0,0} Nat) Bool)) #0) (app SELF.evalLiteral #1))))\ndef SELF.evalLiteral : (forall (forall Nat Bool) (forall (app (app Prod.{0,0} Nat) Bool) Bool)) := (lambda (forall Nat Bool) (lambda (app (app Prod.{0,0} Nat) Bool) (app (app (app (app BEq.beq.{0} Bool) (app (app instBEqOfDecidableEq.{0} Bool) instDecidableEqBool)) (app #1 (app (app (app Prod.fst.{0,0} Nat) Bool) #0))) (app (app (app Prod.snd.{0,0} Nat) Bool) #0))))\nthm SELF.resolutionStep._proof_1 : (app (app LawfulBEq.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app List.instBEq.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app instBEqProd.{0,0} Nat) Bool) (app (app instBEqOfDecidableEq.{0} Nat) instDecidableEqNat)) (app (app instBEqOfDecidableEq.{0} Bool) instDecidableEqBool))))\ndef SELF.resolutionStep : (forall (app Option.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (forall (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) (app Option.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))))) := (lambda (app Option.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (lambda (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) (app (app (app (app Option.bind.{0,0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #1) (lambda (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app (app (app ite.{(succ 0)} (app Option.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))))) (app (app And (app (app (app (app (app Membership.mem.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.instMembership.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #0) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1))) (app (app (app (app (app Membership.mem.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.instMembership.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #0) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app Prod.snd.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1))))) (app (app (app (app instDecidableAnd (app (app (app (app (app Membership.mem.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.instMembership.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #0) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1))) (app (app (app (app (app Membership.mem.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.instMembership.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) #0) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app Prod.snd.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1)))) (app (app (app (app (app List.instDecidableMemOfLawfulBEq.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app List.instBEq.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app instBEqProd.{0,0} Nat) Bool) (app (app instBEqOfDecidableEq.{0} Nat) instDecidableEqNat)) (app (app instBEqOfDecidableEq.{0} Bool) instDecidableEqBool)))) SELF.resolutionStep._proof_1) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1)) #0)) (app (app (app (app (app List.instDecidableMemOfLawfulBEq.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app List.instBEq.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app instBEqProd.{0,0} Nat) Bool) (app (app instBEqOfDecidableEq.{0} Nat) instDecidableEqNat)) (app (app instBEqOfDecidableEq.{0} Bool) instDecidableEqBool)))) SELF.resolutionStep._proof_1) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app Prod.snd.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1))) #0))) (app (app Option.some.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app (app (app (app (app (app HAppend.hAppend.{0,0,0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app (app instHAppendOfAppend.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) (app List.instAppend.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))))) #0) (app (app (app List.cons.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app (app SELF.resolve (app (app (app Prod.snd.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app Prod.snd.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1))) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1)) (app (app (app Prod.fst.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat) (app (app (app Prod.snd.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app Prod.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) Nat)) #1)))) (app List.nil.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))))))) (app Option.none.{0} (app List.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool)))))))))\ndef SELF.resolve : (forall Nat (forall (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (forall (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (app List.{0} (app (app Prod.{0,0} Nat) Bool))))) := (lambda Nat (lambda (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (lambda (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app (app (app (app HAppend.hAppend.{0,0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app instHAppendOfAppend.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.instAppend.{0} (app (app Prod.{0,0} Nat) Bool)))) (app (app (app List.filter.{0} (app (app Prod.{0,0} Nat) Bool)) (lambda (app (app Prod.{0,0} Nat) Bool) (app (app Decidable.decide (app (app (app Ne.{(succ 0)} (app (app Prod.{0,0} Nat) Bool)) #0) (app (app (app (app Prod.mk.{0,0} Nat) Bool) #3) Bool.true))) (app (app instDecidableNot (app (app (app Eq.{(succ 0)} (app (app Prod.{0,0} Nat) Bool)) #0) (app (app (app (app Prod.mk.{0,0} Nat) Bool) #3) Bool.true))) (app (app (app (app (app (app instDecidableEqProd.{0,0} Nat) Bool) instDecidableEqNat) instDecidableEqBool) #0) (app (app (app (app Prod.mk.{0,0} Nat) Bool) #3) Bool.true)))))) #1)) (app (app (app List.filter.{0} (app (app Prod.{0,0} Nat) Bool)) (lambda (app (app Prod.{0,0} Nat) Bool) (app (app Decidable.decide (app (app (app Ne.{(succ 0)} (app (app Prod.{0,0} Nat) Bool)) #0) (app (app (app (app Prod.mk.{0,0} Nat) Bool) #3) Bool.false))) (app (app instDecidableNot (app (app (app Eq.{(succ 0)} (app (app Prod.{0,0} Nat) Bool)) #0) (app (app (app (app Prod.mk.{0,0} Nat) Bool) #3) Bool.false))) (app (app (app (app (app (app instDecidableEqProd.{0,0} Nat) Bool) instDecidableEqNat) instDecidableEqBool) #0) (app (app (app (app Prod.mk.{0,0} Nat) Bool) #3) Bool.false)))))) #0)))))",
+  "canonical_semantics": {
+    "definitions": [
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "checkRefutation"
+        ],
+        "type": "ae43f090ddd5a03dca3a44bdc0571fa92a918c7ac6031b4f39cb8d1a0baa12ad",
+        "value": "329d22722d754ddb4947c95c868262a722f5c9e5bd389eff5a7daf3be85f7847"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "evalCNF"
+        ],
+        "type": "a72d42184c68cda8c0f6addc21ac892895f14295cee9bc956cdbe127e030acf4",
+        "value": "591f6c933ece20e6c1b4d7ee3b4acf3474f63dc3d3a7106fe4b12196791cbf1e"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "evalClause"
+        ],
+        "type": "2dd71a20b1ff67766d4945bcdacbb7ea810a2f9c428c46be7056d4308c003ee1",
+        "value": "1020cb769e2d86e1145b89372d4b1fef6b46bccd79bf7937f66b044f5d35105b"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "evalLiteral"
+        ],
+        "type": "a5fbda274837b78072a7a17c960a66bec52d826a3d6cdb5019337c008b4c9aee",
+        "value": "cde578eed8fff7e4d58f0bbabae8d9e8f741982e1418678b68bab0677e1592bf"
+      },
+      {
+        "kind": "thm",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "resolutionStep",
+          "_proof_1"
+        ],
+        "type": "7d2d08f048fb76de0cede565576ed0650454e86a5426513e5a2361305f1bd880"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "resolutionStep"
+        ],
+        "type": "9872eab7d88ea8a262d222d6f0b8eb2bc845636346a7c90b65fdc261723534a1",
+        "value": "624cb63ed5c13c2ea5bec0f8daca579204ba4c8619832bbd898366f742e7db98"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "resolve"
+        ],
+        "type": "00c7cc57035d866664fcfe4311b8b17088224112849a910ed48e9a2cbd957821",
+        "value": "24d27c9830df49ed8274f097d208c620f9884a421ca044ba5acc08b5ead4692e"
+      }
+    ],
+    "levelParams": [],
+    "type": "d46ae64cd457be034fb6d501bc6ae67d8178a27be345439771586b374995cd21",
+    "version": 1
+  },
+  "theorem": "B_bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7.result",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "declaration_axioms": {
+    "B_bc52b6a034af09e8b5797a352ab6d0b65cb82f60c2022229fcb45ed36fa255c7.result": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "sorry": false,
+  "proof_body_uses": [],
+  "verified_dependencies": [],
+  "dependency_bundle_hashes": {},
+  "dependency_artifact_hashes": {},
+  "dependency_theorems": {},
+  "definition_closure_hash": "0b43093918b1341a82fc03b73010f5665828376782b3dedc8b85bf0a79b06dcd",
+  "full_kernel": {
+    "version": 1,
+    "lean_commit": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+    "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+    "export_hash": "7135eb22d5546edf8faa4b4c2a490acebf165a0fba9cf91aebfe60b79ad05a7f",
+    "baseline_hash": "5c236d0e76e527842bea0954e725a611c3c9533b71351175815500195b59f5fd",
+    "checker_set": [
+      "leanchecker",
+      "leanchecker-paranoid",
+      "lean4lean",
+      "nanoda",
+      "con-leche",
+      "con-ron"
+    ]
+  },
+  "log": "",
+  "legacy_adapters": {},
+  "reuse_limit": "Direct references after bounded beta/zeta/constructor-projection reduction; not necessity, novelty, independence or allocation.",
+  "commit_binding": "Trusted caller resolves immutable accepted records and exact Git commits; checker binds identifiers and bytes."
+}

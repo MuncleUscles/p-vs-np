@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "contract": "0xA303c01f7054061741F883Cf500FaD4447699aD9",
+  "source": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+  "state": {
+    "account_count": 1,
+    "complete": true,
+    "indexed_count": 4,
+    "indexed_totals": {
+      "author_points": "800",
+      "impact_points": "0",
+      "note_points": "0",
+      "points": "800",
+      "returned_points": "160"
+    },
+    "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+    "problem": "p-vs-np",
+    "repository": "MuncleUscles/p-vs-np",
+    "source_config_hash": "1734a60d08884029e816ca20471e43d931676de1228a9d26d621fac84d7420ca",
+    "source_consistent": true,
+    "source_contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+    "source_count": 4,
+    "source_totals": {
+      "author_points": "800",
+      "award_budgets": "800",
+      "impact_points": "0",
+      "note_points": "0",
+      "points": "800",
+      "reserved_points": "0",
+      "returned_points": "160"
+    },
+    "version": 1
+  },
+  "nameErrors": [],
+  "finalUpdates": [
+    {
+      "method": "sync_contribution",
+      "args": [
+        "pr-14-f176c6bf9567-7bd5213f14ba",
+        "5815a8ebc81e1ec4de74c626505186a2ee23d8046529441e605bc025d8695d63"
+      ],
+      "hash": "0xc22d0420de30e767d19fd1467edd7709053757db137e07036f783ad96a4e6ea4"
+    },
+    {
+      "method": "refresh_username",
+      "args": [
+        "2372232",
+        "0"
+      ],
+      "hash": "0x3f731c9096ca66ba2e8d4774ec37fcabe0436883b5ec5f4ecf4edf427674c49f"
+    }
+  ],
+  "sourceMigrationNewRewards": "0",
+  "operationalRecovery": {
+    "reason": "Fee configuration query connection reset before broadcast; preserved original intent, verified no matching call and no indexed source record, then resumed. Earlier confirmed copies were not sent again.",
+    "judgmentRetried": false
+  },
+  "reconciliationTransactions": [
+    {
+      "method": "refresh_username",
+      "args": [
+        "2372232",
+        "0"
+      ],
+      "hash": "0x3f731c9096ca66ba2e8d4774ec37fcabe0436883b5ec5f4ecf4edf427674c49f"
+    },
+    {
+      "method": "sync_contribution",
+      "args": [
+        "pr-14-f176c6bf9567-7bd5213f14ba",
+        "5815a8ebc81e1ec4de74c626505186a2ee23d8046529441e605bc025d8695d63"
+      ],
+      "hash": "0xc22d0420de30e767d19fd1467edd7709053757db137e07036f783ad96a4e6ea4"
+    },
+    {
+      "method": "sync_contribution",
+      "args": [
+        "pr-7-672f1fa46a61-0d05d194a602",
+        "26032f92906c9f8d6c0cb160dcba39c72d1bce1dd21615df9a70ea39bb70e2eb"
+      ],
+      "hash": "0x68e25fe907bec9e0eecf57fabfc81fbcd83c34efae50b767db59692a97699e10"
+    },
+    {
+      "method": "sync_contribution",
+      "args": [
+        "pr-8-c9ee3e5efe6b-979433977845",
+        "ae0881652c95415c8c90201f72c26ce3d8c6df1b86353f1dbc3d1e98c2f30104"
+      ],
+      "hash": "0x253bd10f7c2c93d25e5ab5c3bccf35f4871548ffd1b8defbbde914d9cf6be847"
+    },
+    {
+      "method": "sync_contribution",
+      "args": [
+        "pr-9-327123f9d1b4-2c91a42f97f7",
+        "25fef7524b53b3b23705f5c04dd63e36ad0e95a763d8a94b8cf990fa5c7d5289"
+      ],
+      "hash": "0x27bd1456359be2d1543ed09b9824f15350fe987466a71fa94caeb8b739c67136"
+    }
+  ],
+  "profile": {
+    "author_points": "800",
+    "contribution_count": 4,
+    "credited_count": 2,
+    "formal_count": 2,
+    "github_author_id": "2372232",
+    "impact_points": "0",
+    "login": "MuncleUscles",
+    "note_points": "0",
+    "points": "800",
+    "returned_points": "160",
+    "username_checked_at": 1795465427,
+    "wallet_count": 3
+  },
+  "snapshotCompletedAt": "2026-11-23T20:25:48.897Z"
+}

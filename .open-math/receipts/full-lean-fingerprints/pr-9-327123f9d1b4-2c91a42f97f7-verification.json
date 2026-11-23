@@ -1,0 +1,164 @@
+{
+  "result": "pass",
+  "mode": "isolated",
+  "verified": true,
+  "production_verified": true,
+  "verification": "verified",
+  "checker": "open-mathematics-v5",
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "head": "327123f9d1b49b9587ce2b03f1aa812bb6e04024",
+  "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+  "protocol_commit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+  "toolchain": "lean4:4.36.0",
+  "image": "sha256:ad0f81a002e3940ebb803c6ae6a88438d32682f571eaed705965f9c179bdc249",
+  "bundle_hash": "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a",
+  "artifact_hash": "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a",
+  "assembly_hash": "2d3b966408ef5f38f72eec2bacb38246f492d50d2132d244fb66b23b9287edaa",
+  "proof_hash": "cb4187984203ef6afca25ece24c529259587d6e13123dd35b4347da096ca5629",
+  "statement_hash": "795bac23ed30062c9fb2b3097e80f406ac00325be801d950a64596ada9f8d77f",
+  "proposition_hash": "282e4d6d6335dd2165dc47caf042ed831e58af9049e3d31d0a0ddd74fd60acb3",
+  "formal_statement": "theorem : (forall (forall Nat (app Option.{0} Bool)) (forall SELF.CNF (app (app And (forall Nat (forall (app (app (app (app (app Membership.mem.{0,0} Nat) (app List.{0} Nat)) (app List.instMembership.{0} Nat)) (app SELF.CNFVars (app (app SELF.RestrictedCNF #2) #1))) #0) (app (app And (app (app (app (app (app Membership.mem.{0,0} Nat) (app List.{0} Nat)) (app List.instMembership.{0} Nat)) (app SELF.CNFVars #2)) #1)) (app (app (app Eq.{(succ 0)} (app Option.{0} Bool)) (app #3 #1)) (app Option.none.{0} Bool)))))) (app (app And (app (app (app (app LE.le.{0} Nat) instLENat) (app (app List.length.{0} B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.Clause) (app (app SELF.RestrictedCNF #1) #0))) (app (app List.length.{0} B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.Clause) #0))) (app (app And (forall (forall Nat Bool) (app (app And (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.CNFValue #0) (app (app SELF.RestrictedCNF #2) #1))) (app (app SELF.CNFValue (app (app SELF.ExtendedAssignment #2) #0)) #1))) (app (app SELF.ExtendsPartial #2) (app (app SELF.ExtendedAssignment #2) #0))))) (app (app And (app (app Iff (app (app Exists.{(succ 0)} (forall Nat Bool)) (lambda (forall Nat Bool) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.CNFValue #0) (app (app SELF.RestrictedCNF #2) #1))) Bool.true)))) (app (app Exists.{(succ 0)} (forall Nat Bool)) (lambda (forall Nat Bool) (app (app And (app (app SELF.ExtendsPartial #2) #0)) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.CNFValue #0) #1)) Bool.true)))))) (app (app And (forall (app (app (app List.Mem.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (app List.nil.{0} (app (app Prod.{0,0} Nat) Bool))) (app (app SELF.RestrictedCNF #1) #0)) (app Not (app (app Exists.{(succ 0)} (forall Nat Bool)) (lambda (forall Nat Bool) (app (app And (app (app SELF.ExtendsPartial #3) #0)) (app (app (app Eq.{(succ 0)} Bool) (app (app SELF.CNFValue #0) #2)) Bool.true))))))) (app (app (app Eq.{(succ 0)} SELF.CNF) (app (app SELF.RestrictedCNF #1) (app (app SELF.RestrictedCNF #1) #0))) (app (app SELF.RestrictedCNF #1) #0)))))))))\ndef SELF.CNF : (Sort (succ 0)) := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF\ndef SELF.CNFValue : (forall (forall Nat Bool) (forall SELF.CNF Bool)) := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF\ndef SELF.CNFVars : (forall SELF.CNF (app List.{0} Nat)) := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars\ndef SELF.ExtendedAssignment : (forall (forall Nat (app Option.{0} Bool)) (forall (forall Nat Bool) (forall Nat Bool))) := (lambda (forall Nat (app Option.{0} Bool)) (lambda (forall Nat Bool) (lambda Nat (app (app (app Option.getD.{0} Bool) (app #2 #0)) (app #1 #0)))))\ndef SELF.ExtendsPartial : (forall (forall Nat (app Option.{0} Bool)) (forall (forall Nat Bool) (Sort 0))) := (lambda (forall Nat (app Option.{0} Bool)) (lambda (forall Nat Bool) (forall Nat (forall Bool (forall (app (app (app Eq.{(succ 0)} (app Option.{0} Bool)) (app #3 #1)) (app (app Option.some.{0} Bool) #0)) (app (app (app Eq.{(succ 0)} Bool) (app #3 #2)) #1))))))\ndef SELF.RestrictedCNF : (forall (forall Nat (app Option.{0} Bool)) (forall SELF.CNF SELF.CNF)) := (lambda (forall Nat (app Option.{0} Bool)) (lambda SELF.CNF (app (app (app (app List.map.{0,0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.Clause) (app SELF.ReducedClause #1)) (app (app (app List.filter.{0} (app List.{0} (app (app Prod.{0,0} Nat) Bool))) (lambda (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (app Bool.not (app (app (app List.any.{0} (app (app Prod.{0,0} Nat) Bool)) #0) (lambda (app (app Prod.{0,0} Nat) Bool) (app (app (app (app BEq.beq.{0} (app Option.{0} Bool)) (app (app instBEqOption.{0} Bool) (app (app instBEqOfDecidableEq.{0} Bool) instDecidableEqBool))) (app #3 (app (app (app Prod.fst.{0,0} Nat) Bool) #0))) (app (app Option.some.{0} Bool) (app (app (app Prod.snd.{0,0} Nat) Bool) #0)))))))) #0))))\ndef SELF.ReducedClause : (forall (forall Nat (app Option.{0} Bool)) (forall (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (app List.{0} (app (app Prod.{0,0} Nat) Bool)))) := (lambda (forall Nat (app Option.{0} Bool)) (lambda (app List.{0} (app (app Prod.{0,0} Nat) Bool)) (app (app (app List.filter.{0} (app (app Prod.{0,0} Nat) Bool)) (lambda (app (app Prod.{0,0} Nat) Bool) (app (app Option.isNone.{0} Bool) (app #2 (app (app (app Prod.fst.{0,0} Nat) Bool) #0))))) #0)))",
+  "canonical_semantics": {
+    "definitions": [
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "CNF"
+        ],
+        "type": "733e2514046449c42d66e7059d7c0a5fb207a617be198f02230a265f24f85a7c",
+        "value": "e0e132cd73ffa4224112378769e93f55a164ec13f6dcdb1a2c576d8f5761434a"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "CNFValue"
+        ],
+        "type": "0465d6a2a41cc639dac6bac4583ba97fcf1d92ccdce15728f08b838ca5c0bb20",
+        "value": "466b7d6e7d73c4fd494327f41da3cf8f3e83be2fb15303ceb0c6f34a1a842b45"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "CNFVars"
+        ],
+        "type": "ebadb5719308a6ccd3b48dc811098a73525ea01692e94e82af138d14b2ea87d8",
+        "value": "1583fd7bd6aa513181e5716dcf26921871a22bb781dc90bc985f7a8773958bc5"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "ExtendedAssignment"
+        ],
+        "type": "831e867e528de6009ef5cff7cce26a66726664f00cc97e5cd3b597031d11e48e",
+        "value": "5b533a7cbf8d982cf27cb9f253f0670005c22bb4070e5e64a756f01d846a3bd3"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "ExtendsPartial"
+        ],
+        "type": "e4874732c56a40b8a5bd880edff01c9900aefe17e31a481a51a85927ced0b7fa",
+        "value": "5cbb51c9cd91836b0b11e5477ca99e288dd119780d04795fd07d71a737202d20"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "RestrictedCNF"
+        ],
+        "type": "7c6e8dab6d7923e36afdc47472df69209d6f6c620d0b015bcd5c9d2dbd68a748",
+        "value": "74c5f2be77bac36e81b364a5952adf084b0217d29cb0d315c2c4e07e28e8d74e"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "ReducedClause"
+        ],
+        "type": "22f8da055d1556433d69464ca669c4cdcd01653e91e382114f1294ac1a5ef00f",
+        "value": "84ed29e5d82647c9c38e54c37401989654a3bf53e252cdb18be61de3b28e99a5"
+      }
+    ],
+    "levelParams": [],
+    "type": "ffd31409dff0c6719cbca75087a541bf036bfc77673022a61a0f3e4725700d86",
+    "version": 1
+  },
+  "theorem": "B_35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a.result",
+  "axioms": [
+    "Quot.sound",
+    "propext"
+  ],
+  "declaration_axioms": {
+    "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result": [
+      "Quot.sound",
+      "propext"
+    ],
+    "B_35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a.result": [
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "sorry": false,
+  "proof_body_uses": [
+    "pr-7-672f1fa46a61-0d05d194a602"
+  ],
+  "verified_dependencies": [
+    {
+      "id": "pr-7-672f1fa46a61-0d05d194a602",
+      "artifact_hash": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00",
+      "proof_body_use": true,
+      "constant": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result"
+    }
+  ],
+  "dependency_bundle_hashes": {
+    "pr-7-672f1fa46a61-0d05d194a602": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+  },
+  "dependency_artifact_hashes": {
+    "pr-7-672f1fa46a61-0d05d194a602": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+  },
+  "dependency_theorems": {
+    "pr-7-672f1fa46a61-0d05d194a602": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result"
+  },
+  "definition_closure_hash": "a119b908161b82b08aac13e48f164856f47ccdf75d601c8a5168ebe8a8e8c02e",
+  "full_kernel": {
+    "version": 1,
+    "lean_commit": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+    "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+    "export_hash": "34e942fbdedd98e71552c9807f4d7bda0a4c21adb3765780c101f50ec095104b",
+    "baseline_hash": "23cb23108abe0b6348994741dd99475fea1df801db6bfbeed20c37d206b585f5",
+    "checker_set": [
+      "leanchecker",
+      "leanchecker-paranoid",
+      "lean4lean",
+      "nanoda",
+      "con-leche",
+      "con-ron"
+    ]
+  },
+  "log": "",
+  "legacy_adapters": {
+    "35d59f911bb387ef910ecc2eeb9f6500430ff1c9f6a458f406be00bcd1f5e23a": {
+      "version": 1,
+      "original_proof_hash": "cb4187984203ef6afca25ece24c529259587d6e13123dd35b4347da096ca5629",
+      "compiled_proof_hash": "62a556b26b111f86a07bcfd96505a55b318b07b34343e5840bc058352f5a4e7a",
+      "reason": "Historical CNF restriction proof: explicitly prove mapped-list length with List.length_map and simplify id after Lean 4.36 changed default simplification. Definitions, theorem statement, dependencies and original artifact identity remain exact.",
+      "manifest_hash": "5e2a0cc959ff42027656800bfe35bcf23f87100128a718e9ccdcd7068f40e216"
+    }
+  },
+  "reuse_limit": "Direct references after bounded beta/zeta/constructor-projection reduction; not necessity, novelty, independence or allocation.",
+  "commit_binding": "Trusted caller resolves immutable accepted records and exact Git commits; checker binds identifiers and bytes."
+}

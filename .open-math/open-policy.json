@@ -1,14 +1,20 @@
 {
-  "version": 5,
+  "version": 6,
   "problem": "p-vs-np",
   "repository": "MuncleUscles/p-vs-np",
   "branch": "research",
   "objective": "Resolve P versus NP; useful work toward either outcome is welcome. Contributors choose intermediate questions and research directions.",
-  "toolchain": "lean4:4.19.0",
+  "toolchain": "lean4:4.36.0",
   "allowed_axioms": [
     "propext",
+    "Classical.choice",
     "Quot.sound"
   ],
   "admission": "open",
-  "notes": "Research notes are reviewed arguments, not kernel-verified results. Evidence must support the scope actually claimed."
+  "notes": "Open-ended Lean and pinned Mathlib proofs are checked as serialized terms against independent kernels and trusted library definitions. Research notes are reviewed arguments. Verification establishes the exact submitted statement, not significance or a resolution of P versus NP.",
+  "mathlib": {
+    "repository": "leanprover-community/mathlib4",
+    "commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842"
+  },
+  "checker": "serialized-kernels-v1"
 }

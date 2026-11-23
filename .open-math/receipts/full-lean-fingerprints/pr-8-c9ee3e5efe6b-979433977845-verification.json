@@ -1,0 +1,108 @@
+{
+  "result": "pass",
+  "mode": "isolated",
+  "verified": true,
+  "production_verified": true,
+  "verification": "verified",
+  "checker": "open-mathematics-v5",
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "head": "c9ee3e5efe6bcb72a4d0bbecb1f4b6674676d22e",
+  "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+  "protocol_commit": "abbf15ce23fca94e57db581d497f24a8bd1560b2",
+  "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+  "toolchain": "lean4:4.36.0",
+  "image": "sha256:ad0f81a002e3940ebb803c6ae6a88438d32682f571eaed705965f9c179bdc249",
+  "bundle_hash": "ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6",
+  "artifact_hash": "ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6",
+  "assembly_hash": "d064504913793aed6ef576817bfe55a77c35da831697528ee8e17e4d52a350d8",
+  "proof_hash": "21b66ccd365fd4a351383a694e980714434608c764a8d0e70989bedc99ff4e41",
+  "statement_hash": "bfb21f6ecfefade7e3742b47c0fbc6980adc1ac67813ef633a25ea7c58d24a52",
+  "proposition_hash": "008d38d6c33e249c6d1f1a87e081f7496c878d04bdbb8f5b731ee81503ff5a9b",
+  "formal_statement": "theorem : (forall SELF.CNF (app (app Iff (app SELF.Satisfiable #0)) (app (app Exists.{(succ 0)} (forall Nat Bool)) (lambda (forall Nat Bool) (app (app And (app (app (app Eq.{(succ 0)} Bool) (app (app B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF #0) #1)) Bool.true)) (forall Nat (forall (app Not (app (app (app (app (app Membership.mem.{0,0} Nat) (app List.{0} Nat)) (app List.instMembership.{0} Nat)) (app B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars #2)) #0)) (app (app (app Eq.{(succ 0)} Bool) (app #2 #1)) Bool.false))))))))\ndef SELF.CNF : (Sort (succ 0)) := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF\ndef SELF.Satisfiable : (forall SELF.CNF (Sort 0)) := (lambda SELF.CNF (app (app Exists.{(succ 0)} (forall Nat Bool)) (lambda (forall Nat Bool) (app (app (app Eq.{(succ 0)} Bool) (app (app B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF #0) #1)) Bool.true))))",
+  "canonical_semantics": {
+    "definitions": [
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "CNF"
+        ],
+        "type": "733e2514046449c42d66e7059d7c0a5fb207a617be198f02230a265f24f85a7c",
+        "value": "e0e132cd73ffa4224112378769e93f55a164ec13f6dcdb1a2c576d8f5761434a"
+      },
+      {
+        "kind": "def",
+        "levelParams": [],
+        "name": [
+          "SELF",
+          "Satisfiable"
+        ],
+        "type": "f08139118ee47c40e86be7b018886877d787fd5ccba321bbf53582556ac3e658",
+        "value": "16d87f38e89961c9fcfda6ff57ea65d99753cbbdaf4bcc982026f35cbfa87371"
+      }
+    ],
+    "levelParams": [],
+    "type": "1489dacc93fec5b998e9da50aec9f084628269f7b851b3d4735b9cb55265b7b6",
+    "version": 1
+  },
+  "theorem": "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.result",
+  "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "declaration_axioms": {
+    "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result": [
+      "Quot.sound",
+      "propext"
+    ],
+    "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.result": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "sorry": false,
+  "proof_body_uses": [
+    "pr-7-672f1fa46a61-0d05d194a602"
+  ],
+  "verified_dependencies": [
+    {
+      "id": "pr-7-672f1fa46a61-0d05d194a602",
+      "artifact_hash": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00",
+      "proof_body_use": true,
+      "constant": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result"
+    }
+  ],
+  "dependency_bundle_hashes": {
+    "pr-7-672f1fa46a61-0d05d194a602": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+  },
+  "dependency_artifact_hashes": {
+    "pr-7-672f1fa46a61-0d05d194a602": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+  },
+  "dependency_theorems": {
+    "pr-7-672f1fa46a61-0d05d194a602": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result"
+  },
+  "definition_closure_hash": "b8fbb8fe6ab47593c0b529a5a50560b4809a77f8813fc46c4c4b8ad838fdbed7",
+  "full_kernel": {
+    "version": 1,
+    "lean_commit": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+    "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+    "export_hash": "c55d4714961f12350b58427240c32a22fa5e63a53aaddf4e845cc4ef44c9ecf3",
+    "baseline_hash": "fc90260f1c10291295adfa96729a85ee37937a67dcef54d2d754602d92ea03ea",
+    "checker_set": [
+      "leanchecker",
+      "leanchecker-paranoid",
+      "lean4lean",
+      "nanoda",
+      "con-leche",
+      "con-ron"
+    ]
+  },
+  "log": "",
+  "legacy_adapters": {},
+  "reuse_limit": "Direct references after bounded beta/zeta/constructor-projection reduction; not necessity, novelty, independence or allocation.",
+  "commit_binding": "Trusted caller resolves immutable accepted records and exact Git commits; checker binds identifiers and bytes."
+}
