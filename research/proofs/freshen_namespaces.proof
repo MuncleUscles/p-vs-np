@@ -1,0 +1,14 @@
+by
+  have image (r : Nat → Nat) (f : CNF) (n : Nat)
+      (h : n ∈ cnfVars (renameCNF r f)) : ∃ k : Nat, r k = n := by
+    obtain ⟨c, hc, hn⟩ := List.mem_flatMap.mp h
+    obtain ⟨d, hd, rfl⟩ := List.mem_map.mp hc
+    obtain ⟨l, hl, hn⟩ := List.mem_map.mp hn
+    obtain ⟨k, hk, rfl⟩ := List.mem_map.mp hl
+    exact ⟨k.1, hn⟩
+  intro f g n hl hr
+  obtain ⟨k, hk⟩ := image leftVar f n hl
+  obtain ⟨m, hm⟩ := image rightVar g n hr
+  simp [leftVar] at hk
+  simp [rightVar] at hm
+  omega

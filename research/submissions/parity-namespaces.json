@@ -1,0 +1,55 @@
+{
+  "schema_version": 2,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Parity-disjoint variable namespaces for arbitrary CNF components",
+  "claim": "For every pair of CNFs f and g, renaming every variable in f by leftVar n = 2*n and every variable in g by rightVar n = 2*n+1 produces disjoint variable sets, under the exact enrolled list-based CNF definitions. The proof extracts a preimage from each renamed variable occurrence and derives a contradiction between its even and odd representations.",
+  "novelty": "A newly written 516-byte Lean proof expression integrating an elementary, established parity fact with this repository's exact CNF definitions. This is formalization and integration, not new mathematical discovery or a first-formalization claim. It proves disjointness only; earlier credited renaming and satisfiability-preservation results are not claimed again. This is a disclosed project-agent pilot submission, not independent outside research.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/MuncleUscles/open-mathematics/pull/1",
+      "relationship": "Prior credited renaming foundation. This submission neither imports its proof nor requests its credit again; it proves only even/odd namespace disjointness."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/open-mathematics/pull/5",
+      "relationship": "Prior credited renaming-satisfiability result. Satisfiability preservation is outside this submission's claim and no dependency award is requested."
+    }
+  ],
+  "evidence": {
+    "policy": "pnp-cnf-foundations-v1",
+    "goal": "freshen_namespaces",
+    "proof_path": "research/proofs/freshen_namespaces.proof",
+    "reproduce": "Run the trusted problem-agent check on this record, then the isolated verify_problem.py checker with policy 8049d47f9e93c89d0941865c2e5c8615b4d76da7b6cbb4c272e595f28f4674e2 and goal freshen_namespaces. CI independently compiles against the pinned definitions using Lean 4.19.0, kernel trust zero and restricted axioms. Local diagnostics used synthetic commits and are not production evidence."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x24cE571092c1Cb9921E3c1de72a5E4597f606799",
+    "contributions": "Produced by the project's Codex agent under Edgars's explicit request for a real pilot contribution, with a mathematics subagent writing and locally checking this proof. The same project prepared the problem pack and verifier. This wallet is a dedicated pilot identity controlled in the same project context, not an independent human or outside researcher. No private key is disclosed."
+  },
+  "limitations": "Proves only parity namespace disjointness, including empty and duplicate-bearing CNF lists. It establishes no new complexity result, satisfiability theorem, runtime bound or P-versus-NP resolution. CNF restriction was not solved or edited. No credited artifact is imported, so dependencies are empty. Local Lean checks do not authorize merging or points; the independent verifier and GenLayer adjudication must complete.",
+  "research_direction": "shared",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+        "title": "Lean 4.19.0 Core List membership lemmas",
+        "authors": [
+          "Lean contributors"
+        ],
+        "relationship": "Uses the public List.mem_flatMap and List.mem_map lemmas to extract witnesses from the renamed CNF's variable list; Core omega discharges the elementary parity contradiction.",
+        "priority_evidence": "The pinned Lean v4.19.0 release contains these established library lemmas. No claim of discovering parity or being its first formalizer is made."
+      },
+      {
+        "reference": "https://github.com/MuncleUscles/p-vs-np/blob/2835b70ede542e2a838e355129344459d52eac08/lean/Definitions.lean",
+        "title": "Pinned Open Mathematics CNF definitions",
+        "authors": [
+          "Open Mathematics project agents"
+        ],
+        "relationship": "Defines the exact CNF lists, variable extraction, renaming, parity functions and disjointness predicate against which the proof is checked. These definitions were produced by this same project before the proof submission.",
+        "priority_evidence": "Public immutable problem source commit 2835b70ede542e2a838e355129344459d52eac08 predates this contribution. The project-authored target is disclosed; enrollment is not a proof or a merit award."
+      }
+    ],
+    "discovery_basis": "No discovery claim. A repository-specific proof was written from the reviewed definitions and known Core library lemmas. This submission makes no exhaustive literature-search or independent-research claim."
+  }
+}
