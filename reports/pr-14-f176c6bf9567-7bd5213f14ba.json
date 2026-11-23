@@ -51383,7 +51383,7 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0xfc083d7cff8359682edd274d2fca0bcf8d2f7554433169d69786b1f39d40750d527c074837c5e74e7ac31669ed998ab047c098a3106c08fc3b352664e567f9391b"
   },
-  "updatedAt": "2026-11-23T16:50:54.102Z",
+  "updatedAt": "2026-11-23T16:50:59.624Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45218787676",
   "record": {
     "adjudication_finished_round": 0,
@@ -51517,5 +51517,23 @@
     "round": 0,
     "source_digest": "b83b9bac95b5d1cfcd957806198805cc99e2eb27830dc789dc2281f3f3c7f268",
     "status": "settled"
-  }
+  },
+  "points": {
+    "impact_points": "0",
+    "initial_points": "400",
+    "mode": "contribution points on this Intelligent Contract",
+    "note_points": "0",
+    "points": "400",
+    "problem": "p-vs-np",
+    "returned_points": "80",
+    "total_award_budgets": "800",
+    "total_awarded": "800",
+    "total_impact_points": "0",
+    "total_initial_points": "800",
+    "total_note_points": "0",
+    "total_reserved_points": "0",
+    "total_returned_points": "160",
+    "transferable": false
+  },
+  "completedAt": "2026-11-23T16:50:59.624Z"
 }
