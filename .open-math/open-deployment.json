@@ -6,7 +6,7 @@
   "chainId": 61999,
   "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
   "codeHash": "5960faa03c81106ec306cebcc269b489711d16bfd619e84c31116467523dbf94",
-  "protocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+  "protocolCommit": "4ccd7853753cf7d367e4c758b274ed5e1be655dd",
   "deploymentTx": "0xc7cab2fbcbc58caff3463c575465b49e08b3ea2fab5e7e688b46738019b9e5e4",
   "deployedAt": "2026-11-23T13:01:57.146Z",
   "origin": "https://muncleuscles.github.io",
@@ -46,5 +46,12 @@
   "mode": "live-native-open-research-v5",
   "review": "https://github.com/MuncleUscles/open-mathematics/pull/21",
   "evidence": "https://github.com/MuncleUscles/p-vs-np/tree/evidence",
-  "scope": "This deployment record confirms the source and native configuration. Individual submission outcomes are established by finalized native records and public evidence reports."
+  "scope": "This deployment record confirms the source and native configuration. Individual submission outcomes are established by finalized native records and public evidence reports.",
+  "deploymentProtocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+  "runtimeUpgrade": {
+    "reason": "Immutable-blob recovery for large evidence reports and a dated finalized-native dashboard snapshot fallback.",
+    "previousProtocolCommit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+    "contractSourceUnchanged": true,
+    "review": "https://github.com/MuncleUscles/open-mathematics/pull/23"
+  }
 }

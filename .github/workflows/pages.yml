@@ -3,6 +3,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  workflow_run:
+    workflows: [Open research adjudication]
+    types: [completed]
+    branches: [main]
 permissions:
   contents: read
   pages: write
@@ -12,7 +16,11 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.head_branch == 'main' &&
+      github.event.workflow_run.head_repository.full_name == github.repository))
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     defaults:
@@ -32,7 +40,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/open-mathematics
-          ref: 0ab8a70f1321113f045f0226c44b7fa0db883528
+          ref: 4ccd7853753cf7d367e4c758b274ed5e1be655dd
           path: protocol
           persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
@@ -41,7 +49,8 @@ jobs:
           cache: npm
           cache-dependency-path: protocol/package-lock.json
       - run: npm ci --ignore-scripts
-      - run: node scripts/build-open-site.mjs ../problem ../site
+      - name: Build dashboard with a dated finalized-native snapshot
+        run: node scripts/build-open-site.mjs ../problem ../site --snapshot
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         with:
