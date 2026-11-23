@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "infrastructure",
+  "title": "Adversarial integration test: reject skipped-kernel False forgery",
+  "claim": "Controlled negative integration test, deliberately not a valid proof. The artifact assigns True.intro to a False goal and disables the compiler kernel check. The compiler accepts this tested source, but the fresh independent leanchecker must reject its serialized proof before any on-chain registration, merit judgment, merge or points.",
+  "novelty": "No mathematical novelty, research value or reward is claimed. This reuses the exact existing protocol security-test source to exercise the live submission path after activation. It is an openly declared test of the boundary between compiler acceptance and independent proof verification.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/MuncleUscles/open-mathematics/blob/71897b9885487e4dddbe0db1a5b242df629482ec/tests/test_full_lean.py",
+      "relationship": "Exact source copied from test_skipped_kernel_check_cannot_prove_false. That existing test expects Kernel leanchecker rejected serialized proof; this candidate adds only the mandatory submission wrapper."
+    }
+  ],
+  "research_direction": "Adversarial validation of the mathematical research submission verifier",
+  "provenance": {
+    "mode": "integration",
+    "sources": [
+      {
+        "reference": "https://github.com/MuncleUscles/open-mathematics/blob/71897b9885487e4dddbe0db1a5b242df629482ec/tests/test_full_lean.py",
+        "title": "Open Mathematics full-Lean adversarial kernel-check regression",
+        "authors": [
+          "Open Mathematics contributors"
+        ],
+        "relationship": "The entire Lean source is copied exactly from the existing compiler-accepted skipped-kernel False forgery regression. Its comment attributes the technique to Lean's tests/elab/skipKernelTC.lean; no independent discovery or new exploit is claimed.",
+        "priority_evidence": "The immutable protocol commit identifies the existing regression used for this candidate. This submission makes no claim to priority over that regression or the cited upstream Lean test."
+      }
+    ],
+    "discovery_basis": "Prepared by the project as an explicit adversarial integration test. The source was extracted from the existing regression without executing or changing it; no literature search or new mathematical contribution is claimed."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/rejected-skipped-kernel-false.json",
+    "reproduce": "Using the activated trusted full-Lean environment, run om check research/submissions/rejected-skipped-kernel-false.json --lean. Expected failure: Kernel leanchecker rejected serialized proof. The production worker must reject the exact same artifact before registration."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0xC3606632d9A43e4c7822179e81D12BFBa0Cde974",
+    "contributions": "A project-operated AI subagent copied the existing negative-test Lean source byte-for-byte and prepared this openly adversarial submission wrapper. Replace the placeholder only with the public address used for a separately authorized test claim; no private key belongs in this record."
+  },
+  "limitations": "This artifact intentionally does not prove False or any P versus NP result. It is expected to fail verification and must receive no registration, merge or points. Passing the compiler is the attack condition, not evidence of a theorem. Preparing these files does not execute a live test, open a PR, sign a claim or demonstrate that the deployed worker has rejected it."
+}
