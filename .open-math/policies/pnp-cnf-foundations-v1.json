@@ -1,0 +1,87 @@
+{
+  "version": 4,
+  "name": "pnp-cnf-foundations-v1",
+  "problem": "p-vs-np",
+  "repository": "MuncleUscles/p-vs-np",
+  "branch": "research",
+  "toolchain": "lean4:4.19.0",
+  "allowed_axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "files": {
+    "Definitions.lean": "65043983bd3c63033d2e626a434a30a26975d08fd5ae2e64b1c21e7b766c795b",
+    "goals/disjoint_sat.lean": "f38209f809e351a378d51b22a4c764e6db7c1a4f737fa0c736d5b9309156bee3",
+    "goals/freshen_namespaces.lean": "0d616f141d318f89c4f5561eb7103453ded977f7e0eff792d6ffdb8c4f44a2e7",
+    "goals/clause_restriction.lean": "99a9e1c44defb99cc9beddc03d26a7cc2f6838af1df4adb5e8904d314a4ef0fa",
+    "goals/cnf_restriction.lean": "2f571abf854aba2ce2c1accc34b6375e87044e1a730c06f22f27ea69c2af5371",
+    "goals/unit_propagation.lean": "e775659a1e8ee68c2386f8bd1381b9a61519668f2752d5a509087a6e5633d71a"
+  },
+  "goals": {
+    "disjoint_sat": {
+      "path": "research/proofs/disjoint_sat.proof",
+      "theorem": "candidate : DisjointSAT",
+      "statement": "def DisjointSAT : Prop := ∀ (f g : CNF), DisjointCNFVars f g →\n  (Satisfiable (List.append f g) ↔ Satisfiable f ∧ Satisfiable g)",
+      "statement_hash": "19bef13b0936474f298c451bfd2cf3808eaec0621d7af7efa4ca4dc10166fa23",
+      "goal_hash": "7f0113ed2a081250cfe99dd8cb5a72c945e564e1fea41f938f1366301ee28af1",
+      "definition_files": [
+        "Definitions.lean",
+        "goals/disjoint_sat.lean"
+      ],
+      "dependency": null,
+      "rewardable": false
+    },
+    "freshen_namespaces": {
+      "path": "research/proofs/freshen_namespaces.proof",
+      "theorem": "candidate : FreshenNamespaces",
+      "statement": "def FreshenNamespaces : Prop := ∀ (f g : CNF),\n  DisjointCNFVars (renameCNF leftVar f) (renameCNF rightVar g)",
+      "statement_hash": "b45cc5bc9e11720ae19ee1717dcb68bdaf67cbc96b35faa404626086c296652e",
+      "goal_hash": "d52297e2452e8d94693f893ed7108c84108c429735fe08e3b9dd382a5012fc41",
+      "definition_files": [
+        "Definitions.lean",
+        "goals/freshen_namespaces.lean"
+      ],
+      "dependency": null,
+      "rewardable": true
+    },
+    "clause_restriction": {
+      "path": "research/proofs/clause_restriction.proof",
+      "theorem": "candidate : ClauseRestriction",
+      "statement": "def ClauseRestriction : Prop := ∀ (a : Nat → Bool) (x : Nat) (b : Bool) (c : Clause),\n  evalRestrictedClause a (restrictClause x b c) = evalClause (assignVar a x b) c",
+      "statement_hash": "5a833baf6d77d47775e7a7f067f73411a01be1ede0ca69bad8853f1f031bb9de",
+      "goal_hash": "86ee67e7900b50cdfcbb78cfd334d3b694212170622dbfa5ed63919f8f1dcd39",
+      "definition_files": [
+        "Definitions.lean",
+        "goals/clause_restriction.lean"
+      ],
+      "dependency": null,
+      "rewardable": false
+    },
+    "cnf_restriction": {
+      "path": "research/proofs/cnf_restriction.proof",
+      "theorem": "candidate : CNFRestriction",
+      "statement": "def CNFRestriction : Prop := ∀ (a : Nat → Bool) (x : Nat) (b : Bool) (f : CNF),\n  evalCNF a (restrictCNF x b f) = evalCNF (assignVar a x b) f",
+      "statement_hash": "60bf7fb03e8b922eb5c7dec20683bf885b47dc67f2511fc900d67941786a1088",
+      "goal_hash": "c80fd07873f9c81d5dab3dcd42f6bcd53130d10a5d7172bf3285057ac0913d4e",
+      "definition_files": [
+        "Definitions.lean",
+        "goals/cnf_restriction.lean"
+      ],
+      "dependency": null,
+      "rewardable": true
+    },
+    "unit_propagation": {
+      "path": "research/proofs/unit_propagation.proof",
+      "theorem": "candidate : UnitPropagation",
+      "statement": "def UnitPropagation : Prop := ∀ (x : Nat) (b : Bool) (f : CNF),\n  List.Mem [(x, b)] f → (Satisfiable (restrictCNF x b f) ↔ Satisfiable f)",
+      "statement_hash": "3c24573288d7f5b1edfedac1aee02f9d190687db5b33944826b4b721678a47de",
+      "goal_hash": "9981183d96e164a33afd05c7859a7f6544b9b16c9e7aaa7ceade455040614325",
+      "definition_files": [
+        "Definitions.lean",
+        "goals/unit_propagation.lean"
+      ],
+      "dependency": null,
+      "rewardable": false
+    }
+  }
+}

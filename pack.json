@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "id": "pnp-cnf-foundations-v1",
+  "title": "P vs NP · CNF foundations",
+  "activation": "draft-unenrolled",
+  "problem": {
+    "id": "p-vs-np",
+    "title": "P versus NP",
+    "completeTargetEnrolled": false
+  },
+  "scope": "Known CNF/SAT infrastructure formalization. No P-versus-NP theorem, solved percentage, solver performance or financial value claim.",
+  "toolchain": "leanprover/lean4:v4.19.0",
+  "mathlib": null,
+  "allowedAxioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "definitions": {
+    "path": "lean/Definitions.lean",
+    "sha256": "65043983bd3c63033d2e626a434a30a26975d08fd5ae2e64b1c21e7b766c795b"
+  },
+  "boundaries": {
+    "path": "lean/BoundaryChecks.lean",
+    "sha256": "fd64655b980d963151d39a662329cd6ba740bb7bf9872726e4d7e3bf05e92719",
+    "theorems": [
+      "empty_cnf_sat",
+      "empty_clause_unsat",
+      "positive_unit_sat",
+      "negative_unit_sat",
+      "opposite_units_unsat",
+      "overlapping_variables",
+      "overlap_can_be_sat",
+      "freshening_shapes",
+      "freshened_conflict_is_sat",
+      "freshened_empty_clause_unsat",
+      "different_variables_sat",
+      "collapsed_variables_unsat",
+      "satisfied_clause_removed",
+      "falsified_clause_retained",
+      "empty_clause_retained",
+      "absent_variable_unchanged",
+      "mixed_clause_restricted",
+      "tautological_clause_removed",
+      "option_semantics",
+      "assignment_override",
+      "cnf_restriction_keeps_conflict",
+      "cnf_restriction_example",
+      "restriction_of_empty_cnf",
+      "restriction_of_empty_clause",
+      "unit_condition_present",
+      "unit_condition_not_automatic",
+      "forced_wrong_value_unsat",
+      "one_step_is_not_fixpoint"
+    ]
+  },
+  "trustedFiles": {
+    "lean/Definitions.lean": "65043983bd3c63033d2e626a434a30a26975d08fd5ae2e64b1c21e7b766c795b",
+    "lean/BoundaryChecks.lean": "fd64655b980d963151d39a662329cd6ba740bb7bf9872726e4d7e3bf05e92719",
+    "lean/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "reference/disjoint_sat.proof": "a272dc74160b5ddc82cce907030a9c9f49dfe6827c01d3933b6e9618070edcc3",
+    "goals/disjoint_sat/Statement.lean": "f38209f809e351a378d51b22a4c764e6db7c1a4f737fa0c736d5b9309156bee3",
+    "goals/freshen_namespaces/Statement.lean": "0d616f141d318f89c4f5561eb7103453ded977f7e0eff792d6ffdb8c4f44a2e7",
+    "goals/clause_restriction/Statement.lean": "99a9e1c44defb99cc9beddc03d26a7cc2f6838af1df4adb5e8904d314a4ef0fa",
+    "goals/cnf_restriction/Statement.lean": "2f571abf854aba2ce2c1accc34b6375e87044e1a730c06f22f27ea69c2af5371",
+    "goals/unit_propagation/Statement.lean": "e775659a1e8ee68c2386f8bd1381b9a61519668f2752d5a509087a6e5633d71a"
+  },
+  "rewardNotice": "The rewardable flag denotes proposed eligibility only. No goal is activated by this file; no budget, reward amount, wallet or mint is configured. A separately reviewed protocol deployment and native enrollment are required.",
+  "goals": [
+    {
+      "id": "disjoint_sat",
+      "title": "Compose CNFs with disjoint variables",
+      "status": "reference-only",
+      "rewardable": false,
+      "declaration": "candidate : DisjointSAT",
+      "statementPath": "goals/disjoint_sat/Statement.lean",
+      "statementSha256": "f38209f809e351a378d51b22a4c764e6db7c1a4f737fa0c736d5b9309156bee3",
+      "statementDisplay": "def DisjointSAT : Prop := ∀ (f g : CNF), DisjointCNFVars f g →\n  (Satisfiable (List.append f g) ↔ Satisfiable f ∧ Satisfiable g)",
+      "proofPath": "research/proofs/disjoint_sat.proof",
+      "dependencies": [],
+      "suggestedDependencies": [],
+      "suggestedDependenciesMeaning": "Reading relationships only; no imported proof, required dependency or point allocation.",
+      "referenceProof": "reference/disjoint_sat.proof",
+      "description": "Disjoint variable sets let two independently satisfiable CNFs share one combined assignment.",
+      "priorArt": [
+        "biere-sinz-2006",
+        "repository-disjoint-reference"
+      ],
+      "limits": "This exact reference proof is publicly disclosed; validation/integration only, no independent discovery or automatic credit."
+    },
+    {
+      "id": "freshen_namespaces",
+      "title": "Freshen components into disjoint namespaces",
+      "status": "proposed-open",
+      "rewardable": true,
+      "declaration": "candidate : FreshenNamespaces",
+      "statementPath": "goals/freshen_namespaces/Statement.lean",
+      "statementSha256": "0d616f141d318f89c4f5561eb7103453ded977f7e0eff792d6ffdb8c4f44a2e7",
+      "statementDisplay": "def FreshenNamespaces : Prop := ∀ (f g : CNF),\n  DisjointCNFVars (renameCNF leftVar f) (renameCNF rightVar g)",
+      "proofPath": "research/proofs/freshen_namespaces.proof",
+      "dependencies": [],
+      "suggestedDependencies": [
+        "disjoint_sat"
+      ],
+      "suggestedDependenciesMeaning": "Reading relationships only; no imported proof, required dependency or point allocation.",
+      "referenceProof": null,
+      "description": "Prove the even-variable namespace and odd-variable namespace are disjoint for all CNF components.",
+      "priorArt": [
+        "repository-cnf-foundations",
+        "legacy-renaming-credit",
+        "legacy-renaming-sat-credit"
+      ],
+      "limits": "Disjointness extension only. Previously credited renaming/equisatisfiability facts are excluded from reward; no runtime bound or new reduction."
+    },
+    {
+      "id": "clause_restriction",
+      "title": "Verify one-variable clause restriction",
+      "status": "supporting-only",
+      "rewardable": false,
+      "declaration": "candidate : ClauseRestriction",
+      "statementPath": "goals/clause_restriction/Statement.lean",
+      "statementSha256": "99a9e1c44defb99cc9beddc03d26a7cc2f6838af1df4adb5e8904d314a4ef0fa",
+      "statementDisplay": "def ClauseRestriction : Prop := ∀ (a : Nat → Bool) (x : Nat) (b : Bool) (c : Clause),\n  evalRestrictedClause a (restrictClause x b c) = evalClause (assignVar a x b) c",
+      "proofPath": "research/proofs/clause_restriction.proof",
+      "dependencies": [],
+      "suggestedDependencies": [],
+      "suggestedDependenciesMeaning": "Reading relationships only; no imported proof, required dependency or point allocation.",
+      "referenceProof": null,
+      "description": "Prove exact Boolean evaluation after removing falsified literals or recognizing a satisfied clause.",
+      "priorArt": [
+        "lamr-restriction"
+      ],
+      "limits": "Nonrewardable supporting milestone inside cnf_restriction; its singleton-CNF converse means a separate award would duplicate essentially the same result."
+    },
+    {
+      "id": "cnf_restriction",
+      "title": "Lift restriction correctness to CNFs",
+      "status": "proposed-open",
+      "rewardable": true,
+      "declaration": "candidate : CNFRestriction",
+      "statementPath": "goals/cnf_restriction/Statement.lean",
+      "statementSha256": "2f571abf854aba2ce2c1accc34b6375e87044e1a730c06f22f27ea69c2af5371",
+      "statementDisplay": "def CNFRestriction : Prop := ∀ (a : Nat → Bool) (x : Nat) (b : Bool) (f : CNF),\n  evalCNF a (restrictCNF x b f) = evalCNF (assignVar a x b) f",
+      "proofPath": "research/proofs/cnf_restriction.proof",
+      "dependencies": [],
+      "suggestedDependencies": [
+        "clause_restriction"
+      ],
+      "suggestedDependenciesMeaning": "Reading relationships only; no imported proof, required dependency or point allocation.",
+      "referenceProof": null,
+      "description": "Prove evaluation of the restricted CNF equals original evaluation with the chosen variable overridden.",
+      "priorArt": [
+        "lamr-restriction"
+      ],
+      "limits": "Known semantic infrastructure; no SAT solver completeness or complexity claim."
+    },
+    {
+      "id": "unit_propagation",
+      "title": "Preserve satisfiability for one forced unit step",
+      "status": "deferred",
+      "rewardable": false,
+      "declaration": "candidate : UnitPropagation",
+      "statementPath": "goals/unit_propagation/Statement.lean",
+      "statementSha256": "e775659a1e8ee68c2386f8bd1381b9a61519668f2752d5a509087a6e5633d71a",
+      "statementDisplay": "def UnitPropagation : Prop := ∀ (x : Nat) (b : Bool) (f : CNF),\n  List.Mem [(x, b)] f → (Satisfiable (restrictCNF x b f) ↔ Satisfiable f)",
+      "proofPath": "research/proofs/unit_propagation.proof",
+      "dependencies": [],
+      "suggestedDependencies": [
+        "cnf_restriction"
+      ],
+      "suggestedDependenciesMeaning": "Reading relationships only; no imported proof, required dependency or point allocation.",
+      "referenceProof": null,
+      "description": "When the exact unit clause is a member of the formula, prove that assigning its literal and restricting preserves satisfiability.",
+      "priorArt": [
+        "lamr-restriction"
+      ],
+      "limits": "Deferred until verified dependency attribution is supported. One step only; not iteration, a DPLL solver or a complexity result."
+    }
+  ],
+  "priorArt": {
+    "biere-sinz-2006": {
+      "title": "Decomposing SAT Problems into Connected Components",
+      "authors": [
+        "Armin Biere",
+        "Carsten Sinz"
+      ],
+      "year": 2006,
+      "reference": "https://cca.informatik.uni-freiburg.de/papers/BiereSinz-JSAT06.pdf",
+      "relationship": "Known disjoint-component SAT equivalence; not asserted to be its first formulation."
+    },
+    "lamr-restriction": {
+      "title": "Logic and Mechanized Reasoning, Decision Procedures for Propositional Logic",
+      "reference": "https://avigad.github.io/lamr/decision_procedures_for_propositional_logic.html",
+      "relationship": "Known CNF restriction and unit-propagation semantics; no external implementation is imported."
+    },
+    "repository-cnf-foundations": {
+      "title": "Reviewed Open Mathematics CNF foundations",
+      "reference": "https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/lean/Trusted.lean",
+      "relationship": "Definitions preserved at the start of lean/Definitions.lean; natural variables and Boolean literal signs."
+    },
+    "repository-disjoint-reference": {
+      "title": "Published disjoint-CNF proposal and constructive reference proof",
+      "reference": "https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof",
+      "sha256": "a272dc74160b5ddc82cce907030a9c9f49dfe6827c01d3933b6e9618070edcc3",
+      "relationship": "Exact bytes copied and disclosed as a nonrewardable positive verifier fixture."
+    },
+    "legacy-renaming-credit": {
+      "title": "Previously credited variable-renaming formalization",
+      "reference": "https://github.com/MuncleUscles/open-mathematics/pull/1",
+      "relationship": "Historical credited foundation, not an open reward. This pack retains the old definitions but imports no historical proof."
+    },
+    "legacy-renaming-sat-credit": {
+      "title": "Previously credited renaming satisfiability result",
+      "reference": "https://github.com/MuncleUscles/open-mathematics/pull/5",
+      "relationship": "Historical credited RenamingSAT; its even/odd instances are excluded from the new freshening reward."
+    }
+  }
+}

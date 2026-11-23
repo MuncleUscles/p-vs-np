@@ -1,0 +1,33 @@
+by
+  have transport (f : CNF) (a b : Nat → Bool)
+      (same : ∀ n, n ∈ cnfVars f → a n = b n) :
+      evalCNF a f = true → evalCNF b f = true := by
+    intro ha
+    apply List.all_eq_true.mpr
+    intro c hc
+    obtain ⟨l, hl, hla⟩ := List.any_eq_true.mp ((List.all_eq_true.mp ha) c hc)
+    apply List.any_eq_true.mpr
+    refine ⟨l, hl, ?_⟩
+    have member : l.1 ∈ cnfVars f :=
+      List.mem_flatMap.mpr ⟨c, hc, List.mem_map.mpr ⟨l, hl, rfl⟩⟩
+    simpa [evalLiteral, ← same l.1 member] using hla
+  intro f g disjoint
+  constructor
+  · intro combined
+    obtain ⟨a, ha⟩ := combined
+    have both : evalCNF a f = true ∧ evalCNF a g = true := by
+      simpa [evalCNF, List.all_append] using ha
+    exact ⟨⟨a, both.1⟩, ⟨a, both.2⟩⟩
+  · intro separate
+    obtain ⟨⟨a, ha⟩, ⟨b, hb⟩⟩ := separate
+    let joined : Nat → Bool := fun n => if n ∈ cnfVars f then a n else b n
+    have left : evalCNF joined f = true := transport f a joined (by
+      intro n hn
+      simp [joined, hn]) ha
+    have right : evalCNF joined g = true := transport g b joined (by
+      intro n hn
+      have absent : n ∉ cnfVars f := fun hf => disjoint n hf hn
+      simp [joined, absent]) hb
+    refine ⟨joined, ?_⟩
+    simpa [evalCNF, List.all_append] using And.intro left right
+

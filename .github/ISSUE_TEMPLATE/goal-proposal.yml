@@ -1,0 +1,32 @@
+name: Propose a mathematical goal
+description: Request curator review of exact mathematics; proposals do not enroll rewards.
+title: '[Goal] '
+body:
+  - type: textarea
+    id: statement
+    attributes:
+      label: Exact statement and definitions
+      description: Include quantifiers, assumptions, Lean declaration and definitions.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why this task matters
+      description: Explain what it enables and why it is not a duplicate or artificial split.
+    validations:
+      required: true
+  - type: textarea
+    id: prior_art
+    attributes:
+      label: Prior work, dependencies and attribution
+      description: Cite known mathematics and accepted work; distinguish discovery from formalization.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification and boundary cases
+      description: Specify toolchain, axioms, counterexamples to missing hypotheses and scope limits.
+    validations:
+      required: true

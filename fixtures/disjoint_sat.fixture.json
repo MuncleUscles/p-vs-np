@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "goal": "disjoint_sat",
+  "proofPath": "reference/disjoint_sat.proof",
+  "expected": "formal-valid",
+  "rewardable": false,
+  "disclosure": "Exact already-published reference proof. This is a verifier fixture, never a signed research claim or an earning opportunity."
+}

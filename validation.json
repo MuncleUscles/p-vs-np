@@ -1,0 +1,118 @@
+{
+  "status": "pass",
+  "scope": "Reviewed local definitions, exact goal types, boundary checks and disclosed reference only; not sandbox, native enrollment, reward or proof of the unimplemented general goals.",
+  "packSha256": "72112afa11b229c02a461756049746526201cdaf4393280c5094bee0671078be",
+  "toolchain": "Lean (version 4.19.0, arm64-apple-darwin23.6.0, commit 6caaee842e94, Release)",
+  "kernelTrust": 0,
+  "maxHeartbeats": 100000,
+  "boundaryCount": 28,
+  "boundaries": {
+    "sha256": "2e9a322885e0e751114fe3c275bca262f1a91e9ffc5175d41ba358d098e552e0",
+    "bytes": 7997,
+    "exitCode": 0,
+    "log": "'Boundary.empty_cnf_sat' does not depend on any axioms\n'Boundary.empty_clause_unsat' depends on axioms: [propext]\n'Boundary.positive_unit_sat' does not depend on any axioms\n'Boundary.negative_unit_sat' does not depend on any axioms\n'Boundary.opposite_units_unsat' depends on axioms: [propext]\n'Boundary.overlapping_variables' depends on axioms: [propext]\n'Boundary.overlap_can_be_sat' does not depend on any axioms\n'Boundary.freshening_shapes' does not depend on any axioms\n'Boundary.freshened_conflict_is_sat' does not depend on any axioms\n'Boundary.freshened_empty_clause_unsat' depends on axioms: [propext]\n'Boundary.different_variables_sat' does not depend on any axioms\n'Boundary.collapsed_variables_unsat' depends on axioms: [propext]\n'Boundary.satisfied_clause_removed' does not depend on any axioms\n'Boundary.falsified_clause_retained' does not depend on any axioms\n'Boundary.empty_clause_retained' does not depend on any axioms\n'Boundary.absent_variable_unchanged' does not depend on any axioms\n'Boundary.mixed_clause_restricted' does not depend on any axioms\n'Boundary.tautological_clause_removed' does not depend on any axioms\n'Boundary.option_semantics' does not depend on any axioms\n'Boundary.assignment_override' does not depend on any axioms\n'Boundary.cnf_restriction_keeps_conflict' does not depend on any axioms\n'Boundary.cnf_restriction_example' does not depend on any axioms\n'Boundary.restriction_of_empty_cnf' does not depend on any axioms\n'Boundary.restriction_of_empty_clause' does not depend on any axioms\n'Boundary.unit_condition_present' depends on axioms: [propext]\n'Boundary.unit_condition_not_automatic' depends on axioms: [propext, Quot.sound]\n'Boundary.forced_wrong_value_unsat' depends on axioms: [propext]\n'Boundary.one_step_is_not_fixpoint' does not depend on any axioms\n"
+  },
+  "boundaryAxioms": {
+    "Boundary.empty_cnf_sat": [],
+    "Boundary.empty_clause_unsat": [
+      "propext"
+    ],
+    "Boundary.positive_unit_sat": [],
+    "Boundary.negative_unit_sat": [],
+    "Boundary.opposite_units_unsat": [
+      "propext"
+    ],
+    "Boundary.overlapping_variables": [
+      "propext"
+    ],
+    "Boundary.overlap_can_be_sat": [],
+    "Boundary.freshening_shapes": [],
+    "Boundary.freshened_conflict_is_sat": [],
+    "Boundary.freshened_empty_clause_unsat": [
+      "propext"
+    ],
+    "Boundary.different_variables_sat": [],
+    "Boundary.collapsed_variables_unsat": [
+      "propext"
+    ],
+    "Boundary.satisfied_clause_removed": [],
+    "Boundary.falsified_clause_retained": [],
+    "Boundary.empty_clause_retained": [],
+    "Boundary.absent_variable_unchanged": [],
+    "Boundary.mixed_clause_restricted": [],
+    "Boundary.tautological_clause_removed": [],
+    "Boundary.option_semantics": [],
+    "Boundary.assignment_override": [],
+    "Boundary.cnf_restriction_keeps_conflict": [],
+    "Boundary.cnf_restriction_example": [],
+    "Boundary.restriction_of_empty_cnf": [],
+    "Boundary.restriction_of_empty_clause": [],
+    "Boundary.unit_condition_present": [
+      "propext"
+    ],
+    "Boundary.unit_condition_not_automatic": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Boundary.forced_wrong_value_unsat": [
+      "propext"
+    ],
+    "Boundary.one_step_is_not_fixpoint": []
+  },
+  "reference": {
+    "sha256": "c00d60e3e9c7a82bf6a278897f9b99744d4e95bfdff0e423deec04fde38ee1c1",
+    "bytes": 3606,
+    "exitCode": 0,
+    "log": "'candidate' depends on axioms: [propext, Quot.sound]\n"
+  },
+  "referenceAxioms": {
+    "candidate": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "negativeProofChecks": {
+    "disjoint_sat": {
+      "sha256": "903881c5ff4417b919af12d7bc166f57fee6834181b767bcae5b709bbf505ca3",
+      "bytes": 2245,
+      "exitCode": 1,
+      "log": "Rejected deliberately false proof."
+    },
+    "freshen_namespaces": {
+      "sha256": "64780f79b1ddcc597ccc2824738926af6dd658e0cc101c098dc128408d66ccea",
+      "bytes": 2226,
+      "exitCode": 1,
+      "log": "Rejected deliberately false proof."
+    },
+    "clause_restriction": {
+      "sha256": "c697cc9d6ae6fb1363964bb5c5eb0e894a64299d0f30430168ad1a2e97bb5950",
+      "bytes": 2285,
+      "exitCode": 1,
+      "log": "Rejected deliberately false proof."
+    },
+    "cnf_restriction": {
+      "sha256": "86d97766657b53d8b00cc125dac2397c02eb3f0dfabe5c873b0544f1e92261c3",
+      "bytes": 2257,
+      "exitCode": 1,
+      "log": "Rejected deliberately false proof."
+    },
+    "unit_propagation": {
+      "sha256": "a07e2f77f1731fee83aa2f67b148240c62885f1b2ea06030640b5c3f066a7091",
+      "bytes": 2256,
+      "exitCode": 1,
+      "log": "Rejected deliberately false proof."
+    }
+  },
+  "openGeneralProofsSupplied": 0,
+  "trustedFiles": {
+    "lean/Definitions.lean": "65043983bd3c63033d2e626a434a30a26975d08fd5ae2e64b1c21e7b766c795b",
+    "lean/BoundaryChecks.lean": "fd64655b980d963151d39a662329cd6ba740bb7bf9872726e4d7e3bf05e92719",
+    "lean/lean-toolchain": "55e97be96000b5e9e290c9e74482e5e317861499a5540353ce845471bded8cea",
+    "reference/disjoint_sat.proof": "a272dc74160b5ddc82cce907030a9c9f49dfe6827c01d3933b6e9618070edcc3",
+    "goals/disjoint_sat/Statement.lean": "f38209f809e351a378d51b22a4c764e6db7c1a4f737fa0c736d5b9309156bee3",
+    "goals/freshen_namespaces/Statement.lean": "0d616f141d318f89c4f5561eb7103453ded977f7e0eff792d6ffdb8c4f44a2e7",
+    "goals/clause_restriction/Statement.lean": "99a9e1c44defb99cc9beddc03d26a7cc2f6838af1df4adb5e8904d314a4ef0fa",
+    "goals/cnf_restriction/Statement.lean": "2f571abf854aba2ce2c1accc34b6375e87044e1a730c06f22f27ea69c2af5371",
+    "goals/unit_propagation/Statement.lean": "e775659a1e8ee68c2386f8bd1381b9a61519668f2752d5a509087a6e5633d71a"
+  }
+}
