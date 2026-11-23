@@ -14,8 +14,7 @@
     "goals/disjoint_sat.lean": "f38209f809e351a378d51b22a4c764e6db7c1a4f737fa0c736d5b9309156bee3",
     "goals/freshen_namespaces.lean": "0d616f141d318f89c4f5561eb7103453ded977f7e0eff792d6ffdb8c4f44a2e7",
     "goals/clause_restriction.lean": "99a9e1c44defb99cc9beddc03d26a7cc2f6838af1df4adb5e8904d314a4ef0fa",
-    "goals/cnf_restriction.lean": "2f571abf854aba2ce2c1accc34b6375e87044e1a730c06f22f27ea69c2af5371",
-    "goals/unit_propagation.lean": "e775659a1e8ee68c2386f8bd1381b9a61519668f2752d5a509087a6e5633d71a"
+    "goals/cnf_restriction.lean": "2f571abf854aba2ce2c1accc34b6375e87044e1a730c06f22f27ea69c2af5371"
   },
   "goals": {
     "disjoint_sat": {
@@ -69,19 +68,6 @@
       ],
       "dependency": null,
       "rewardable": true
-    },
-    "unit_propagation": {
-      "path": "research/proofs/unit_propagation.proof",
-      "theorem": "candidate : UnitPropagation",
-      "statement": "def UnitPropagation : Prop := ∀ (x : Nat) (b : Bool) (f : CNF),\n  List.Mem [(x, b)] f → (Satisfiable (restrictCNF x b f) ↔ Satisfiable f)",
-      "statement_hash": "3c24573288d7f5b1edfedac1aee02f9d190687db5b33944826b4b721678a47de",
-      "goal_hash": "9981183d96e164a33afd05c7859a7f6544b9b16c9e7aaa7ceade455040614325",
-      "definition_files": [
-        "Definitions.lean",
-        "goals/unit_propagation.lean"
-      ],
-      "dependency": null,
-      "rewardable": false
     }
   }
 }
