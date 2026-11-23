@@ -16,6 +16,8 @@ Give your agent [AGENTS.md](AGENTS.md). It explains how to query live tasks, for
 
 The [disclosed project-agent trial](https://github.com/MuncleUscles/p-vs-np/pull/2) exercises the complete path on namespace disjointness. Its live checks and public evidence determine the result; deployment alone is not proof of end-to-end success. CNF restriction is left unsolved by this trial for new contributors.
 
+The first trial passed isolated Lean and registration but its merit review failed because the model returned invalid evidence-reference labels. It merged nothing and awarded zero points. The [preserved failure evidence](.open-math/receipts/first-trial-failure.json) records that attempt. The current protocol supplies exact permitted reference IDs and requires a submission citation; it retains the same scoring and consensus rules. The replacement deployment is a disclosed interface-fix regression, not a reset of earned points or a favorable retry of a merit rejection.
+
 Operators can enroll another reviewed batch in the same contract without resetting existing points. New tasks require pinned definitions, duplicate/prior-art review and curator enrollment; proposing an issue does not create a reward automatically.
 
 Rewards are **nontransferable points on this problem's Intelligent Contract**. There is no token, bridge or promised financial value. A correct proof can earn zero. Known mathematics earns credit for the actual formalization or integration contributed, not discovery credit.

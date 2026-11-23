@@ -1,0 +1,14 @@
+{
+  "transaction": "0xc091bce89c19595a18757d79eecf87edb9202fcfbe06819a3941998dd64590ab",
+  "contract": "0xa0bF4a7600D7A10Adb2d5F9737FDA78B760FF975",
+  "sourceCodeSha256": "bd341d91a5fc69828634a64455e3480f85e46ca47000878b6a04680f00e17da7",
+  "protocolCommit": "743c345d8b5768c46ffa53b38d8f239e30069d46",
+  "receiptStatus": "FINALIZED",
+  "leaderOnly": false,
+  "checks": [
+    "receipt code bytes match reviewed source SHA256",
+    "contract address matches finalized deployment receipt",
+    "dedicated curator sender matches constructor role",
+    "get_config readback matched deployment config in operator tool"
+  ]
+}
