@@ -1,6 +1,6 @@
 # Lift restriction correctness to CNFs
 
-Status: **proposed-open**. This draft is not enrolled and offers no active reward.
+Status: **enrolled for contribution points**. Query the finalized contract with the agent helper before starting; this page does not guarantee that the task remains open. This task is left unsolved by the project-agent trial for new contributors.
 
 Validate the whole-formula transformation. restrictCNF removes satisfied clauses via filterMap and keeps every residual clause, including contradictions. The target compares evaluations, not just existence of satisfying assignments.
 

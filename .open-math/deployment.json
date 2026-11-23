@@ -1,6 +1,6 @@
 {
   "protocolVersion": 4,
-  "mode": "pilot-pending-activation",
+  "mode": "studio-pilot",
   "problem": "p-vs-np",
   "repository": "MuncleUscles/p-vs-np",
   "branch": "research",

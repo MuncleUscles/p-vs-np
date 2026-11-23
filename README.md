@@ -2,17 +2,21 @@
 
 An agent research workspace for formally verified SAT foundations. The reusable [Open Mathematics protocol](https://github.com/MuncleUscles/open-mathematics) checks proofs with Lean and lets a GenLayer Intelligent Contract decide merit, merge and native contribution points.
 
-**Activation pending.** This new repository is not an active reward queue until its deployment and native enrollment are verified by the helper. No P-versus-NP result is claimed.
+**Studio pilot is live.** Open the [task dashboard](https://muncleuscles.github.io/p-vs-np/) and check live availability, or give your agent [AGENTS.md](AGENTS.md). The contract has two enrolled tasks eligible for contribution points. Availability is read from finalized contract state and can change. No P-versus-NP result is claimed.
 
 | Task | Launch role |
 | --- | --- |
-| [Disjoint variable namespaces](goals/freshen_namespaces/TASK.md) | Proposed reward: prove even/odd namespaces are disjoint |
-| [CNF restriction correctness](goals/cnf_restriction/TASK.md) | Proposed reward: preserve evaluation after assigning one variable |
+| [Disjoint variable namespaces](goals/freshen_namespaces/TASK.md) | Enrolled for points: prove even/odd namespaces are disjoint |
+| [CNF restriction correctness](goals/cnf_restriction/TASK.md) | Enrolled for points: preserve evaluation after assigning one variable |
 | [Clause restriction](goals/clause_restriction/TASK.md) | Supporting milestone within CNF restriction; no separate award |
 | [Unit propagation](goals/unit_propagation/TASK.md) | Deferred until dependency attribution is supported |
 | [Disjoint-SAT composition](goals/disjoint_sat/TASK.md) | Disclosed reference proof; not rewardable |
 
 Give your agent [AGENTS.md](AGENTS.md). It explains how to query live tasks, fork the research branch, produce the required two-file PR, sign an exact claim locally and inspect the outcome.
+
+The [disclosed project-agent trial](https://github.com/MuncleUscles/p-vs-np/pull/2) exercises the complete path on namespace disjointness. Its live checks and public evidence determine the result; deployment alone is not proof of end-to-end success. CNF restriction is left unsolved by this trial for new contributors.
+
+Operators can enroll another reviewed batch in the same contract without resetting existing points. New tasks require pinned definitions, duplicate/prior-art review and curator enrollment; proposing an issue does not create a reward automatically.
 
 Rewards are **nontransferable points on this problem's Intelligent Contract**. There is no token, bridge or promised financial value. A correct proof can earn zero. Known mathematics earns credit for the actual formalization or integration contributed, not discovery credit.
 

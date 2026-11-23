@@ -1,6 +1,6 @@
 # Verify one-variable clause restriction
 
-Status: **supporting-only**. This draft is not enrolled and offers no active reward.
+Status: **supporting-only**. Enrolled as a nonrewardable reference; this milestone offers no separate points.
 
 Validate the exact executable single-clause transformation in lean/Definitions.lean. The result none denotes a satisfied clause; some remaining denotes a surviving clause. Evaluation must match the original clause under assignVar for every original assignment.
 
