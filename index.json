@@ -15,11 +15,17 @@
       "title": "Parity-disjoint variable namespaces for arbitrary CNF components",
       "status": "credited",
       "points": "300",
-      "impact": null,
+      "impact": {
+        "downstream": "pr-2-61854232ab90-65281b15d955",
+        "status": "settled",
+        "paid_points": "0",
+        "allocations": [],
+        "reason": "No verified direct dependency with a different contributor wallet."
+      },
       "dependencies": [],
       "report": "reports/pr-2-61854232ab90-65281b15d955.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45157745585",
-      "updatedAt": "2026-11-23T10:47:00.278Z",
+      "updatedAt": "2026-11-23T10:47:05.566Z",
       "commentId": 7098227969,
       "needsResume": true
     },
