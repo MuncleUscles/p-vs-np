@@ -1,0 +1,41 @@
+{
+  "id": "pr-6-d8bfcbd3d0ad-40382ab358c1",
+  "mode": "live-github-studio",
+  "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+  "chainId": 61999,
+  "repository": "MuncleUscles/p-vs-np",
+  "pr": 6,
+  "head": "d8bfcbd3d0addf7b3714fec3cd2aa83105e76718",
+  "base": "758d9b3b559dc882a3680c60bd3969c4f9f444df",
+  "claim": {
+    "claim": {
+      "version": 4,
+      "domain": "https://muncleuscles.github.io",
+      "chainId": 61999,
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 6,
+      "head": "d8bfcbd3d0addf7b3714fec3cd2aa83105e76718",
+      "base": "758d9b3b559dc882a3680c60bd3969c4f9f444df",
+      "branch": "research",
+      "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+      "submission_path": "research/submissions/v5-incomplete-proof.json",
+      "submission_hash": "790d4365e0db1c08ded222d09c82e587b9daf9980a6dfc636b2c04131e5ef63c",
+      "wallet": "0x24cE571092c1Cb9921E3c1de72a5E4597f606799",
+      "nonce": "9e442b50b04c9e15e71e0c72339fa680",
+      "expires": 1795440449952,
+      "protocol_commit": "0ab8a70f1321113f045f0226c44b7fa0db883528"
+    },
+    "signature": "0x0c6aa213afa85509291992f502f0faead51df396f45a4347a2cabdd8eb39822857c34893a14092151b2d387dff78978ae77d7ea78d081eb376667c98621c03d21c"
+  },
+  "commentId": 7102359461,
+  "commentCreatedAt": "2026-11-23T13:18:53Z",
+  "transactions": {},
+  "startedAt": "2026-11-23T13:19:59.847Z",
+  "status": "invalid",
+  "blockedConsensus": false,
+  "error": "Proof verifier rejected: Isolated verifier rejected: Lean rejected bundle audit: /input/Candidate.lean:7:2: error: unsolved goals\nn : Nat\n⊢ n + 0 = n\n\n",
+  "updatedAt": "2026-11-23T13:20:05.684Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45182697596"
+}
