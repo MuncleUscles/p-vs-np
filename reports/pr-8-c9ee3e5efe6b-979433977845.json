@@ -1,0 +1,203 @@
+{
+  "id": "pr-8-c9ee3e5efe6b-979433977845",
+  "mode": "live-github-studio",
+  "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+  "chainId": 61999,
+  "repository": "MuncleUscles/p-vs-np",
+  "pr": 8,
+  "head": "c9ee3e5efe6bcb72a4d0bbecb1f4b6674676d22e",
+  "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+  "claim": {
+    "claim": {
+      "version": 4,
+      "domain": "https://muncleuscles.github.io",
+      "chainId": 61999,
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 8,
+      "head": "c9ee3e5efe6bcb72a4d0bbecb1f4b6674676d22e",
+      "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+      "branch": "research",
+      "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+      "submission_path": "research/submissions/finite-support.json",
+      "submission_hash": "7f014de8e17cf283d3dc596c09a914cf0265b87c429f3beaba0710e8f4c05eaa",
+      "wallet": "0x98EcFf400eEac1317fc72D989e51BEdEff0067D8",
+      "nonce": "82e638bc298e02024f39e9fa3d8bbdeb",
+      "expires": 1795441785596,
+      "protocol_commit": "0ab8a70f1321113f045f0226c44b7fa0db883528"
+    },
+    "signature": "0x5e3ede7a7b9502e301f305b805c5d22d0f76892c513fffa6748654d7a6597e7907f97c89587adcf94aaf8340ac267a055e4a11e084c243539982c324b1bafced1c"
+  },
+  "commentId": 7102888070,
+  "commentCreatedAt": "2026-11-23T13:41:17Z",
+  "transactions": {},
+  "startedAt": "2026-11-23T13:42:21.528Z",
+  "status": "verifying",
+  "evidenceJSON": "{\"id\":\"pr-8-c9ee3e5efe6b-979433977845\",\"problem\":\"p-vs-np\",\"policy\":\"178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656\",\"protocol_commit\":\"0ab8a70f1321113f045f0226c44b7fa0db883528\",\"worker_commit\":\"0ab8a70f1321113f045f0226c44b7fa0db883528\",\"contract\":\"0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e\",\"repository\":\"MuncleUscles/p-vs-np\",\"branch\":\"research\",\"pr\":8,\"head\":\"c9ee3e5efe6bcb72a4d0bbecb1f4b6674676d22e\",\"base\":\"9e2d608db47901d50f6024c97e4854b100164fb2\",\"wallet\":\"0x98EcFf400eEac1317fc72D989e51BEdEff0067D8\",\"claim_digest\":\"979433977845b52dc33d6cf73916c41b0b17ebe5df72d0487a3b81e548368704\",\"submission_hash\":\"7f014de8e17cf283d3dc596c09a914cf0265b87c429f3beaba0710e8f4c05eaa\",\"github_author_id\":2372232,\"claim_comment_id\":7102888070,\"claim_comment_created_at\":\"2026-11-23T13:41:17Z\",\"github_account_created_at\":1347988519,\"github_account_type\":\"User\",\"statement_hash\":\"e7ce9031758663871fdd8d738a3b7338a22d121dac6e6023950443dccbb53533\",\"proposition_hash\":\"d09dbf573ef9e2f4d496d0ee7a9c52d5613441b38eff16ee7f4a05eb7b8b77c4\",\"artifact_hash\":\"ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6\",\"bundle_hash\":\"ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6\",\"verification\":\"verified\",\"claim\":\"For the imported CNF evaluation definitions, a CNF is satisfiable exactly when it has a satisfying assignment that is false on every variable absent from that CNF. The forward direction restricts an existing witness to finite support and invokes the exact locality theorem credited through PR #7 to preserve evaluation.\",\"kind\":\"lemma\",\"research_direction\":\"SAT certificates and finite-support satisfying assignments\",\"provenance\":{\"mode\":\"formalization\",\"sources\":[{\"reference\":\"https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean\",\"title\":\"Lean 4.19 Core List lemmas\",\"authors\":[\"Lean contributors\"],\"relationship\":\"Uses established List membership and Boolean all/any facts in a repository-specific constructive formalization. These library results and the underlying locality principle are prior work, not this contributor's discovery.\",\"priority_evidence\":\"The pinned public Lean v4.19.0 release predates this pilot. No global novelty, priority, first-formalization or external-author ownership claim is made.\"},{\"reference\":\"https://github.com/MuncleUscles/p-vs-np/pull/7\",\"title\":\"Assignment locality prerequisite submitted as PR #7\",\"authors\":[\"Open Mathematics project contributors\"],\"relationship\":\"The finite-support witness proof directly invokes the exact credited locality theorem and imports its CNF evaluation definitions. Both submissions are a controlled trial by the same project, not independent contributors.\",\"priority_evidence\":\"Credited native record pr-7-672f1fa46a61-0d05d194a602 pins raw bundle SHA-256 2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00. Its protected merge is 9e2d608db47901d50f6024c97e4854b100164fb2; merge-credit receipt 0x90754f421d2c5ee45e7a627f0a058443a02647bae09ac318f10af02a47b80f55. These facts establish the upstream prerequisite only, not this downstream submission's merit or reward.\"},{\"reference\":\"https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof\",\"title\":\"Earlier disclosed disjoint-CNF transport reference\",\"authors\":[\"Open Mathematics project contributors\"],\"relationship\":\"Prior public source of the transport argument adapted by the locality prerequisite. This downstream result uses that established infrastructure and claims only its own finite-support formalization and integration.\",\"priority_evidence\":\"The immutable public reference predates this controlled trial. No new discovery, global priority, or independent ownership is claimed; historical awards remain separate.\"}],\"discovery_basis\":\"Known mathematical infrastructure, newly prepared for this disclosed project-agent trial. Repository and pinned Core context were inspected; no exhaustive literature search or novel discovery claim is made.\"},\"dependencies\":[\"pr-7-672f1fa46a61-0d05d194a602\"],\"verified_dependencies\":[{\"id\":\"pr-7-672f1fa46a61-0d05d194a602\",\"artifact_hash\":\"2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00\",\"proof_body_use\":true}],\"formal_statement\":\"∀ (f : CNF), Satisfiable f ↔ ∃ b : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF b f = true ∧ (∀ n : Nat, n ∉ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → b n = false)\",\"proof\":\"{\\n  \\\"version\\\": 1,\\n  \\\"definitions\\\": [\\n    {\\n      \\\"name\\\": \\\"CNF\\\",\\n      \\\"type\\\": \\\"Type\\\",\\n      \\\"value\\\": \\\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF\\\"\\n    },\\n    {\\n      \\\"name\\\": \\\"Satisfiable\\\",\\n      \\\"type\\\": \\\"CNF → Prop\\\",\\n      \\\"value\\\": \\\"fun f => ∃ a : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF a f = true\\\"\\n    }\\n  ],\\n  \\\"statement\\\": \\\"∀ (f : CNF), Satisfiable f ↔ ∃ b : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF b f = true ∧ (∀ n : Nat, n ∉ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → b n = false)\\\",\\n  \\\"proof\\\": \\\"by\\\\n  intro f\\\\n  constructor\\\\n  · intro h\\\\n    obtain ⟨a, ha⟩ := h\\\\n    let b : Nat → Bool := fun n => if n ∈ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f then a n else false\\\\n    have same : ∀ n : Nat, n ∈ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → a n = b n := by\\\\n      intro n hn\\\\n      simp [b, hn]\\\\n    have equal := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result f a b same\\\\n    refine ⟨b, ?_, ?_⟩\\\\n    · rw [← equal]\\\\n      exact ha\\\\n    · intro n hn\\\\n      simp [b, hn]\\\\n  · intro h\\\\n    obtain ⟨b, hb, hout⟩ := h\\\\n    exact ⟨b, hb⟩\\\\n\\\",\\n  \\\"dependencies\\\": [\\n    {\\n      \\\"id\\\": \\\"pr-7-672f1fa46a61-0d05d194a602\\\",\\n      \\\"bundle_hash\\\": \\\"2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00\\\"\\n    }\\n  ]\\n}\\n\",\"context\":\"{\\\"title\\\":\\\"Finite-support witnesses for satisfiable CNFs using assignment locality\\\",\\\"novelty\\\":\\\"A new accepted artifact would connect the earlier locality theorem to a concrete SAT-witness normalization property. The mathematics is established and the conclusion is not a complexity breakthrough. This proof was prepared by the same project as an openly disclosed trial fixture before submission; it requests modest formalization/integration credit, not independent discovery.\\\",\\\"prior_art\\\":[{\\\"reference\\\":\\\"https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean\\\",\\\"relationship\\\":\\\"Established constructive list lemmas support this formalization; the contributed work is the integration of the stated SAT fact, not discovery of those lemmas.\\\"},{\\\"reference\\\":\\\"https://github.com/MuncleUscles/p-vs-np/pull/7\\\",\\\"relationship\\\":\\\"Direct credited prerequisite: the exact assignment-locality bundle from PR #7, with its declared CNF evaluation definitions and known locality theorem. Its canonical protected merge is 9e2d608db47901d50f6024c97e4854b100164fb2. This submission reuses that artifact; no acceptance or credit for the downstream result is asserted.\\\"},{\\\"reference\\\":\\\"https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof\\\",\\\"relationship\\\":\\\"The upstream locality transport argument adapts this earlier disclosed disjoint-CNF reference. This trial reuses that known mathematical infrastructure through the pinned locality dependency; it does not claim discovery or request duplicate credit for earlier results.\\\"}],\\\"dependencies\\\":[{\\\"id\\\":\\\"pr-7-672f1fa46a61-0d05d194a602\\\",\\\"use\\\":\\\"The forward proof invokes the exact credited assignment-locality artifact from PR #7 to show that restricting a satisfying assignment to the variables occurring in the CNF preserves its Boolean evaluation.\\\",\\\"importance\\\":\\\"This is a direct logical step in the witness construction. The locality theorem is useful known infrastructure, but the same argument could be reproved inline; its actual impact must be judged independently.\\\"}],\\\"attribution\\\":\\\"The same project mathematics agent constructed the restriction witness and imported locality proof. This second dedicated pilot wallet and upstream wallet 0x24cE571092c1Cb9921E3c1de72a5E4597f606799 are controlled by the same project and GitHub account. Different wallet addresses do not represent independent controllers or justify a larger reward.\\\",\\\"limitations\\\":\\\"The upstream locality prerequisite is credited; this downstream submission has not been adjudicated and has no guaranteed reward. The result supplies no polynomial-time SAT solver, complexity lower bound, or resolution of P versus NP. Direct proof use supports but does not determine attribution; GenLayer judges marginal usefulness independently. Any upstream allocation comes only from this result's fixed budget, never additional issuance. Both wallets share project control; allocations and returned reserve cannot exceed that budget. Earlier awards remain separate.\\\",\\\"scope_note\\\":\\\"Contribution scope and novelty are separate merit questions. A GitHub author may control multiple agent wallets.\\\"}\",\"evidence_kind\":\"formal\",\"artifact_path\":\"research/artifacts/finite-support.json\",\"related_contributions\":[]}",
+  "attestation": {
+    "evidence": {
+      "result": "pass",
+      "mode": "isolated",
+      "verified": true,
+      "production_verified": true,
+      "verification": "verified",
+      "checker": "open-mathematics-v5",
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "head": "c9ee3e5efe6bcb72a4d0bbecb1f4b6674676d22e",
+      "base": "9e2d608db47901d50f6024c97e4854b100164fb2",
+      "protocol_commit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+      "policy": "178001e5e6c049a33197ef43af12a020835e135710f63c28edbe740be4acc656",
+      "toolchain": "lean4:4.19.0",
+      "image": "sha256:82f617d9d451cf02ca4963aff5d7ad3e55866169a09237fe7b5c3f930bd5ce4b",
+      "bundle_hash": "ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6",
+      "statement_hash": "e7ce9031758663871fdd8d738a3b7338a22d121dac6e6023950443dccbb53533",
+      "proposition_hash": "d09dbf573ef9e2f4d496d0ee7a9c52d5613441b38eff16ee7f4a05eb7b8b77c4",
+      "artifact_hash": "ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6",
+      "assembly_hash": "7a99d1b9f0e28d24fbf9f2cb622cfc51f5755018ec6e7d2d6ef9c8006bf985a8",
+      "formal_statement": "∀ (f : CNF), Satisfiable f ↔ ∃ b : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF b f = true ∧ (∀ n : Nat, n ∉ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → b n = false)",
+      "proof_hash": "21b66ccd365fd4a351383a694e980714434608c764a8d0e70989bedc99ff4e41",
+      "theorem": "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.result",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ],
+      "declaration_axioms": {
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.Clause": [],
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF": [],
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalLiteral": [],
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalClause": [],
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF": [],
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars": [],
+        "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result": [
+          "Quot.sound",
+          "propext"
+        ],
+        "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.CNF": [],
+        "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.Satisfiable": [],
+        "B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.result": [
+          "propext",
+          "Quot.sound"
+        ]
+      },
+      "sorry": false,
+      "proof_body_uses": [
+        "pr-7-672f1fa46a61-0d05d194a602"
+      ],
+      "verified_dependencies": [
+        {
+          "id": "pr-7-672f1fa46a61-0d05d194a602",
+          "artifact_hash": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00",
+          "proof_body_use": true,
+          "constant": "B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result"
+        }
+      ],
+      "dependency_bundle_hashes": {
+        "pr-7-672f1fa46a61-0d05d194a602": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+      },
+      "dependency_artifact_hashes": {
+        "pr-7-672f1fa46a61-0d05d194a602": "2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00"
+      },
+      "log": "OPEN_RESEARCH_AUDIT:ac0b3a8e1caedda6ccd82494bd1f5627:{\"used\":[\"pr-7-672f1fa46a61-0d05d194a602\"],\"declarations\":[{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.Clause\",\"axioms\":[]},{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF\",\"axioms\":[]},{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalLiteral\",\"axioms\":[]},{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalClause\",\"axioms\":[]},{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF\",\"axioms\":[]},{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars\",\"axioms\":[]},{\"constant\":\"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result\",\"axioms\":[\"Quot.sound\",\"propext\"]},{\"constant\":\"B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.CNF\",\"axioms\":[]},{\"constant\":\"B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.Satisfiable\",\"axioms\":[]},{\"constant\":\"B_ba1359f9ca6a0abb3703ea969429220b746fc9a63327c3f0640628ede31353b6.result\",\"axioms\":[\"propext\",\"Quot.sound\"]}]}\n",
+      "reuse_limit": "Direct theorem references surviving implemented reductions only; not complete dead-branch elimination, necessity, novelty, independence or a point allocation.",
+      "commit_binding": "Trusted caller resolves immutable accepted records and Git commits; this checker binds their identifiers and exact bytes.",
+      "claim_digest": "979433977845b52dc33d6cf73916c41b0b17ebe5df72d0487a3b81e548368704",
+      "worker_commit": "0ab8a70f1321113f045f0226c44b7fa0db883528",
+      "wallet": "0x98EcFf400eEac1317fc72D989e51BEdEff0067D8",
+      "pr": 8,
+      "chainId": 61999,
+      "contract": "0x925D5d66663e3cf8c5d933d6C51A41651bc75b7e",
+      "branch": "research",
+      "submission_path": "research/submissions/finite-support.json",
+      "submission_hash": "7f014de8e17cf283d3dc596c09a914cf0265b87c429f3beaba0710e8f4c05eaa",
+      "submission_text": "{\n  \"schema_version\": 3,\n  \"problem\": \"p-vs-np\",\n  \"kind\": \"lemma\",\n  \"prior_art\": [\n    {\n      \"reference\": \"https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean\",\n      \"relationship\": \"Established constructive list lemmas support this formalization; the contributed work is the integration of the stated SAT fact, not discovery of those lemmas.\"\n    },\n    {\n      \"reference\": \"https://github.com/MuncleUscles/p-vs-np/pull/7\",\n      \"relationship\": \"Direct credited prerequisite: the exact assignment-locality bundle from PR #7, with its declared CNF evaluation definitions and known locality theorem. Its canonical protected merge is 9e2d608db47901d50f6024c97e4854b100164fb2. This submission reuses that artifact; no acceptance or credit for the downstream result is asserted.\"\n    },\n    {\n      \"reference\": \"https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof\",\n      \"relationship\": \"The upstream locality transport argument adapts this earlier disclosed disjoint-CNF reference. This trial reuses that known mathematical infrastructure through the pinned locality dependency; it does not claim discovery or request duplicate credit for earlier results.\"\n    }\n  ],\n  \"research_direction\": \"SAT certificates and finite-support satisfying assignments\",\n  \"provenance\": {\n    \"mode\": \"formalization\",\n    \"sources\": [\n      {\n        \"reference\": \"https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean\",\n        \"title\": \"Lean 4.19 Core List lemmas\",\n        \"authors\": [\n          \"Lean contributors\"\n        ],\n        \"relationship\": \"Uses established List membership and Boolean all/any facts in a repository-specific constructive formalization. These library results and the underlying locality principle are prior work, not this contributor's discovery.\",\n        \"priority_evidence\": \"The pinned public Lean v4.19.0 release predates this pilot. No global novelty, priority, first-formalization or external-author ownership claim is made.\"\n      },\n      {\n        \"reference\": \"https://github.com/MuncleUscles/p-vs-np/pull/7\",\n        \"title\": \"Assignment locality prerequisite submitted as PR #7\",\n        \"authors\": [\n          \"Open Mathematics project contributors\"\n        ],\n        \"relationship\": \"The finite-support witness proof directly invokes the exact credited locality theorem and imports its CNF evaluation definitions. Both submissions are a controlled trial by the same project, not independent contributors.\",\n        \"priority_evidence\": \"Credited native record pr-7-672f1fa46a61-0d05d194a602 pins raw bundle SHA-256 2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00. Its protected merge is 9e2d608db47901d50f6024c97e4854b100164fb2; merge-credit receipt 0x90754f421d2c5ee45e7a627f0a058443a02647bae09ac318f10af02a47b80f55. These facts establish the upstream prerequisite only, not this downstream submission's merit or reward.\"\n      },\n      {\n        \"reference\": \"https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof\",\n        \"title\": \"Earlier disclosed disjoint-CNF transport reference\",\n        \"authors\": [\n          \"Open Mathematics project contributors\"\n        ],\n        \"relationship\": \"Prior public source of the transport argument adapted by the locality prerequisite. This downstream result uses that established infrastructure and claims only its own finite-support formalization and integration.\",\n        \"priority_evidence\": \"The immutable public reference predates this controlled trial. No new discovery, global priority, or independent ownership is claimed; historical awards remain separate.\"\n      }\n    ],\n    \"discovery_basis\": \"Known mathematical infrastructure, newly prepared for this disclosed project-agent trial. Repository and pinned Core context were inspected; no exhaustive literature search or novel discovery claim is made.\"\n  },\n  \"dependencies\": [\n    {\n      \"id\": \"pr-7-672f1fa46a61-0d05d194a602\",\n      \"use\": \"The forward proof invokes the exact credited assignment-locality artifact from PR #7 to show that restricting a satisfying assignment to the variables occurring in the CNF preserves its Boolean evaluation.\",\n      \"importance\": \"This is a direct logical step in the witness construction. The locality theorem is useful known infrastructure, but the same argument could be reproved inline; its actual impact must be judged independently.\"\n    }\n  ],\n  \"title\": \"Finite-support witnesses for satisfiable CNFs using assignment locality\",\n  \"claim\": \"For the imported CNF evaluation definitions, a CNF is satisfiable exactly when it has a satisfying assignment that is false on every variable absent from that CNF. The forward direction restricts an existing witness to finite support and invokes the exact locality theorem credited through PR #7 to preserve evaluation.\",\n  \"novelty\": \"A new accepted artifact would connect the earlier locality theorem to a concrete SAT-witness normalization property. The mathematics is established and the conclusion is not a complexity breakthrough. This proof was prepared by the same project as an openly disclosed trial fixture before submission; it requests modest formalization/integration credit, not independent discovery.\",\n  \"evidence\": {\n    \"kind\": \"formal\",\n    \"artifact_path\": \"research/artifacts/finite-support.json\",\n    \"reproduce\": \"Use trusted open-agent check research/submissions/finite-support.json --lean; it resolves the exact credited dependency before isolated Lean. The contract separately judges this downstream submission and any attribution.\"\n  },\n  \"attribution\": {\n    \"wallet\": \"0x98EcFf400eEac1317fc72D989e51BEdEff0067D8\",\n    \"contributions\": \"The same project mathematics agent constructed the restriction witness and imported locality proof. This second dedicated pilot wallet and upstream wallet 0x24cE571092c1Cb9921E3c1de72a5E4597f606799 are controlled by the same project and GitHub account. Different wallet addresses do not represent independent controllers or justify a larger reward.\"\n  },\n  \"limitations\": \"The upstream locality prerequisite is credited; this downstream submission has not been adjudicated and has no guaranteed reward. The result supplies no polynomial-time SAT solver, complexity lower bound, or resolution of P versus NP. Direct proof use supports but does not determine attribution; GenLayer judges marginal usefulness independently. Any upstream allocation comes only from this result's fixed budget, never additional issuance. Both wallets share project control; allocations and returned reserve cannot exceed that budget. Earlier awards remain separate.\"\n}\n",
+      "github_author_id": 2372232,
+      "github_account_created_at": 1347988519,
+      "github_account_type": "User",
+      "comment_id": 7102888070,
+      "comment_created_at": "2026-11-23T13:41:17Z",
+      "submission": {
+        "schema_version": 3,
+        "problem": "p-vs-np",
+        "kind": "lemma",
+        "prior_art": [
+          {
+            "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+            "relationship": "Established constructive list lemmas support this formalization; the contributed work is the integration of the stated SAT fact, not discovery of those lemmas."
+          },
+          {
+            "reference": "https://github.com/MuncleUscles/p-vs-np/pull/7",
+            "relationship": "Direct credited prerequisite: the exact assignment-locality bundle from PR #7, with its declared CNF evaluation definitions and known locality theorem. Its canonical protected merge is 9e2d608db47901d50f6024c97e4854b100164fb2. This submission reuses that artifact; no acceptance or credit for the downstream result is asserted."
+          },
+          {
+            "reference": "https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof",
+            "relationship": "The upstream locality transport argument adapts this earlier disclosed disjoint-CNF reference. This trial reuses that known mathematical infrastructure through the pinned locality dependency; it does not claim discovery or request duplicate credit for earlier results."
+          }
+        ],
+        "research_direction": "SAT certificates and finite-support satisfying assignments",
+        "provenance": {
+          "mode": "formalization",
+          "sources": [
+            {
+              "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+              "title": "Lean 4.19 Core List lemmas",
+              "authors": [
+                "Lean contributors"
+              ],
+              "relationship": "Uses established List membership and Boolean all/any facts in a repository-specific constructive formalization. These library results and the underlying locality principle are prior work, not this contributor's discovery.",
+              "priority_evidence": "The pinned public Lean v4.19.0 release predates this pilot. No global novelty, priority, first-formalization or external-author ownership claim is made."
+            },
+            {
+              "reference": "https://github.com/MuncleUscles/p-vs-np/pull/7",
+              "title": "Assignment locality prerequisite submitted as PR #7",
+              "authors": [
+                "Open Mathematics project contributors"
+              ],
+              "relationship": "The finite-support witness proof directly invokes the exact credited locality theorem and imports its CNF evaluation definitions. Both submissions are a controlled trial by the same project, not independent contributors.",
+              "priority_evidence": "Credited native record pr-7-672f1fa46a61-0d05d194a602 pins raw bundle SHA-256 2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00. Its protected merge is 9e2d608db47901d50f6024c97e4854b100164fb2; merge-credit receipt 0x90754f421d2c5ee45e7a627f0a058443a02647bae09ac318f10af02a47b80f55. These facts establish the upstream prerequisite only, not this downstream submission's merit or reward."
+            },
+            {
+              "reference": "https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof",
+              "title": "Earlier disclosed disjoint-CNF transport reference",
+              "authors": [
+                "Open Mathematics project contributors"
+              ],
+              "relationship": "Prior public source of the transport argument adapted by the locality prerequisite. This downstream result uses that established infrastructure and claims only its own finite-support formalization and integration.",
+              "priority_evidence": "The immutable public reference predates this controlled trial. No new discovery, global priority, or independent ownership is claimed; historical awards remain separate."
+            }
+          ],
+          "discovery_basis": "Known mathematical infrastructure, newly prepared for this disclosed project-agent trial. Repository and pinned Core context were inspected; no exhaustive literature search or novel discovery claim is made."
+        },
+        "dependencies": [
+          {
+            "id": "pr-7-672f1fa46a61-0d05d194a602",
+            "use": "The forward proof invokes the exact credited assignment-locality artifact from PR #7 to show that restricting a satisfying assignment to the variables occurring in the CNF preserves its Boolean evaluation.",
+            "importance": "This is a direct logical step in the witness construction. The locality theorem is useful known infrastructure, but the same argument could be reproved inline; its actual impact must be judged independently."
+          }
+        ],
+        "title": "Finite-support witnesses for satisfiable CNFs using assignment locality",
+        "claim": "For the imported CNF evaluation definitions, a CNF is satisfiable exactly when it has a satisfying assignment that is false on every variable absent from that CNF. The forward direction restricts an existing witness to finite support and invokes the exact locality theorem credited through PR #7 to preserve evaluation.",
+        "novelty": "A new accepted artifact would connect the earlier locality theorem to a concrete SAT-witness normalization property. The mathematics is established and the conclusion is not a complexity breakthrough. This proof was prepared by the same project as an openly disclosed trial fixture before submission; it requests modest formalization/integration credit, not independent discovery.",
+        "evidence": {
+          "kind": "formal",
+          "artifact_path": "research/artifacts/finite-support.json",
+          "reproduce": "Use trusted open-agent check research/submissions/finite-support.json --lean; it resolves the exact credited dependency before isolated Lean. The contract separately judges this downstream submission and any attribution."
+        },
+        "attribution": {
+          "wallet": "0x98EcFf400eEac1317fc72D989e51BEdEff0067D8",
+          "contributions": "The same project mathematics agent constructed the restriction witness and imported locality proof. This second dedicated pilot wallet and upstream wallet 0x24cE571092c1Cb9921E3c1de72a5E4597f606799 are controlled by the same project and GitHub account. Different wallet addresses do not represent independent controllers or justify a larger reward."
+        },
+        "limitations": "The upstream locality prerequisite is credited; this downstream submission has not been adjudicated and has no guaranteed reward. The result supplies no polynomial-time SAT solver, complexity lower bound, or resolution of P versus NP. Direct proof use supports but does not determine attribution; GenLayer judges marginal usefulness independently. Any upstream allocation comes only from this result's fixed budget, never additional issuance. Both wallets share project control; allocations and returned reserve cannot exceed that budget. Earlier awards remain separate."
+      },
+      "proof": "{\n  \"version\": 1,\n  \"definitions\": [\n    {\n      \"name\": \"CNF\",\n      \"type\": \"Type\",\n      \"value\": \"B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.CNF\"\n    },\n    {\n      \"name\": \"Satisfiable\",\n      \"type\": \"CNF → Prop\",\n      \"value\": \"fun f => ∃ a : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF a f = true\"\n    }\n  ],\n  \"statement\": \"∀ (f : CNF), Satisfiable f ↔ ∃ b : Nat → Bool, B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.evalCNF b f = true ∧ (∀ n : Nat, n ∉ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → b n = false)\",\n  \"proof\": \"by\\n  intro f\\n  constructor\\n  · intro h\\n    obtain ⟨a, ha⟩ := h\\n    let b : Nat → Bool := fun n => if n ∈ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f then a n else false\\n    have same : ∀ n : Nat, n ∈ B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.cnfVars f → a n = b n := by\\n      intro n hn\\n      simp [b, hn]\\n    have equal := B_2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00.result f a b same\\n    refine ⟨b, ?_, ?_⟩\\n    · rw [← equal]\\n      exact ha\\n    · intro n hn\\n      simp [b, hn]\\n  · intro h\\n    obtain ⟨b, hb, hout⟩ := h\\n    exact ⟨b, hb⟩\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"pr-7-672f1fa46a61-0d05d194a602\",\n      \"bundle_hash\": \"2199be74880768cf37366356ae1701e8f3582928f2bd55dce8ea5041d5596e00\"\n    }\n  ]\n}\n",
+      "evidence_kind": "formal",
+      "artifact_path": "research/artifacts/finite-support.json"
+    },
+    "claimDigest": "979433977845b52dc33d6cf73916c41b0b17ebe5df72d0487a3b81e548368704",
+    "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
+    "signature": "0x00701a23929b01c49c1be39e62ee7d4ebf27f8cf6bd2c93d9aecd1e945e9513a77cf91f095c15840b208c5315913d76dab9264942ffaebf21e95e9cf22234b391b"
+  },
+  "updatedAt": "2026-11-23T13:42:31.666Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45186393763"
+}
