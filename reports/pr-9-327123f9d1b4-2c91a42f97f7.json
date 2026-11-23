@@ -56517,6 +56517,15 @@
           "outcome": "accepted"
         }
       }
+    },
+    "begin-adjudicate-r0": {
+      "intent": {
+        "address": "0x925d5d66663e3cf8c5d933d6c51a41651bc75b7e",
+        "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+        "method": "begin_adjudication",
+        "argsSha256": "d79a01e158e4f4a906485dc5ad4f4ae92bcc6c469a687f18d44ff78f65d7a3e7",
+        "independent": false
+      }
     }
   },
   "startedAt": "2026-11-23T14:51:55.372Z",
@@ -56695,7 +56704,7 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0xd340af253b7aa0bc70491b6607468fc86ff5212b48bdb2938d6cb69cf87d763d05626cc4742c1c7103dd38d9671142d386f3bd0840b61e73416499386e8139961c"
   },
-  "updatedAt": "2026-11-23T14:52:59.488Z",
+  "updatedAt": "2026-11-23T14:53:04.875Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45198612006",
   "record": {
     "adjudication_finished_round": -1,
