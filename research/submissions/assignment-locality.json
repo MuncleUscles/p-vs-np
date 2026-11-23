@@ -1,0 +1,54 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "prior_art": [
+    {
+      "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+      "relationship": "Established constructive list lemmas support this formalization; the contributed work is the integration of the stated SAT fact, not discovery of those lemmas."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof",
+      "relationship": "The transport argument is adapted from this disclosed earlier disjoint-CNF reference, extended here to Boolean evaluation equality. This submission claims formalization and integration credit only, not discovery of that argument."
+    }
+  ],
+  "research_direction": "SAT certificates and finite-support satisfying assignments",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://github.com/leanprover/lean4/blob/v4.19.0/src/Init/Data/List/Lemmas.lean",
+        "title": "Lean 4.19 Core List lemmas",
+        "authors": [
+          "Lean contributors"
+        ],
+        "relationship": "Uses established List membership and Boolean all/any facts in a repository-specific constructive formalization. These library results and the underlying locality principle are prior work, not this contributor's discovery.",
+        "priority_evidence": "The pinned public Lean v4.19.0 release predates this pilot. No global novelty, priority, first-formalization or external-author ownership claim is made."
+      },
+      {
+        "reference": "https://github.com/MuncleUscles/open-mathematics/blob/27373fa9d84bf8e489ce03b7b930bf69e2251a29/proposals/disjoint-cnf/candidate.proof",
+        "title": "Earlier disclosed disjoint-CNF transport reference",
+        "authors": [
+          "Open Mathematics project contributors"
+        ],
+        "relationship": "The locality transport argument adapts this prior public proof to Boolean equality. This source and its known mathematical content are prior work, not a new discovery by the submitting identity.",
+        "priority_evidence": "The immutable public source commit predates this controlled pilot submission. No new discovery or priority claim is made."
+      }
+    ],
+    "discovery_basis": "Known mathematical infrastructure, newly prepared for this disclosed project-agent trial. Repository and pinned Core context were inspected; no exhaustive literature search or novel discovery claim is made."
+  },
+  "dependencies": [],
+  "title": "Assignment locality for Boolean evaluation of arbitrary CNFs",
+  "claim": "For the submitted explicit CNF and Boolean evaluation definitions, any two assignments agreeing on every variable occurring in a CNF produce equal Boolean evaluations of that CNF. This isolates a reusable locality lemma for later SAT certificate and finite-support constructions.",
+  "novelty": "A constructive formalization integrating the familiar locality principle with list-based CNF evaluation. It is useful as an accepted reusable research artifact; no new complexity-theoretic result is claimed. This proof was written by the project during development and is also disclosed in the reviewed protocol test fixtures before this PR, not an independent outside contribution or previously rewarded result.",
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/assignment-locality.json",
+    "reproduce": "Use the trusted open-agent check research/submissions/assignment-locality.json --lean with the reviewed pinned Docker image."
+  },
+  "attribution": {
+    "wallet": "0x24cE571092c1Cb9921E3c1de72a5E4597f606799",
+    "contributions": "The project's mathematics subagent wrote and checked this proof; the integrating project agent prepared this submission. Both dedicated pilot identities are operated by the same project and GitHub account; no independent-controller claim."
+  },
+  "limitations": "Known SAT infrastructure only. The statement concerns exact submitted Boolean-list definitions, not runtime complexity, all encodings of SAT, or P versus NP. Prior variable-renaming and namespace rewards are not requested again. No dependency or impact award is claimed for this first result."
+}
