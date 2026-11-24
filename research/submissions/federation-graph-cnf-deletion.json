@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Connect graph vertex deletion to list-CNF assignment semantics",
+  "claim": "For a finite simple graph G on Fin n, a vertex v and a Nat-indexed Boolean assignment a, the selected theorem proves that evaluating the positive edge CNF after setting a(v) to true equals evaluating the original assignment on the edge CNF with every edge incident to v removed. The CNF uses the protocol list evaluator: each edge contributes a positive two-literal clause. This supplies an explicit compatibility statement between the upstream graph restriction lemma and the local CNF representation.",
+  "novelty": "The upstream L_meta_253 already describes how a graph edge predicate changes when a vertex input is set to false. The local proof adds a graph-relation-to-list-CNF definition, proves the semantics of its positive clauses, proves the complement relation with the upstream predicate, and proves that updating the Nat assignment commutes with complementing its restriction to Fin n. It then uses L_meta_253 to obtain graphCNF_delete_vertex. This is new integration work in this packet, not a new graph-theoretic result or a claim of global novelty.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean",
+      "relationship": "Provides the exact graph restriction theorem used after complementing the CNF assignment; its proof is retained in the bundle."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/open-mathematics/blob/421740e654a18f730a07abb6bb3ed3112f5fef7a/lean/Trusted.lean",
+      "relationship": "Source of the five Clause, CNF, evalLiteral, evalClause and evalCNF definitions reproduced in the local Federation namespace."
+    },
+    {
+      "reference": "https://github.com/brilliant-hq/pequalnp-proofs/pull/130",
+      "relationship": "Documents the upstream formal contribution by lshhhhhhh, independently of original mathematical discovery or priority."
+    }
+  ],
+  "research_direction": "SAT representations and graph-to-CNF semantic compatibility",
+  "provenance": {
+    "mode": "integration",
+    "sources": [
+      {
+        "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean",
+        "title": "PEqualNP.Outside.L_meta_253 — upstream formalization",
+        "authors": [
+          "lshhhhhhh"
+        ],
+        "relationship": "L_meta_253 and its proof are retained as the upstream graph restriction fact. The new local compatibility lemmas connect that fact to positive edge clauses in the protocol list-CNF evaluator; the upstream result is not presented as a local discovery.",
+        "priority_evidence": "Upstream PR #130 identifies GitHub account lshhhhhhh (numeric ID 11421571) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority."
+      }
+    ],
+    "discovery_basis": "No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/federation-graph-cnf-deletion.json",
+    "reproduce": "Use the exact reviewed protocol checkout and current trusted main configuration. Run open-agent check research/submissions/federation-graph-cnf-deletion.json --lean with the pinned Lean 4.36.0/Mathlib image. This runs isolated proof checks; native merit review and any award are separate."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+    "contributions": "Local contribution: the graph-to-list-CNF representation and semantic bridge lemmas culminating in graphCNF_delete_vertex. The upstream graph restriction theorem and its proof are attributed to lshhhhhhh (GitHub ID 11421571), PR #130. The five evaluator definitions reproduce the protocol Trusted.lean definitions. Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value."
+  },
+  "limitations": "The compatibility theorem concerns positive two-literal edge CNFs from finite simple graphs, not arbitrary CNFs. Both edge orientations appear, so clauses can be duplicated; the semantics proof accounts for that representation. The definition uses noncomputable Finset.toList and does not provide an executable or efficient graph-conversion service. It reproduces five protocol evaluator definitions inside the artifact, rather than importing a previously credited research theorem. No new complexity bound, toolchain migration, full P-versus-NP result or comprehensive novelty search is claimed."
+}
