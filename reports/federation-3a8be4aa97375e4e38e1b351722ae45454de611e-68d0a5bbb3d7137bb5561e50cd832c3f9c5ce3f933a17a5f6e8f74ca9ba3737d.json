@@ -5760,5 +5760,29 @@
       ]
     }
   },
-  "updatedAt": "2026-11-24T00:40:41.324Z"
+  "result": {
+    "evidence": {
+      "attribution_basis": "The merged source PR identifies its submitter as lshhhhhhh (GitHub numeric account 11421571). This is evidence of the submitted formalization, not original mathematical discovery, real-world identity, wallet control or global priority. Local adaptation is independently checked and separately assessed.",
+      "blob_sha": "7e5ba19a1d145ab1f12f754454f67be11f9205f6",
+      "commit": "42765bad82112b0ea3e275713780ab49db8074ec",
+      "content_sha256": "85e90f9eab972f297bcdbd5f7f260511a2f7caf5415a1b76d232a8a4ccea8874",
+      "github_author_id": 11421571,
+      "license": "Apache-2.0",
+      "origin": "formalization",
+      "path": "lean/PEqualNP/Outside/L_meta_253.lean",
+      "pr": 130,
+      "repository": "brilliant-hq/pequalnp-proofs",
+      "repository_id": 1468025030,
+      "source_url": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean",
+      "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_meta_253 :\n    ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (v : Fin n)\n      (x : Fin n → Bool),\n      decide (∃ u w : Fin n, G.Adj u w ∧\n        Function.update x v false u = true ∧ Function.update x v false w = true) =\n      decide (∃ u w : Fin n, u ≠ v ∧ w ≠ v ∧ G.Adj u w ∧\n        x u = true ∧ x w = true)",
+      "theorem": "PEqualNP.Outside.L_meta_253"
+    },
+    "id": "external-ca1639c9d20f4b4886c7a3012ba9d083",
+    "points": "0",
+    "registered_at": 1795480799,
+    "source_hash": "1b2122f52e9b588d48a8c93a4445a550bfeb3a20d7dd0abc78c272f630f5b450",
+    "subject": "github:11421571",
+    "verification": "not-locally-verified"
+  },
+  "updatedAt": "2026-11-24T00:40:43.489Z"
 }
