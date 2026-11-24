@@ -1,0 +1,64 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Transport forced cover vertices to minimum-true CNF models",
+  "claim": "Let a satisfy the positive edge CNF of a finite simple graph G, and suppose a minimizes the number of true variables among graph vertices. If a vertex v has degree greater than that minimum count, the selected theorem proves a(v)=true and that the same assignment satisfies the edge CNF with v-incident clauses removed. The proof transports the known vertex-cover forcing result into the list-CNF representation and directly uses the declared exact B artifact for the deletion equality.",
+  "novelty": "The forced-vertex fact is already established by upstream L_meta_727. Local work identifies trueVars of a satisfying assignment with a vertex cover, constructs an assignmentOf for every finite cover, proves the relevant cardinality correspondence, and transfers the minimum-cardinality hypothesis. It applies the upstream forcing theorem, then invokes B.graphCNF_delete_vertex on the original assignment. This is a formal integration of a known consequence using an explicit local dependency, not a new literature result or stronger complexity theorem.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_727.lean",
+      "relationship": "Exact source of the vertex-cover forcing theorem and its proof; the submitted CNF statement is a known consequence expressed through the local representation."
+    },
+    {
+      "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean",
+      "relationship": "The upstream graph restriction theorem enters through B, whose exact selected deletion theorem is called in the C proof."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/open-mathematics/blob/421740e654a18f730a07abb6bb3ed3112f5fef7a/lean/Trusted.lean",
+      "relationship": "Protocol list-CNF semantics reproduced in B and reused here through that bundle, with finite true-variable cardinality defined locally."
+    }
+  ],
+  "research_direction": "Vertex-cover structure in minimum-true positive CNF models",
+  "provenance": {
+    "mode": "integration",
+    "sources": [
+      {
+        "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_727.lean",
+        "title": "PEqualNP.Outside.L_meta_727 — upstream formalization",
+        "authors": [
+          "fededevi"
+        ],
+        "relationship": "The known L_meta_727 vertex-cover forcing theorem and proof are retained. The local proof transports its hypotheses to minimum-true-variable CNF models and composes the result with the separately declared B artifact.",
+        "priority_evidence": "Upstream PR #979 identifies GitHub account fededevi (numeric ID 5583580) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority."
+      },
+      {
+        "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean",
+        "title": "PEqualNP.Outside.L_meta_253 — upstream formalization",
+        "authors": [
+          "lshhhhhhh"
+        ],
+        "relationship": "This source theorem is reused through the exact B dependency. B connects the upstream graph restriction fact to the list-CNF deletion equality invoked directly in the selected C proof; this does not assign the upstream formalization to the local integrator.",
+        "priority_evidence": "Upstream PR #130 identifies GitHub account lshhhhhhh (numeric ID 11421571) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority."
+      }
+    ],
+    "discovery_basis": "No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/federation-forced-cover-variable.json",
+    "reproduce": "Use the exact reviewed protocol checkout and current trusted main configuration. Run open-agent check research/submissions/federation-forced-cover-variable.json --lean with the pinned Lean 4.36.0/Mathlib image. This runs isolated proof checks; native merit review and any award are separate."
+  },
+  "dependencies": [
+    {
+      "id": "pr-29-574730b7e55c-9f1a7872c261",
+      "use": "The selected proof directly calls the exact B theorem Federation.graphCNF_delete_vertex after establishing a(v)=true. It also reuses B relationCNF, evalCNF and relationCNF_semantics while transferring vertex covers to satisfying assignments. The bundle namespace is pinned by the raw B artifact SHA256.",
+      "importance": "B supplies the representation and the exact assignment-update/deleted-edge equality needed for the final reduced-CNF conclusion. This is concrete proof-body use; no claim of irreplaceability, new discovery or automatic impact credit is made."
+    }
+  ],
+  "attribution": {
+    "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+    "contributions": "Local contribution: the finite-cover/Boolean-assignment transport lemmas and composition with B. The forcing theorem and proof are attributed to fededevi (GitHub ID 5583580), upstream PR #979. B in turn retains the graph restriction result of lshhhhhhh (GitHub ID 11421571), PR #130. B and C are prepared by the same project-controlled pilot, not independent contributors. Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value."
+  },
+  "limitations": "The statement assumes a satisfying assignment and a minimum-cardinality hypothesis; it does not compute a minimum model or prove an algorithmic speedup. Only variables indexed by Fin n contribute to the cardinality. It uses the same noncomputable graph-to-list-CNF representation as B. No new graph-theoretic discovery, complexity bound or P-versus-NP solution is claimed. No acceptance or impact award is assumed."
+}
