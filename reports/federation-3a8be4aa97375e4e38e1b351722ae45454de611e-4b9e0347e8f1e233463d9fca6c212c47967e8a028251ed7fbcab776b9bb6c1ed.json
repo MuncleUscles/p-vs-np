@@ -6283,5 +6283,29 @@
       ]
     }
   },
-  "updatedAt": "2026-11-24T00:50:19.853Z"
+  "result": {
+    "evidence": {
+      "attribution_basis": "The merged source PR identifies its submitter as fededevi (GitHub numeric account 5583580). This is evidence of the submitted formalization, not original mathematical discovery, real-world identity, wallet control or global priority. Local adaptation is independently checked and separately assessed.",
+      "blob_sha": "1c18ed25ca0fb25ff80c031eccc4b0af5c8ce088",
+      "commit": "42765bad82112b0ea3e275713780ab49db8074ec",
+      "content_sha256": "de4686e1cd14a8bb4d80974931fc158e66094e6db39c768ad6793520eef6d7e5",
+      "github_author_id": 5583580,
+      "license": "Apache-2.0",
+      "origin": "formalization",
+      "path": "lean/PEqualNP/Outside/L_meta_727.lean",
+      "pr": 979,
+      "repository": "brilliant-hq/pequalnp-proofs",
+      "repository_id": 1468025030,
+      "source_url": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_727.lean",
+      "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_meta_727 : ∀ (n t : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (v : Fin n), (∃ S : Finset (Fin n), (∀ a b : Fin n, G.Adj a b → a ∈ S ∨ b ∈ S) ∧ S.card = t) → (∀ T : Finset (Fin n), (∀ c d : Fin n, G.Adj c d → c ∈ T ∨ d ∈ T) → t ≤ T.card) → t < (Finset.univ.filter (fun u : Fin n => G.Adj v u)).card → ∀ U : Finset (Fin n), (∀ e f : Fin n, G.Adj e f → e ∈ U ∨ f ∈ U) → U.card = t → v ∈ U",
+      "theorem": "PEqualNP.Outside.L_meta_727"
+    },
+    "id": "external-e7774218fb7da4926ff431422aefd016",
+    "points": "0",
+    "registered_at": 1795481377,
+    "source_hash": "940ed77cf7b8373f315fed5eaf412ebb1cb8d8748d7c00c1b53492b5ff23407d",
+    "subject": "github:5583580",
+    "verification": "not-locally-verified"
+  },
+  "updatedAt": "2026-11-24T00:50:22.594Z"
 }
