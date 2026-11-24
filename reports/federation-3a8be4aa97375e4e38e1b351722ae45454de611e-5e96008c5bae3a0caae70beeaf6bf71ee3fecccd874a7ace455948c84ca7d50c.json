@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "intent": {
+    "command": "verify-author",
+    "input": {
+      "claim": "author-claim-472fb090311e89c0fd60ef5b729cf318",
+      "external_result": "external-0e3b8f5f2dad2237f60ba766ab309cbe",
+      "comment_id": 7119157595
+    },
+    "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+    "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+    "chainId": 61999,
+    "protocolCommit": "dfa403421ce5fecede60fb41ade6a41fb785cd39"
+  },
+  "transactions": {
+    "verify-author": {
+      "intent": {
+        "address": "0x3a8be4aa97375e4e38e1b351722ae45454de611e",
+        "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+        "method": "verify_author_claim",
+        "argsSha256": "36d10ac1fdf8a7b9aa5796f22f7f71628833e3e23f97fc8f2480546b701d29ba",
+        "independent": true
+      }
+    }
+  },
+  "updatedAt": "2026-11-24T01:31:05.512Z"
+}
