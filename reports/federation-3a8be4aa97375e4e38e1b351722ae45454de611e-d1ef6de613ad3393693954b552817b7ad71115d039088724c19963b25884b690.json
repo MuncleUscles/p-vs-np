@@ -5174,5 +5174,29 @@
       ]
     }
   },
-  "updatedAt": "2026-11-24T01:26:46.881Z"
+  "result": {
+    "evidence": {
+      "attribution_basis": "Controlled pilot source for a zero-point GitHub account-to-wallet claim trial. The merged PR submitter identifies the account that supplied this established arithmetic identity; this does not establish original discovery, real-world identity, independent outside participation, or Sybil resistance. No outside author wallet is assigned.",
+      "blob_sha": "fd749700d5994e271a15ecd6cf744a61404ce400",
+      "commit": "8c76a8d31ffeccbe6ad108543b7c19279b0c5d93",
+      "content_sha256": "c8ca6a8d0e1835ebb185e65113a6af2a493e64d1aa720583a7c555100542ad5d",
+      "github_author_id": 2372232,
+      "license": "MIT",
+      "origin": "formalization",
+      "path": "lean/IdentityControl.lean",
+      "pr": 1,
+      "repository": "MuncleUscles/pnp-federation-fixtures",
+      "repository_id": 1469492328,
+      "source_url": "https://github.com/MuncleUscles/pnp-federation-fixtures/blob/8c76a8d31ffeccbe6ad108543b7c19279b0c5d93/lean/IdentityControl.lean",
+      "statement": "theorem PnpFederationFixtures.add_zero_identity (n : Nat) : n + 0 = n := by\n  rfl\n",
+      "theorem": "PnpFederationFixtures.add_zero_identity"
+    },
+    "id": "external-0e3b8f5f2dad2237f60ba766ab309cbe",
+    "points": "0",
+    "registered_at": 1795483559,
+    "source_hash": "64c4c58d1e4f048bb187c4f5c4ef5694bfae14c0e3e0585a7afadae90a02d38a",
+    "subject": "github:2372232",
+    "verification": "not-locally-verified"
+  },
+  "updatedAt": "2026-11-24T01:26:49.590Z"
 }
