@@ -10,13 +10,19 @@ on:
         description: Optional exact upstream PR number to diagnose
         required: false
         type: string
+      source_case:
+        description: Optional checked-in source for complete provenance collection
+        required: false
+        type: choice
+        default: none
+        options: [none, A, B, C, D-anthropic]
 permissions:
   contents: read
 jobs:
   diagnose:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 3
+    timeout-minutes: 5
     steps:
       - name: Read public API access without exposing response content or credentials
         env:
@@ -60,3 +66,29 @@ jobs:
             }catch{console.log(JSON.stringify({path,authenticated,classification:failureClass}));}
           }
           JS
+      - name: Read this exact reviewed diagnostic and source requests
+        if: inputs.source_case != '' && inputs.source_case != 'none'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          path: problem
+          persist-credentials: false
+      - name: Read the exact provenance collector under diagnosis
+        if: inputs.source_case != '' && inputs.source_case != 'none'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: 7669a2cdd54dee1f828f02f86723b4d5ff526075
+          path: protocol
+          persist-credentials: false
+      - name: Use the reviewed collector runtime
+        if: inputs.source_case != '' && inputs.source_case != 'none'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22.22.0
+      - name: Compare complete authenticated and anonymous source collection
+        if: inputs.source_case != '' && inputs.source_case != 'none'
+        run: node problem/.github/scripts/source-collector-access.mjs
+        env:
+          SOURCE_CASE: ${{ inputs.source_case }}
+          GITHUB_TOKEN: ${{ github.token }}
