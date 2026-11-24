@@ -16,8 +16,9 @@
         "method": "settle_author_claim",
         "argsSha256": "5853a1cfaf410e7b180925d2b6870621453b80c00736e6136aab65999d96c7d2",
         "independent": true
-      }
+      },
+      "hash": "0x197ed4929f7239c80c3a21d36932441855c82d5d2dea4484efe97d50cc2f1b02"
     }
   },
-  "updatedAt": "2026-11-24T01:37:11.088Z"
+  "updatedAt": "2026-11-24T01:37:15.890Z"
 }
