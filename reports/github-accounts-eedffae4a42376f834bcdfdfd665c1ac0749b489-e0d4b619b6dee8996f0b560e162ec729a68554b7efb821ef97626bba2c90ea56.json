@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "intent": {
+    "contract": "0xEEdFFaE4A42376f834bCDfDfd665c1ac0749B489",
+    "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+    "method": "sync_contribution",
+    "args": [
+      "pr-27-dfe76b37c950-d08c386809b2",
+      "2ed20dc9a6cf62018bc6e085dd835ce810b1f73a6a576e9d2d71b152b79aa25b"
+    ]
+  },
+  "transactions": {
+    "apply": {
+      "intent": {
+        "address": "0xeedffae4a42376f834bcdfdfd665c1ac0749b489",
+        "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+        "method": "sync_contribution",
+        "argsSha256": "06cf6f633bc0add668709d259eb839dbae6347dbce19e220dd96ddc75d38119d",
+        "independent": false
+      }
+    }
+  },
+  "updatedAt": "2026-11-24T00:16:01.799Z"
+}
