@@ -3,6 +3,29 @@
   "repository": "MuncleUscles/p-vs-np",
   "entries": [
     {
+      "id": "pr-27-dfe76b37c950-d08c386809b2",
+      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+      "chainId": 61999,
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 27,
+      "head": "dfe76b37c950f78f0c54f48215888e28382babfb",
+      "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "protocolCommit": "421740e654a18f730a07abb6bb3ed3112f5fef7a",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "Reuse the upstream cubic polarization identity",
+      "status": "verifying",
+      "points": "0",
+      "impact": null,
+      "dependencies": [],
+      "report": "reports/pr-27-dfe76b37c950-d08c386809b2.json",
+      "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45294067395",
+      "updatedAt": "2026-11-24T00:07:03.276Z",
+      "commentId": 7117664740,
+      "needsResume": true
+    },
+    {
       "id": "pr-21-589b13fbf3f8-cd32910c53f7",
       "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
       "chainId": 61999,
@@ -360,7 +383,7 @@
   ],
   "deployment": {
     "protocolVersion": 5,
-    "contract": "0x8C5F84C7804b2EC283053A8861Fa6d135Cd32a58",
+    "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
     "problem": "p-vs-np",
     "repository": "MuncleUscles/p-vs-np",
     "branch": "research",
