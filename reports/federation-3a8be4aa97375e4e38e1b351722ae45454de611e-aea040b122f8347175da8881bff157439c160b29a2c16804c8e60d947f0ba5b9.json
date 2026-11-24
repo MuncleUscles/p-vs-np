@@ -17,9 +17,19 @@
     "chainId": 61999,
     "protocolCommit": "7669a2cdd54dee1f828f02f86723b4d5ff526075"
   },
-  "transactions": {},
+  "transactions": {
+    "register": {
+      "intent": {
+        "address": "0x3a8be4aa97375e4e38e1b351722ae45454de611e",
+        "sender": "0x9686a4f167600c764c4af3c0c58536f9b7fb8f90",
+        "method": "register_external_result",
+        "argsSha256": "86e81e79dae7e78113e1cb95eb9a602fc2268f07c6966514e0bef75f4b4ecfd0",
+        "independent": false
+      }
+    }
+  },
   "error": "GitHub provenance: HTTP 403 for /repos/brilliant-hq/pequalnp-proofs; complete HTTP 200 response required",
-  "updatedAt": "2026-11-24T00:36:14.001Z",
+  "updatedAt": "2026-11-24T00:36:17.212Z",
   "source": {
     "evidence": {
       "repository": "brilliant-hq/pequalnp-proofs",
