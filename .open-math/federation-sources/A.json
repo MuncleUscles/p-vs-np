@@ -4,7 +4,7 @@
   "commit": "42765bad82112b0ea3e275713780ab49db8074ec",
   "path": "lean/PEqualNP/Outside/L_gct_126.lean",
   "theorem": "PEqualNP.Outside.L_gct_126",
-  "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_gct_126 : \u2200 (R : Type) [CommRing R] (x y z : R), 24 * x * y * z = (x + y + z) ^ 3 - (x + y - z) ^ 3 - (x - y + z) ^ 3 + (x - y - z) ^ 3",
+  "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_gct_126 : ∀ (R : Type) [CommRing R] (x y z : R), 24 * x * y * z = (x + y + z) ^ 3 - (x + y - z) ^ 3 - (x - y + z) ^ 3 + (x - y - z) ^ 3",
   "origin": "formalization",
   "attributionBasis": "The merged source PR identifies its submitter as brilliant-hq (GitHub numeric account 264814072). This is evidence of the submitted formalization, not original mathematical discovery, real-world identity, wallet control or global priority. Local adaptation is independently checked and separately assessed."
 }
