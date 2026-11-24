@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "intent": {
+    "command": "register",
+    "input": {
+      "repository": "brilliant-hq/pequalnp-proofs",
+      "pr": 2,
+      "commit": "42765bad82112b0ea3e275713780ab49db8074ec",
+      "path": "lean/PEqualNP/Outside/L_gct_126.lean",
+      "theorem": "PEqualNP.Outside.L_gct_126",
+      "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_gct_126 : ∀ (R : Type) [CommRing R] (x y z : R), 24 * x * y * z = (x + y + z) ^ 3 - (x + y - z) ^ 3 - (x - y + z) ^ 3 + (x - y - z) ^ 3",
+      "origin": "formalization",
+      "attributionBasis": "The merged source PR identifies its submitter as brilliant-hq (GitHub numeric account 264814072). This is evidence of the submitted formalization, not original mathematical discovery, real-world identity, wallet control or global priority. Local adaptation is independently checked and separately assessed."
+    },
+    "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+    "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+    "chainId": 61999,
+    "protocolCommit": "7669a2cdd54dee1f828f02f86723b4d5ff526075"
+  },
+  "transactions": {},
+  "error": "GitHub provenance: HTTP 403 for /repos/brilliant-hq/pequalnp-proofs; complete HTTP 200 response required",
+  "updatedAt": "2026-11-24T00:18:07.910Z"
+}
