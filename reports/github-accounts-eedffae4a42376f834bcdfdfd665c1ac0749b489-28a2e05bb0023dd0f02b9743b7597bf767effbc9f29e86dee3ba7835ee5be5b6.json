@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "intent": {
+    "contract": "0xEEdFFaE4A42376f834bCDfDfd665c1ac0749B489",
+    "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+    "method": "sync_external_author",
+    "args": [
+      "github:5583580",
+      "a14b26a1fda3abd29de3d3f1d736b4cccc1ed0a67d938c264b501bae822347e6"
+    ]
+  },
+  "transactions": {
+    "apply": {
+      "intent": {
+        "address": "0xeedffae4a42376f834bcdfdfd665c1ac0749b489",
+        "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+        "method": "sync_external_author",
+        "argsSha256": "a56c8a880ff8e466d6ce198d458826f4c586713168af3d179bc0258f811935c2",
+        "independent": false
+      }
+    }
+  },
+  "updatedAt": "2026-11-24T00:52:11.114Z"
+}
