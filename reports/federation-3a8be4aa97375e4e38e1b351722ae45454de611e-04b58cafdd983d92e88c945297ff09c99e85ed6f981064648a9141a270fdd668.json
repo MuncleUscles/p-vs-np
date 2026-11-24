@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "intent": {
+    "command": "attribution",
+    "input": "attribution-74a560cd58b9592e86dd20b594fcd43f",
+    "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+    "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+    "chainId": 61999,
+    "protocolCommit": "7669a2cdd54dee1f828f02f86723b4d5ff526075"
+  },
+  "transactions": {},
+  "error": "GitHub provenance: HTTP 403 for /repos/brilliant-hq/pequalnp-proofs; complete HTTP 200 response required",
+  "updatedAt": "2026-11-24T00:56:09.170Z"
+}
