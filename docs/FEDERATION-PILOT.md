@@ -55,6 +55,12 @@ build and hosted checks**. The
 has five completed cells and 13 unrun cells. Two isolated baseline judgments—one for A and one for B—matched GenLayer. Two agreements do not establish judging accuracy or
 consensus superiority; no independent expert ground truth is supplied.
 
+The [recovery follow-up](https://github.com/MuncleUscles/open-mathematics/pull/43)
+prevents an already-started attribution round from receiving a new judgment
+after a worker upgrade or lost journal. It passed 454 Node tests and preserves
+the native contracts and this failed case. It does not provide a terminal exit
+for unresolved attribution or unblock C.
+
 B's unresolved case is `attribution-74a560cd58b9592e86dd20b594fcd43f`; its preserved
 review transaction is
 `0x70ec339ebfebb843faba0b4980c729991ec62a497e164cb299da24cf6e26f76d`.
