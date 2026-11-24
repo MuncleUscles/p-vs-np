@@ -1,0 +1,45 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Reuse the upstream cubic polarization identity",
+  "claim": "For every commutative ring R and x, y, z in R, the selected theorem proves 24*x*y*z = (x+y+z)^3 - (x+y-z)^3 - (x-y+z)^3 + (x-y-z)^3. It preserves the upstream statement and ring proof. The local work packages the existing theorem in the pinned source-bundle format with a specific Mathlib import; it provides a small reusable algebraic identity, not progress on a complexity bound.",
+  "novelty": "No new mathematical statement or proof argument is contributed. The upstream proof already establishes this exact identity. Local changes remove an unused project import, narrow the Mathlib import and package the source; they add no theorem strength or new reasoning. This direct-reuse case has little incremental mathematical value and does not claim toolchain-migration work.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean",
+      "relationship": "Exact source of the selected cubic polarization theorem and ring proof; it already proves the submitted identity."
+    },
+    {
+      "reference": "https://github.com/brilliant-hq/pequalnp-proofs/pull/2",
+      "relationship": "Upstream submission history identifies brilliant-hq as the formal contributor, without establishing original mathematical discovery."
+    }
+  ],
+  "research_direction": "Algebraic identities as explicitly attributed formal infrastructure",
+  "provenance": {
+    "mode": "integration",
+    "sources": [
+      {
+        "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean",
+        "title": "PEqualNP.Outside.L_gct_126 — upstream formalization",
+        "authors": [
+          "brilliant-hq"
+        ],
+        "relationship": "The selected theorem and its ring proof are reused unchanged; only project-import removal, specific Mathlib imports and bundle packaging are local. There is no new mathematical derivation.",
+        "priority_evidence": "Upstream PR #2 identifies GitHub account brilliant-hq (numeric ID 264814072) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority."
+      }
+    ],
+    "discovery_basis": "No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/federation-cubic-polarization.json",
+    "reproduce": "Use the exact reviewed protocol checkout and current trusted main configuration. Run open-agent check research/submissions/federation-cubic-polarization.json --lean with the pinned Lean 4.36.0/Mathlib image. This runs isolated proof checks; native merit review and any award are separate."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+    "contributions": "Local contribution: source packaging, a narrow Mathlib import and explicit provenance. The unchanged formal theorem and ring proof are attributed to upstream PR #2, submitted by brilliant-hq (GitHub ID 264814072). Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value."
+  },
+  "limitations": "This is a standard polynomial identity already formalized upstream, not a discovery. No relevance to a specific circuit lower-bound argument, SAT algorithm or P-versus-NP resolution is established. The general commutative-ring statement carries no efficiency guarantee. Upstream acceptance and local unpublished kernel checks are not native acceptance or an award for this submission. No comprehensive prior-art search or independent external participation is claimed."
+}
