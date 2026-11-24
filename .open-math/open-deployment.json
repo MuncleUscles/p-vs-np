@@ -14,13 +14,13 @@
   "policyHash": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
   "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
   "codeHash": "429da6bb99951cfb2da1db693e5b164df54f2b22082148722c411917b818ac27",
-  "protocolCommit": "124a3a8192165f74c3918a3352a29b8ec425e096",
+  "protocolCommit": "dfa403421ce5fecede60fb41ade6a41fb785cd39",
   "deploymentProtocolCommit": "421740e654a18f730a07abb6bb3ed3112f5fef7a",
   "deploymentTx": "0x50dfc335e1782bc428c1982be381d2c21544709988071a8eb6dff66daec8fe4a",
   "deployedAt": "2026-11-23T23:49:00.049115+00:00",
   "legacyLedgers": [],
   "mode": "live-native-open-research-v5-federation",
-  "review": "https://github.com/MuncleUscles/open-mathematics/pull/40",
+  "review": "https://github.com/MuncleUscles/open-mathematics/pull/42",
   "evidence": "https://github.com/MuncleUscles/p-vs-np/tree/evidence",
   "scope": "Fresh Studio federation test ledger. No previous records or points migrated. Full Lean 4.36 and pinned Mathlib; native source registration, fixed-budget attribution and explicit future-impact routing.",
   "runtimeUpgradeHistory": [
@@ -31,8 +31,8 @@
     },
     {
       "from": "7669a2cdd54dee1f828f02f86723b4d5ff526075",
-      "to": "124a3a8192165f74c3918a3352a29b8ec425e096",
-      "reason": "Wait for exact finalized-check visibility and protected merge readiness; preserve finalized native approval after operational errors. Native code, policy, contracts and migration state unchanged."
+      "to": "dfa403421ce5fecede60fb41ade6a41fb785cd39",
+      "reason": "Guard finalized-check propagation before protected merges; pace browser reads while showing dated snapshots; use supplied workflow credentials for public provenance. Native code, policy, contracts and migration state unchanged."
     }
   ]
 }
