@@ -5924,5 +5924,6 @@
       ]
     }
   },
-  "updatedAt": "2026-11-24T01:16:56.598Z"
+  "error": "Transaction UNDETERMINED: 0x70ec339ebfebb843faba0b4980c729991ec62a497e164cb299da24cf6e26f76d",
+  "updatedAt": "2026-11-24T01:19:44.284Z"
 }
