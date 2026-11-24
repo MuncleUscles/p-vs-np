@@ -21,9 +21,9 @@
       "dependencies": [],
       "report": "reports/pr-27-dfe76b37c950-d08c386809b2.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45294067395",
-      "updatedAt": "2026-11-24T00:15:04.447Z",
+      "updatedAt": "2026-11-24T00:15:10.780Z",
       "commentId": 7117664740,
-      "needsResume": true
+      "needsResume": false
     },
     {
       "id": "pr-21-589b13fbf3f8-cd32910c53f7",
