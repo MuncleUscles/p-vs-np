@@ -8,7 +8,17 @@
     "chainId": 61999,
     "protocolCommit": "dfa403421ce5fecede60fb41ade6a41fb785cd39"
   },
-  "transactions": {},
+  "transactions": {
+    "attest-r0": {
+      "intent": {
+        "address": "0x3a8be4aa97375e4e38e1b351722ae45454de611e",
+        "sender": "0x9686a4f167600c764c4af3c0c58536f9b7fb8f90",
+        "method": "attest_attribution",
+        "argsSha256": "26862abfd11e17b21d1a73595e599905dfdadd0c8ebb9cace20e5b2e92bc084b",
+        "independent": false
+      }
+    }
+  },
   "source-external-ca1639c9d20f4b4886c7a3012ba9d083": {
     "evidence": {
       "repository": "brilliant-hq/pequalnp-proofs",
@@ -560,5 +570,5 @@
       ]
     }
   },
-  "updatedAt": "2026-11-24T01:15:08.957Z"
+  "updatedAt": "2026-11-24T01:15:11.738Z"
 }
