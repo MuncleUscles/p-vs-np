@@ -1,0 +1,726 @@
+{
+  "version": 1,
+  "intent": {
+    "command": "register",
+    "input": {
+      "repository": "anthropics/formal-math",
+      "pr": 51,
+      "commit": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+      "path": "vp-vnp/Nc/LowDegree.lean",
+      "theorem": "eval_one_line",
+      "statement": "/-\nCopyright (c) 2026 Anthropic, PBC. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nSPDX-License-Identifier: Apache-2.0\n-/\nimport Mathlib\n\n/-!\n# Low degree is fast (Lemma 1)\n\nA polynomial of degree at most `d` that is computed by an arithmetic circuit with `s` gates has, at every\npoint, a value that is a sum over parse trees. A parse tree with `i` leaves reads `2 * i - 1` entries of\nfixed tables of the circuit and `i` coordinates of the point; only `i ≤ d` occurs.\n-/\n\nnamespace Nc\n\nopen Finset\n\nsection Circuits\n\nvariable {F : Type*} [CommSemiring F] {σ : Type*}\n\n/-- Entry `k` of the list `l` is a variable, a constant, or the sum or product of two earlier entries. -/\ndef IsStep (l : ℕ → MvPolynomial σ F) (k : ℕ) : Prop :=\n  (∃ i : σ, l k = MvPolynomial.X i) ∨ (∃ a : F, l k = MvPolynomial.C a) ∨\n    (∃ i < k, ∃ j < k, l k = l i + l j) ∨ (∃ i < k, ∃ j < k, l k = l i * l j)\n\n/-- `p` is computed by an arithmetic circuit with `s` gates (inputs and constants count as gates). -/\ndef Computes (p : MvPolynomial σ F) (s : ℕ) : Prop :=\n  ∃ l : ℕ → MvPolynomial σ F, (∀ k < s, IsStep l k) ∧ ∃ k < s, l k = p\n\nend Circuits\n\nvariable {F : Type*} [Field F] {σ : Type*} {s : ℕ}\n\nsection Proof\n\n/-- `p` along the line through 0 and `u`. -/\nnoncomputable def line (u : σ → F) : MvPolynomial σ F →ₐ[F] Polynomial F :=\n  MvPolynomial.aeval fun l => Polynomial.C (u l) * Polynomial.X\n\ntheorem eval_one_line (u : σ → F) (p : MvPolynomial σ F) :\n    (line u p).eval 1 = MvPolynomial.eval u p := by\n  have : ((Polynomial.evalRingHom (1 : F)).comp (line u).toRingHom) =\n      (MvPolynomial.eval u : MvPolynomial σ F →+* F) := by\n    apply MvPolynomial.ringHom_ext\n    · intro r; simp [line]\n    · intro i; simp [line]\n  exact DFunLike.congr_fun this p\n\nend Proof\n\nend Nc\n",
+      "origin": "formalization",
+      "attributionBasis": "PR #51 identifies steinke-ant as the publishing account for this added formal source file. Individual lemma authorship and original mathematical discovery are not independently established."
+    },
+    "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+    "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+    "chainId": 61999,
+    "protocolCommit": "dfa403421ce5fecede60fb41ade6a41fb785cd39"
+  },
+  "transactions": {},
+  "source": {
+    "evidence": {
+      "repository": "anthropics/formal-math",
+      "repository_id": 1326008263,
+      "pr": 51,
+      "commit": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+      "path": "vp-vnp/Nc/LowDegree.lean",
+      "blob_sha": "67486500737d07db480c2d0deeb645437278cdfe",
+      "content_sha256": "ae26842182c09a0154db023ecb736b11e86137632f5e852c0f192e3e1c28316b",
+      "theorem": "eval_one_line",
+      "statement": "/-\nCopyright (c) 2026 Anthropic, PBC. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nSPDX-License-Identifier: Apache-2.0\n-/\nimport Mathlib\n\n/-!\n# Low degree is fast (Lemma 1)\n\nA polynomial of degree at most `d` that is computed by an arithmetic circuit with `s` gates has, at every\npoint, a value that is a sum over parse trees. A parse tree with `i` leaves reads `2 * i - 1` entries of\nfixed tables of the circuit and `i` coordinates of the point; only `i ≤ d` occurs.\n-/\n\nnamespace Nc\n\nopen Finset\n\nsection Circuits\n\nvariable {F : Type*} [CommSemiring F] {σ : Type*}\n\n/-- Entry `k` of the list `l` is a variable, a constant, or the sum or product of two earlier entries. -/\ndef IsStep (l : ℕ → MvPolynomial σ F) (k : ℕ) : Prop :=\n  (∃ i : σ, l k = MvPolynomial.X i) ∨ (∃ a : F, l k = MvPolynomial.C a) ∨\n    (∃ i < k, ∃ j < k, l k = l i + l j) ∨ (∃ i < k, ∃ j < k, l k = l i * l j)\n\n/-- `p` is computed by an arithmetic circuit with `s` gates (inputs and constants count as gates). -/\ndef Computes (p : MvPolynomial σ F) (s : ℕ) : Prop :=\n  ∃ l : ℕ → MvPolynomial σ F, (∀ k < s, IsStep l k) ∧ ∃ k < s, l k = p\n\nend Circuits\n\nvariable {F : Type*} [Field F] {σ : Type*} {s : ℕ}\n\nsection Proof\n\n/-- `p` along the line through 0 and `u`. -/\nnoncomputable def line (u : σ → F) : MvPolynomial σ F →ₐ[F] Polynomial F :=\n  MvPolynomial.aeval fun l => Polynomial.C (u l) * Polynomial.X\n\ntheorem eval_one_line (u : σ → F) (p : MvPolynomial σ F) :\n    (line u p).eval 1 = MvPolynomial.eval u p := by\n  have : ((Polynomial.evalRingHom (1 : F)).comp (line u).toRingHom) =\n      (MvPolynomial.eval u : MvPolynomial σ F →+* F) := by\n    apply MvPolynomial.ringHom_ext\n    · intro r; simp [line]\n    · intro i; simp [line]\n  exact DFunLike.congr_fun this p\n\nend Proof\n\nend Nc\n",
+      "license": "Apache-2.0",
+      "source_url": "https://github.com/anthropics/formal-math/blob/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/Nc/LowDegree.lean",
+      "github_author_id": 294419551,
+      "origin": "formalization",
+      "attribution_basis": "PR #51 identifies steinke-ant as the publishing account for this added formal source file. Individual lemma authorship and original mathematical discovery are not independently established."
+    },
+    "source_hash": "c1ebb2e15003f93910224ceb6b35a55c7d39856cb1e2fb1c043e684ad0479ae8",
+    "packet": {
+      "schema_version": 1,
+      "retrieved_at": "2026-11-24T01:21:44.707Z",
+      "verification": "not-locally-verified",
+      "statement_kind": "exact-source-excerpt",
+      "repository": {
+        "id": 1326008263,
+        "full_name": "anthropics/formal-math",
+        "private": false
+      },
+      "pull_request": {
+        "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51",
+        "id": 5461228204,
+        "node_id": "PR_kwDOTwlHx88AAAABRYO6rA",
+        "html_url": "https://github.com/anthropics/formal-math/pull/51",
+        "diff_url": "https://github.com/anthropics/formal-math/pull/51.diff",
+        "patch_url": "https://github.com/anthropics/formal-math/pull/51.patch",
+        "issue_url": "https://api.github.com/repos/anthropics/formal-math/issues/51",
+        "commits_url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/commits",
+        "review_comments_url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/comments",
+        "review_comment_url": "https://api.github.com/repos/anthropics/formal-math/pulls/comments{/number}",
+        "comments_url": "https://api.github.com/repos/anthropics/formal-math/issues/51/comments",
+        "statuses_url": "https://api.github.com/repos/anthropics/formal-math/statuses/918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+        "number": 51,
+        "state": "closed",
+        "locked": false,
+        "title": "vp-vnp: VP != VNP, paper and Lean proof",
+        "user": {
+          "login": "steinke-ant",
+          "id": 294419551,
+          "node_id": "U_kgDOEYx8Xw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/294419551?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/steinke-ant",
+          "html_url": "https://github.com/steinke-ant",
+          "followers_url": "https://api.github.com/users/steinke-ant/followers",
+          "following_url": "https://api.github.com/users/steinke-ant/following{/other_user}",
+          "gists_url": "https://api.github.com/users/steinke-ant/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/steinke-ant/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/steinke-ant/subscriptions",
+          "organizations_url": "https://api.github.com/users/steinke-ant/orgs",
+          "repos_url": "https://api.github.com/users/steinke-ant/repos",
+          "events_url": "https://api.github.com/users/steinke-ant/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/steinke-ant/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Adds vp-vnp/: the paper and its Lean 4 proof.",
+        "labels": [],
+        "milestone": null,
+        "active_lock_reason": null,
+        "created_at": "2026-11-23T21:06:18Z",
+        "updated_at": "2026-11-23T23:03:30Z",
+        "closed_at": "2026-11-23T21:43:50Z",
+        "merged_at": "2026-11-23T21:43:50Z",
+        "merge_commit_sha": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+        "assignee": null,
+        "assignees": [],
+        "requested_reviewers": [],
+        "requested_teams": [],
+        "head": {
+          "label": "anthropics:vp-vnp",
+          "ref": "vp-vnp",
+          "repo": {
+            "id": 1326008263,
+            "node_id": "R_kgDOTwlHxw",
+            "name": "formal-math",
+            "full_name": "anthropics/formal-math",
+            "owner": {
+              "login": "anthropics",
+              "id": 76263028,
+              "node_id": "MDEyOk9yZ2FuaXphdGlvbjc2MjYzMDI4",
+              "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/anthropics",
+              "html_url": "https://github.com/anthropics",
+              "followers_url": "https://api.github.com/users/anthropics/followers",
+              "following_url": "https://api.github.com/users/anthropics/following{/other_user}",
+              "gists_url": "https://api.github.com/users/anthropics/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/anthropics/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/anthropics/subscriptions",
+              "organizations_url": "https://api.github.com/users/anthropics/orgs",
+              "repos_url": "https://api.github.com/users/anthropics/repos",
+              "events_url": "https://api.github.com/users/anthropics/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/anthropics/received_events",
+              "type": "Organization",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "private": false,
+            "fork": false,
+            "archived": false,
+            "disabled": false,
+            "description": null,
+            "homepage": null,
+            "language": "Lean",
+            "visibility": "public",
+            "is_template": false,
+            "topics": [],
+            "forks_count": 97,
+            "forks": 97,
+            "stargazers_count": 638,
+            "watchers_count": 638,
+            "watchers": 638,
+            "open_issues_count": 33,
+            "open_issues": 33,
+            "size": 9079,
+            "default_branch": "main",
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "has_pages": false,
+            "has_downloads": false,
+            "has_discussions": false,
+            "has_pull_requests": true,
+            "pushed_at": "2026-11-23T21:43:50Z",
+            "created_at": "2026-08-06T23:56:11Z",
+            "updated_at": "2026-11-24T01:15:59Z",
+            "allow_forking": true,
+            "web_commit_signoff_required": false,
+            "pull_request_creation_policy": "all",
+            "license": {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "url": "https://api.github.com/licenses/apache-2.0",
+              "spdx_id": "Apache-2.0",
+              "node_id": "MDc6TGljZW5zZTI="
+            },
+            "url": "https://api.github.com/repos/anthropics/formal-math",
+            "html_url": "https://github.com/anthropics/formal-math",
+            "archive_url": "https://api.github.com/repos/anthropics/formal-math/{archive_format}{/ref}",
+            "assignees_url": "https://api.github.com/repos/anthropics/formal-math/assignees{/user}",
+            "blobs_url": "https://api.github.com/repos/anthropics/formal-math/git/blobs{/sha}",
+            "branches_url": "https://api.github.com/repos/anthropics/formal-math/branches{/branch}",
+            "collaborators_url": "https://api.github.com/repos/anthropics/formal-math/collaborators{/collaborator}",
+            "comments_url": "https://api.github.com/repos/anthropics/formal-math/comments{/number}",
+            "commits_url": "https://api.github.com/repos/anthropics/formal-math/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/anthropics/formal-math/compare/{base}...{head}",
+            "contents_url": "https://api.github.com/repos/anthropics/formal-math/contents/{+path}",
+            "contributors_url": "https://api.github.com/repos/anthropics/formal-math/contributors",
+            "deployments_url": "https://api.github.com/repos/anthropics/formal-math/deployments",
+            "downloads_url": "https://api.github.com/repos/anthropics/formal-math/downloads",
+            "events_url": "https://api.github.com/repos/anthropics/formal-math/events",
+            "forks_url": "https://api.github.com/repos/anthropics/formal-math/forks",
+            "git_commits_url": "https://api.github.com/repos/anthropics/formal-math/git/commits{/sha}",
+            "git_refs_url": "https://api.github.com/repos/anthropics/formal-math/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/anthropics/formal-math/git/tags{/sha}",
+            "git_url": "git://github.com/anthropics/formal-math.git",
+            "issue_comment_url": "https://api.github.com/repos/anthropics/formal-math/issues/comments{/number}",
+            "issue_events_url": "https://api.github.com/repos/anthropics/formal-math/issues/events{/number}",
+            "issues_url": "https://api.github.com/repos/anthropics/formal-math/issues{/number}",
+            "keys_url": "https://api.github.com/repos/anthropics/formal-math/keys{/key_id}",
+            "labels_url": "https://api.github.com/repos/anthropics/formal-math/labels{/name}",
+            "languages_url": "https://api.github.com/repos/anthropics/formal-math/languages",
+            "merges_url": "https://api.github.com/repos/anthropics/formal-math/merges",
+            "milestones_url": "https://api.github.com/repos/anthropics/formal-math/milestones{/number}",
+            "notifications_url": "https://api.github.com/repos/anthropics/formal-math/notifications{?since,all,participating}",
+            "pulls_url": "https://api.github.com/repos/anthropics/formal-math/pulls{/number}",
+            "releases_url": "https://api.github.com/repos/anthropics/formal-math/releases{/id}",
+            "ssh_url": "git@github.com:anthropics/formal-math.git",
+            "stargazers_url": "https://api.github.com/repos/anthropics/formal-math/stargazers",
+            "statuses_url": "https://api.github.com/repos/anthropics/formal-math/statuses/{sha}",
+            "subscribers_url": "https://api.github.com/repos/anthropics/formal-math/subscribers",
+            "subscription_url": "https://api.github.com/repos/anthropics/formal-math/subscription",
+            "tags_url": "https://api.github.com/repos/anthropics/formal-math/tags",
+            "teams_url": "https://api.github.com/repos/anthropics/formal-math/teams",
+            "trees_url": "https://api.github.com/repos/anthropics/formal-math/git/trees{/sha}",
+            "clone_url": "https://github.com/anthropics/formal-math.git",
+            "mirror_url": null,
+            "hooks_url": "https://api.github.com/repos/anthropics/formal-math/hooks",
+            "svn_url": "https://github.com/anthropics/formal-math"
+          },
+          "sha": "918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+          "user": {
+            "login": "anthropics",
+            "id": 76263028,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjc2MjYzMDI4",
+            "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/anthropics",
+            "html_url": "https://github.com/anthropics",
+            "followers_url": "https://api.github.com/users/anthropics/followers",
+            "following_url": "https://api.github.com/users/anthropics/following{/other_user}",
+            "gists_url": "https://api.github.com/users/anthropics/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/anthropics/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/anthropics/subscriptions",
+            "organizations_url": "https://api.github.com/users/anthropics/orgs",
+            "repos_url": "https://api.github.com/users/anthropics/repos",
+            "events_url": "https://api.github.com/users/anthropics/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/anthropics/received_events",
+            "type": "Organization",
+            "user_view_type": "public",
+            "site_admin": false
+          }
+        },
+        "base": {
+          "label": "anthropics:main",
+          "ref": "main",
+          "repo": {
+            "id": 1326008263,
+            "node_id": "R_kgDOTwlHxw",
+            "name": "formal-math",
+            "full_name": "anthropics/formal-math",
+            "owner": {
+              "login": "anthropics",
+              "id": 76263028,
+              "node_id": "MDEyOk9yZ2FuaXphdGlvbjc2MjYzMDI4",
+              "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+              "gravatar_id": "",
+              "url": "https://api.github.com/users/anthropics",
+              "html_url": "https://github.com/anthropics",
+              "followers_url": "https://api.github.com/users/anthropics/followers",
+              "following_url": "https://api.github.com/users/anthropics/following{/other_user}",
+              "gists_url": "https://api.github.com/users/anthropics/gists{/gist_id}",
+              "starred_url": "https://api.github.com/users/anthropics/starred{/owner}{/repo}",
+              "subscriptions_url": "https://api.github.com/users/anthropics/subscriptions",
+              "organizations_url": "https://api.github.com/users/anthropics/orgs",
+              "repos_url": "https://api.github.com/users/anthropics/repos",
+              "events_url": "https://api.github.com/users/anthropics/events{/privacy}",
+              "received_events_url": "https://api.github.com/users/anthropics/received_events",
+              "type": "Organization",
+              "user_view_type": "public",
+              "site_admin": false
+            },
+            "private": false,
+            "fork": false,
+            "archived": false,
+            "disabled": false,
+            "description": null,
+            "homepage": null,
+            "language": "Lean",
+            "visibility": "public",
+            "is_template": false,
+            "topics": [],
+            "forks_count": 97,
+            "forks": 97,
+            "stargazers_count": 638,
+            "watchers_count": 638,
+            "watchers": 638,
+            "open_issues_count": 33,
+            "open_issues": 33,
+            "size": 9079,
+            "default_branch": "main",
+            "has_issues": true,
+            "has_projects": true,
+            "has_wiki": true,
+            "has_pages": false,
+            "has_downloads": false,
+            "has_discussions": false,
+            "has_pull_requests": true,
+            "pushed_at": "2026-11-23T21:43:50Z",
+            "created_at": "2026-08-06T23:56:11Z",
+            "updated_at": "2026-11-24T01:15:59Z",
+            "allow_forking": true,
+            "web_commit_signoff_required": false,
+            "pull_request_creation_policy": "all",
+            "license": {
+              "key": "apache-2.0",
+              "name": "Apache License 2.0",
+              "url": "https://api.github.com/licenses/apache-2.0",
+              "spdx_id": "Apache-2.0",
+              "node_id": "MDc6TGljZW5zZTI="
+            },
+            "url": "https://api.github.com/repos/anthropics/formal-math",
+            "html_url": "https://github.com/anthropics/formal-math",
+            "archive_url": "https://api.github.com/repos/anthropics/formal-math/{archive_format}{/ref}",
+            "assignees_url": "https://api.github.com/repos/anthropics/formal-math/assignees{/user}",
+            "blobs_url": "https://api.github.com/repos/anthropics/formal-math/git/blobs{/sha}",
+            "branches_url": "https://api.github.com/repos/anthropics/formal-math/branches{/branch}",
+            "collaborators_url": "https://api.github.com/repos/anthropics/formal-math/collaborators{/collaborator}",
+            "comments_url": "https://api.github.com/repos/anthropics/formal-math/comments{/number}",
+            "commits_url": "https://api.github.com/repos/anthropics/formal-math/commits{/sha}",
+            "compare_url": "https://api.github.com/repos/anthropics/formal-math/compare/{base}...{head}",
+            "contents_url": "https://api.github.com/repos/anthropics/formal-math/contents/{+path}",
+            "contributors_url": "https://api.github.com/repos/anthropics/formal-math/contributors",
+            "deployments_url": "https://api.github.com/repos/anthropics/formal-math/deployments",
+            "downloads_url": "https://api.github.com/repos/anthropics/formal-math/downloads",
+            "events_url": "https://api.github.com/repos/anthropics/formal-math/events",
+            "forks_url": "https://api.github.com/repos/anthropics/formal-math/forks",
+            "git_commits_url": "https://api.github.com/repos/anthropics/formal-math/git/commits{/sha}",
+            "git_refs_url": "https://api.github.com/repos/anthropics/formal-math/git/refs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/anthropics/formal-math/git/tags{/sha}",
+            "git_url": "git://github.com/anthropics/formal-math.git",
+            "issue_comment_url": "https://api.github.com/repos/anthropics/formal-math/issues/comments{/number}",
+            "issue_events_url": "https://api.github.com/repos/anthropics/formal-math/issues/events{/number}",
+            "issues_url": "https://api.github.com/repos/anthropics/formal-math/issues{/number}",
+            "keys_url": "https://api.github.com/repos/anthropics/formal-math/keys{/key_id}",
+            "labels_url": "https://api.github.com/repos/anthropics/formal-math/labels{/name}",
+            "languages_url": "https://api.github.com/repos/anthropics/formal-math/languages",
+            "merges_url": "https://api.github.com/repos/anthropics/formal-math/merges",
+            "milestones_url": "https://api.github.com/repos/anthropics/formal-math/milestones{/number}",
+            "notifications_url": "https://api.github.com/repos/anthropics/formal-math/notifications{?since,all,participating}",
+            "pulls_url": "https://api.github.com/repos/anthropics/formal-math/pulls{/number}",
+            "releases_url": "https://api.github.com/repos/anthropics/formal-math/releases{/id}",
+            "ssh_url": "git@github.com:anthropics/formal-math.git",
+            "stargazers_url": "https://api.github.com/repos/anthropics/formal-math/stargazers",
+            "statuses_url": "https://api.github.com/repos/anthropics/formal-math/statuses/{sha}",
+            "subscribers_url": "https://api.github.com/repos/anthropics/formal-math/subscribers",
+            "subscription_url": "https://api.github.com/repos/anthropics/formal-math/subscription",
+            "tags_url": "https://api.github.com/repos/anthropics/formal-math/tags",
+            "teams_url": "https://api.github.com/repos/anthropics/formal-math/teams",
+            "trees_url": "https://api.github.com/repos/anthropics/formal-math/git/trees{/sha}",
+            "clone_url": "https://github.com/anthropics/formal-math.git",
+            "mirror_url": null,
+            "hooks_url": "https://api.github.com/repos/anthropics/formal-math/hooks",
+            "svn_url": "https://github.com/anthropics/formal-math"
+          },
+          "sha": "16a5ce41304fcdaea4e0be7c132e1c361dc26da5",
+          "user": {
+            "login": "anthropics",
+            "id": 76263028,
+            "node_id": "MDEyOk9yZ2FuaXphdGlvbjc2MjYzMDI4",
+            "avatar_url": "https://avatars.githubusercontent.com/u/76263028?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/anthropics",
+            "html_url": "https://github.com/anthropics",
+            "followers_url": "https://api.github.com/users/anthropics/followers",
+            "following_url": "https://api.github.com/users/anthropics/following{/other_user}",
+            "gists_url": "https://api.github.com/users/anthropics/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/anthropics/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/anthropics/subscriptions",
+            "organizations_url": "https://api.github.com/users/anthropics/orgs",
+            "repos_url": "https://api.github.com/users/anthropics/repos",
+            "events_url": "https://api.github.com/users/anthropics/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/anthropics/received_events",
+            "type": "Organization",
+            "user_view_type": "public",
+            "site_admin": false
+          }
+        },
+        "_links": {
+          "comments": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/issues/51/comments"
+          },
+          "commits": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/pulls/51/commits"
+          },
+          "statuses": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/statuses/918c8e2778aee18b0283dc5a33ed39ab3cd63a96"
+          },
+          "html": {
+            "href": "https://github.com/anthropics/formal-math/pull/51"
+          },
+          "issue": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/issues/51"
+          },
+          "review_comments": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/pulls/51/comments"
+          },
+          "review_comment": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/pulls/comments{/number}"
+          },
+          "self": {
+            "href": "https://api.github.com/repos/anthropics/formal-math/pulls/51"
+          }
+        },
+        "author_association": "COLLABORATOR",
+        "auto_merge": null,
+        "draft": false,
+        "merged": true,
+        "mergeable": null,
+        "rebaseable": null,
+        "mergeable_state": "unknown",
+        "merged_by": {
+          "login": "steinke-ant",
+          "id": 294419551,
+          "node_id": "U_kgDOEYx8Xw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/294419551?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/steinke-ant",
+          "html_url": "https://github.com/steinke-ant",
+          "followers_url": "https://api.github.com/users/steinke-ant/followers",
+          "following_url": "https://api.github.com/users/steinke-ant/following{/other_user}",
+          "gists_url": "https://api.github.com/users/steinke-ant/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/steinke-ant/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/steinke-ant/subscriptions",
+          "organizations_url": "https://api.github.com/users/steinke-ant/orgs",
+          "repos_url": "https://api.github.com/users/steinke-ant/repos",
+          "events_url": "https://api.github.com/users/steinke-ant/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/steinke-ant/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "comments": 2,
+        "review_comments": 0,
+        "maintainer_can_modify": false,
+        "commits": 1,
+        "additions": 73324,
+        "deletions": 0,
+        "changed_files": 333
+      },
+      "association": {
+        "kind": "exact-pr-merge",
+        "pr_head": "918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+        "merge_commit": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+        "head_blob": "67486500737d07db480c2d0deeb645437278cdfe",
+        "merge_blob": "67486500737d07db480c2d0deeb645437278cdfe"
+      },
+      "changed_file": {
+        "sha": "67486500737d07db480c2d0deeb645437278cdfe",
+        "filename": "vp-vnp/Nc/LowDegree.lean",
+        "status": "added",
+        "additions": 54,
+        "deletions": 0,
+        "changes": 54,
+        "blob_url": "https://github.com/anthropics/formal-math/blob/918c8e2778aee18b0283dc5a33ed39ab3cd63a96/vp-vnp%2FNc%2FLowDegree.lean",
+        "raw_url": "https://github.com/anthropics/formal-math/raw/918c8e2778aee18b0283dc5a33ed39ab3cd63a96/vp-vnp%2FNc%2FLowDegree.lean",
+        "contents_url": "https://api.github.com/repos/anthropics/formal-math/contents/vp-vnp%2FNc%2FLowDegree.lean?ref=918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+        "patch": "@@ -0,0 +1,54 @@\n+/-\n+Copyright (c) 2026 Anthropic, PBC. All rights reserved.\n+Released under Apache 2.0 license as described in the file LICENSE.\n+SPDX-License-Identifier: Apache-2.0\n+-/\n+import Mathlib\n+\n+/-!\n+# Low degree is fast (Lemma 1)\n+\n+A polynomial of degree at most `d` that is computed by an arithmetic circuit with `s` gates has, at every\n+point, a value that is a sum over parse trees. A parse tree with `i` leaves reads `2 * i - 1` entries of\n+fixed tables of the circuit and `i` coordinates of the point; only `i ≤ d` occurs.\n+-/\n+\n+namespace Nc\n+\n+open Finset\n+\n+section Circuits\n+\n+variable {F : Type*} [CommSemiring F] {σ : Type*}\n+\n+/-- Entry `k` of the list `l` is a variable, a constant, or the sum or product of two earlier entries. -/\n+def IsStep (l : ℕ → MvPolynomial σ F) (k : ℕ) : Prop :=\n+  (∃ i : σ, l k = MvPolynomial.X i) ∨ (∃ a : F, l k = MvPolynomial.C a) ∨\n+    (∃ i < k, ∃ j < k, l k = l i + l j) ∨ (∃ i < k, ∃ j < k, l k = l i * l j)\n+\n+/-- `p` is computed by an arithmetic circuit with `s` gates (inputs and constants count as gates). -/\n+def Computes (p : MvPolynomial σ F) (s : ℕ) : Prop :=\n+  ∃ l : ℕ → MvPolynomial σ F, (∀ k < s, IsStep l k) ∧ ∃ k < s, l k = p\n+\n+end Circuits\n+\n+variable {F : Type*} [Field F] {σ : Type*} {s : ℕ}\n+\n+section Proof\n+\n+/-- `p` along the line through 0 and `u`. -/\n+noncomputable def line (u : σ → F) : MvPolynomial σ F →ₐ[F] Polynomial F :=\n+  MvPolynomial.aeval fun l => Polynomial.C (u l) * Polynomial.X\n+\n+theorem eval_one_line (u : σ → F) (p : MvPolynomial σ F) :\n+    (line u p).eval 1 = MvPolynomial.eval u p := by\n+  have : ((Polynomial.evalRingHom (1 : F)).comp (line u).toRingHom) =\n+      (MvPolynomial.eval u : MvPolynomial σ F →+* F) := by\n+    apply MvPolynomial.ringHom_ext\n+    · intro r; simp [line]\n+    · intro i; simp [line]\n+  exact DFunLike.congr_fun this p\n+\n+end Proof\n+\n+end Nc"
+      },
+      "source": {
+        "source_url": "https://github.com/anthropics/formal-math/blob/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/vp-vnp/Nc/LowDegree.lean",
+        "commit": {
+          "sha": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+          "node_id": "C_kwDOTwlHx9oAKDExYjZjN2UzYzkyN2RmMjY1OGY1MTNiNmI2OGVhN2Y4OTI5YzYyYzU",
+          "url": "https://api.github.com/repos/anthropics/formal-math/git/commits/11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+          "html_url": "https://github.com/anthropics/formal-math/commit/11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+          "author": {
+            "name": "steinke-ant",
+            "email": "steinke@anthropic.com",
+            "date": "2026-11-23T21:43:48Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2026-11-23T21:43:48Z"
+          },
+          "tree": {
+            "sha": "d60b29743cf59121811be35b128cfbd40e3fa3fe",
+            "url": "https://api.github.com/repos/anthropics/formal-math/git/trees/d60b29743cf59121811be35b128cfbd40e3fa3fe"
+          },
+          "message": "Merge pull request #51 from anthropics/vp-vnp\n\nvp-vnp: VP != VNP, paper and Lean proof",
+          "parents": [
+            {
+              "sha": "16a5ce41304fcdaea4e0be7c132e1c361dc26da5",
+              "url": "https://api.github.com/repos/anthropics/formal-math/git/commits/16a5ce41304fcdaea4e0be7c132e1c361dc26da5",
+              "html_url": "https://github.com/anthropics/formal-math/commit/16a5ce41304fcdaea4e0be7c132e1c361dc26da5"
+            },
+            {
+              "sha": "918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+              "url": "https://api.github.com/repos/anthropics/formal-math/git/commits/918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+              "html_url": "https://github.com/anthropics/formal-math/commit/918c8e2778aee18b0283dc5a33ed39ab3cd63a96"
+            }
+          ],
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJrBLOUCRC1aQ7uu5UhlAAADdMQABGWG9H9rrSWcsleJ3V0hKnr\n2EMcICAQh7tPbEAzK3fTFUrtoILdHCWMXShpWQ6aixQOjJLaueDDVrbCvhU+/HQ0\neRpBFAkuxpx6ibfb5mUWGez1BKkoQYaB59CwCSlJo6C2OXzjNzQwYj3dtz30pm4D\njtU0fg5/3DUAzE5ChLmMMCDWA5mv6VLGSHK0PacBnn80XcX/l7NrXtf7dT2MqBaZ\nKvlHKBvFbz1CuMBKGQMNfNv70wGZgkE3qniJYvXSMYs3BaXfvEN1pKSJfW0itJrB\nE+mK1746lcdWug1ItoJt33XLHyFnjkezL+jz7x4lvzYPxGeisPUmpzVmCos31yjh\n/HR9iDgHQsvqmmSeULTDMivCOiS//GZfcYw1TBCCZDLUX8TdLyFkRm7cq6RTLHho\nX5SqEaqbaclB3qCWNHijm7rr82Jo2MTx/NNiFQRtRLPSBF8qkcITzjGpQU26cSaO\n7uTAjJSALbJEDcZYf+z6XianF/sw+utaB7Bs51/jz34tJjAE1YICOLptmt+OX9YT\nh6/uEe52hDAhAnzbymoBnZRe0udhaRYxth5maehHSVQaeyek2F4Eg0j8rYMcPyyP\nfsr/8gpyQf0JEoZze0pJ5OrJ+22M4gahUG6BbgN5duDWD2teMLDMmP6GiDFNbDla\nFY77JsGJTtj0jEQ1zsHZ\n=O2uw\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree d60b29743cf59121811be35b128cfbd40e3fa3fe\nparent 16a5ce41304fcdaea4e0be7c132e1c361dc26da5\nparent 918c8e2778aee18b0283dc5a33ed39ab3cd63a96\nauthor steinke-ant <steinke@anthropic.com> 1795470228 -0800\ncommitter GitHub <noreply@github.com> 1795470228 -0800\n\nMerge pull request #51 from anthropics/vp-vnp\n\nvp-vnp: VP != VNP, paper and Lean proof",
+            "verified_at": "2026-11-23T21:43:48Z"
+          }
+        },
+        "path": "vp-vnp/Nc/LowDegree.lean",
+        "blob_sha": "67486500737d07db480c2d0deeb645437278cdfe",
+        "bytes": 1869,
+        "content_sha256": "ae26842182c09a0154db023ecb736b11e86137632f5e852c0f192e3e1c28316b",
+        "content_base64": "Ly0KQ29weXJpZ2h0IChjKSAyMDI2IEFudGhyb3BpYywgUEJDLiBBbGwgcmlnaHRzIHJlc2VydmVkLgpSZWxlYXNlZCB1bmRlciBBcGFjaGUgMi4wIGxpY2Vuc2UgYXMgZGVzY3JpYmVkIGluIHRoZSBmaWxlIExJQ0VOU0UuClNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiBBcGFjaGUtMi4wCi0vCmltcG9ydCBNYXRobGliCgovLSEKIyBMb3cgZGVncmVlIGlzIGZhc3QgKExlbW1hIDEpCgpBIHBvbHlub21pYWwgb2YgZGVncmVlIGF0IG1vc3QgYGRgIHRoYXQgaXMgY29tcHV0ZWQgYnkgYW4gYXJpdGhtZXRpYyBjaXJjdWl0IHdpdGggYHNgIGdhdGVzIGhhcywgYXQgZXZlcnkKcG9pbnQsIGEgdmFsdWUgdGhhdCBpcyBhIHN1bSBvdmVyIHBhcnNlIHRyZWVzLiBBIHBhcnNlIHRyZWUgd2l0aCBgaWAgbGVhdmVzIHJlYWRzIGAyICogaSAtIDFgIGVudHJpZXMgb2YKZml4ZWQgdGFibGVzIG9mIHRoZSBjaXJjdWl0IGFuZCBgaWAgY29vcmRpbmF0ZXMgb2YgdGhlIHBvaW50OyBvbmx5IGBpIOKJpCBkYCBvY2N1cnMuCi0vCgpuYW1lc3BhY2UgTmMKCm9wZW4gRmluc2V0CgpzZWN0aW9uIENpcmN1aXRzCgp2YXJpYWJsZSB7RiA6IFR5cGUqfSBbQ29tbVNlbWlyaW5nIEZdIHvPgyA6IFR5cGUqfQoKLy0tIEVudHJ5IGBrYCBvZiB0aGUgbGlzdCBgbGAgaXMgYSB2YXJpYWJsZSwgYSBjb25zdGFudCwgb3IgdGhlIHN1bSBvciBwcm9kdWN0IG9mIHR3byBlYXJsaWVyIGVudHJpZXMuIC0vCmRlZiBJc1N0ZXAgKGwgOiDihJUg4oaSIE12UG9seW5vbWlhbCDPgyBGKSAoayA6IOKElSkgOiBQcm9wIDo9CiAgKOKIgyBpIDogz4MsIGwgayA9IE12UG9seW5vbWlhbC5YIGkpIOKIqCAo4oiDIGEgOiBGLCBsIGsgPSBNdlBvbHlub21pYWwuQyBhKSDiiKgKICAgICjiiIMgaSA8IGssIOKIgyBqIDwgaywgbCBrID0gbCBpICsgbCBqKSDiiKggKOKIgyBpIDwgaywg4oiDIGogPCBrLCBsIGsgPSBsIGkgKiBsIGopCgovLS0gYHBgIGlzIGNvbXB1dGVkIGJ5IGFuIGFyaXRobWV0aWMgY2lyY3VpdCB3aXRoIGBzYCBnYXRlcyAoaW5wdXRzIGFuZCBjb25zdGFudHMgY291bnQgYXMgZ2F0ZXMpLiAtLwpkZWYgQ29tcHV0ZXMgKHAgOiBNdlBvbHlub21pYWwgz4MgRikgKHMgOiDihJUpIDogUHJvcCA6PQogIOKIgyBsIDog4oSVIOKGkiBNdlBvbHlub21pYWwgz4MgRiwgKOKIgCBrIDwgcywgSXNTdGVwIGwgaykg4oinIOKIgyBrIDwgcywgbCBrID0gcAoKZW5kIENpcmN1aXRzCgp2YXJpYWJsZSB7RiA6IFR5cGUqfSBbRmllbGQgRl0ge8+DIDogVHlwZSp9IHtzIDog4oSVfQoKc2VjdGlvbiBQcm9vZgoKLy0tIGBwYCBhbG9uZyB0aGUgbGluZSB0aHJvdWdoIDAgYW5kIGB1YC4gLS8Kbm9uY29tcHV0YWJsZSBkZWYgbGluZSAodSA6IM+DIOKGkiBGKSA6IE12UG9seW5vbWlhbCDPgyBGIOKGkuKCkFtGXSBQb2x5bm9taWFsIEYgOj0KICBNdlBvbHlub21pYWwuYWV2YWwgZnVuIGwgPT4gUG9seW5vbWlhbC5DICh1IGwpICogUG9seW5vbWlhbC5YCgp0aGVvcmVtIGV2YWxfb25lX2xpbmUgKHUgOiDPgyDihpIgRikgKHAgOiBNdlBvbHlub21pYWwgz4MgRikgOgogICAgKGxpbmUgdSBwKS5ldmFsIDEgPSBNdlBvbHlub21pYWwuZXZhbCB1IHAgOj0gYnkKICBoYXZlIDogKChQb2x5bm9taWFsLmV2YWxSaW5nSG9tICgxIDogRikpLmNvbXAgKGxpbmUgdSkudG9SaW5nSG9tKSA9CiAgICAgIChNdlBvbHlub21pYWwuZXZhbCB1IDogTXZQb2x5bm9taWFsIM+DIEYg4oaSKyogRikgOj0gYnkKICAgIGFwcGx5IE12UG9seW5vbWlhbC5yaW5nSG9tX2V4dAogICAgwrcgaW50cm8gcjsgc2ltcCBbbGluZV0KICAgIMK3IGludHJvIGk7IHNpbXAgW2xpbmVdCiAgZXhhY3QgREZ1bkxpa2UuY29uZ3JfZnVuIHRoaXMgcAoKZW5kIFByb29mCgplbmQgTmMK",
+        "text": "/-\nCopyright (c) 2026 Anthropic, PBC. All rights reserved.\nReleased under Apache 2.0 license as described in the file LICENSE.\nSPDX-License-Identifier: Apache-2.0\n-/\nimport Mathlib\n\n/-!\n# Low degree is fast (Lemma 1)\n\nA polynomial of degree at most `d` that is computed by an arithmetic circuit with `s` gates has, at every\npoint, a value that is a sum over parse trees. A parse tree with `i` leaves reads `2 * i - 1` entries of\nfixed tables of the circuit and `i` coordinates of the point; only `i ≤ d` occurs.\n-/\n\nnamespace Nc\n\nopen Finset\n\nsection Circuits\n\nvariable {F : Type*} [CommSemiring F] {σ : Type*}\n\n/-- Entry `k` of the list `l` is a variable, a constant, or the sum or product of two earlier entries. -/\ndef IsStep (l : ℕ → MvPolynomial σ F) (k : ℕ) : Prop :=\n  (∃ i : σ, l k = MvPolynomial.X i) ∨ (∃ a : F, l k = MvPolynomial.C a) ∨\n    (∃ i < k, ∃ j < k, l k = l i + l j) ∨ (∃ i < k, ∃ j < k, l k = l i * l j)\n\n/-- `p` is computed by an arithmetic circuit with `s` gates (inputs and constants count as gates). -/\ndef Computes (p : MvPolynomial σ F) (s : ℕ) : Prop :=\n  ∃ l : ℕ → MvPolynomial σ F, (∀ k < s, IsStep l k) ∧ ∃ k < s, l k = p\n\nend Circuits\n\nvariable {F : Type*} [Field F] {σ : Type*} {s : ℕ}\n\nsection Proof\n\n/-- `p` along the line through 0 and `u`. -/\nnoncomputable def line (u : σ → F) : MvPolynomial σ F →ₐ[F] Polynomial F :=\n  MvPolynomial.aeval fun l => Polynomial.C (u l) * Polynomial.X\n\ntheorem eval_one_line (u : σ → F) (p : MvPolynomial σ F) :\n    (line u p).eval 1 = MvPolynomial.eval u p := by\n  have : ((Polynomial.evalRingHom (1 : F)).comp (line u).toRingHom) =\n      (MvPolynomial.eval u : MvPolynomial σ F →+* F) := by\n    apply MvPolynomial.ringHom_ext\n    · intro r; simp [line]\n    · intro i; simp [line]\n  exact DFunLike.congr_fun this p\n\nend Proof\n\nend Nc\n"
+      },
+      "license": {
+        "source_url": "https://github.com/anthropics/formal-math/blob/11b6c7e3c927df2658f513b6b68ea7f8929c62c5/LICENSE",
+        "path": "LICENSE",
+        "spdx_id": "Apache-2.0",
+        "blob_sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "bytes": 11357,
+        "content_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "content_base64": "ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQXBhY2hlIExpY2Vuc2UKICAgICAgICAgICAgICAgICAgICAgICAgICAgVmVyc2lvbiAyLjAsIEphbnVhcnkgMjAwNAogICAgICAgICAgICAgICAgICAgICAgICBodHRwOi8vd3d3LmFwYWNoZS5vcmcvbGljZW5zZXMvCgogICBURVJNUyBBTkQgQ09ORElUSU9OUyBGT1IgVVNFLCBSRVBST0RVQ1RJT04sIEFORCBESVNUUklCVVRJT04KCiAgIDEuIERlZmluaXRpb25zLgoKICAgICAgIkxpY2Vuc2UiIHNoYWxsIG1lYW4gdGhlIHRlcm1zIGFuZCBjb25kaXRpb25zIGZvciB1c2UsIHJlcHJvZHVjdGlvbiwKICAgICAgYW5kIGRpc3RyaWJ1dGlvbiBhcyBkZWZpbmVkIGJ5IFNlY3Rpb25zIDEgdGhyb3VnaCA5IG9mIHRoaXMgZG9jdW1lbnQuCgogICAgICAiTGljZW5zb3IiIHNoYWxsIG1lYW4gdGhlIGNvcHlyaWdodCBvd25lciBvciBlbnRpdHkgYXV0aG9yaXplZCBieQogICAgICB0aGUgY29weXJpZ2h0IG93bmVyIHRoYXQgaXMgZ3JhbnRpbmcgdGhlIExpY2Vuc2UuCgogICAgICAiTGVnYWwgRW50aXR5IiBzaGFsbCBtZWFuIHRoZSB1bmlvbiBvZiB0aGUgYWN0aW5nIGVudGl0eSBhbmQgYWxsCiAgICAgIG90aGVyIGVudGl0aWVzIHRoYXQgY29udHJvbCwgYXJlIGNvbnRyb2xsZWQgYnksIG9yIGFyZSB1bmRlciBjb21tb24KICAgICAgY29udHJvbCB3aXRoIHRoYXQgZW50aXR5LiBGb3IgdGhlIHB1cnBvc2VzIG9mIHRoaXMgZGVmaW5pdGlvbiwKICAgICAgImNvbnRyb2wiIG1lYW5zIChpKSB0aGUgcG93ZXIsIGRpcmVjdCBvciBpbmRpcmVjdCwgdG8gY2F1c2UgdGhlCiAgICAgIGRpcmVjdGlvbiBvciBtYW5hZ2VtZW50IG9mIHN1Y2ggZW50aXR5LCB3aGV0aGVyIGJ5IGNvbnRyYWN0IG9yCiAgICAgIG90aGVyd2lzZSwgb3IgKGlpKSBvd25lcnNoaXAgb2YgZmlmdHkgcGVyY2VudCAoNTAlKSBvciBtb3JlIG9mIHRoZQogICAgICBvdXRzdGFuZGluZyBzaGFyZXMsIG9yIChpaWkpIGJlbmVmaWNpYWwgb3duZXJzaGlwIG9mIHN1Y2ggZW50aXR5LgoKICAgICAgIllvdSIgKG9yICJZb3VyIikgc2hhbGwgbWVhbiBhbiBpbmRpdmlkdWFsIG9yIExlZ2FsIEVudGl0eQogICAgICBleGVyY2lzaW5nIHBlcm1pc3Npb25zIGdyYW50ZWQgYnkgdGhpcyBMaWNlbnNlLgoKICAgICAgIlNvdXJjZSIgZm9ybSBzaGFsbCBtZWFuIHRoZSBwcmVmZXJyZWQgZm9ybSBmb3IgbWFraW5nIG1vZGlmaWNhdGlvbnMsCiAgICAgIGluY2x1ZGluZyBidXQgbm90IGxpbWl0ZWQgdG8gc29mdHdhcmUgc291cmNlIGNvZGUsIGRvY3VtZW50YXRpb24KICAgICAgc291cmNlLCBhbmQgY29uZmlndXJhdGlvbiBmaWxlcy4KCiAgICAgICJPYmplY3QiIGZvcm0gc2hhbGwgbWVhbiBhbnkgZm9ybSByZXN1bHRpbmcgZnJvbSBtZWNoYW5pY2FsCiAgICAgIHRyYW5zZm9ybWF0aW9uIG9yIHRyYW5zbGF0aW9uIG9mIGEgU291cmNlIGZvcm0sIGluY2x1ZGluZyBidXQKICAgICAgbm90IGxpbWl0ZWQgdG8gY29tcGlsZWQgb2JqZWN0IGNvZGUsIGdlbmVyYXRlZCBkb2N1bWVudGF0aW9uLAogICAgICBhbmQgY29udmVyc2lvbnMgdG8gb3RoZXIgbWVkaWEgdHlwZXMuCgogICAgICAiV29yayIgc2hhbGwgbWVhbiB0aGUgd29yayBvZiBhdXRob3JzaGlwLCB3aGV0aGVyIGluIFNvdXJjZSBvcgogICAgICBPYmplY3QgZm9ybSwgbWFkZSBhdmFpbGFibGUgdW5kZXIgdGhlIExpY2Vuc2UsIGFzIGluZGljYXRlZCBieSBhCiAgICAgIGNvcHlyaWdodCBub3RpY2UgdGhhdCBpcyBpbmNsdWRlZCBpbiBvciBhdHRhY2hlZCB0byB0aGUgd29yawogICAgICAoYW4gZXhhbXBsZSBpcyBwcm92aWRlZCBpbiB0aGUgQXBwZW5kaXggYmVsb3cpLgoKICAgICAgIkRlcml2YXRpdmUgV29ya3MiIHNoYWxsIG1lYW4gYW55IHdvcmssIHdoZXRoZXIgaW4gU291cmNlIG9yIE9iamVjdAogICAgICBmb3JtLCB0aGF0IGlzIGJhc2VkIG9uIChvciBkZXJpdmVkIGZyb20pIHRoZSBXb3JrIGFuZCBmb3Igd2hpY2ggdGhlCiAgICAgIGVkaXRvcmlhbCByZXZpc2lvbnMsIGFubm90YXRpb25zLCBlbGFib3JhdGlvbnMsIG9yIG90aGVyIG1vZGlmaWNhdGlvbnMKICAgICAgcmVwcmVzZW50LCBhcyBhIHdob2xlLCBhbiBvcmlnaW5hbCB3b3JrIG9mIGF1dGhvcnNoaXAuIEZvciB0aGUgcHVycG9zZXMKICAgICAgb2YgdGhpcyBMaWNlbnNlLCBEZXJpdmF0aXZlIFdvcmtzIHNoYWxsIG5vdCBpbmNsdWRlIHdvcmtzIHRoYXQgcmVtYWluCiAgICAgIHNlcGFyYWJsZSBmcm9tLCBvciBtZXJlbHkgbGluayAob3IgYmluZCBieSBuYW1lKSB0byB0aGUgaW50ZXJmYWNlcyBvZiwKICAgICAgdGhlIFdvcmsgYW5kIERlcml2YXRpdmUgV29ya3MgdGhlcmVvZi4KCiAgICAgICJDb250cmlidXRpb24iIHNoYWxsIG1lYW4gYW55IHdvcmsgb2YgYXV0aG9yc2hpcCwgaW5jbHVkaW5nCiAgICAgIHRoZSBvcmlnaW5hbCB2ZXJzaW9uIG9mIHRoZSBXb3JrIGFuZCBhbnkgbW9kaWZpY2F0aW9ucyBvciBhZGRpdGlvbnMKICAgICAgdG8gdGhhdCBXb3JrIG9yIERlcml2YXRpdmUgV29ya3MgdGhlcmVvZiwgdGhhdCBpcyBpbnRlbnRpb25hbGx5CiAgICAgIHN1Ym1pdHRlZCB0byBMaWNlbnNvciBmb3IgaW5jbHVzaW9uIGluIHRoZSBXb3JrIGJ5IHRoZSBjb3B5cmlnaHQgb3duZXIKICAgICAgb3IgYnkgYW4gaW5kaXZpZHVhbCBvciBMZWdhbCBFbnRpdHkgYXV0aG9yaXplZCB0byBzdWJtaXQgb24gYmVoYWxmIG9mCiAgICAgIHRoZSBjb3B5cmlnaHQgb3duZXIuIEZvciB0aGUgcHVycG9zZXMgb2YgdGhpcyBkZWZpbml0aW9uLCAic3VibWl0dGVkIgogICAgICBtZWFucyBhbnkgZm9ybSBvZiBlbGVjdHJvbmljLCB2ZXJiYWwsIG9yIHdyaXR0ZW4gY29tbXVuaWNhdGlvbiBzZW50CiAgICAgIHRvIHRoZSBMaWNlbnNvciBvciBpdHMgcmVwcmVzZW50YXRpdmVzLCBpbmNsdWRpbmcgYnV0IG5vdCBsaW1pdGVkIHRvCiAgICAgIGNvbW11bmljYXRpb24gb24gZWxlY3Ryb25pYyBtYWlsaW5nIGxpc3RzLCBzb3VyY2UgY29kZSBjb250cm9sIHN5c3RlbXMsCiAgICAgIGFuZCBpc3N1ZSB0cmFja2luZyBzeXN0ZW1zIHRoYXQgYXJlIG1hbmFnZWQgYnksIG9yIG9uIGJlaGFsZiBvZiwgdGhlCiAgICAgIExpY2Vuc29yIGZvciB0aGUgcHVycG9zZSBvZiBkaXNjdXNzaW5nIGFuZCBpbXByb3ZpbmcgdGhlIFdvcmssIGJ1dAogICAgICBleGNsdWRpbmcgY29tbXVuaWNhdGlvbiB0aGF0IGlzIGNvbnNwaWN1b3VzbHkgbWFya2VkIG9yIG90aGVyd2lzZQogICAgICBkZXNpZ25hdGVkIGluIHdyaXRpbmcgYnkgdGhlIGNvcHlyaWdodCBvd25lciBhcyAiTm90IGEgQ29udHJpYnV0aW9uLiIKCiAgICAgICJDb250cmlidXRvciIgc2hhbGwgbWVhbiBMaWNlbnNvciBhbmQgYW55IGluZGl2aWR1YWwgb3IgTGVnYWwgRW50aXR5CiAgICAgIG9uIGJlaGFsZiBvZiB3aG9tIGEgQ29udHJpYnV0aW9uIGhhcyBiZWVuIHJlY2VpdmVkIGJ5IExpY2Vuc29yIGFuZAogICAgICBzdWJzZXF1ZW50bHkgaW5jb3Jwb3JhdGVkIHdpdGhpbiB0aGUgV29yay4KCiAgIDIuIEdyYW50IG9mIENvcHlyaWdodCBMaWNlbnNlLiBTdWJqZWN0IHRvIHRoZSB0ZXJtcyBhbmQgY29uZGl0aW9ucyBvZgogICAgICB0aGlzIExpY2Vuc2UsIGVhY2ggQ29udHJpYnV0b3IgaGVyZWJ5IGdyYW50cyB0byBZb3UgYSBwZXJwZXR1YWwsCiAgICAgIHdvcmxkd2lkZSwgbm9uLWV4Y2x1c2l2ZSwgbm8tY2hhcmdlLCByb3lhbHR5LWZyZWUsIGlycmV2b2NhYmxlCiAgICAgIGNvcHlyaWdodCBsaWNlbnNlIHRvIHJlcHJvZHVjZSwgcHJlcGFyZSBEZXJpdmF0aXZlIFdvcmtzIG9mLAogICAgICBwdWJsaWNseSBkaXNwbGF5LCBwdWJsaWNseSBwZXJmb3JtLCBzdWJsaWNlbnNlLCBhbmQgZGlzdHJpYnV0ZSB0aGUKICAgICAgV29yayBhbmQgc3VjaCBEZXJpdmF0aXZlIFdvcmtzIGluIFNvdXJjZSBvciBPYmplY3QgZm9ybS4KCiAgIDMuIEdyYW50IG9mIFBhdGVudCBMaWNlbnNlLiBTdWJqZWN0IHRvIHRoZSB0ZXJtcyBhbmQgY29uZGl0aW9ucyBvZgogICAgICB0aGlzIExpY2Vuc2UsIGVhY2ggQ29udHJpYnV0b3IgaGVyZWJ5IGdyYW50cyB0byBZb3UgYSBwZXJwZXR1YWwsCiAgICAgIHdvcmxkd2lkZSwgbm9uLWV4Y2x1c2l2ZSwgbm8tY2hhcmdlLCByb3lhbHR5LWZyZWUsIGlycmV2b2NhYmxlCiAgICAgIChleGNlcHQgYXMgc3RhdGVkIGluIHRoaXMgc2VjdGlvbikgcGF0ZW50IGxpY2Vuc2UgdG8gbWFrZSwgaGF2ZSBtYWRlLAogICAgICB1c2UsIG9mZmVyIHRvIHNlbGwsIHNlbGwsIGltcG9ydCwgYW5kIG90aGVyd2lzZSB0cmFuc2ZlciB0aGUgV29yaywKICAgICAgd2hlcmUgc3VjaCBsaWNlbnNlIGFwcGxpZXMgb25seSB0byB0aG9zZSBwYXRlbnQgY2xhaW1zIGxpY2Vuc2FibGUKICAgICAgYnkgc3VjaCBDb250cmlidXRvciB0aGF0IGFyZSBuZWNlc3NhcmlseSBpbmZyaW5nZWQgYnkgdGhlaXIKICAgICAgQ29udHJpYnV0aW9uKHMpIGFsb25lIG9yIGJ5IGNvbWJpbmF0aW9uIG9mIHRoZWlyIENvbnRyaWJ1dGlvbihzKQogICAgICB3aXRoIHRoZSBXb3JrIHRvIHdoaWNoIHN1Y2ggQ29udHJpYnV0aW9uKHMpIHdhcyBzdWJtaXR0ZWQuIElmIFlvdQogICAgICBpbnN0aXR1dGUgcGF0ZW50IGxpdGlnYXRpb24gYWdhaW5zdCBhbnkgZW50aXR5IChpbmNsdWRpbmcgYQogICAgICBjcm9zcy1jbGFpbSBvciBjb3VudGVyY2xhaW0gaW4gYSBsYXdzdWl0KSBhbGxlZ2luZyB0aGF0IHRoZSBXb3JrCiAgICAgIG9yIGEgQ29udHJpYnV0aW9uIGluY29ycG9yYXRlZCB3aXRoaW4gdGhlIFdvcmsgY29uc3RpdHV0ZXMgZGlyZWN0CiAgICAgIG9yIGNvbnRyaWJ1dG9yeSBwYXRlbnQgaW5mcmluZ2VtZW50LCB0aGVuIGFueSBwYXRlbnQgbGljZW5zZXMKICAgICAgZ3JhbnRlZCB0byBZb3UgdW5kZXIgdGhpcyBMaWNlbnNlIGZvciB0aGF0IFdvcmsgc2hhbGwgdGVybWluYXRlCiAgICAgIGFzIG9mIHRoZSBkYXRlIHN1Y2ggbGl0aWdhdGlvbiBpcyBmaWxlZC4KCiAgIDQuIFJlZGlzdHJpYnV0aW9uLiBZb3UgbWF5IHJlcHJvZHVjZSBhbmQgZGlzdHJpYnV0ZSBjb3BpZXMgb2YgdGhlCiAgICAgIFdvcmsgb3IgRGVyaXZhdGl2ZSBXb3JrcyB0aGVyZW9mIGluIGFueSBtZWRpdW0sIHdpdGggb3Igd2l0aG91dAogICAgICBtb2RpZmljYXRpb25zLCBhbmQgaW4gU291cmNlIG9yIE9iamVjdCBmb3JtLCBwcm92aWRlZCB0aGF0IFlvdQogICAgICBtZWV0IHRoZSBmb2xsb3dpbmcgY29uZGl0aW9uczoKCiAgICAgIChhKSBZb3UgbXVzdCBnaXZlIGFueSBvdGhlciByZWNpcGllbnRzIG9mIHRoZSBXb3JrIG9yCiAgICAgICAgICBEZXJpdmF0aXZlIFdvcmtzIGEgY29weSBvZiB0aGlzIExpY2Vuc2U7IGFuZAoKICAgICAgKGIpIFlvdSBtdXN0IGNhdXNlIGFueSBtb2RpZmllZCBmaWxlcyB0byBjYXJyeSBwcm9taW5lbnQgbm90aWNlcwogICAgICAgICAgc3RhdGluZyB0aGF0IFlvdSBjaGFuZ2VkIHRoZSBmaWxlczsgYW5kCgogICAgICAoYykgWW91IG11c3QgcmV0YWluLCBpbiB0aGUgU291cmNlIGZvcm0gb2YgYW55IERlcml2YXRpdmUgV29ya3MKICAgICAgICAgIHRoYXQgWW91IGRpc3RyaWJ1dGUsIGFsbCBjb3B5cmlnaHQsIHBhdGVudCwgdHJhZGVtYXJrLCBhbmQKICAgICAgICAgIGF0dHJpYnV0aW9uIG5vdGljZXMgZnJvbSB0aGUgU291cmNlIGZvcm0gb2YgdGhlIFdvcmssCiAgICAgICAgICBleGNsdWRpbmcgdGhvc2Ugbm90aWNlcyB0aGF0IGRvIG5vdCBwZXJ0YWluIHRvIGFueSBwYXJ0IG9mCiAgICAgICAgICB0aGUgRGVyaXZhdGl2ZSBXb3JrczsgYW5kCgogICAgICAoZCkgSWYgdGhlIFdvcmsgaW5jbHVkZXMgYSAiTk9USUNFIiB0ZXh0IGZpbGUgYXMgcGFydCBvZiBpdHMKICAgICAgICAgIGRpc3RyaWJ1dGlvbiwgdGhlbiBhbnkgRGVyaXZhdGl2ZSBXb3JrcyB0aGF0IFlvdSBkaXN0cmlidXRlIG11c3QKICAgICAgICAgIGluY2x1ZGUgYSByZWFkYWJsZSBjb3B5IG9mIHRoZSBhdHRyaWJ1dGlvbiBub3RpY2VzIGNvbnRhaW5lZAogICAgICAgICAgd2l0aGluIHN1Y2ggTk9USUNFIGZpbGUsIGV4Y2x1ZGluZyB0aG9zZSBub3RpY2VzIHRoYXQgZG8gbm90CiAgICAgICAgICBwZXJ0YWluIHRvIGFueSBwYXJ0IG9mIHRoZSBEZXJpdmF0aXZlIFdvcmtzLCBpbiBhdCBsZWFzdCBvbmUKICAgICAgICAgIG9mIHRoZSBmb2xsb3dpbmcgcGxhY2VzOiB3aXRoaW4gYSBOT1RJQ0UgdGV4dCBmaWxlIGRpc3RyaWJ1dGVkCiAgICAgICAgICBhcyBwYXJ0IG9mIHRoZSBEZXJpdmF0aXZlIFdvcmtzOyB3aXRoaW4gdGhlIFNvdXJjZSBmb3JtIG9yCiAgICAgICAgICBkb2N1bWVudGF0aW9uLCBpZiBwcm92aWRlZCBhbG9uZyB3aXRoIHRoZSBEZXJpdmF0aXZlIFdvcmtzOyBvciwKICAgICAgICAgIHdpdGhpbiBhIGRpc3BsYXkgZ2VuZXJhdGVkIGJ5IHRoZSBEZXJpdmF0aXZlIFdvcmtzLCBpZiBhbmQKICAgICAgICAgIHdoZXJldmVyIHN1Y2ggdGhpcmQtcGFydHkgbm90aWNlcyBub3JtYWxseSBhcHBlYXIuIFRoZSBjb250ZW50cwogICAgICAgICAgb2YgdGhlIE5PVElDRSBmaWxlIGFyZSBmb3IgaW5mb3JtYXRpb25hbCBwdXJwb3NlcyBvbmx5IGFuZAogICAgICAgICAgZG8gbm90IG1vZGlmeSB0aGUgTGljZW5zZS4gWW91IG1heSBhZGQgWW91ciBvd24gYXR0cmlidXRpb24KICAgICAgICAgIG5vdGljZXMgd2l0aGluIERlcml2YXRpdmUgV29ya3MgdGhhdCBZb3UgZGlzdHJpYnV0ZSwgYWxvbmdzaWRlCiAgICAgICAgICBvciBhcyBhbiBhZGRlbmR1bSB0byB0aGUgTk9USUNFIHRleHQgZnJvbSB0aGUgV29yaywgcHJvdmlkZWQKICAgICAgICAgIHRoYXQgc3VjaCBhZGRpdGlvbmFsIGF0dHJpYnV0aW9uIG5vdGljZXMgY2Fubm90IGJlIGNvbnN0cnVlZAogICAgICAgICAgYXMgbW9kaWZ5aW5nIHRoZSBMaWNlbnNlLgoKICAgICAgWW91IG1heSBhZGQgWW91ciBvd24gY29weXJpZ2h0IHN0YXRlbWVudCB0byBZb3VyIG1vZGlmaWNhdGlvbnMgYW5kCiAgICAgIG1heSBwcm92aWRlIGFkZGl0aW9uYWwgb3IgZGlmZmVyZW50IGxpY2Vuc2UgdGVybXMgYW5kIGNvbmRpdGlvbnMKICAgICAgZm9yIHVzZSwgcmVwcm9kdWN0aW9uLCBvciBkaXN0cmlidXRpb24gb2YgWW91ciBtb2RpZmljYXRpb25zLCBvcgogICAgICBmb3IgYW55IHN1Y2ggRGVyaXZhdGl2ZSBXb3JrcyBhcyBhIHdob2xlLCBwcm92aWRlZCBZb3VyIHVzZSwKICAgICAgcmVwcm9kdWN0aW9uLCBhbmQgZGlzdHJpYnV0aW9uIG9mIHRoZSBXb3JrIG90aGVyd2lzZSBjb21wbGllcyB3aXRoCiAgICAgIHRoZSBjb25kaXRpb25zIHN0YXRlZCBpbiB0aGlzIExpY2Vuc2UuCgogICA1LiBTdWJtaXNzaW9uIG9mIENvbnRyaWJ1dGlvbnMuIFVubGVzcyBZb3UgZXhwbGljaXRseSBzdGF0ZSBvdGhlcndpc2UsCiAgICAgIGFueSBDb250cmlidXRpb24gaW50ZW50aW9uYWxseSBzdWJtaXR0ZWQgZm9yIGluY2x1c2lvbiBpbiB0aGUgV29yawogICAgICBieSBZb3UgdG8gdGhlIExpY2Vuc29yIHNoYWxsIGJlIHVuZGVyIHRoZSB0ZXJtcyBhbmQgY29uZGl0aW9ucyBvZgogICAgICB0aGlzIExpY2Vuc2UsIHdpdGhvdXQgYW55IGFkZGl0aW9uYWwgdGVybXMgb3IgY29uZGl0aW9ucy4KICAgICAgTm90d2l0aHN0YW5kaW5nIHRoZSBhYm92ZSwgbm90aGluZyBoZXJlaW4gc2hhbGwgc3VwZXJzZWRlIG9yIG1vZGlmeQogICAgICB0aGUgdGVybXMgb2YgYW55IHNlcGFyYXRlIGxpY2Vuc2UgYWdyZWVtZW50IHlvdSBtYXkgaGF2ZSBleGVjdXRlZAogICAgICB3aXRoIExpY2Vuc29yIHJlZ2FyZGluZyBzdWNoIENvbnRyaWJ1dGlvbnMuCgogICA2LiBUcmFkZW1hcmtzLiBUaGlzIExpY2Vuc2UgZG9lcyBub3QgZ3JhbnQgcGVybWlzc2lvbiB0byB1c2UgdGhlIHRyYWRlCiAgICAgIG5hbWVzLCB0cmFkZW1hcmtzLCBzZXJ2aWNlIG1hcmtzLCBvciBwcm9kdWN0IG5hbWVzIG9mIHRoZSBMaWNlbnNvciwKICAgICAgZXhjZXB0IGFzIHJlcXVpcmVkIGZvciByZWFzb25hYmxlIGFuZCBjdXN0b21hcnkgdXNlIGluIGRlc2NyaWJpbmcgdGhlCiAgICAgIG9yaWdpbiBvZiB0aGUgV29yayBhbmQgcmVwcm9kdWNpbmcgdGhlIGNvbnRlbnQgb2YgdGhlIE5PVElDRSBmaWxlLgoKICAgNy4gRGlzY2xhaW1lciBvZiBXYXJyYW50eS4gVW5sZXNzIHJlcXVpcmVkIGJ5IGFwcGxpY2FibGUgbGF3IG9yCiAgICAgIGFncmVlZCB0byBpbiB3cml0aW5nLCBMaWNlbnNvciBwcm92aWRlcyB0aGUgV29yayAoYW5kIGVhY2gKICAgICAgQ29udHJpYnV0b3IgcHJvdmlkZXMgaXRzIENvbnRyaWJ1dGlvbnMpIG9uIGFuICJBUyBJUyIgQkFTSVMsCiAgICAgIFdJVEhPVVQgV0FSUkFOVElFUyBPUiBDT05ESVRJT05TIE9GIEFOWSBLSU5ELCBlaXRoZXIgZXhwcmVzcyBvcgogICAgICBpbXBsaWVkLCBpbmNsdWRpbmcsIHdpdGhvdXQgbGltaXRhdGlvbiwgYW55IHdhcnJhbnRpZXMgb3IgY29uZGl0aW9ucwogICAgICBvZiBUSVRMRSwgTk9OLUlORlJJTkdFTUVOVCwgTUVSQ0hBTlRBQklMSVRZLCBvciBGSVRORVNTIEZPUiBBCiAgICAgIFBBUlRJQ1VMQVIgUFVSUE9TRS4gWW91IGFyZSBzb2xlbHkgcmVzcG9uc2libGUgZm9yIGRldGVybWluaW5nIHRoZQogICAgICBhcHByb3ByaWF0ZW5lc3Mgb2YgdXNpbmcgb3IgcmVkaXN0cmlidXRpbmcgdGhlIFdvcmsgYW5kIGFzc3VtZSBhbnkKICAgICAgcmlza3MgYXNzb2NpYXRlZCB3aXRoIFlvdXIgZXhlcmNpc2Ugb2YgcGVybWlzc2lvbnMgdW5kZXIgdGhpcyBMaWNlbnNlLgoKICAgOC4gTGltaXRhdGlvbiBvZiBMaWFiaWxpdHkuIEluIG5vIGV2ZW50IGFuZCB1bmRlciBubyBsZWdhbCB0aGVvcnksCiAgICAgIHdoZXRoZXIgaW4gdG9ydCAoaW5jbHVkaW5nIG5lZ2xpZ2VuY2UpLCBjb250cmFjdCwgb3Igb3RoZXJ3aXNlLAogICAgICB1bmxlc3MgcmVxdWlyZWQgYnkgYXBwbGljYWJsZSBsYXcgKHN1Y2ggYXMgZGVsaWJlcmF0ZSBhbmQgZ3Jvc3NseQogICAgICBuZWdsaWdlbnQgYWN0cykgb3IgYWdyZWVkIHRvIGluIHdyaXRpbmcsIHNoYWxsIGFueSBDb250cmlidXRvciBiZQogICAgICBsaWFibGUgdG8gWW91IGZvciBkYW1hZ2VzLCBpbmNsdWRpbmcgYW55IGRpcmVjdCwgaW5kaXJlY3QsIHNwZWNpYWwsCiAgICAgIGluY2lkZW50YWwsIG9yIGNvbnNlcXVlbnRpYWwgZGFtYWdlcyBvZiBhbnkgY2hhcmFjdGVyIGFyaXNpbmcgYXMgYQogICAgICByZXN1bHQgb2YgdGhpcyBMaWNlbnNlIG9yIG91dCBvZiB0aGUgdXNlIG9yIGluYWJpbGl0eSB0byB1c2UgdGhlCiAgICAgIFdvcmsgKGluY2x1ZGluZyBidXQgbm90IGxpbWl0ZWQgdG8gZGFtYWdlcyBmb3IgbG9zcyBvZiBnb29kd2lsbCwKICAgICAgd29yayBzdG9wcGFnZSwgY29tcHV0ZXIgZmFpbHVyZSBvciBtYWxmdW5jdGlvbiwgb3IgYW55IGFuZCBhbGwKICAgICAgb3RoZXIgY29tbWVyY2lhbCBkYW1hZ2VzIG9yIGxvc3NlcyksIGV2ZW4gaWYgc3VjaCBDb250cmlidXRvcgogICAgICBoYXMgYmVlbiBhZHZpc2VkIG9mIHRoZSBwb3NzaWJpbGl0eSBvZiBzdWNoIGRhbWFnZXMuCgogICA5LiBBY2NlcHRpbmcgV2FycmFudHkgb3IgQWRkaXRpb25hbCBMaWFiaWxpdHkuIFdoaWxlIHJlZGlzdHJpYnV0aW5nCiAgICAgIHRoZSBXb3JrIG9yIERlcml2YXRpdmUgV29ya3MgdGhlcmVvZiwgWW91IG1heSBjaG9vc2UgdG8gb2ZmZXIsCiAgICAgIGFuZCBjaGFyZ2UgYSBmZWUgZm9yLCBhY2NlcHRhbmNlIG9mIHN1cHBvcnQsIHdhcnJhbnR5LCBpbmRlbW5pdHksCiAgICAgIG9yIG90aGVyIGxpYWJpbGl0eSBvYmxpZ2F0aW9ucyBhbmQvb3IgcmlnaHRzIGNvbnNpc3RlbnQgd2l0aCB0aGlzCiAgICAgIExpY2Vuc2UuIEhvd2V2ZXIsIGluIGFjY2VwdGluZyBzdWNoIG9ibGlnYXRpb25zLCBZb3UgbWF5IGFjdCBvbmx5CiAgICAgIG9uIFlvdXIgb3duIGJlaGFsZiBhbmQgb24gWW91ciBzb2xlIHJlc3BvbnNpYmlsaXR5LCBub3Qgb24gYmVoYWxmCiAgICAgIG9mIGFueSBvdGhlciBDb250cmlidXRvciwgYW5kIG9ubHkgaWYgWW91IGFncmVlIHRvIGluZGVtbmlmeSwKICAgICAgZGVmZW5kLCBhbmQgaG9sZCBlYWNoIENvbnRyaWJ1dG9yIGhhcm1sZXNzIGZvciBhbnkgbGlhYmlsaXR5CiAgICAgIGluY3VycmVkIGJ5LCBvciBjbGFpbXMgYXNzZXJ0ZWQgYWdhaW5zdCwgc3VjaCBDb250cmlidXRvciBieSByZWFzb24KICAgICAgb2YgeW91ciBhY2NlcHRpbmcgYW55IHN1Y2ggd2FycmFudHkgb3IgYWRkaXRpb25hbCBsaWFiaWxpdHkuCgogICBFTkQgT0YgVEVSTVMgQU5EIENPTkRJVElPTlMKCiAgIEFQUEVORElYOiBIb3cgdG8gYXBwbHkgdGhlIEFwYWNoZSBMaWNlbnNlIHRvIHlvdXIgd29yay4KCiAgICAgIFRvIGFwcGx5IHRoZSBBcGFjaGUgTGljZW5zZSB0byB5b3VyIHdvcmssIGF0dGFjaCB0aGUgZm9sbG93aW5nCiAgICAgIGJvaWxlcnBsYXRlIG5vdGljZSwgd2l0aCB0aGUgZmllbGRzIGVuY2xvc2VkIGJ5IGJyYWNrZXRzICJbXSIKICAgICAgcmVwbGFjZWQgd2l0aCB5b3VyIG93biBpZGVudGlmeWluZyBpbmZvcm1hdGlvbi4gKERvbid0IGluY2x1ZGUKICAgICAgdGhlIGJyYWNrZXRzISkgIFRoZSB0ZXh0IHNob3VsZCBiZSBlbmNsb3NlZCBpbiB0aGUgYXBwcm9wcmlhdGUKICAgICAgY29tbWVudCBzeW50YXggZm9yIHRoZSBmaWxlIGZvcm1hdC4gV2UgYWxzbyByZWNvbW1lbmQgdGhhdCBhCiAgICAgIGZpbGUgb3IgY2xhc3MgbmFtZSBhbmQgZGVzY3JpcHRpb24gb2YgcHVycG9zZSBiZSBpbmNsdWRlZCBvbiB0aGUKICAgICAgc2FtZSAicHJpbnRlZCBwYWdlIiBhcyB0aGUgY29weXJpZ2h0IG5vdGljZSBmb3IgZWFzaWVyCiAgICAgIGlkZW50aWZpY2F0aW9uIHdpdGhpbiB0aGlyZC1wYXJ0eSBhcmNoaXZlcy4KCiAgIENvcHlyaWdodCBbeXl5eV0gW25hbWUgb2YgY29weXJpZ2h0IG93bmVyXQoKICAgTGljZW5zZWQgdW5kZXIgdGhlIEFwYWNoZSBMaWNlbnNlLCBWZXJzaW9uIDIuMCAodGhlICJMaWNlbnNlIik7CiAgIHlvdSBtYXkgbm90IHVzZSB0aGlzIGZpbGUgZXhjZXB0IGluIGNvbXBsaWFuY2Ugd2l0aCB0aGUgTGljZW5zZS4KICAgWW91IG1heSBvYnRhaW4gYSBjb3B5IG9mIHRoZSBMaWNlbnNlIGF0CgogICAgICAgaHR0cDovL3d3dy5hcGFjaGUub3JnL2xpY2Vuc2VzL0xJQ0VOU0UtMi4wCgogICBVbmxlc3MgcmVxdWlyZWQgYnkgYXBwbGljYWJsZSBsYXcgb3IgYWdyZWVkIHRvIGluIHdyaXRpbmcsIHNvZnR3YXJlCiAgIGRpc3RyaWJ1dGVkIHVuZGVyIHRoZSBMaWNlbnNlIGlzIGRpc3RyaWJ1dGVkIG9uIGFuICJBUyBJUyIgQkFTSVMsCiAgIFdJVEhPVVQgV0FSUkFOVElFUyBPUiBDT05ESVRJT05TIE9GIEFOWSBLSU5ELCBlaXRoZXIgZXhwcmVzcyBvciBpbXBsaWVkLgogICBTZWUgdGhlIExpY2Vuc2UgZm9yIHRoZSBzcGVjaWZpYyBsYW5ndWFnZSBnb3Zlcm5pbmcgcGVybWlzc2lvbnMgYW5kCiAgIGxpbWl0YXRpb25zIHVuZGVyIHRoZSBMaWNlbnNlLgo=",
+        "text": "                                 Apache License\n                           Version 2.0, January 2004\n                        http://www.apache.org/licenses/\n\n   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION\n\n   1. Definitions.\n\n      \"License\" shall mean the terms and conditions for use, reproduction,\n      and distribution as defined by Sections 1 through 9 of this document.\n\n      \"Licensor\" shall mean the copyright owner or entity authorized by\n      the copyright owner that is granting the License.\n\n      \"Legal Entity\" shall mean the union of the acting entity and all\n      other entities that control, are controlled by, or are under common\n      control with that entity. For the purposes of this definition,\n      \"control\" means (i) the power, direct or indirect, to cause the\n      direction or management of such entity, whether by contract or\n      otherwise, or (ii) ownership of fifty percent (50%) or more of the\n      outstanding shares, or (iii) beneficial ownership of such entity.\n\n      \"You\" (or \"Your\") shall mean an individual or Legal Entity\n      exercising permissions granted by this License.\n\n      \"Source\" form shall mean the preferred form for making modifications,\n      including but not limited to software source code, documentation\n      source, and configuration files.\n\n      \"Object\" form shall mean any form resulting from mechanical\n      transformation or translation of a Source form, including but\n      not limited to compiled object code, generated documentation,\n      and conversions to other media types.\n\n      \"Work\" shall mean the work of authorship, whether in Source or\n      Object form, made available under the License, as indicated by a\n      copyright notice that is included in or attached to the work\n      (an example is provided in the Appendix below).\n\n      \"Derivative Works\" shall mean any work, whether in Source or Object\n      form, that is based on (or derived from) the Work and for which the\n      editorial revisions, annotations, elaborations, or other modifications\n      represent, as a whole, an original work of authorship. For the purposes\n      of this License, Derivative Works shall not include works that remain\n      separable from, or merely link (or bind by name) to the interfaces of,\n      the Work and Derivative Works thereof.\n\n      \"Contribution\" shall mean any work of authorship, including\n      the original version of the Work and any modifications or additions\n      to that Work or Derivative Works thereof, that is intentionally\n      submitted to Licensor for inclusion in the Work by the copyright owner\n      or by an individual or Legal Entity authorized to submit on behalf of\n      the copyright owner. For the purposes of this definition, \"submitted\"\n      means any form of electronic, verbal, or written communication sent\n      to the Licensor or its representatives, including but not limited to\n      communication on electronic mailing lists, source code control systems,\n      and issue tracking systems that are managed by, or on behalf of, the\n      Licensor for the purpose of discussing and improving the Work, but\n      excluding communication that is conspicuously marked or otherwise\n      designated in writing by the copyright owner as \"Not a Contribution.\"\n\n      \"Contributor\" shall mean Licensor and any individual or Legal Entity\n      on behalf of whom a Contribution has been received by Licensor and\n      subsequently incorporated within the Work.\n\n   2. Grant of Copyright License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      copyright license to reproduce, prepare Derivative Works of,\n      publicly display, publicly perform, sublicense, and distribute the\n      Work and such Derivative Works in Source or Object form.\n\n   3. Grant of Patent License. Subject to the terms and conditions of\n      this License, each Contributor hereby grants to You a perpetual,\n      worldwide, non-exclusive, no-charge, royalty-free, irrevocable\n      (except as stated in this section) patent license to make, have made,\n      use, offer to sell, sell, import, and otherwise transfer the Work,\n      where such license applies only to those patent claims licensable\n      by such Contributor that are necessarily infringed by their\n      Contribution(s) alone or by combination of their Contribution(s)\n      with the Work to which such Contribution(s) was submitted. If You\n      institute patent litigation against any entity (including a\n      cross-claim or counterclaim in a lawsuit) alleging that the Work\n      or a Contribution incorporated within the Work constitutes direct\n      or contributory patent infringement, then any patent licenses\n      granted to You under this License for that Work shall terminate\n      as of the date such litigation is filed.\n\n   4. Redistribution. You may reproduce and distribute copies of the\n      Work or Derivative Works thereof in any medium, with or without\n      modifications, and in Source or Object form, provided that You\n      meet the following conditions:\n\n      (a) You must give any other recipients of the Work or\n          Derivative Works a copy of this License; and\n\n      (b) You must cause any modified files to carry prominent notices\n          stating that You changed the files; and\n\n      (c) You must retain, in the Source form of any Derivative Works\n          that You distribute, all copyright, patent, trademark, and\n          attribution notices from the Source form of the Work,\n          excluding those notices that do not pertain to any part of\n          the Derivative Works; and\n\n      (d) If the Work includes a \"NOTICE\" text file as part of its\n          distribution, then any Derivative Works that You distribute must\n          include a readable copy of the attribution notices contained\n          within such NOTICE file, excluding those notices that do not\n          pertain to any part of the Derivative Works, in at least one\n          of the following places: within a NOTICE text file distributed\n          as part of the Derivative Works; within the Source form or\n          documentation, if provided along with the Derivative Works; or,\n          within a display generated by the Derivative Works, if and\n          wherever such third-party notices normally appear. The contents\n          of the NOTICE file are for informational purposes only and\n          do not modify the License. You may add Your own attribution\n          notices within Derivative Works that You distribute, alongside\n          or as an addendum to the NOTICE text from the Work, provided\n          that such additional attribution notices cannot be construed\n          as modifying the License.\n\n      You may add Your own copyright statement to Your modifications and\n      may provide additional or different license terms and conditions\n      for use, reproduction, or distribution of Your modifications, or\n      for any such Derivative Works as a whole, provided Your use,\n      reproduction, and distribution of the Work otherwise complies with\n      the conditions stated in this License.\n\n   5. Submission of Contributions. Unless You explicitly state otherwise,\n      any Contribution intentionally submitted for inclusion in the Work\n      by You to the Licensor shall be under the terms and conditions of\n      this License, without any additional terms or conditions.\n      Notwithstanding the above, nothing herein shall supersede or modify\n      the terms of any separate license agreement you may have executed\n      with Licensor regarding such Contributions.\n\n   6. Trademarks. This License does not grant permission to use the trade\n      names, trademarks, service marks, or product names of the Licensor,\n      except as required for reasonable and customary use in describing the\n      origin of the Work and reproducing the content of the NOTICE file.\n\n   7. Disclaimer of Warranty. Unless required by applicable law or\n      agreed to in writing, Licensor provides the Work (and each\n      Contributor provides its Contributions) on an \"AS IS\" BASIS,\n      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or\n      implied, including, without limitation, any warranties or conditions\n      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A\n      PARTICULAR PURPOSE. You are solely responsible for determining the\n      appropriateness of using or redistributing the Work and assume any\n      risks associated with Your exercise of permissions under this License.\n\n   8. Limitation of Liability. In no event and under no legal theory,\n      whether in tort (including negligence), contract, or otherwise,\n      unless required by applicable law (such as deliberate and grossly\n      negligent acts) or agreed to in writing, shall any Contributor be\n      liable to You for damages, including any direct, indirect, special,\n      incidental, or consequential damages of any character arising as a\n      result of this License or out of the use or inability to use the\n      Work (including but not limited to damages for loss of goodwill,\n      work stoppage, computer failure or malfunction, or any and all\n      other commercial damages or losses), even if such Contributor\n      has been advised of the possibility of such damages.\n\n   9. Accepting Warranty or Additional Liability. While redistributing\n      the Work or Derivative Works thereof, You may choose to offer,\n      and charge a fee for, acceptance of support, warranty, indemnity,\n      or other liability obligations and/or rights consistent with this\n      License. However, in accepting such obligations, You may act only\n      on Your own behalf and on Your sole responsibility, not on behalf\n      of any other Contributor, and only if You agree to indemnify,\n      defend, and hold each Contributor harmless for any liability\n      incurred by, or claims asserted against, such Contributor by reason\n      of your accepting any such warranty or additional liability.\n\n   END OF TERMS AND CONDITIONS\n\n   APPENDIX: How to apply the Apache License to your work.\n\n      To apply the Apache License to your work, attach the following\n      boilerplate notice, with the fields enclosed by brackets \"[]\"\n      replaced with your own identifying information. (Don't include\n      the brackets!)  The text should be enclosed in the appropriate\n      comment syntax for the file format. We also recommend that a\n      file or class name and description of purpose be included on the\n      same \"printed page\" as the copyright notice for easier\n      identification within third-party archives.\n\n   Copyright [yyyy] [name of copyright owner]\n\n   Licensed under the Apache License, Version 2.0 (the \"License\");\n   you may not use this file except in compliance with the License.\n   You may obtain a copy of the License at\n\n       http://www.apache.org/licenses/LICENSE-2.0\n\n   Unless required by applicable law or agreed to in writing, software\n   distributed under the License is distributed on an \"AS IS\" BASIS,\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n   See the License for the specific language governing permissions and\n   limitations under the License.\n"
+      },
+      "attribution_limitations": "github_author_id identifies the PR submitter only. Statement is an exact source excerpt containing the supplied theorem token, not a verified formal statement; origin is a supplied documentary claim. Neither PR ownership nor a license establishes original mathematical authorship, discovery, priority, formal validity, or a wallet. SPDX is GitHub metadata; inspect the preserved license and any additional notices before reuse.",
+      "requests": [
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math",
+          "bytes": 6806,
+          "content_sha256": "e8d93cb97e411375cb3bfdadc537d4131e3eafa103e24c607d2585dfe5000e95"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51",
+          "bytes": 17175,
+          "content_sha256": "2d4d9b54603d9cd259029c3237c2ddcfdf605e616b012d3fd0a16caf50c9f478"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=1",
+          "bytes": 78913,
+          "content_sha256": "3cdeeada9a15559ecc2bcd97b462079d1e45193fb21b365bc11dc3b8f1f423d3"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=2",
+          "bytes": 125988,
+          "content_sha256": "e427d100a6d6f42fb63c68d90500f729817efa0e6993fa2ada8e195004d3c311"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=3",
+          "bytes": 144372,
+          "content_sha256": "05b7382197b092b8c0aefe51dcbe248119d077a7927fff1ba1e6715d2624d153"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=4",
+          "bytes": 102207,
+          "content_sha256": "f030057f8cac8722d4da4b960c9e36d8682e288771ddee2e40a7a76ed6316a6a"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=5",
+          "bytes": 66344,
+          "content_sha256": "f3d8a978349f5b0227850dc2ffaef03a569ee581196d98e96150c59f633c1027"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=6",
+          "bytes": 58170,
+          "content_sha256": "33c237b494d914aad740f0a779795d2b02acf7fbcfbc570e267d84d889927ca8"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=7",
+          "bytes": 56278,
+          "content_sha256": "abf2c4d56365bcef59d3169d1fd63ef1d0ae4bab70d67933eac13296ed7eb5c1"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=8",
+          "bytes": 85097,
+          "content_sha256": "2ec24271af369757e92c1c142bf57701ec835341649569f5f903a03fb9c84f5b"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=9",
+          "bytes": 97518,
+          "content_sha256": "243652eb5abf367ee3c23b419de446b5cb67ece9711a672d6785b2d0ee7999c0"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=10",
+          "bytes": 136348,
+          "content_sha256": "bdfa4ceec97a02b809e40bce26300ece402e48331abddf011b747790ff1c83ef"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=11",
+          "bytes": 75149,
+          "content_sha256": "d470197b73d4819b41dfaa62a0a899b9cf0f94789355b9f721aa4f1d14a1d5b1"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=12",
+          "bytes": 71780,
+          "content_sha256": "cf83764c88c19b4c1f025272da6520f47d39dad9d00a9701059b0bd69302b7da"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=13",
+          "bytes": 145307,
+          "content_sha256": "6eb7d03f521bc4bf3f9b0537dd8959d416b01b6d6b7e82b87eb366866e73bf95"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=14",
+          "bytes": 132784,
+          "content_sha256": "dda8f472c0c9977794988f0637f707e8d1e2281e677e81374cd12a1eacd74d6b"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=15",
+          "bytes": 120045,
+          "content_sha256": "6bd82ab243f06de4231abf8988ea8f3d1353b5c1973155c2a1ef2458d817261b"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=16",
+          "bytes": 106101,
+          "content_sha256": "7c7568d03c81156e7eb0779f03cfdb29fc543e3897e093c9e35fd519c59fddea"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=17",
+          "bytes": 57924,
+          "content_sha256": "c156cf5f1a2ee612bce4f155ceeefdba6c687e62fd6d07cc859e533cade03bb9"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=18",
+          "bytes": 63666,
+          "content_sha256": "df08d85d733bce2cff05397d91fb13881d9b9895cdd2beee519ccef01fa65f0b"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=19",
+          "bytes": 91215,
+          "content_sha256": "f5325049d70045f5a41e2bdb3bda8266636dfe2d14d6abbc30c06dc14eb1ebd2"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=20",
+          "bytes": 76153,
+          "content_sha256": "23621f5c51d9d66fce1932ffe70b701a698ae1eab86d79d67e26fdfe2324eb11"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=21",
+          "bytes": 126978,
+          "content_sha256": "b94d04acfc86452c72c20979bf665a517f936bb71737290e94c74dd8a028c5a8"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=22",
+          "bytes": 142673,
+          "content_sha256": "21c8f030ff7f37b07074309e3bef22dc78a6379bee74bb3dc07b39557090a868"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=23",
+          "bytes": 92875,
+          "content_sha256": "75867620b19f92300a08ba1a88bb6cbe811ededd9378fc4647e047ea1c9c08f9"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=24",
+          "bytes": 93159,
+          "content_sha256": "22a3846f8fe39eb4502ec3e2630f644b24af83dbd4fc829a82b8f54e069f4a80"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=25",
+          "bytes": 91129,
+          "content_sha256": "8132e59206cbcc7371e27a9c5f70a402ff47e96b5997057d15b69af26a65921e"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=26",
+          "bytes": 129822,
+          "content_sha256": "e494791f0b97c227bc549d789e734456c8f07a28b2f1861315009c6d3342c96a"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=27",
+          "bytes": 105635,
+          "content_sha256": "29279339102cd26aaf228eb5b04fd17715f9d143c00308c7103018d8989dd7e6"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=28",
+          "bytes": 75637,
+          "content_sha256": "9b7558811daa994ea6315c7a9dfbe0a045a462cb5624159d4da887985c8eff94"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=29",
+          "bytes": 243241,
+          "content_sha256": "205f51cd4b54b2c2e8e3fc52fe32e09e3eb6f0186b09f60982376c3f2b3fe40f"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=30",
+          "bytes": 283235,
+          "content_sha256": "e8f06c6c88080808f5ce7d6cf2d4137176a72fd55cd0f487509a07e8664e1a2d"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=31",
+          "bytes": 233494,
+          "content_sha256": "89a4288cde88a114f210397b7a694dbbfd7f19503f0ad6c6b7617fd0c2c0100e"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=32",
+          "bytes": 152844,
+          "content_sha256": "5ddabe1a0c112cbce79c5b9165795ef1c2c0c8238ec7fc95c30b0fec52398943"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=33",
+          "bytes": 125974,
+          "content_sha256": "13ff2a59d80135364cbef057acb1c32d11667e39db370382fb156c2119264626"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/pulls/51/files?per_page=10&page=34",
+          "bytes": 2122,
+          "content_sha256": "5bc662375f0d9b018ff94f4be28c76fd1f6100ce5e39da32453178fe5693a15a"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/git/commits/11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+          "bytes": 2631,
+          "content_sha256": "a9e16fbffe9ba7b34ad2b8aeca57fa2f1c39ba1e89becb2a99a0139dc343ae19"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/contents/vp-vnp/Nc/LowDegree.lean?ref=11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+          "bytes": 3647,
+          "content_sha256": "2db7e7831dba7bddd57a7669295d7e987dd4b99bc0a8f9ee43b0b98bb2243d21"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/contents/vp-vnp/Nc/LowDegree.lean?ref=918c8e2778aee18b0283dc5a33ed39ab3cd63a96",
+          "bytes": 3647,
+          "content_sha256": "4a0a8f2b85cc17f069b728b98371bfe437d727295846889ace68e27d048ab639"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/git/blobs/67486500737d07db480c2d0deeb645437278cdfe",
+          "bytes": 2864,
+          "content_sha256": "ddf8a4cc37cfdb823596f343e2a1c161e6f9a16b741be776f68279ae01719a4c"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/license?ref=11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+          "bytes": 16775,
+          "content_sha256": "5390a148287c1fca837163998245ee61e780a52474a8e90ad6ead45a0ccb5c26"
+        },
+        {
+          "url": "https://api.github.com/repos/anthropics/formal-math/git/blobs/261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+          "bytes": 15939,
+          "content_sha256": "44745cccf2c4f376839876e19e9db4a35e70ebeb74a0692100a1d3959447fda1"
+        }
+      ]
+    }
+  },
+  "updatedAt": "2026-11-24T01:21:44.707Z"
+}
