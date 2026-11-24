@@ -1,0 +1,174 @@
+{
+  "id": "pr-27-dfe76b37c950-d08c386809b2",
+  "mode": "live-github-studio",
+  "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+  "chainId": 61999,
+  "repository": "MuncleUscles/p-vs-np",
+  "pr": 27,
+  "head": "dfe76b37c950f78f0c54f48215888e28382babfb",
+  "base": "feb1ed9c262a5122f937d8256e87e963c8d3def5",
+  "claim": {
+    "claim": {
+      "version": 4,
+      "domain": "https://muncleuscles.github.io",
+      "chainId": 61999,
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 27,
+      "head": "dfe76b37c950f78f0c54f48215888e28382babfb",
+      "base": "feb1ed9c262a5122f937d8256e87e963c8d3def5",
+      "branch": "research",
+      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "submission_path": "research/submissions/federation-cubic-polarization.json",
+      "submission_hash": "f2f80f7e1bc626bb5d94b584b0b1b2900e88190831b31b48f5d6abe2bd410d74",
+      "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+      "nonce": "535e671088ce4ff5b3e73a62fbe0ffa3",
+      "expires": 1795479138022,
+      "protocol_commit": "421740e654a18f730a07abb6bb3ed3112f5fef7a"
+    },
+    "signature": "0x02f78a83c99cc430d083a54e1f2c1bfacba438f2f83345914c984be6544ee81068835f723506ffb5975f4a25599b2432a769366ebf554b53ce452701c02f3b661b"
+  },
+  "commentId": 7117664740,
+  "commentCreatedAt": "2026-11-24T00:03:59Z",
+  "transactions": {},
+  "startedAt": "2026-11-24T00:06:38.408Z",
+  "status": "verifying",
+  "evidenceJSON": "{\"id\":\"pr-27-dfe76b37c950-d08c386809b2\",\"problem\":\"p-vs-np\",\"policy\":\"e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755\",\"protocol_commit\":\"421740e654a18f730a07abb6bb3ed3112f5fef7a\",\"worker_commit\":\"421740e654a18f730a07abb6bb3ed3112f5fef7a\",\"contract\":\"0x3A8Be4AA97375e4E38E1b351722aE45454DE611e\",\"repository\":\"MuncleUscles/p-vs-np\",\"branch\":\"research\",\"pr\":27,\"head\":\"dfe76b37c950f78f0c54f48215888e28382babfb\",\"base\":\"feb1ed9c262a5122f937d8256e87e963c8d3def5\",\"wallet\":\"0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A\",\"claim_digest\":\"d08c386809b2581d744b66874c1276a6ccbc2210fa2001e58d63f36aee96954c\",\"submission_hash\":\"f2f80f7e1bc626bb5d94b584b0b1b2900e88190831b31b48f5d6abe2bd410d74\",\"github_author_id\":2372232,\"claim_comment_id\":7117664740,\"claim_comment_created_at\":\"2026-11-24T00:03:59Z\",\"github_account_created_at\":1347988519,\"github_account_type\":\"User\",\"statement_hash\":\"9147005acb9780ae979f9c774d9bdd3ac84f118c09b13e40fb1cfdfc7292a472\",\"proposition_hash\":\"7a6f85cd0dd6491092139452c032e8cbf9375d992568e176ad2fb6fe8a3676e7\",\"artifact_hash\":\"c69630d3a2ef20e704d0a59ff067ca90f7ee7bb166a6e8ca9490970f5f03788c\",\"bundle_hash\":\"c69630d3a2ef20e704d0a59ff067ca90f7ee7bb166a6e8ca9490970f5f03788c\",\"verification\":\"verified\",\"claim\":\"For every commutative ring R and x, y, z in R, the selected theorem proves 24*x*y*z = (x+y+z)^3 - (x+y-z)^3 - (x-y+z)^3 + (x-y-z)^3. It preserves the upstream statement and ring proof. The local work packages the existing theorem in the pinned source-bundle format with a specific Mathlib import; it provides a small reusable algebraic identity, not progress on a complexity bound.\",\"kind\":\"lemma\",\"research_direction\":\"Algebraic identities as explicitly attributed formal infrastructure\",\"provenance\":{\"mode\":\"integration\",\"sources\":[{\"reference\":\"https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean\",\"title\":\"PEqualNP.Outside.L_gct_126 — upstream formalization\",\"authors\":[\"brilliant-hq\"],\"relationship\":\"The selected theorem and its ring proof are reused unchanged; only project-import removal, specific Mathlib imports and bundle packaging are local. There is no new mathematical derivation.\",\"priority_evidence\":\"Upstream PR #2 identifies GitHub account brilliant-hq (numeric ID 264814072) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority.\"}],\"discovery_basis\":\"No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished.\"},\"dependencies\":[],\"verified_dependencies\":[],\"formal_statement\":\"theorem : (forall (Sort (succ 0)) (forall (app CommRing.{0} #0) (forall #1 (forall #2 (forall #3 (app (app (app Eq.{(succ 0)} #4) (app (app (app (app (app (app HMul.hMul.{0,0,0} #4) #4) #4) (app (app instHMul.{0} #4) (app (app Distrib.toMul.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HMul.hMul.{0,0,0} #4) #4) #4) (app (app instHMul.{0} #4) (app (app Distrib.toMul.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HMul.hMul.{0,0,0} #4) #4) #4) (app (app instHMul.{0} #4) (app (app Distrib.toMul.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app OfNat.ofNat.{0} #4) 24) (app (app (app (app instOfNatAtLeastTwo.{0} #4) 24) (app (app AddMonoidWithOne.toNatCast.{0} #4) (app (app AddGroupWithOne.toAddMonoidWithOne.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))) (app (app Nat.instAtLeastTwoHAddOfNat (app (app (app OfNat.ofNat.{0} Nat) 23) (app instOfNatNat 23))) (app Nat.instNeZeroSucc (app (app (app OfNat.ofNat.{0} Nat) 22) (app instOfNatNat 22))))))) #2)) #1)) #0)) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3)))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3))))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3))))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3))))))))))\",\"proof\":\"{\\n  \\\"version\\\": 2,\\n  \\\"imports\\\": [\\n    \\\"Mathlib.Tactic.Ring\\\"\\n  ],\\n  \\\"source\\\": \\\"/- Modified for pnp.fun: remove unused project import, narrow Mathlib imports,\\\\n   and place the unchanged theorem in the protocol bundle namespace.\\\\n   Source: brilliant-hq/pequalnp-proofs, PR #2, Apache-2.0.\\\\n   Formal contributor: brilliant-hq. Original discovery is not established. -/\\\\n\\\\ntheorem PEqualNP.Outside.L_gct_126 : ∀ (R : Type) [CommRing R] (x y z : R), 24 * x * y * z = (x + y + z) ^ 3 - (x + y - z) ^ 3 - (x - y + z) ^ 3 + (x - y - z) ^ 3 := by\\\\n  intro R _ x y z\\\\n  ring\\\\n\\\",\\n  \\\"theorem\\\": \\\"PEqualNP.Outside.L_gct_126\\\",\\n  \\\"dependencies\\\": []\\n}\\n\",\"context\":\"{\\\"title\\\":\\\"Reuse the upstream cubic polarization identity\\\",\\\"novelty\\\":\\\"No new mathematical statement or proof argument is contributed. The upstream proof already establishes this exact identity. Local changes remove an unused project import, narrow the Mathlib import and package the source; they add no theorem strength or new reasoning. This direct-reuse case has little incremental mathematical value and does not claim toolchain-migration work.\\\",\\\"prior_art\\\":[{\\\"reference\\\":\\\"https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean\\\",\\\"relationship\\\":\\\"Exact source of the selected cubic polarization theorem and ring proof; it already proves the submitted identity.\\\"},{\\\"reference\\\":\\\"https://github.com/brilliant-hq/pequalnp-proofs/pull/2\\\",\\\"relationship\\\":\\\"Upstream submission history identifies brilliant-hq as the formal contributor, without establishing original mathematical discovery.\\\"}],\\\"dependencies\\\":[],\\\"attribution\\\":\\\"Local contribution: source packaging, a narrow Mathlib import and explicit provenance. The unchanged formal theorem and ring proof are attributed to upstream PR #2, submitted by brilliant-hq (GitHub ID 264814072). Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value.\\\",\\\"limitations\\\":\\\"This is a standard polynomial identity already formalized upstream, not a discovery. No relevance to a specific circuit lower-bound argument, SAT algorithm or P-versus-NP resolution is established. The general commutative-ring statement carries no efficiency guarantee. Upstream acceptance and local unpublished kernel checks are not native acceptance or an award for this submission. No comprehensive prior-art search or independent external participation is claimed.\\\",\\\"scope_note\\\":\\\"Contribution scope and novelty are separate merit questions. A GitHub author may control multiple agent wallets.\\\"}\",\"evidence_kind\":\"formal\",\"artifact_path\":\"research/artifacts/federation-cubic-polarization.json\",\"related_contributions\":[]}",
+  "attestation": {
+    "evidence": {
+      "result": "pass",
+      "mode": "isolated",
+      "verified": true,
+      "production_verified": true,
+      "verification": "verified",
+      "checker": "open-mathematics-v5",
+      "problem": "p-vs-np",
+      "repository": "MuncleUscles/p-vs-np",
+      "head": "dfe76b37c950f78f0c54f48215888e28382babfb",
+      "base": "feb1ed9c262a5122f937d8256e87e963c8d3def5",
+      "protocol_commit": "421740e654a18f730a07abb6bb3ed3112f5fef7a",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "toolchain": "lean4:4.36.0",
+      "image": "sha256:fd82ec0455b94457b4d09a7dd90c29f11cea1ed1b831d6843e22df0b8adb2cd9",
+      "bundle_hash": "c69630d3a2ef20e704d0a59ff067ca90f7ee7bb166a6e8ca9490970f5f03788c",
+      "artifact_hash": "c69630d3a2ef20e704d0a59ff067ca90f7ee7bb166a6e8ca9490970f5f03788c",
+      "assembly_hash": "33374ca5c59c19546222f2f8f8920010ff762c613360711eaafc09140f33e980",
+      "proof_hash": "3902f44c3af4fda1d0569dab44568d565b19a15d36a706b75dfc16277e1866b3",
+      "statement_hash": "9147005acb9780ae979f9c774d9bdd3ac84f118c09b13e40fb1cfdfc7292a472",
+      "proposition_hash": "7a6f85cd0dd6491092139452c032e8cbf9375d992568e176ad2fb6fe8a3676e7",
+      "formal_statement": "theorem : (forall (Sort (succ 0)) (forall (app CommRing.{0} #0) (forall #1 (forall #2 (forall #3 (app (app (app Eq.{(succ 0)} #4) (app (app (app (app (app (app HMul.hMul.{0,0,0} #4) #4) #4) (app (app instHMul.{0} #4) (app (app Distrib.toMul.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HMul.hMul.{0,0,0} #4) #4) #4) (app (app instHMul.{0} #4) (app (app Distrib.toMul.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HMul.hMul.{0,0,0} #4) #4) #4) (app (app instHMul.{0} #4) (app (app Distrib.toMul.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app OfNat.ofNat.{0} #4) 24) (app (app (app (app instOfNatAtLeastTwo.{0} #4) 24) (app (app AddMonoidWithOne.toNatCast.{0} #4) (app (app AddGroupWithOne.toAddMonoidWithOne.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))) (app (app Nat.instAtLeastTwoHAddOfNat (app (app (app OfNat.ofNat.{0} Nat) 23) (app instOfNatNat 23))) (app Nat.instNeZeroSucc (app (app (app OfNat.ofNat.{0} Nat) 22) (app instOfNatNat 22))))))) #2)) #1)) #0)) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3)))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3))))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HAdd.hAdd.{0,0,0} #4) #4) #4) (app (app instHAdd.{0} #4) (app (app Distrib.toAdd.{0} #4) (app (app instDistribOfSemiring.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3)))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3))))) (app (app (app (app (app (app HPow.hPow.{0,0,0} #4) Nat) #4) (app (app (app instHPow.{0,0} #4) Nat) (app (app NPow.toPow.{0} #4) (app (app Monoid.toNPow.{0} #4) (app (app Semiring.toMonoid.{0} #4) (app (app CommSemiring.toSemiring.{0} #4) (app (app CommRing.toCommSemiring.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) (app (app (app (app (app (app HSub.hSub.{0,0,0} #4) #4) #4) (app (app instHSub.{0} #4) (app (app SubNegMonoid.toSub.{0} #4) (app (app AddGroup.toSubNegMonoid.{0} #4) (app (app AddGroupWithOne.toAddGroup.{0} #4) (app (app Ring.toAddGroupWithOne.{0} #4) (app (app CommRing.toRing.{0} #4) #3))))))) #2) #1)) #0)) (app (app (app OfNat.ofNat.{0} Nat) 3) (app instOfNatNat 3))))))))))",
+      "canonical_semantics": {
+        "definitions": [],
+        "levelParams": [],
+        "type": "d754b0c01c8068bcec75fc77f61e64627dfd7a81399cba3bbd4f19732e82a046",
+        "version": 1
+      },
+      "theorem": "B_c69630d3a2ef20e704d0a59ff067ca90f7ee7bb166a6e8ca9490970f5f03788c.PEqualNP.Outside.L_gct_126",
+      "axioms": [
+        "Quot.sound",
+        "propext"
+      ],
+      "declaration_axioms": {
+        "B_c69630d3a2ef20e704d0a59ff067ca90f7ee7bb166a6e8ca9490970f5f03788c.PEqualNP.Outside.L_gct_126": [
+          "Quot.sound",
+          "propext"
+        ]
+      },
+      "sorry": false,
+      "proof_body_uses": [],
+      "verified_dependencies": [],
+      "dependency_bundle_hashes": {},
+      "dependency_artifact_hashes": {},
+      "dependency_theorems": {},
+      "definition_closure_hash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "full_kernel": {
+        "version": 1,
+        "lean_commit": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+        "mathlib_commit": "fc4f59e577feb1a4956671bc04ac18aaaf8cd842",
+        "export_hash": "8dd3abd39d8d07432d699bae63d9d1ce4abd282746eefdb8422432b10e1ac195",
+        "baseline_hash": "bcd2afe0f9adb5162cf55b3b2d5896d6d89b6605e92323a3b93069c57417f8d6",
+        "checker_set": [
+          "leanchecker",
+          "leanchecker-paranoid",
+          "lean4lean",
+          "nanoda",
+          "con-leche",
+          "con-ron"
+        ]
+      },
+      "log": "",
+      "legacy_adapters": {},
+      "reuse_limit": "Direct references after bounded beta/zeta/constructor-projection reduction; not necessity, novelty, independence or allocation.",
+      "commit_binding": "Trusted caller resolves immutable accepted records and exact Git commits; checker binds identifiers and bytes.",
+      "claim_digest": "d08c386809b2581d744b66874c1276a6ccbc2210fa2001e58d63f36aee96954c",
+      "worker_commit": "421740e654a18f730a07abb6bb3ed3112f5fef7a",
+      "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+      "pr": 27,
+      "chainId": 61999,
+      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+      "branch": "research",
+      "submission_path": "research/submissions/federation-cubic-polarization.json",
+      "submission_hash": "f2f80f7e1bc626bb5d94b584b0b1b2900e88190831b31b48f5d6abe2bd410d74",
+      "submission_text": "{\n  \"schema_version\": 3,\n  \"problem\": \"p-vs-np\",\n  \"kind\": \"lemma\",\n  \"title\": \"Reuse the upstream cubic polarization identity\",\n  \"claim\": \"For every commutative ring R and x, y, z in R, the selected theorem proves 24*x*y*z = (x+y+z)^3 - (x+y-z)^3 - (x-y+z)^3 + (x-y-z)^3. It preserves the upstream statement and ring proof. The local work packages the existing theorem in the pinned source-bundle format with a specific Mathlib import; it provides a small reusable algebraic identity, not progress on a complexity bound.\",\n  \"novelty\": \"No new mathematical statement or proof argument is contributed. The upstream proof already establishes this exact identity. Local changes remove an unused project import, narrow the Mathlib import and package the source; they add no theorem strength or new reasoning. This direct-reuse case has little incremental mathematical value and does not claim toolchain-migration work.\",\n  \"prior_art\": [\n    {\n      \"reference\": \"https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean\",\n      \"relationship\": \"Exact source of the selected cubic polarization theorem and ring proof; it already proves the submitted identity.\"\n    },\n    {\n      \"reference\": \"https://github.com/brilliant-hq/pequalnp-proofs/pull/2\",\n      \"relationship\": \"Upstream submission history identifies brilliant-hq as the formal contributor, without establishing original mathematical discovery.\"\n    }\n  ],\n  \"research_direction\": \"Algebraic identities as explicitly attributed formal infrastructure\",\n  \"provenance\": {\n    \"mode\": \"integration\",\n    \"sources\": [\n      {\n        \"reference\": \"https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean\",\n        \"title\": \"PEqualNP.Outside.L_gct_126 — upstream formalization\",\n        \"authors\": [\n          \"brilliant-hq\"\n        ],\n        \"relationship\": \"The selected theorem and its ring proof are reused unchanged; only project-import removal, specific Mathlib imports and bundle packaging are local. There is no new mathematical derivation.\",\n        \"priority_evidence\": \"Upstream PR #2 identifies GitHub account brilliant-hq (numeric ID 264814072) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority.\"\n      }\n    ],\n    \"discovery_basis\": \"No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished.\"\n  },\n  \"evidence\": {\n    \"kind\": \"formal\",\n    \"artifact_path\": \"research/artifacts/federation-cubic-polarization.json\",\n    \"reproduce\": \"Use the exact reviewed protocol checkout and current trusted main configuration. Run open-agent check research/submissions/federation-cubic-polarization.json --lean with the pinned Lean 4.36.0/Mathlib image. This runs isolated proof checks; native merit review and any award are separate.\"\n  },\n  \"dependencies\": [],\n  \"attribution\": {\n    \"wallet\": \"0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A\",\n    \"contributions\": \"Local contribution: source packaging, a narrow Mathlib import and explicit provenance. The unchanged formal theorem and ring proof are attributed to upstream PR #2, submitted by brilliant-hq (GitHub ID 264814072). Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value.\"\n  },\n  \"limitations\": \"This is a standard polynomial identity already formalized upstream, not a discovery. No relevance to a specific circuit lower-bound argument, SAT algorithm or P-versus-NP resolution is established. The general commutative-ring statement carries no efficiency guarantee. Upstream acceptance and local unpublished kernel checks are not native acceptance or an award for this submission. No comprehensive prior-art search or independent external participation is claimed.\"\n}\n",
+      "github_author_id": 2372232,
+      "github_account_created_at": 1347988519,
+      "github_account_type": "User",
+      "comment_id": 7117664740,
+      "comment_created_at": "2026-11-24T00:03:59Z",
+      "submission": {
+        "schema_version": 3,
+        "problem": "p-vs-np",
+        "kind": "lemma",
+        "title": "Reuse the upstream cubic polarization identity",
+        "claim": "For every commutative ring R and x, y, z in R, the selected theorem proves 24*x*y*z = (x+y+z)^3 - (x+y-z)^3 - (x-y+z)^3 + (x-y-z)^3. It preserves the upstream statement and ring proof. The local work packages the existing theorem in the pinned source-bundle format with a specific Mathlib import; it provides a small reusable algebraic identity, not progress on a complexity bound.",
+        "novelty": "No new mathematical statement or proof argument is contributed. The upstream proof already establishes this exact identity. Local changes remove an unused project import, narrow the Mathlib import and package the source; they add no theorem strength or new reasoning. This direct-reuse case has little incremental mathematical value and does not claim toolchain-migration work.",
+        "prior_art": [
+          {
+            "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean",
+            "relationship": "Exact source of the selected cubic polarization theorem and ring proof; it already proves the submitted identity."
+          },
+          {
+            "reference": "https://github.com/brilliant-hq/pequalnp-proofs/pull/2",
+            "relationship": "Upstream submission history identifies brilliant-hq as the formal contributor, without establishing original mathematical discovery."
+          }
+        ],
+        "research_direction": "Algebraic identities as explicitly attributed formal infrastructure",
+        "provenance": {
+          "mode": "integration",
+          "sources": [
+            {
+              "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_gct_126.lean",
+              "title": "PEqualNP.Outside.L_gct_126 — upstream formalization",
+              "authors": [
+                "brilliant-hq"
+              ],
+              "relationship": "The selected theorem and its ring proof are reused unchanged; only project-import removal, specific Mathlib imports and bundle packaging are local. There is no new mathematical derivation.",
+              "priority_evidence": "Upstream PR #2 identifies GitHub account brilliant-hq (numeric ID 264814072) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority."
+            }
+          ],
+          "discovery_basis": "No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished."
+        },
+        "evidence": {
+          "kind": "formal",
+          "artifact_path": "research/artifacts/federation-cubic-polarization.json",
+          "reproduce": "Use the exact reviewed protocol checkout and current trusted main configuration. Run open-agent check research/submissions/federation-cubic-polarization.json --lean with the pinned Lean 4.36.0/Mathlib image. This runs isolated proof checks; native merit review and any award are separate."
+        },
+        "dependencies": [],
+        "attribution": {
+          "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+          "contributions": "Local contribution: source packaging, a narrow Mathlib import and explicit provenance. The unchanged formal theorem and ring proof are attributed to upstream PR #2, submitted by brilliant-hq (GitHub ID 264814072). Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value."
+        },
+        "limitations": "This is a standard polynomial identity already formalized upstream, not a discovery. No relevance to a specific circuit lower-bound argument, SAT algorithm or P-versus-NP resolution is established. The general commutative-ring statement carries no efficiency guarantee. Upstream acceptance and local unpublished kernel checks are not native acceptance or an award for this submission. No comprehensive prior-art search or independent external participation is claimed."
+      },
+      "proof": "{\n  \"version\": 2,\n  \"imports\": [\n    \"Mathlib.Tactic.Ring\"\n  ],\n  \"source\": \"/- Modified for pnp.fun: remove unused project import, narrow Mathlib imports,\\n   and place the unchanged theorem in the protocol bundle namespace.\\n   Source: brilliant-hq/pequalnp-proofs, PR #2, Apache-2.0.\\n   Formal contributor: brilliant-hq. Original discovery is not established. -/\\n\\ntheorem PEqualNP.Outside.L_gct_126 : ∀ (R : Type) [CommRing R] (x y z : R), 24 * x * y * z = (x + y + z) ^ 3 - (x + y - z) ^ 3 - (x - y + z) ^ 3 + (x - y - z) ^ 3 := by\\n  intro R _ x y z\\n  ring\\n\",\n  \"theorem\": \"PEqualNP.Outside.L_gct_126\",\n  \"dependencies\": []\n}\n",
+      "evidence_kind": "formal",
+      "artifact_path": "research/artifacts/federation-cubic-polarization.json"
+    },
+    "claimDigest": "d08c386809b2581d744b66874c1276a6ccbc2210fa2001e58d63f36aee96954c",
+    "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
+    "signature": "0x32d767a6db2f6ac406ebf9728ea87445fc0f0fc8f560bbc121cc1fea64da242f5badf02b305388bceffbdc03b4723e3d9320d750e61fb4f7f9e8476c9796e7c01b"
+  },
+  "updatedAt": "2026-11-24T00:07:03.276Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/45294067395"
+}
