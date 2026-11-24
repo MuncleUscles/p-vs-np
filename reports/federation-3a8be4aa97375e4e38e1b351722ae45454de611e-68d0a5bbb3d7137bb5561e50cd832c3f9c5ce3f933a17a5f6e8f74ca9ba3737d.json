@@ -25,7 +25,8 @@
         "method": "register_external_result",
         "argsSha256": "81433ae4eb9c01db6ba6a44edd29f57fa68110d3e993294aacd5c44b7555a850",
         "independent": false
-      }
+      },
+      "hash": "0x8b2c90cb442e1ec1f5c51a595bd78e24a9e21ad69f093928d3c9e054bfd22ce0"
     }
   },
   "source": {
@@ -579,5 +580,5 @@
       ]
     }
   },
-  "updatedAt": "2026-11-24T00:39:56.749Z"
+  "updatedAt": "2026-11-24T00:40:00.290Z"
 }
