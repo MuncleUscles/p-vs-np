@@ -1,0 +1,53 @@
+name: Public source access check
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Public upstream owner/repository to diagnose
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Read public API access without exposing response content or credentials
+        env:
+          SOURCE_REPOSITORY: ${{ inputs.repository }}
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          node --input-type=module <<'JS'
+          const repository=process.env.SOURCE_REPOSITORY;
+          if(!/^[A-Za-z0-9][A-Za-z0-9-]{0,38}\/[A-Za-z0-9_.-]{1,100}$/.test(repository)||['.','..'].includes(repository.split('/')[1]))throw Error('Invalid repository');
+          const url='https://api.github.com/repos/'+repository;
+          for(const authenticated of [false,true]){
+            let failureClass='transport-or-deadline';
+            try{
+            const headers={Accept:'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'open-mathematics-source-diagnostic','Accept-Encoding':'identity'};
+            if(authenticated)headers.Authorization='Bearer '+process.env.GITHUB_TOKEN;
+            const response=await fetch(url,{headers,redirect:'error',signal:AbortSignal.timeout(10000)});
+            const numeric=name=>{const s=response.headers.get(name);return s!==null&&/^\d{1,12}$/.test(s)?Number(s):null;};
+            const result={authenticated,status:response.status,limit:numeric('x-ratelimit-limit'),remaining:numeric('x-ratelimit-remaining'),reset:numeric('x-ratelimit-reset'),retry_after:numeric('retry-after'),classification:null};
+            failureClass='body-read-failure';
+            const reader=response.body.getReader();let total=0;const chunks=[];
+            try{while(true){const {done,value}=await reader.read();if(done)break;total+=value.byteLength;if(total>32768){result.classification='body-too-large';await reader.cancel();break;}chunks.push(value);}}
+            finally{reader.releaseLock();}
+            if(result.classification===null){
+              let message;try{message=JSON.parse(Buffer.concat(chunks).toString('utf8')).message;}catch{}
+              if(typeof message==='string'){
+                if(message.startsWith('API rate limit exceeded for '))result.classification='primary-rate-limit';
+                else if(message.includes('secondary rate limit'))result.classification='secondary-rate-limit';
+                else if(message==='Resource not accessible by integration')result.classification='integration-access';
+                else if(message==='Bad credentials')result.classification='bad-credentials';
+                else if(message==='Not Found')result.classification='not-found';
+              }
+            }
+            if([403,429].includes(result.status)&&result.remaining===0)result.classification='primary-rate-limit';
+            console.log(JSON.stringify(result));
+            }catch{console.log(JSON.stringify({authenticated,classification:failureClass}));}
+          }
+          JS
