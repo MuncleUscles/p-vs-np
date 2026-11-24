@@ -44,14 +44,25 @@ jobs:
           ref: 93c7d3fce28163b281a33fcdfeab00aed06c46f4
           path: protocol
           persist-credentials: false
+      - name: Read the independently pinned presentation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: MuncleUscles/open-mathematics
+          ref: ef177357def62ec65daf47dbc2870ccb068202f7
+          path: renderer
+          persist-credentials: false
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 22.22.0
           cache: npm
           cache-dependency-path: protocol/package-lock.json
       - run: npm ci --ignore-scripts
+      - name: Install presentation dependencies
+        run: npm ci --ignore-scripts
+        working-directory: renderer
       - name: Build dashboard with a dated finalized-native snapshot
-        run: node scripts/build-open-site.mjs ../problem ../site --snapshot
+        run: node scripts/build-open-site.mjs ../problem ../site --snapshot --protocol-checkout ../protocol
+        working-directory: renderer
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         id: upload
