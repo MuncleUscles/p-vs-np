@@ -4,7 +4,7 @@
   "commit": "42765bad82112b0ea3e275713780ab49db8074ec",
   "path": "lean/PEqualNP/Outside/L_meta_253.lean",
   "theorem": "PEqualNP.Outside.L_meta_253",
-  "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_meta_253 :\n    \u2200 (n : \u2115) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (v : Fin n)\n      (x : Fin n \u2192 Bool),\n      decide (\u2203 u w : Fin n, G.Adj u w \u2227\n        Function.update x v false u = true \u2227 Function.update x v false w = true) =\n      decide (\u2203 u w : Fin n, u \u2260 v \u2227 w \u2260 v \u2227 G.Adj u w \u2227\n        x u = true \u2227 x w = true)",
+  "statement": "import Mathlib\nimport PEqualNP.Defs\n\ntheorem PEqualNP.Outside.L_meta_253 :\n    ∀ (n : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (v : Fin n)\n      (x : Fin n → Bool),\n      decide (∃ u w : Fin n, G.Adj u w ∧\n        Function.update x v false u = true ∧ Function.update x v false w = true) =\n      decide (∃ u w : Fin n, u ≠ v ∧ w ≠ v ∧ G.Adj u w ∧\n        x u = true ∧ x w = true)",
   "origin": "formalization",
   "attributionBasis": "The merged source PR identifies its submitter as lshhhhhhh (GitHub numeric account 11421571). This is evidence of the submitted formalization, not original mathematical discovery, real-world identity, wallet control or global priority. Local adaptation is independently checked and separately assessed."
 }
