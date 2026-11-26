@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "intent": {
+    "contract": "0xEEdFFaE4A42376f834bCDfDfd665c1ac0749B489",
+    "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+    "method": "refresh_username",
+    "args": [
+      "11421571",
+      "1795593000"
+    ]
+  },
+  "transactions": {
+    "apply": {
+      "intent": {
+        "address": "0xeedffae4a42376f834bcdfdfd665c1ac0749b489",
+        "sender": "0x06bab7179c48f0dcd1afc93c48d3d22c5a6377f2",
+        "method": "refresh_username",
+        "argsSha256": "53a88b71cfd54259ae7dbf9bacd12a8a9fee5bdaef39b7a2d52b8b0e649e7145",
+        "independent": true
+      }
+    }
+  },
+  "updatedAt": "2026-11-26T10:16:29.563Z"
+}
