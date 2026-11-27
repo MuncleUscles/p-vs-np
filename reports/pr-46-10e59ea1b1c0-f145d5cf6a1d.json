@@ -45137,11 +45137,11 @@
   },
   "blockedConsensus": true,
   "error": "Invalid finalized consensus outcome or execution receipt",
-  "updatedAt": "2026-11-27T18:30:24.193Z",
+  "updatedAt": "2026-11-27T18:30:30.405Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46049453451",
   "record": {
     "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
