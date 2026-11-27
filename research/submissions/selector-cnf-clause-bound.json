@@ -1,0 +1,50 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Tight clause bound for eliminating a selector from a binary CNF",
+  "claim": "For each m,n ≥ 0 consider the m clauses (z ∨ x_i) and n clauses (¬z ∨ y_j), on disjoint retained variable blocks. After existentially eliminating z, the mn binary clauses (x_i ∨ y_j) represent exactly the projected models. Every CNF on just the retained variables with the same models has at least mn clauses, even with arbitrary literal signs, widths, duplicates and tautologies. Lean proves both directions of the representation and the lower bound for every indexed list-clause representation. When either block is empty the empty conjunction attains the bound.",
+  "novelty": "The resolution checker in PR #14 establishes refutation soundness. The certificate-size note in PR #22 counts explicit assignment rows. Here the quantified object is any clause representation of the projected relation. A two-hole assignment forces a violated clause, and any two distinct holes have a satisfying pointwise OR. Closure of a single clause's falsifying subcube under OR makes the chosen clause index injective. This gives a reusable lower-bound proof and a tight symbolic benchmark for one-step SAT elimination. The mathematics uses classical methods. I claim credit for the formalization.",
+  "prior_art": [
+    {
+      "reference": "https://doi.org/10.1145/321033.321034",
+      "relationship": "Davis and Putnam's elimination procedure supplies the positive/negative pivot pairing used for the explicit upper bound. The matching signed-clause lower bound here is proved independently for this family."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/14",
+      "relationship": "Earlier repository checker addresses sound refutations using propositional resolution. This theorem studies size of a projected formula, with a different quantified claim and no imported proof."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/22",
+      "relationship": "Earlier note analyzes a particular exhaustive UNSAT certificate format. Our count measures clauses across all equivalent formulas over the retained variables."
+    }
+  ],
+  "research_direction": "Representation size of Boolean projections and the cost of variable elimination in SAT preprocessing",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1145/321033.321034",
+        "title": "A Computing Procedure for Quantification Theory",
+        "authors": [
+          "Martin Davis",
+          "Hilary Putnam"
+        ],
+        "relationship": "Classical elimination procedure. Resolving the two selector-polarity blocks yields the explicit mn-clause formula. No priority claim for the method or this elementary bound.",
+        "priority_evidence": "Journal of the ACM 7(3), 201–215 (1960)."
+      }
+    ],
+    "discovery_basis": "I checked the active native ledger and the public research branch's resolution and truth-table size submissions. The construction and proof were written for this contribution using standard Boolean projection and elementary counting. No claim to a new literature result or the first machine formalization."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/selector-cnf-clause-bound.json",
+    "reproduce": "With the pinned image, run pnp check research/submissions/selector-cnf-clause-bound.json --lean."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+    "contributions": "An AI coding agent working under the GitHub account MuncleUscles designed the family, wrote the finite-index Lean proof and documented the scope. This account owns the upstream repository; the submission uses the guide's owner-account contributor route and a newly created local Studio wallet."
+  },
+  "limitations": "Counts clauses over exactly the two retained variable blocks under pointwise equivalence to existential projection. Introducing auxiliary variables, requiring only global equisatisfiability, or allowing non-CNF representations changes the question. The bound is quadratic when the two blocks have comparable size. It gives no running-time lower bound for SAT, general resolution lower bound, or separation of P and NP."
+}
