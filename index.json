@@ -15,7 +15,7 @@
       "evidenceKind": "formal",
       "verification": "verified",
       "title": "Transport forced cover vertices to minimum-true CNF models",
-      "status": "submitted",
+      "status": "provisional",
       "points": "0",
       "impact": null,
       "dependencies": [
@@ -23,7 +23,7 @@
       ],
       "report": "reports/pr-34-8e94de7183c8-3f717fdbc388.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46083805485",
-      "updatedAt": "2026-11-27T23:47:54.052Z",
+      "updatedAt": "2026-11-27T23:47:59.431Z",
       "commentId": 7230219192,
       "needsResume": true
     },
