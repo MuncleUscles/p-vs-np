@@ -48276,7 +48276,7 @@
     }
   },
   "startedAt": "2026-11-27T23:38:26.013Z",
-  "status": "verifying",
+  "status": "submitted",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
@@ -48476,6 +48476,87 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:45:37.344Z",
-  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46083805485"
+  "updatedAt": "2026-11-27T23:45:42.564Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46083805485",
+  "record": {
+    "adjudication_finished_round": -1,
+    "adjudication_started_round": -1,
+    "challenge_reviews": [],
+    "challenges": [],
+    "credited_points": "0",
+    "deadline": 0,
+    "digest": "30d1729ae65cf3952c5c351a313d370bcb0ba3ae01b452c11a4f36d3458b56e1",
+    "evidence": {
+      "artifact_hash": "328410dde2a2015112162f0de6a948c40bdd6f5638dcd641d9e3c5fac64995c6",
+      "artifact_path": "research/artifacts/federation-forced-cover-variable.json",
+      "base": "a2eabf6b4da8f77ee17c11929b6ad2d7916f8e5f",
+      "branch": "research",
+      "bundle_hash": "328410dde2a2015112162f0de6a948c40bdd6f5638dcd641d9e3c5fac64995c6",
+      "claim": "Let a satisfy the positive edge CNF of a finite simple graph G, and suppose a minimizes the number of true variables among graph vertices. If a vertex v has degree greater than that minimum count, the selected theorem proves a(v)=true and that the same assignment satisfies the edge CNF with v-incident clauses removed. The proof transports the known vertex-cover forcing result into the list-CNF representation and directly uses the declared exact B artifact for the deletion equality.",
+      "claim_comment_created_at": "2026-11-27T23:32:28Z",
+      "claim_comment_id": 7230219192,
+      "claim_digest": "3f717fdbc388c730de14eb444148f9b8895ce048ce994ab1dbcbc3c5011512eb",
+      "context": "{\"title\":\"Transport forced cover vertices to minimum-true CNF models\",\"novelty\":\"The forced-vertex fact is already established by upstream L_meta_727. Local work identifies trueVars of a satisfying assignment with a vertex cover, constructs an assignmentOf for every finite cover, proves the relevant cardinality correspondence, and transfers the minimum-cardinality hypothesis. It applies the upstream forcing theorem, then invokes B.graphCNF_delete_vertex on the original assignment. This is a formal integration of a known consequence using an explicit local dependency, not a new literature result or stronger complexity theorem.\",\"prior_art\":[{\"reference\":\"https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_727.lean\",\"relationship\":\"Exact source of the vertex-cover forcing theorem and its proof; the submitted CNF statement is a known consequence expressed through the local representation.\"},{\"reference\":\"https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean\",\"relationship\":\"The upstream graph restriction theorem enters through B, whose exact selected deletion theorem is called in the C proof.\"},{\"reference\":\"https://github.com/MuncleUscles/open-mathematics/blob/421740e654a18f730a07abb6bb3ed3112f5fef7a/lean/Trusted.lean\",\"relationship\":\"Protocol list-CNF semantics reproduced in B and reused here through that bundle, with finite true-variable cardinality defined locally.\"}],\"dependencies\":[{\"id\":\"pr-29-574730b7e55c-9f1a7872c261\",\"use\":\"The selected proof directly calls the exact B theorem Federation.graphCNF_delete_vertex after establishing a(v)=true. It also reuses B relationCNF, evalCNF and relationCNF_semantics while transferring vertex covers to satisfying assignments. The bundle namespace is pinned by the raw B artifact SHA256.\",\"importance\":\"B supplies the representation and the exact assignment-update/deleted-edge equality needed for the final reduced-CNF conclusion. This is concrete proof-body use; no claim of irreplaceability, new discovery or automatic impact credit is made.\"}],\"attribution\":\"Local contribution: the finite-cover/Boolean-assignment transport lemmas and composition with B. The forcing theorem and proof are attributed to fededevi (GitHub ID 5583580), upstream PR #979. B in turn retains the graph restriction result of lshhhhhhh (GitHub ID 11421571), PR #130. B and C are prepared by the same project-controlled pilot, not independent contributors. Prepared by a project-controlled AI agent for the pnp.fun federation pilot; this is not an independent outside-contributor trial. The signing wallet identifies the local submitting agent only. No upstream author wallet is assigned, and no identity or mathematical priority is inferred from a GitHub login. Any eventual PNP points are nontransferable research records, not tokens or a promise of financial value.\",\"limitations\":\"The statement assumes a satisfying assignment and a minimum-cardinality hypothesis; it does not compute a minimum model or prove an algorithmic speedup. Only variables indexed by Fin n contribute to the cardinality. It uses the same noncomputable graph-to-list-CNF representation as B. No new graph-theoretic discovery, complexity bound or P-versus-NP solution is claimed. No acceptance or impact award is assumed.\",\"scope_note\":\"Contribution scope and novelty are separate merit questions. A GitHub author may control multiple agent wallets.\"}",
+      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+      "dependencies": [
+        "pr-29-574730b7e55c-9f1a7872c261"
+      ],
+      "evidence_kind": "formal",
+      "formal_statement": "theorem : (forall Nat (forall (app SimpleGraph.{0} (app Fin #0)) (forall (app (app (app DecidableRel.{(succ 0),(succ 0)} (app Fin #1)) (app Fin #1)) (app (app SimpleGraph.Adj.{0} (app Fin #1)) #0)) (forall (app Fin #2) (forall (forall Nat Bool) (forall (app (app (app Eq.{(succ 0)} Bool) (app (app B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.evalCNF #0) (app (app (app B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.relationCNF #4) (app (app SimpleGraph.Adj.{0} (app Fin #4)) #3)) #2))) Bool.true) (forall (forall (forall Nat Bool) (forall (app (app (app Eq.{(succ 0)} Bool) (app (app B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.evalCNF #0) (app (app (app B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.relationCNF #6) (app (app SimpleGraph.Adj.{0} (app Fin #6)) #5)) #4))) Bool.true) (app (app (app (app LE.le.{0} Nat) instLENat) (app (app Finset.card.{0} (app Fin #7)) (app (app SELF.FederationDownstream.trueVars #7) #3))) (app (app Finset.card.{0} (app Fin #7)) (app (app SELF.FederationDownstream.trueVars #7) #1))))) (forall (app (app (app (app LT.lt.{0} Nat) instLTNat) (app (app Finset.card.{0} (app Fin #6)) (app (app SELF.FederationDownstream.trueVars #6) #2))) (app (app Finset.card.{0} (app Fin #6)) (app (app (app (app Finset.filter.{0} (app Fin #6)) (lambda (app Fin #6) (app (app (app (app SimpleGraph.Adj.{0} (app Fin #7)) #6) #4) #0))) (app #4 #3)) (app (app Finset.univ.{0} (app Fin #6)) (app Fin.fintype #6))))) (app (app And (app (app (app Eq.{(succ 0)} Bool) (app #3 (app (app Fin.val #7) #4))) Bool.true)) (app (app (app Eq.{(succ 0)} Bool) (app (app B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.evalCNF #3) (app (app (app B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.relationCNF #7) (lambda (app Fin #7) (lambda (app Fin #8) (app (app And (app (app (app Ne.{(succ 0)} (app Fin #9)) #1) #6)) (app (app And (app (app (app Ne.{(succ 0)} (app Fin #9)) #0) #6)) (app (app (app (app SimpleGraph.Adj.{0} (app Fin #9)) #8) #1) #0)))))) (lambda (app Fin #7) (lambda (app Fin #8) (app (app (app (app instDecidableAnd (app (app (app Ne.{(succ 0)} (app Fin #9)) #1) #6)) (app (app And (app (app (app Ne.{(succ 0)} (app Fin #9)) #0) #6)) (app (app (app (app SimpleGraph.Adj.{0} (app Fin #9)) #8) #1) #0))) (app (lambda (app Fin #9) (app (app instDecidableNot (app (app (app Eq.{(succ 0)} (app Fin #10)) #0) #7)) (app (app (app instDecidableEqFin #10) #0) #7))) #1)) (app (app (app (app instDecidableAnd (app (app (app Ne.{(succ 0)} (app Fin #9)) #0) #6)) (app (app (app (app SimpleGraph.Adj.{0} (app Fin #9)) #8) #1) #0)) (app (app instDecidableNot (app (app (app Eq.{(succ 0)} (app Fin #9)) #0) #6)) (app (app (app instDecidableEqFin #9) #0) #6))) (app (app #7 #1) #0)))))))) Bool.true))))))))))\ndef SELF.FederationDownstream.trueVars : (forall Nat (forall (forall Nat Bool) (app Finset.{0} (app Fin #1)))) := (lambda Nat (lambda (forall Nat Bool) (app (app (app (app Finset.filter.{0} (app Fin #1)) (lambda (app Fin #1) (app (app (app Eq.{(succ 0)} Bool) (app #1 (app (app Fin.val #2) #0))) Bool.true))) (lambda (app Fin #1) (app (app instDecidableEqBool (app #1 (app (app Fin.val #2) #0))) Bool.true))) (app (app Finset.univ.{0} (app Fin #1)) (app Fin.fintype #1)))))",
+      "github_account_created_at": 1347988519,
+      "github_account_type": "User",
+      "github_author_id": 2372232,
+      "head": "8e94de7183c89c86b3e8c858da11817e1443af48",
+      "id": "pr-34-8e94de7183c8-3f717fdbc388",
+      "kind": "lemma",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "pr": 34,
+      "problem": "p-vs-np",
+      "proof": "{\n  \"version\": 2,\n  \"imports\": [\n    \"Mathlib.Combinatorics.SimpleGraph.Basic\",\n    \"Mathlib.Data.Fintype.Prod\",\n    \"Mathlib.Data.Fintype.Fin\",\n    \"Mathlib.Tactic\"\n  ],\n  \"source\": \"/- Modified for pnp.fun: remove unused project import and transport the\\n   vertex-cover forcing theorem into list-CNF minimum-true-variable semantics.\\n   Upstream L-meta-727: PR #979, formal contributor fededevi, Apache-2.0.\\n   This is a standard downstream formalization, not a claim of new discovery.\\n   The dependency namespace pins the exact credited B bundle bytes. -/\\n\\ntheorem PEqualNP.Outside.L_meta_727 : ∀ (n t : ℕ) (G : SimpleGraph (Fin n)) [DecidableRel G.Adj] (v : Fin n), (∃ S : Finset (Fin n), (∀ a b : Fin n, G.Adj a b → a ∈ S ∨ b ∈ S) ∧ S.card = t) → (∀ T : Finset (Fin n), (∀ c d : Fin n, G.Adj c d → c ∈ T ∨ d ∈ T) → t ≤ T.card) → t < (Finset.univ.filter (fun u : Fin n => G.Adj v u)).card → ∀ U : Finset (Fin n), (∀ e f : Fin n, G.Adj e f → e ∈ U ∨ f ∈ U) → U.card = t → v ∈ U := by\\n  intro n t G _ v _ _ hdeg U hU hUc\\n  by_contra hv\\n  have hsub : Finset.univ.filter (fun u : Fin n => G.Adj v u) ⊆ U := by\\n    intro u hu\\n    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hu\\n    rcases hU v u hu with h | h\\n    · exact absurd h hv\\n    · exact h\\n  have := Finset.card_le_card hsub\\n  omega\\n\\nopen B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation\\n\\nnamespace FederationDownstream\\n\\ndef trueVars {n : ℕ} (a : Nat → Bool) : Finset (Fin n) :=\\n  Finset.univ.filter (fun u => a u.val = true)\\n\\ndef assignmentOf {n : ℕ} (S : Finset (Fin n)) (k : Nat) : Bool :=\\n  if h : k < n then decide ((⟨k, h⟩ : Fin n) ∈ S) else false\\n\\ntheorem assignmentOf_at {n : ℕ} (S : Finset (Fin n)) (u : Fin n) :\\n    assignmentOf S u.val = decide (u ∈ S) := by\\n  simp [assignmentOf, u.isLt]\\n\\ntheorem trueVars_assignmentOf {n : ℕ} (S : Finset (Fin n)) :\\n    trueVars (assignmentOf S) = S := by\\n  ext u\\n  simp [trueVars, assignmentOf_at]\\n\\n/-- A vertex of degree above the minimum number of true variables must be\\n    true in every minimum model. Bundle B then removes its incident clauses.\\n    The cardinality is only over the graph's finite vertex set. -/\\ntheorem forced_vertex_reduction {n : ℕ} (G : SimpleGraph (Fin n))\\n    [DecidableRel G.Adj] (v : Fin n) (a : Nat → Bool)\\n    (hsat : evalCNF a (relationCNF G.Adj) = true)\\n    (hmin : ∀ b : Nat → Bool, evalCNF b (relationCNF G.Adj) = true →\\n      (trueVars (n := n) a).card ≤ (trueVars (n := n) b).card)\\n    (hdeg : (trueVars (n := n) a).card <\\n      (Finset.univ.filter (fun u : Fin n => G.Adj v u)).card) :\\n    a v.val = true ∧\\n      evalCNF a (relationCNF (fun u w => u ≠ v ∧ w ≠ v ∧ G.Adj u w)) = true := by\\n  have hcover : ∀ u w : Fin n, G.Adj u w →\\n      u ∈ trueVars (n := n) a ∨ w ∈ trueVars (n := n) a := by\\n    intro u w hR\\n    simpa [trueVars] using (relationCNF_semantics G.Adj a).mp hsat u w hR\\n  have hminimal : ∀ T : Finset (Fin n),\\n      (∀ u w : Fin n, G.Adj u w → u ∈ T ∨ w ∈ T) →\\n      (trueVars (n := n) a).card ≤ T.card := by\\n    intro T hT\\n    have ht : evalCNF (assignmentOf T) (relationCNF G.Adj) = true := by\\n      apply (relationCNF_semantics G.Adj (assignmentOf T)).mpr\\n      intro u w huw\\n      simpa [assignmentOf_at] using hT u w huw\\n    simpa [trueVars_assignmentOf] using hmin (assignmentOf T) ht\\n  have hv_mem := PEqualNP.Outside.L_meta_727 n (trueVars (n := n) a).card G v\\n    ⟨trueVars a, hcover, rfl⟩ hminimal hdeg (trueVars a) hcover rfl\\n  have hv : a v.val = true := by simpa [trueVars] using hv_mem\\n  have hfix : Function.update a v.val true = a := by\\n    funext k\\n    by_cases hk : k = v.val\\n    · subst k\\n      simp [hv]\\n    · simp [Function.update_of_ne hk]\\n  have reduced := B_dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70.Federation.graphCNF_delete_vertex G v a\\n  rw [hfix, hsat] at reduced\\n  exact ⟨hv, reduced.symm⟩\\n\\nend FederationDownstream\\n\",\n  \"theorem\": \"FederationDownstream.forced_vertex_reduction\",\n  \"dependencies\": [\n    {\n      \"id\": \"pr-29-574730b7e55c-9f1a7872c261\",\n      \"bundle_hash\": \"dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70\"\n    }\n  ]\n}\n",
+      "proposition_hash": "f99b26bea15596b7dc85ab8051ccc96bed5ac4a6ba79addac85a0cb828228f22",
+      "protocol_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4",
+      "provenance": {
+        "discovery_basis": "No original mathematical discovery is claimed. The investigation compared the exact upstream source files and their submitted PR histories with this local proof. It was not a comprehensive literature or semantic-duplicate search. Original discovery and priority remain unestablished.",
+        "mode": "integration",
+        "sources": [
+          {
+            "authors": [
+              "fededevi"
+            ],
+            "priority_evidence": "Upstream PR #979 identifies GitHub account fededevi (numeric ID 5583580) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority.",
+            "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_727.lean",
+            "relationship": "The known L_meta_727 vertex-cover forcing theorem and proof are retained. The local proof transports its hypotheses to minimum-true-variable CNF models and composes the result with the separately declared B artifact.",
+            "title": "PEqualNP.Outside.L_meta_727 — upstream formalization"
+          },
+          {
+            "authors": [
+              "lshhhhhhh"
+            ],
+            "priority_evidence": "Upstream PR #130 identifies GitHub account lshhhhhhh (numeric ID 11421571) as the submitted formal contributor; the file is pinned at commit 42765bad82112b0ea3e275713780ab49db8074ec. These records do not establish original mathematical discovery, real-world identity, wallet control, or global priority.",
+            "reference": "https://github.com/brilliant-hq/pequalnp-proofs/blob/42765bad82112b0ea3e275713780ab49db8074ec/lean/PEqualNP/Outside/L_meta_253.lean",
+            "relationship": "This source theorem is reused through the exact B dependency. B connects the upstream graph restriction fact to the list-CNF deletion equality invoked directly in the selected C proof; this does not assign the upstream formalization to the local integrator.",
+            "title": "PEqualNP.Outside.L_meta_253 — upstream formalization"
+          }
+        ]
+      },
+      "related_contributions": [],
+      "repository": "MuncleUscles/p-vs-np",
+      "research_direction": "Vertex-cover structure in minimum-true positive CNF models",
+      "statement_hash": "bc728efaa318e2cf090e915a8d8972a0e83a1431c739c1354b8de149021b6e49",
+      "submission_hash": "54a3eeec2ed44cdc36ea7301e7fda6cb1d796dda4117dbab5a25e82262e479a0",
+      "verification": "verified",
+      "verified_dependencies": [
+        {
+          "artifact_hash": "dd8e844ea24178cf06ed26a50bb2f4b1a253fd25ec68dc0c55e415c8d52cfd70",
+          "id": "pr-29-574730b7e55c-9f1a7872c261",
+          "proof_body_use": true
+        }
+      ],
+      "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+      "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
+    },
+    "round": 0,
+    "status": "submitted",
+    "verdict": null
+  }
 }
