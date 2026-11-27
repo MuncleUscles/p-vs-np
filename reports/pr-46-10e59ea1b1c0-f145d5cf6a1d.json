@@ -47344,7 +47344,7 @@
     "signature": "0x2153f7868454c891cfed9247b242972147b69bb911fbf1bfbeac210c534516d80fe77a4521e7cc2e6e9a835bba719683ec2f1c003c4126898ba5503b0bc303f71b"
   },
   "error": "Malformed sender in Studio transaction history",
-  "updatedAt": "2026-11-27T20:48:16.076Z",
+  "updatedAt": "2026-11-27T20:51:54.983Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46065518811",
   "record": {
     "adjudication_finished_round": 0,
