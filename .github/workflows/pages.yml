@@ -1,80 +1,42 @@
-name: Open research dashboard
+name: Legacy dashboard links
 on:
   push:
     branches: [main]
+    paths: ['.github/legacy-pages/**', '.github/workflows/pages.yml', '.open-math/open.json', '.open-math/open-deployment.json']
   workflow_dispatch:
-  workflow_run:
-    workflows: [Open research adjudication, Research federation]
-    types: [completed]
-    branches: [main]
 permissions:
   contents: read
-  actions: read
   pages: write
   id-token: write
 concurrency:
   group: github-pages
   cancel-in-progress: false
 jobs:
-  deploy:
-    if: >-
-      github.ref == 'refs/heads/main' &&
-      (github.event_name != 'workflow_run' ||
-      (github.event.workflow_run.head_branch == 'main' &&
-      github.event.workflow_run.head_repository.full_name == github.repository))
+  redirect:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
-    defaults:
-      run:
-        working-directory: protocol
+    timeout-minutes: 8
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Read this exact reviewed problem configuration
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ github.sha }}
-          path: problem
           persist-credentials: false
-      - name: Read the pinned protocol implementation
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: MuncleUscles/open-mathematics
-          ref: 93c7d3fce28163b281a33fcdfeab00aed06c46f4
-          path: protocol
-          persist-credentials: false
-      - name: Read the independently pinned presentation
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          repository: MuncleUscles/open-mathematics
-          ref: 2a090ea4ef880d4b857733fa0fc9b058afc09c08
-          path: renderer
-          persist-credentials: false
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: 22.22.0
-          cache: npm
-          cache-dependency-path: protocol/package-lock.json
-      - run: npm ci --ignore-scripts
-      - name: Install presentation dependencies
-        run: npm ci --ignore-scripts
-        working-directory: renderer
-      - name: Build dashboard with a dated finalized-native snapshot
-        run: node scripts/build-open-site.mjs ../problem ../site --snapshot --protocol-checkout ../protocol
-        working-directory: renderer
+      - name: Prepare redirects for existing shared links
+        run: |
+          mkdir site
+          cp .github/legacy-pages/index.html site/index.html
+          touch site/.nojekyll
+          for manifest in agent.json problem.json; do
+            curl --fail --silent --show-error --retry 3 --max-time 20 "https://pnp.fun/$manifest" -o "site/$manifest"
+            jq -e 'type == "object"' "site/$manifest" >/dev/null
+          done
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
-        id: upload
         with:
           path: site
           retention-days: 1
-      - name: Wait for this run's exact uploaded artifact
-        timeout-minutes: 5
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          PAGES_ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
-        run: node github/wait-pages-artifact.mjs
-      - name: Publish problem dashboard
+      - name: Publish legacy links
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
