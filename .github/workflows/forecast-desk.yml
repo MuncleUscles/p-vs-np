@@ -20,7 +20,7 @@ jobs:
           path: problem
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          repository: MuncleUscles/open-mathematics
+          repository: MuncleUscles/pnp.fun
           ref: ef177357def62ec65daf47dbc2870ccb068202f7
           persist-credentials: false
           path: renderer

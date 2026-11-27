@@ -77,7 +77,7 @@ jobs:
         if: inputs.source_case != '' && inputs.source_case != 'none'
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          repository: MuncleUscles/open-mathematics
+          repository: MuncleUscles/pnp.fun
           ref: 7669a2cdd54dee1f828f02f86723b4d5ff526075
           path: protocol
           persist-credentials: false
