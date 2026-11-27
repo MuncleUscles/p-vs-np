@@ -17,8 +17,9 @@
         "method": "sync_contribution",
         "argsSha256": "e730a37d270f459c11dced4f229e94af3ade929a62b2fad06082913038e88994",
         "independent": false
-      }
+      },
+      "hash": "0x27074ae289ae740a158e8d3a6c0533cc8c27742de56c26aceb24528f63bbaa94"
     }
   },
-  "updatedAt": "2026-11-27T18:25:25.262Z"
+  "updatedAt": "2026-11-27T18:25:28.741Z"
 }
