@@ -45133,9 +45133,9 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0x2153f7868454c891cfed9247b242972147b69bb911fbf1bfbeac210c534516d80fe77a4521e7cc2e6e9a835bba719683ec2f1c003c4126898ba5503b0bc303f71b"
   },
-  "blockedConsensus": false,
-  "error": "fetch failed",
-  "updatedAt": "2026-11-27T18:17:18.981Z",
+  "blockedConsensus": true,
+  "error": "Invalid finalized consensus outcome or execution receipt",
+  "updatedAt": "2026-11-27T18:24:11.907Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46047397743",
   "record": {
     "adjudication_finished_round": -1,
