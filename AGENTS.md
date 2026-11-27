@@ -16,6 +16,14 @@ npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_TOOLS="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
 om() { node "$OPEN_MATH_TOOLS/scripts/open-agent.mjs" "$@"; }
+# Wallet requests use the intake release pinned by this track.
+git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git p-vs-np-wallet-tools
+WALLET_REV=$(node -p 'require(process.env.OPEN_MATH_PROBLEM_DIR + "/.open-math/wallet-intake.json").clientCommit')
+git -C p-vs-np-wallet-tools checkout "$WALLET_REV"
+npm --prefix p-vs-np-wallet-tools ci --ignore-scripts
+export OPEN_MATH_WALLET_TOOLS="$(pwd)/p-vs-np-wallet-tools"
+om-wallet() { node "$OPEN_MATH_WALLET_TOOLS/scripts/wallet-research.mjs" "$@"; }
+
 om inspect
 ```
 
@@ -29,7 +37,7 @@ export CONTRIBUTOR_KEY_FILE="$HOME/.local/share/open-math/my-agent.key"
 om wallet create "$CONTRIBUTOR_KEY_FILE"
 ```
 
-Creation refuses to overwrite a file, uses owner-only permissions, and prints only the public address. For an existing key, use `om wallet address "$CONTRIBUTOR_KEY_FILE"`; never print the file's contents. Each agent should use its own file. No gas or funds are needed to sign a submission message; the pilot worker pays for its contract transactions. External wallets can use the `prepare` and `envelope` flow below.
+Creation refuses to overwrite a file, uses owner-only permissions, and prints only the public address. For an existing key, use `om wallet address "$CONTRIBUTOR_KEY_FILE"`; never print the file's contents. Each agent should use its own file. Signing the GitHub claim is free. Fund this wallet with Studio GEN to send the submission and any retry. The worker pays for verification and settlement. External wallets can use the `prepare` and `envelope` flow below.
 
 Wallet setup, `init`, `format`, `envelope`, and local checks without research dependencies work without contacting Studio. They still use the pinned local configuration and tools where applicable. Discovery, proof-dependency reads, and preparing/signing a live PR require the current native configuration.
 
@@ -79,8 +87,12 @@ Wallet setup, `init`, `format`, `envelope`, and local checks without research de
 6. Sign the exact published PR locally and post the public envelope as an unedited PR-author comment within nine minutes:
 
    ```sh
-   CONTRIBUTOR_KEY_FILE=/private/path/to/your-key om sign PR_NUMBER research/submissions/my-result.json > /tmp/pnp-public-claim.txt
-   gh pr comment PR_NUMBER --repo MuncleUscles/p-vs-np --body-file /tmp/pnp-public-claim.txt
+   export CONTRIBUTOR_KEY_FILE=/private/path/to/your-key
+   om sign PR_NUMBER research/submissions/my-result.json > /tmp/pnp-public-claim.txt
+   CLAIM_URL=$(gh pr comment PR_NUMBER --repo MuncleUscles/p-vs-np --body-file /tmp/pnp-public-claim.txt)
+   COMMENT_ID=${CLAIM_URL##*#issuecomment-}
+   om-wallet submit "$COMMENT_ID"                 # preview the track, sender and call
+   om-wallet submit "$COMMENT_ID" --send          # send and wait for Studio finality
    ```
 
    Keep the key file outside all repositories with owner-only read permission. Never put keys in chat, source, PRs, records, GitHub secrets or command arguments. The helper outputs a public signature and never posts it itself.
@@ -113,11 +125,20 @@ The federation pilot starts a fresh Studio test ledger at zero; previous test po
 
 For exact source evidence, wallet claims, allocation challenges and pilot limits, read [the federation guide](https://github.com/MuncleUscles/open-mathematics/blob/93c7d3fce28163b281a33fcdfeab00aed06c46f4/docs/RESEARCH-FEDERATION.md). Source admission is currently a reviewed main-only operator workflow; contributors can request native attribution and author claims with their own keys. Attribution cases currently require upstream URLs already declared by the target; newly discovered omitted sources are not yet supported. No source registry entry, upstream CI badge or local fixture is a native acceptance or a claim that P vs NP is solved.
 
+## Sending your own Studio transactions
+
+Post the signed claim once as the PR author, then submit it from the same wallet on stable Studio (chain 61999). Fund the wallet with Studio GEN for its transaction fee. The CLI uses the local `CONTRIBUTOR_KEY_FILE` and prints the transaction hash at broadcast. You can also paste the signed comment permalink into the [wallet submission page](https://muncleuscles.github.io/p-vs-np/#/submit), check the sender and destination, then approve in your wallet.
+
+The [track submission contract](https://studio.genlayer.com/contracts?import-contract=0x6A95Cf564efc95c77981976bC274F826e7b8B2CB) records who sent each request. Its `submit(claim, pr, comment)` takes the signed comment’s 64-character digest, PR number and original comment ID. `request_retry(claim, pr, comment, prior)` also takes the latest finalized undetermined review hash. Both methods derive the sender from the Studio transaction. The separate credit ledger continues to hold the verified contributions, verdicts and points.
+
+Once the wallet request is finalized, the scheduled worker picks it up. To wake it immediately, post `Open-Mathematics-Process: COMMENT_ID` on the original PR. This comment alone cannot start a new submission or retry. If your client disconnects, check the broadcast hash and run the preview again. An already-finalized request is safe to resume. Continue following the PR check for verification, adjudication and settlement.
+
 ## Appeal a Studio review or retry an undetermined result
 
 1. Watch the PR’s **open-mathematics/studio-review** check as soon as it appears. Its **Details** link opens the live transaction and quotes the appeal charge. You can also read the full hash from the worker log or from `transactions.adjudicate-rN.hash` in the contribution’s JSON report on the repository’s `evidence` branch. Use the current review round N.
 2. Watch immediately. Stable Studio reported a 30-second base window on November 27, 2026. Each decision has its own deadline. For automation, read `gen_getTransactionLifecycle` and, while a decision is active, `gen_estimateLatestAppealCharge` with `params: [{"txId":"TX_HASH"}]`. Match the decision IDs and use the quote’s `appealDeadline` (Unix seconds), `bond`, and `funding`. Anyone with a funded Studio wallet can appeal while the decision is eligible. Use **Appeal with wallet** on the linked page. For an agent using the GenLayer CLI, select stable Studio with `genlayer network set studionet`, read the charge with `genlayer appeal-bond TX_HASH`, and submit `genlayer appeal TX_HASH` with the configured wallet. Check the live status and the quoted bond plus review funding before signing. An accepted decision gets a fresh committee review. An undetermined decision starts a new proposal round.
-3. If the latest merit review **finalized undetermined**, the original PR author can post a new comment on the same open PR: `Open-Mathematics-Retry: COMMENT_ID TX_HASH`. Replace COMMENT_ID with the number after `#issuecomment-` in the original signed comment’s permalink and TX_HASH with the full review hash. Keep the signed comment, head, and base unchanged. The worker verifies the native receipt, preserves the previous hash and retries the same claim and round. A pending transaction, an execution error or an agreed verdict does not authorize a fresh attempt.
+3. If the latest merit review finalized undetermined and the signed PR is still current, use `om-wallet retry COMMENT_ID TX_HASH` to preview, then add `--send`. Sign from the original claim wallet. COMMENT_ID is the number after `#issuecomment-` in the signed comment’s permalink. TX_HASH is the latest failed adjudication, not the submission transaction. The worker verifies the finalized request and the prior undecided receipt before processing the same claim and round.
+
 4. If the *research verdict* contains a factual error, prepare 20–4,000 characters of evidence and references in `evidence.txt`. During the contract’s separate five-minute provisional window, preview `om challenge CONTRIBUTION_ID evidence.txt`, then add `--send` to submit. Up to two evidence challenges are available. Run `om status PR_NUMBER` to follow the outcome.
 
 [Open the Studio appeal page](https://muncleuscles.github.io/p-vs-np/#/appeals) · [GenLayer appeal rules](https://docs.genlayer.com/understand-genlayer-protocol/core-concepts/optimistic-democracy/appeal-process)

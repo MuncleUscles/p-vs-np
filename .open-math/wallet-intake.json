@@ -1,0 +1,15 @@
+{
+  "chainId": 61999,
+  "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
+  "deployer": "0x38798DD68546cf207469B4aee65a63280825497e",
+  "deploymentTx": "0xec006a1eb9118dee74e55ec0afe584a035dfcc997f697c3f654fcabb60083577",
+  "codeHash": "8a843bb389bb19dfe9eab000a132934428b01ea2eeeeb9ea4e9d0c96bb347370",
+  "config": {
+    "version": "wallet-intake-v1",
+    "problem": "p-vs-np",
+    "repository": "MuncleUscles/p-vs-np",
+    "ledger": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+    "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755"
+  },
+  "clientCommit": "1199fba4f2e0c067c4cc27b10e201b3f7847393d"
+}
