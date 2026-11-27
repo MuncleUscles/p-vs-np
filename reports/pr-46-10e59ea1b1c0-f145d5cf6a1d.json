@@ -53056,7 +53056,7 @@
     "signature": "0x2153f7868454c891cfed9247b242972147b69bb911fbf1bfbeac210c534516d80fe77a4521e7cc2e6e9a835bba719683ec2f1c003c4126898ba5503b0bc303f71b"
   },
   "error": "Malformed sender in Studio transaction history",
-  "updatedAt": "2026-11-27T20:55:11.965Z",
+  "updatedAt": "2026-11-27T20:55:18.146Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46065518811",
   "record": {
     "adjudication_finished_round": 0,
@@ -53149,5 +53149,32 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "a2eabf6b4da8f77ee17c11929b6ad2d7916f8e5f"
+  },
+  "impact": {
+    "allocations": [],
+    "band_points": 26,
+    "budget": 80,
+    "challenge_reviews": [],
+    "challenges": [],
+    "deadline": 0,
+    "downstream": "pr-46-10e59ea1b1c0-f145d5cf6a1d",
+    "eligible": [],
+    "paid_points": "0",
+    "reason": "No verified direct dependency; the unused reserve returns to the result's contributor.",
+    "recipient_allocations": [],
+    "returned_points": "80",
+    "round": 0,
+    "route_commitments": [
+      {
+        "id": "pr-46-10e59ea1b1c0-f145d5cf6a1d",
+        "revision": 0,
+        "route_hash": "c760951a7322e95cd354084dabf373b789b2d7e73a05fc7081acba574efdb0c0"
+      }
+    ],
+    "route_commitments_hash": "1672c34c5828b125fd1e0a9114f17c8611141a9f0cb7379be8e5e2b07ed10f2e",
+    "route_history": [],
+    "routing_revision": 0,
+    "source_digest": "04a3479b9c4b90d685cc0eab1fa3c91eb70be6234a3ac382832e6dc39665217c",
+    "status": "settled"
   }
 }
