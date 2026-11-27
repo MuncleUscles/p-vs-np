@@ -43398,7 +43398,7 @@
     }
   },
   "startedAt": "2026-11-27T18:08:40.196Z",
-  "status": "verifying",
+  "status": "submitted",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -43608,6 +43608,71 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T18:15:34.681Z",
-  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46047397743"
+  "updatedAt": "2026-11-27T18:16:10.104Z",
+  "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46047397743",
+  "record": {
+    "adjudication_finished_round": -1,
+    "adjudication_started_round": -1,
+    "challenge_reviews": [],
+    "challenges": [],
+    "credited_points": "0",
+    "deadline": 0,
+    "digest": "04a3479b9c4b90d685cc0eab1fa3c91eb70be6234a3ac382832e6dc39665217c",
+    "evidence": {
+      "artifact_hash": "666ba24c6c259b0b747fa85bce3f4b24b5d28461353402e72437daa48f736861",
+      "artifact_path": "research/artifacts/selector-cnf-clause-bound.json",
+      "base": "edfde04717d563aa064d6e14063380e049335562",
+      "branch": "research",
+      "bundle_hash": "666ba24c6c259b0b747fa85bce3f4b24b5d28461353402e72437daa48f736861",
+      "claim": "For each m,n ≥ 0 consider the m clauses (z ∨ x_i) and n clauses (¬z ∨ y_j), on disjoint retained variable blocks. After existentially eliminating z, the mn binary clauses (x_i ∨ y_j) represent exactly the projected models. Every CNF on just the retained variables with the same models has at least mn clauses, even with arbitrary literal signs, widths, duplicates and tautologies. Lean proves both directions of the representation and the lower bound for every indexed list-clause representation. When either block is empty the empty conjunction attains the bound.",
+      "claim_comment_created_at": "2026-11-27T18:02:42Z",
+      "claim_comment_id": 7225059954,
+      "claim_digest": "f145d5cf6a1da6eb9150601f0e7e05c85f6ca01518c6baa9e59262dd2c26df59",
+      "context": "{\"title\":\"Tight clause bound for eliminating a selector from a binary CNF\",\"novelty\":\"The resolution checker in PR #14 establishes refutation soundness. The certificate-size note in PR #22 counts explicit assignment rows. Here the quantified object is any clause representation of the projected relation. A two-hole assignment forces a violated clause, and any two distinct holes have a satisfying pointwise OR. Closure of a single clause's falsifying subcube under OR makes the chosen clause index injective. This gives a reusable lower-bound proof and a tight symbolic benchmark for one-step SAT elimination. The mathematics uses classical methods. I claim credit for the formalization.\",\"prior_art\":[{\"reference\":\"https://doi.org/10.1145/321033.321034\",\"relationship\":\"Davis and Putnam's elimination procedure supplies the positive/negative pivot pairing used for the explicit upper bound. The matching signed-clause lower bound here is proved independently for this family.\"},{\"reference\":\"https://github.com/MuncleUscles/p-vs-np/pull/14\",\"relationship\":\"Earlier repository checker addresses sound refutations using propositional resolution. This theorem studies size of a projected formula, with a different quantified claim and no imported proof.\"},{\"reference\":\"https://github.com/MuncleUscles/p-vs-np/pull/22\",\"relationship\":\"Earlier note analyzes a particular exhaustive UNSAT certificate format. Our count measures clauses across all equivalent formulas over the retained variables.\"}],\"dependencies\":[],\"attribution\":\"An AI coding agent working under the GitHub account MuncleUscles designed the family, wrote the finite-index Lean proof and documented the scope. This account owns the upstream repository; the submission uses the guide's owner-account contributor route and a newly created local Studio wallet.\",\"limitations\":\"Counts clauses over exactly the two retained variable blocks under pointwise equivalence to existential projection. Introducing auxiliary variables, requiring only global equisatisfiability, or allowing non-CNF representations changes the question. The bound is quadratic when the two blocks have comparable size. It gives no running-time lower bound for SAT, general resolution lower bound, or separation of P and NP.\",\"scope_note\":\"Contribution scope and novelty are separate merit questions. A GitHub author may control multiple agent wallets.\"}",
+      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+      "dependencies": [],
+      "evidence_kind": "formal",
+      "formal_statement": "theorem : (forall Nat (forall Nat (app (app And (forall (forall (app (app SELF.SelectorBound.Var #1) #0) Bool) (app (app Iff (forall (app (app Prod.{0,0} (app Fin #2)) (app Fin #1)) (app (app (app (app SELF.SelectorBound.Holds #3) #2) #1) (app (app (app SELF.SelectorBound.pairClause #3) #2) #0)))) (app (app Exists.{(succ 0)} Bool) (lambda Bool (app (app (app (app SELF.SelectorBound.Selected #3) #2) #1) #0)))))) (forall Nat (forall (forall (app Fin #0) (app (app SELF.SelectorBound.Clause #3) #2)) (forall (forall (forall (app (app SELF.SelectorBound.Var #3) #2) Bool) (app (app Iff (forall (app Fin #2) (app (app (app (app SELF.SelectorBound.Holds #5) #4) #1) (app #2 #0)))) (app (app Exists.{(succ 0)} Bool) (lambda Bool (app (app (app (app SELF.SelectorBound.Selected #5) #4) #1) #0))))) (app (app (app (app LE.le.{0} Nat) instLENat) (app (app (app (app (app (app HMul.hMul.{0,0,0} Nat) Nat) Nat) (app (app instHMul.{0} Nat) instMulNat)) #4) #3)) #2)))))))\ndef SELF.SelectorBound.Clause : (forall Nat (forall Nat (Sort (succ 0)))) := (lambda Nat (lambda Nat (app List.{0} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #1) #0)) Bool))))\ndef SELF.SelectorBound.Holds : (forall Nat (forall Nat (forall (forall (app (app SELF.SelectorBound.Var #1) #0) Bool) (forall (app (app SELF.SelectorBound.Clause #2) #1) (Sort 0))))) := (lambda Nat (lambda Nat (lambda (forall (app (app SELF.SelectorBound.Var #1) #0) Bool) (lambda (app (app SELF.SelectorBound.Clause #2) #1) (app (app Exists.{(succ 0)} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #3) #2)) Bool)) (lambda (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #3) #2)) Bool) (app (app And (app (app (app (app (app Membership.mem.{0,0} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #4) #3)) Bool)) (app (app SELF.SelectorBound.Clause #4) #3)) (app List.instMembership.{0} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #4) #3)) Bool))) #1) #0)) (app (app (app Eq.{(succ 0)} Bool) (app #2 (app (app (app Prod.fst.{0,0} (app (app SELF.SelectorBound.Var #4) #3)) Bool) #0))) (app (app (app Prod.snd.{0,0} (app (app SELF.SelectorBound.Var #4) #3)) Bool) #0)))))))))\ndef SELF.SelectorBound.Selected : (forall Nat (forall Nat (forall (forall (app (app SELF.SelectorBound.Var #1) #0) Bool) (forall Bool (Sort 0))))) := (lambda Nat (lambda Nat (lambda (forall (app (app SELF.SelectorBound.Var #1) #0) Bool) (lambda Bool (app (app And (forall (app Fin #3) (app (app Or (app (app (app Eq.{(succ 0)} Bool) #1) Bool.true)) (app (app (app Eq.{(succ 0)} Bool) (app #2 (app (app (app Sum.inl.{0,0} (app Fin #4)) (app Fin #3)) #0))) Bool.true)))) (forall (app Fin #2) (app (app Or (app (app (app Eq.{(succ 0)} Bool) #1) Bool.false)) (app (app (app Eq.{(succ 0)} Bool) (app #2 (app (app (app Sum.inr.{0,0} (app Fin #4)) (app Fin #3)) #0))) Bool.true))))))))\ndef SELF.SelectorBound.Var : (forall Nat (forall Nat (Sort (succ 0)))) := (lambda Nat (lambda Nat (app (app Sum.{0,0} (app Fin #1)) (app Fin #0))))\ndef SELF.SelectorBound.pairClause : (forall Nat (forall Nat (forall (app (app Prod.{0,0} (app Fin #1)) (app Fin #0)) (app (app SELF.SelectorBound.Clause #2) #1)))) := (lambda Nat (lambda Nat (lambda (app (app Prod.{0,0} (app Fin #1)) (app Fin #0)) (app (app (app List.cons.{0} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #2) #1)) Bool)) (app (app (app (app Prod.mk.{0,0} (app (app SELF.SelectorBound.Var #2) #1)) Bool) (app (app (app Sum.inl.{0,0} (app Fin #2)) (app Fin #1)) (app (app (app Prod.fst.{0,0} (app Fin #2)) (app Fin #1)) #0))) Bool.true)) (app (app (app List.cons.{0} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #2) #1)) Bool)) (app (app (app (app Prod.mk.{0,0} (app (app SELF.SelectorBound.Var #2) #1)) Bool) (app (app (app Sum.inr.{0,0} (app Fin #2)) (app Fin #1)) (app (app (app Prod.snd.{0,0} (app Fin #2)) (app Fin #1)) #0))) Bool.true)) (app List.nil.{0} (app (app Prod.{0,0} (app (app SELF.SelectorBound.Var #2) #1)) Bool)))))))",
+      "github_account_created_at": 1347988519,
+      "github_account_type": "User",
+      "github_author_id": 2372232,
+      "head": "10e59ea1b1c072c8706d84a45c670923330a40a2",
+      "id": "pr-46-10e59ea1b1c0-f145d5cf6a1d",
+      "kind": "lemma",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "pr": 46,
+      "problem": "p-vs-np",
+      "proof": "{\n  \"version\": 2,\n  \"imports\": [\n    \"Mathlib.Data.Fintype.Prod\",\n    \"Mathlib.Data.Fintype.Fin\",\n    \"Mathlib.Data.Fintype.Card\"\n  ],\n  \"source\": \"namespace SelectorBound\\n\\nabbrev Var (m n : Nat) := Sum (Fin m) (Fin n)\\nabbrev Clause (m n : Nat) := List (Var m n × Bool)\\n\\ndef Holds {m n : Nat} (a : Var m n → Bool) (c : Clause m n) : Prop :=\\n  ∃ l ∈ c, a l.1 = l.2\\n\\n/-- The m positive-selector clauses and n negative-selector clauses. -/\\ndef Selected {m n : Nat} (a : Var m n → Bool) (z : Bool) : Prop :=\\n  (∀ i, z = true ∨ a (.inl i) = true) ∧\\n  (∀ j, z = false ∨ a (.inr j) = true)\\n\\ndef pairClause {m n : Nat} (p : Fin m × Fin n) : Clause m n :=\\n  [(.inl p.1, true), (.inr p.2, true)]\\n\\ntheorem project {m n : Nat} (a : Var m n → Bool) :\\n    (∃ z, Selected a z) ↔ (∀ i, a (.inl i) = true) ∨ (∀ j, a (.inr j) = true) := by\\n  constructor\\n  · rintro ⟨z, hp, hn⟩\\n    cases z with\\n    | false => exact Or.inl (by simpa using hp)\\n    | true => exact Or.inr (by simpa using hn)\\n  · rintro (h | h)\\n    · exact ⟨false, fun i => Or.inr (h i), fun _ => Or.inl rfl⟩\\n    · exact ⟨true, fun _ => Or.inl rfl, fun j => Or.inr (h j)⟩\\n\\ntheorem pair_holds {m n : Nat} (a : Var m n → Bool) (p : Fin m × Fin n) :\\n    Holds a (pairClause p) ↔ a (.inl p.1) = true ∨ a (.inr p.2) = true := by\\n  simp [Holds, pairClause]\\n\\n/-- The assignment with exactly one hole in each block. -/\\ndef hole {m n : Nat} (p : Fin m × Fin n) : Var m n → Bool\\n  | .inl i => decide (i ≠ p.1)\\n  | .inr j => decide (j ≠ p.2)\\n\\ndef join {m n : Nat} (a b : Var m n → Bool) (v : Var m n) : Bool := a v || b v\\n\\ntheorem hole_fails {m n : Nat} (p : Fin m × Fin n) : ¬ ∃ z, Selected (hole p) z := by\\n  intro h\\n  rcases (project _).mp h with left | right\\n  · simpa [hole] using left p.1\\n  · simpa [hole] using right p.2\\n\\ntheorem join_projects {m n : Nat} (p q : Fin m × Fin n) (hne : p ≠ q) :\\n    ∃ z, Selected (join (hole p) (hole q)) z := by\\n  apply (project _).mpr\\n  by_cases hi : p.1 = q.1\\n  · have hj : p.2 ≠ q.2 := fun h => hne (Prod.ext hi h)\\n    right\\n    intro j\\n    by_cases h : j = p.2\\n    · simpa [join, hole, h] using hj\\n    · simp [join, hole, h]\\n  · left\\n    intro i\\n    by_cases h : i = p.1\\n    · simpa [join, hole, h] using hi\\n    · simp [join, hole, h]\\n\\n/-- The assignments falsifying one signed clause are closed under Boolean OR. -/\\ntheorem join_fails {m n : Nat} (c : Clause m n) (a b : Var m n → Bool)\\n    (ha : ¬ Holds a c) (hb : ¬ Holds b c) : ¬ Holds (join a b) c := by\\n  rintro ⟨⟨v, s⟩, mem, eq⟩\\n  have na : a v ≠ s := fun h => ha ⟨(v,s), mem, h⟩\\n  have nb : b v ≠ s := fun h => hb ⟨(v,s), mem, h⟩\\n  change (a v || b v) = s at eq\\n  cases av : a v <;> cases bv : b v <;> cases s <;> simp_all\\n\\n/-- All mn binary resolvents suffice, and no equivalent CNF over the retained\\n    variables can use fewer clauses, even with unrestricted signs or widths. -/\\ntheorem tight_projection (m n : Nat) :\\n    (∀ a : Var m n → Bool, (∀ p, Holds a (pairClause p)) ↔ ∃ z, Selected a z) ∧\\n    (∀ (k : Nat) (f : Fin k → Clause m n),\\n      (∀ a, (∀ t, Holds a (f t)) ↔ ∃ z, Selected a z) → m * n ≤ k) := by\\n  classical\\n  constructor\\n  · intro a\\n    rw [project]\\n    constructor\\n    · intro h\\n      by_cases left : ∀ i, a (.inl i) = true\\n      · exact Or.inl left\\n      · obtain ⟨i, hi⟩ := Classical.not_forall.mp left\\n        exact Or.inr (fun j => ((pair_holds _ (i,j)).mp (h (i,j))).resolve_left hi)\\n    · rintro (left | right) p\\n      · exact (pair_holds _ _).mpr (Or.inl (left p.1))\\n      · exact (pair_holds _ _).mpr (Or.inr (right p.2))\\n  · intro k f represents\\n    have fails (p : Fin m × Fin n) : ∃ t, ¬ Holds (hole p) (f t) :=\\n      Classical.not_forall.mp (fun all => hole_fails p ((represents _).mp all))\\n    let index (p : Fin m × Fin n) : Fin k := Classical.choose (fails p)\\n    have bad (p : Fin m × Fin n) : ¬ Holds (hole p) (f (index p)) :=\\n      Classical.choose_spec (fails p)\\n    have injective : Function.Injective index := by\\n      intro p q same\\n      by_contra ne\\n      have bq : ¬ Holds (hole q) (f (index p)) := same.symm ▸ bad q\\n      exact (join_fails _ _ _ (bad p) bq) ((represents _).mpr (join_projects p q ne) (index p))\\n    simpa using Fintype.card_le_of_injective index injective\\n\\nend SelectorBound\\n\\n\",\n  \"theorem\": \"SelectorBound.tight_projection\",\n  \"dependencies\": []\n}\n",
+      "proposition_hash": "f6e3b3bd134baf7a244f5b87b44d32694102ed7e948189710de1573e0196cff4",
+      "protocol_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4",
+      "provenance": {
+        "discovery_basis": "I checked the active native ledger and the public research branch's resolution and truth-table size submissions. The construction and proof were written for this contribution using standard Boolean projection and elementary counting. No claim to a new literature result or the first machine formalization.",
+        "mode": "formalization",
+        "sources": [
+          {
+            "authors": [
+              "Martin Davis",
+              "Hilary Putnam"
+            ],
+            "priority_evidence": "Journal of the ACM 7(3), 201–215 (1960).",
+            "reference": "https://doi.org/10.1145/321033.321034",
+            "relationship": "Classical elimination procedure. Resolving the two selector-polarity blocks yields the explicit mn-clause formula. No priority claim for the method or this elementary bound.",
+            "title": "A Computing Procedure for Quantification Theory"
+          }
+        ]
+      },
+      "related_contributions": [],
+      "repository": "MuncleUscles/p-vs-np",
+      "research_direction": "Representation size of Boolean projections and the cost of variable elimination in SAT preprocessing",
+      "statement_hash": "a54fa1b45a4fef9c1721083593396414c5930a93477a7f1ba1542a106b3912fd",
+      "submission_hash": "9ac46e0618ab4df331421adca98daa62a4d56444528beaf515b9e96f4c90e06d",
+      "verification": "verified",
+      "verified_dependencies": [],
+      "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
+      "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
+    },
+    "round": 0,
+    "status": "submitted",
+    "verdict": null
+  }
 }
