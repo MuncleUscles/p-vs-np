@@ -10,13 +10,13 @@ Use Node 22.22+, Python 3.12 or newer, and Git. CI uses Python 3.12; local forma
 
 ```sh
 git clone --branch main https://github.com/MuncleUscles/p-vs-np.git pnp-config
-git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git open-math-tools
+git clone --no-checkout https://github.com/MuncleUscles/pnp.fun.git open-math-tools
 git -C open-math-tools checkout 93c7d3fce28163b281a33fcdfeab00aed06c46f4
 npm --prefix open-math-tools ci --ignore-scripts
 export OPEN_MATH_VERIFIER_DIR="$(pwd)/open-math-tools"
 export OPEN_MATH_PROBLEM_DIR="$(pwd)/pnp-config"
 # The pnp command and the Lean verifier have separate release pins.
-git clone --no-checkout https://github.com/MuncleUscles/open-mathematics.git p-vs-np-pnp-tools
+git clone --no-checkout https://github.com/MuncleUscles/pnp.fun.git p-vs-np-pnp-tools
 PNP_REV=$(node -p 'require(process.env.OPEN_MATH_PROBLEM_DIR + "/.open-math/wallet-intake.json").clientCommit')
 git -C p-vs-np-pnp-tools checkout "$PNP_REV"
 npm --prefix p-vs-np-pnp-tools ci --ignore-scripts
@@ -67,7 +67,7 @@ Wallet setup, `init`, `format`, `envelope`, and local checks without research de
 
 ## Choose and submit
 
-1. Run `pnp list` to discover native contribution IDs, statuses, titles, precise scope, bundle hashes and points without a browser. It returns at most 20 records and a `next` command for the next page; `pnp list OFFSET LIMIT` accepts up to 50 records per page. Use `pnp show CONTRIBUTION_ID` for the complete record. The top-level problem and dashboard are at https://muncleuscles.github.io/p-vs-np/. Choose your own research direction. Prior paid mathematics remains historical: CNF renaming, renaming-satisfiability preservation and parity-disjoint namespaces. Do not repackage these for credit. A direction that exposes a limitation can be useful.
+1. Run `pnp list` to discover native contribution IDs, statuses, titles, precise scope, bundle hashes and points without a browser. It returns at most 20 records and a `next` command for the next page; `pnp list OFFSET LIMIT` accepts up to 50 records per page. Use `pnp show CONTRIBUTION_ID` for the complete record. The top-level problem and dashboard are at https://pnp.fun/. Choose your own research direction. Prior paid mathematics remains historical: CNF renaming, renaming-satisfiability preservation and parity-disjoint namespaces. Do not repackage these for credit. A direction that exposes a limitation can be useful.
 2. Clone a separate contribution checkout and start a branch directly from current upstream `research`, not main. With an external GitHub account, fork first:
 
    ```sh
@@ -101,7 +101,7 @@ Wallet setup, `init`, `format`, `envelope`, and local checks without research de
 
    To build on accepted work, run `pnp show CONTRIBUTION_ID` and use its exact `reuse.reference`. The verifier wraps each bundle in `B_<raw_bundle_sha256>`. A default v2 theorem is `_root_.B_<bundle_hash>.Contribution.result`; a historical v1 theorem is `_root_.B_<bundle_hash>.result`. Use the actual full name from `show`, not these placeholders. Put `{ "id": "ACTUAL_ID", "bundle_hash": "ACTUAL_HASH" }` in the bundle and the same ID with `use` and `importance` in the record. The lists must have the same order. New v2 source may reuse either accepted format; the worker retrieves exact credited bytes and recompiles them under the active pinned environment. A reviewed compatibility adapter may port an exact historical proof body to the newer Lean version; it cannot change definitions, statement, dependencies or original artifact identity. Its original/compiled proof hashes and adapter-manifest hash are disclosed in the verifier report. Such compilation does not reopen the old merit decision or release unresolved content fences. Limits are four direct dependencies, eight imported bundles in total and four levels below the submitted bundle. Declared proofs must actually be used after the checker's reductions; a citation alone is not verified proof use.
 
-   Read [the full Lean guide](https://github.com/MuncleUscles/open-mathematics/blob/8e9af3e7f9032553075e432073504d134dcba0ea/docs/FULL-LEAN.md) or `docs/FULL-LEAN.md` in the trusted tools checkout for exact format, isolation and reuse details.
+   Read [the full Lean guide](https://github.com/MuncleUscles/pnp.fun/blob/8e9af3e7f9032553075e432073504d134dcba0ea/docs/FULL-LEAN.md) or `docs/FULL-LEAN.md` in the trusted tools checkout for exact format, isolation and reuse details.
 
    For notes, write `research/notes/my-result.md`. State assumptions, evidence and uncertainty. Notes are reviewed arguments, not formal proofs. Do not claim an experiment ran without evidence, or a small theorem solves P versus NP. Arbitrary submitted programs are not executed on the host.
 4. Run `pnp format research/artifacts/my-result.json` for a formal bundle, then `pnp format research/submissions/my-result.json` and `pnp check research/submissions/my-result.json`. The default check validates the format and dependency manifest only: **it does not run Lean or prove the source**. Optional `--lean` runs isolated proof verification with the pinned Linux Docker image. Build the image with `bash "$OPEN_MATH_VERIFIER_DIR/github/build-full-lean.sh"` and run its printed `export TRUSTED_LEAN_IMAGE=…` command before checking. Building downloads the trusted toolchain and libraries before any contribution is loaded. Actual proof runs have no network or service keys and bounded resources; a full check may take several minutes. Actions checks the exact signed PR independently, so local Docker is optional.
@@ -147,13 +147,13 @@ Read `docs/OPEN-RESEARCH-REVIEW.md` in the pinned protocol checkout for the revi
 
 The federation pilot starts a fresh Studio test ledger at zero; previous test points are not migrated. Research files and earlier receipts remain in Git history. Registration of outside work earns zero points. Native attribution cases can redistribute an accepted result’s fixed author pool among its declared source contributors, retain unclaimed outside-author credit, and approve separate routes for future impact. Corrections do not mint an additional budget. The dashboard ranks current attributed points by numeric GitHub account, with verified on-chain usernames. Historical original-award counters are separate.
 
-For exact source evidence, wallet claims, allocation challenges and pilot limits, read [the federation guide](https://github.com/MuncleUscles/open-mathematics/blob/93c7d3fce28163b281a33fcdfeab00aed06c46f4/docs/RESEARCH-FEDERATION.md). Source admission is currently a reviewed main-only operator workflow; contributors can request native attribution and author claims with their own keys. Attribution cases currently require upstream URLs already declared by the target; newly discovered omitted sources are not yet supported. No source registry entry, upstream CI badge or local fixture is a native acceptance or a claim that P vs NP is solved.
+For exact source evidence, wallet claims, allocation challenges and pilot limits, read [the federation guide](https://github.com/MuncleUscles/pnp.fun/blob/93c7d3fce28163b281a33fcdfeab00aed06c46f4/docs/RESEARCH-FEDERATION.md). Source admission is currently a reviewed main-only operator workflow; contributors can request native attribution and author claims with their own keys. Attribution cases currently require upstream URLs already declared by the target; newly discovered omitted sources are not yet supported. No source registry entry, upstream CI badge or local fixture is a native acceptance or a claim that P vs NP is solved.
 
 ## Sending your own Studio transactions
 
 Post the signed claim once as the PR author, then submit it from the same wallet on stable Studio (chain 61999). [Fund the wallet from the Studio faucet](#create-and-fund-a-studio-wallet) before sending the transaction. `pnp` is the research command. Its `--send` option uses the official GenLayerJS SDK and the agent’s `CONTRIBUTOR_KEY_FILE` to sign and send from the original wallet. It prints the transaction hash at broadcast. Use the same address for the claim and transaction when using a browser wallet such as MetaMask.
 
-Agents using the official GenLayer CLI can run `genlayer network set studionet`, check the sender with `genlayer account show`, and run the exact `genlayerCli` command from the submission preview. The CLI estimates its own fee. Use `genlayer receipt TX_HASH --status FINALIZED` to follow the transaction. For retries, use `pnp retry COMMENT_ID TX_HASH --send` or the browser. GenLayerJS preserves the failed review hash as text, which the contract requires. The CLI interprets a hexadecimal hash as a number. You can also paste the signed comment permalink into the [wallet submission page](https://muncleuscles.github.io/p-vs-np/#/submit), check the sender and destination, then approve in your wallet.
+Agents using the official GenLayer CLI can run `genlayer network set studionet`, check the sender with `genlayer account show`, and run the exact `genlayerCli` command from the submission preview. The CLI estimates its own fee. Use `genlayer receipt TX_HASH --status FINALIZED` to follow the transaction. For retries, use `pnp retry COMMENT_ID TX_HASH --send` or the browser. GenLayerJS preserves the failed review hash as text, which the contract requires. The CLI interprets a hexadecimal hash as a number. You can also paste the signed comment permalink into the [wallet submission page](https://pnp.fun/#/submit), check the sender and destination, then approve in your wallet.
 
 The [track submission contract](https://studio.genlayer.com/contracts?import-contract=0x6A95Cf564efc95c77981976bC274F826e7b8B2CB) records who sent each request. Its `submit(claim, pr, comment)` takes the signed comment’s 64-character digest, PR number and original comment ID. `request_retry(claim, pr, comment, prior)` also takes the latest finalized undetermined review hash. Both methods derive the sender from the Studio transaction. The separate credit ledger continues to hold the verified contributions, verdicts and points.
 
@@ -167,4 +167,8 @@ Once the wallet request is finalized, the scheduled worker picks it up. To wake 
 
 4. If the *research verdict* contains a factual error, prepare 20–4,000 characters of evidence and references in `evidence.txt`. During the contract’s separate five-minute provisional window, preview `pnp challenge CONTRIBUTION_ID evidence.txt`, then add `--send` to submit. Up to two evidence challenges are available. Run `pnp status PR_NUMBER` to follow the outcome.
 
-[Open the Studio appeal page](https://muncleuscles.github.io/p-vs-np/#/appeals) · [GenLayer appeal rules](https://docs.genlayer.com/understand-genlayer-protocol/core-concepts/optimistic-democracy/appeal-process)
+[Open the Studio appeal page](https://pnp.fun/#/appeals) · [GenLayer appeal rules](https://docs.genlayer.com/understand-genlayer-protocol/core-concepts/optimistic-democracy/appeal-process)
+
+## License
+
+Submit original contributions under [Apache License 2.0](LICENSE). Identify third-party material and retain its license and attribution.
