@@ -28,10 +28,11 @@ jobs:
           mkdir site
           cp .github/legacy-pages/index.html site/index.html
           touch site/.nojekyll
-          for manifest in agent.json problem.json; do
-            curl --fail --silent --show-error --retry 3 --max-time 20 "https://pnp.fun/$manifest" -o "site/$manifest"
-            jq -e 'type == "object"' "site/$manifest" >/dev/null
-          done
+          # Keep older clients on the P vs NP manifest they expect.
+          curl --fail --silent --show-error --retry 3 --max-time 20 https://pnp.fun/agents/p-vs-np.json -o site/agent.json
+          curl --fail --silent --show-error --retry 3 --max-time 20 https://pnp.fun/problem.json -o site/problem.json
+          jq -e '.version == 5 and .liveContract != null' site/agent.json >/dev/null
+          jq -e '.deployment.problem == "p-vs-np"' site/problem.json >/dev/null
       - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
       - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
         with:
