@@ -50163,7 +50163,7 @@
     }
   },
   "startedAt": "2026-11-27T18:08:40.196Z",
-  "status": "approved",
+  "status": "credited",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
@@ -50375,14 +50375,15 @@
     "signature": "0x2153f7868454c891cfed9247b242972147b69bb911fbf1bfbeac210c534516d80fe77a4521e7cc2e6e9a835bba719683ec2f1c003c4126898ba5503b0bc303f71b"
   },
   "error": "Malformed sender in Studio transaction history",
-  "updatedAt": "2026-11-27T20:54:15.306Z",
+  "updatedAt": "2026-11-27T20:54:20.808Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46065518811",
   "record": {
     "adjudication_finished_round": 0,
     "adjudication_started_round": 0,
+    "award_budget": "400",
     "challenge_reviews": [],
     "challenges": [],
-    "credited_points": "0",
+    "credited_points": "320",
     "deadline": 1795812713,
     "digest": "04a3479b9c4b90d685cc0eab1fa3c91eb70be6234a3ac382832e6dc39665217c",
     "evidence": {
@@ -50438,8 +50439,13 @@
       "wallet": "0x8562799a4d8AC66F732fd47aF5c20018FF509f8F",
       "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
     },
+    "impact_reserve": "80",
+    "initial_paid": "320",
+    "merge_commit": "a2eabf6b4da8f77ee17c11929b6ad2d7916f8e5f",
+    "reserve_returned": "0",
+    "reserve_settled": false,
     "round": 0,
-    "status": "approved",
+    "status": "credited",
     "verdict": {
       "accept": true,
       "award": "400",
@@ -50458,5 +50464,9 @@
     "head": "10e59ea1b1c072c8706d84a45c670923330a40a2",
     "receiptHash": "0x3447981736972558baebbe27e3a6c92aeb9a64b4955103e881e4b7f7c3947d60"
   },
-  "mergeCommit": "a2eabf6b4da8f77ee17c11929b6ad2d7916f8e5f"
+  "mergeCommit": "a2eabf6b4da8f77ee17c11929b6ad2d7916f8e5f",
+  "outcome": {
+    "status": "credited",
+    "mergeCommit": "a2eabf6b4da8f77ee17c11929b6ad2d7916f8e5f"
+  }
 }
