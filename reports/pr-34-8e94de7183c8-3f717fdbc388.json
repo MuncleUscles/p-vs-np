@@ -52611,7 +52611,7 @@
     }
   },
   "startedAt": "2026-11-27T23:38:26.013Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
@@ -52811,15 +52811,15 @@
   },
   "blockedConsensus": false,
   "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:47:54.052Z",
+  "updatedAt": "2026-11-27T23:47:59.431Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46083805485",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795823508,
     "digest": "30d1729ae65cf3952c5c351a313d370bcb0ba3ae01b452c11a4f36d3458b56e1",
     "evidence": {
       "artifact_hash": "328410dde2a2015112162f0de6a948c40bdd6f5638dcd641d9e3c5fac64995c6",
@@ -52891,8 +52891,19 @@
       "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "300",
+      "evidence_refs": [
+        "pr-34-8e94de7183c8-3f717fdbc388",
+        "pr-29-574730b7e55c-9f1a7872c261"
+      ],
+      "novelty": 1,
+      "reason": "Verified formal integration: the submission transports the known vertex-cover forcing theorem into the repository's list-CNF minimum-true-variable semantics and composes it with the exact deletion theorem from pr-29. The local contribution is the trueVars/assignmentOf correspondence, minimum-cardinality transfer, and final composition; the forcing and deletion results are honestly attributed. This is a useful intermediate lemma for the stated research direction, but it is not a new complexity result, does not resolve P versus NP, and has only modest incremental novelty and significance.",
+      "reusability": 1,
+      "significance": 1
+    }
   },
   "reviewLinkHash": "0x30231511731ea4946e6a0cd9e25d827fc59ef82eac82e7bfc09b52fd7d50dbc0"
 }
