@@ -55844,8 +55844,8 @@
     "signature": "0x142c43bcaa899eab5f8e21cc5e1851774532413c1211513d5b97f82b7aed2e93387f06a3624e44dc76106118451c06ecd624d2b46eb7ccfd46bf43e3d35a9a6f1c"
   },
   "blockedConsensus": false,
-  "error": "fetch failed",
-  "updatedAt": "2026-11-27T23:54:10.073Z",
+  "error": "Missing or invalid parameters.\nDouble check you have provided the correct parameters.\n\nDetails: execution failed\nVersion: viem@2.45.1",
+  "updatedAt": "2026-11-27T23:54:32.871Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46083805485",
   "record": {
     "adjudication_finished_round": 0,
@@ -55955,5 +55955,18 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "ac00f3ad9f8d1e8fc997b59b096914e06910e24a"
-  }
+  },
+  "operationalErrors": [
+    {
+      "stage": "post-finalization",
+      "message": "Missing or invalid parameters.\nDouble check you have provided the correct parameters.\n\nDetails: execution failed\nVersion: viem@2.45.1",
+      "at": "2026-11-27T23:54:32.871Z",
+      "finalizedCheck": {
+        "id": 140792111594,
+        "head": "8e94de7183c89c86b3e8c858da11817e1443af48",
+        "receiptHash": "0x92e066c03bad17a6dcd987a8b20dbc7fcd2e16cb7f850d492ee0c0a85654c923"
+      },
+      "recordStatus": "credited"
+    }
+  ]
 }
