@@ -1,5 +1,6 @@
 name: Open research adjudication
 on:
+  workflow_call:
   issue_comment:
     types: [created]
   workflow_dispatch:
@@ -16,9 +17,12 @@ permissions:
   checks: write
 jobs:
   process:
+    outputs:
+      comment_id: ${{ steps.claim.outputs.comment_id }}
     if: >-
       github.ref == 'refs/heads/main' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' ||
+       github.event_name == 'workflow_run' || github.event_name == 'push' ||
       (github.event.action == 'created' && github.event.issue.pull_request && (startsWith(github.event.comment.body, 'Open-Mathematics-Claim: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Process: ') || startsWith(github.event.comment.body, 'Open-Mathematics-Retry: '))))
     environment: protocol
     concurrency:
@@ -55,7 +59,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: MuncleUscles/pnp.fun
-          ref: 938cb89480cc96ba4fd1686d6d3341436ee9bca1
+          ref: 25c877483987bb48ea4a88fb2e010be9181ec1d3
           path: review
           persist-credentials: false
       - name: Install the review worker’s pinned dependencies
@@ -84,6 +88,7 @@ jobs:
     needs: process
     if: >-
       always() && !cancelled() && needs.process.result != 'skipped' &&
+      ((github.event_name != 'workflow_run' && github.event_name != 'push') || needs.process.outputs.comment_id != '') &&
       github.ref == 'refs/heads/main'
     environment: protocol
     concurrency:
