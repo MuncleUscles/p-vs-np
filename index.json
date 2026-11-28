@@ -35,9 +35,9 @@
       "dependencies": [],
       "report": "reports/pr-57-05a2520b66c9-e4ebd77f6bef.json",
       "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168740720",
-      "updatedAt": "2026-11-28T17:24:24.528Z",
+      "updatedAt": "2026-11-28T17:24:29.203Z",
       "commentId": 7242765040,
-      "needsResume": true
+      "needsResume": false
     },
     {
       "id": "pr-34-8e94de7183c8-3f717fdbc388",
