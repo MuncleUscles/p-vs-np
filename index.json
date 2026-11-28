@@ -3,6 +3,36 @@
   "repository": "MuncleUscles/p-vs-np",
   "entries": [
     {
+      "id": "pr-34-8e94de7183c8-3f717fdbc388",
+      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
+      "chainId": 61999,
+      "repository": "MuncleUscles/p-vs-np",
+      "pr": 34,
+      "head": "8e94de7183c89c86b3e8c858da11817e1443af48",
+      "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
+      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
+      "protocolCommit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4",
+      "evidenceKind": "formal",
+      "verification": "verified",
+      "title": "Transport forced cover vertices to minimum-true CNF models",
+      "status": "credited",
+      "points": "240",
+      "awardBudget": "300",
+      "initialPaid": "240",
+      "impactReserve": "60",
+      "reserveReturned": "0",
+      "reserveSettled": false,
+      "impact": null,
+      "dependencies": [
+        "pr-29-574730b7e55c-9f1a7872c261"
+      ],
+      "report": "reports/pr-34-8e94de7183c8-3f717fdbc388.json",
+      "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168683872",
+      "updatedAt": "2026-11-28T17:08:49.680Z",
+      "commentId": 7230219192,
+      "needsResume": true
+    },
+    {
       "id": "pr-56-1e4ef3479f67-76f2f0f1595c",
       "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
       "chainId": 61999,
@@ -38,36 +68,6 @@
       "updatedAt": "2026-11-28T12:13:12.740Z",
       "commentId": 7238931685,
       "needsResume": false
-    },
-    {
-      "id": "pr-34-8e94de7183c8-3f717fdbc388",
-      "contract": "0x3A8Be4AA97375e4E38E1b351722aE45454DE611e",
-      "chainId": 61999,
-      "repository": "MuncleUscles/p-vs-np",
-      "pr": 34,
-      "head": "8e94de7183c89c86b3e8c858da11817e1443af48",
-      "wallet": "0xC1b1289F188B6f9CF456d655Eab7F236Eac6293A",
-      "policy": "e75a2e10e8fc196c8ea6ddaf2c2c6808f13025a0bcd9e87a9b2d13889f5e0755",
-      "protocolCommit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4",
-      "evidenceKind": "formal",
-      "verification": "verified",
-      "title": "Transport forced cover vertices to minimum-true CNF models",
-      "status": "credited",
-      "points": "240",
-      "awardBudget": "300",
-      "initialPaid": "240",
-      "impactReserve": "60",
-      "reserveReturned": "0",
-      "reserveSettled": false,
-      "impact": null,
-      "dependencies": [
-        "pr-29-574730b7e55c-9f1a7872c261"
-      ],
-      "report": "reports/pr-34-8e94de7183c8-3f717fdbc388.json",
-      "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46126025357",
-      "updatedAt": "2026-11-28T08:33:06.221Z",
-      "commentId": 7230219192,
-      "needsResume": true
     },
     {
       "id": "pr-46-10e59ea1b1c0-f145d5cf6a1d",
