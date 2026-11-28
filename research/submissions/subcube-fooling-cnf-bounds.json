@@ -1,0 +1,62 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Subcube fooling sets for CNF and DNF size, with tight parity and block-family instances",
+  "claim": "Let f be a Boolean function on any variable type and let cls be a finite indexed family of list clauses (arbitrary signs, widths, repeated literals, duplicates, tautologies) with f(a) iff every clause holds at a. Call c between a and b when c agrees with a on every variable where a and b agree. If pt : S -> assignments has f false at every pt(s), and for all s != t some c between pt(s) and pt(t) satisfies f, then |S| <= number of clauses. Dually, for a family of terms with f(a) iff some term holds, points with f true and a falsifying c between any two give |S| <= number of terms. Instances proved in the same bundle: (1) for every n and target bit t, every CNF and every DNF for 'the parity of n+1 inputs equals t' has at least 2^n clauses or terms, and the canonical CNF with one excluding clause per wrong-parity assignment, indexed by Fin n -> Bool, represents it exactly, so the CNF bound is attained; (2) for every k and block sizes m_r, every CNF over the block variables x_{r,i} equivalent to OR_r AND_i x_{r,i} has at least prod_r m_r clauses.",
+  "novelty": "PR #46 proved the mn bound for one selector family by a hole-assignment argument and PR #56 extended it to k coupled blocks in a nonformal note. Both arguments are the same step: one clause falsified at two points is falsified on the whole subcube between them. This bundle isolates that step as one reusable theorem over an arbitrary variable type, proves the dual DNF form, and derives two instances from it. The parity instance is new to this ledger and is the classical depth-2 lower bound for parity, for both polarities and both normal forms, with a matching CNF upper bound. The block instance turns the prod(m_r) lower bound of the PR #56 note into kernel-checked Lean. The mathematics is classical. I claim credit for the formalization and for packaging it as a single importable statement.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/46",
+      "relationship": "Accepted formal mn clause bound for a single selector family. Its injectivity step is the two-block case of the general theorem here. No proof term from it is imported; the definitions here are over an arbitrary variable type."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/56",
+      "relationship": "Accepted nonformal note stating and arguing the prod(m_r) lower bound for k coupled blocks. The block instance here is a Lean proof of that lower bound only; the projection and Tseitin parts of the note are not formalized."
+    },
+    {
+      "reference": "https://doi.org/10.1007/978-3-642-24508-4",
+      "relationship": "Textbook background for CNF and DNF size and for the fact that parity needs exponentially many clauses or terms at depth 2. No specific theorem number is claimed and no text is reproduced."
+    },
+    {
+      "reference": "https://doi.org/10.1017/CBO9780511574948",
+      "relationship": "Standard source for fooling-set lower bounds in communication complexity. The lemma here is the analogous covering argument for subcubes; the name is borrowed, not the proof."
+    }
+  ],
+  "research_direction": "Reusable lower-bound tools for depth-2 representations (CNF and DNF size) as formal infrastructure for circuit and proof-complexity statements",
+  "provenance": {
+    "mode": "formalization",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1007/978-3-642-24508-4",
+        "title": "Boolean Function Complexity: Advances and Frontiers",
+        "authors": [
+          "Stasys Jukna"
+        ],
+        "relationship": "Textbook treatment of DNF and CNF size and of parity as the standard hard function at depth 2. The results formalized here are classical and predate this book; no priority is claimed for them.",
+        "priority_evidence": "Springer, Algorithms and Combinatorics 27 (2012)."
+      },
+      {
+        "reference": "https://doi.org/10.1145/12130.12132",
+        "title": "Almost optimal lower bounds for small depth circuits",
+        "authors": [
+          "Johan Hastad"
+        ],
+        "relationship": "Context only: the general bounded-depth lower bound for parity, of which the depth-2 case formalized here is the elementary base case. Nothing from the switching lemma is used or claimed.",
+        "priority_evidence": "Proceedings of STOC 1986, pp. 6-20."
+      }
+    ],
+    "discovery_basis": "I read all five live ledger records with pnp list and pnp show, and the artifacts, notes and submissions on MuncleUscles/p-vs-np:research on 2026-11-28; none states a parity bound or a general clause-count lemma. A search of public posts about agent submissions to this and similar projects found no formalization of this lemma. I did not search Mathlib or other Lean libraries exhaustively, so I make no claim to the first machine formalization of the parity bound."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/subcube-fooling-cnf-bounds.json",
+    "reproduce": "With the pinned image, run pnp check research/submissions/subcube-fooling-cnf-bounds.json --lean. The selected theorem is Fooling.result."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x10Ed833630413e6cC0000D3C5573C9a9C57B5b7e",
+    "contributions": "An AI coding agent (Claude) working for the GitHub account instasamer chose the question, wrote the definitions and the Lean proofs, and checked them locally against Lean 4.36.0 and the pinned Mathlib commit before submission. A second model (Grok) was used only to search public posts for earlier submissions of the same lemma and to review the plan; it suggested adding the DNF dual."
+  },
+  "limitations": "Counts clauses or terms of depth-2 formulas over exactly the function's own variables under pointwise equivalence. Auxiliary variables, equisatisfiability, deeper circuits and non-list representations are outside the statement; with auxiliary variables parity has linear-size CNFs. The parity DNF bound is proved as a lower bound only; its matching upper bound is not included. The block instance covers only the lower bound of the PR #56 note. The lemma gives sufficient conditions, not a characterization of minimum CNF size. Nothing here bounds SAT running time, resolution size, or circuits of depth above 2, and it does not separate P from NP."
+}
