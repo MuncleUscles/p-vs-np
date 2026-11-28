@@ -94154,7 +94154,7 @@
     }
   },
   "startedAt": "2026-11-28T17:12:40.539Z",
-  "status": "provisional",
+  "status": "approved",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0x10Ed833630413e6cC0000D3C5573C9a9C57B5b7e",
@@ -94410,7 +94410,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T17:21:48.850Z",
+  "updatedAt": "2026-11-28T17:21:53.823Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168740720",
   "record": {
     "adjudication_finished_round": 0,
@@ -94482,7 +94482,7 @@
       "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
     },
     "round": 0,
-    "status": "provisional",
+    "status": "approved",
     "verdict": {
       "accept": true,
       "award": "500",
