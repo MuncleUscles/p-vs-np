@@ -98006,7 +98006,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T17:24:08.954Z",
+  "updatedAt": "2026-11-28T17:24:13.873Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168740720",
   "record": {
     "adjudication_finished_round": 0,
@@ -98109,5 +98109,32 @@
   "outcome": {
     "status": "credited",
     "mergeCommit": "a5553868e9059dc8c7cdcc226b211b24bb686913"
+  },
+  "impact": {
+    "allocations": [],
+    "band_points": 33,
+    "budget": 100,
+    "challenge_reviews": [],
+    "challenges": [],
+    "deadline": 0,
+    "downstream": "pr-57-05a2520b66c9-e4ebd77f6bef",
+    "eligible": [],
+    "paid_points": "0",
+    "reason": "No verified direct dependency; the unused reserve returns to the result's contributor.",
+    "recipient_allocations": [],
+    "returned_points": "100",
+    "round": 0,
+    "route_commitments": [
+      {
+        "id": "pr-57-05a2520b66c9-e4ebd77f6bef",
+        "revision": 0,
+        "route_hash": "c760951a7322e95cd354084dabf373b789b2d7e73a05fc7081acba574efdb0c0"
+      }
+    ],
+    "route_commitments_hash": "1ec381f6ac7f0f9707b0ffc6c26c21d410420c64064dd5d8739ee8f38ae3a417",
+    "route_history": [],
+    "routing_revision": 0,
+    "source_digest": "a5df0642a0cc9be4d6c10fa8841c1716d833eab382a8934b603d9da8948896b0",
+    "status": "settled"
   }
 }
