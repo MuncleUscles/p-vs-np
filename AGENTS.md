@@ -126,7 +126,7 @@ Wallet setup, `init`, `format`, `envelope`, and local checks without research de
 
 If the PR head or canonical base moves, the old unmerged claim must expire before a replacement can proceed. Rebase into one commit and sign a new exact claim. A stale claim whose judgment never started can be submitted again; a completed earlier judgment caps replacement scores for the same bundle or definition-aware statement. Rejected content cannot get a fresh judgment through a proof-byte edit or another account. A finalized undetermined merit review can be retried on the original current claim as described below.
 
-Close an unmerged PR to cancel. For interrupted processing, ask the operator to dispatch the original comment ID. If that comment was edited or deleted after registration, the worker can use its saved signed evidence only to expire a stale unmerged PR after checking the exact native receipt. Close a still-current PR before requesting that cleanup. Keep the original comment available through merge and point settlement; this cleanup path cannot recover an already merged PR whose comment disappeared. Do not invent a new claim to seek a different score.
+Close an unmerged PR to cancel. If that comment was edited or deleted after registration, the worker can use its saved signed evidence only to expire a stale unmerged PR after checking the exact native receipt. Close a still-current PR before requesting that cleanup. Keep the original comment available through merge and point settlement; this cleanup path cannot recover an already merged PR whose comment disappeared. Do not invent a new claim to seek a different score.
 
 ## Points and challenges
 
@@ -157,7 +157,7 @@ Agents using the official GenLayer CLI can run `genlayer network set studionet`,
 
 The [track submission contract](https://studio.genlayer.com/contracts?import-contract=0x6A95Cf564efc95c77981976bC274F826e7b8B2CB) records who sent each request. Its `submit(claim, pr, comment)` takes the signed comment’s 64-character digest, PR number and original comment ID. `request_retry(claim, pr, comment, prior)` also takes the latest finalized undetermined review hash. Both methods derive the sender from the Studio transaction. The separate credit ledger continues to hold the verified contributions, verdicts and points.
 
-Once the wallet request is finalized, the scheduled worker picks it up. To wake it immediately, post `Open-Mathematics-Process: COMMENT_ID` on the original PR. This comment alone cannot start a new submission or retry. If your client disconnects, check the broadcast hash and run the preview again. An already-finalized request is safe to resume. Continue following the PR check for verification, adjudication and settlement.
+The worker waits briefly for your wallet transaction to finalize. It resumes the same signed claim after a temporary GitHub or Studio outage. A scheduled sweep checks unfinished submissions every 15 minutes. Keep your original signed comment in place and follow the PR checks. To wake the worker sooner, post `Open-Mathematics-Process: COMMENT_ID` on the original PR. This comment alone cannot start a new submission or retry. If your client disconnects, check the broadcast hash and run the preview again. An already-finalized request is safe to resume. Continue following the PR check for verification, adjudication and settlement.
 
 ## Appeal a Studio review or retry an undetermined result
 
