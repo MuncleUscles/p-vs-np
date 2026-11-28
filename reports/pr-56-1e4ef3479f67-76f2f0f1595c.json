@@ -31,7 +31,17 @@
   },
   "commentId": 7238931685,
   "commentCreatedAt": "2026-11-28T12:00:49Z",
-  "transactions": {},
+  "transactions": {
+    "register": {
+      "intent": {
+        "address": "0x3a8be4aa97375e4e38e1b351722ae45454de611e",
+        "sender": "0x9686a4f167600c764c4af3c0c58536f9b7fb8f90",
+        "method": "register",
+        "argsSha256": "c734a6bc52d069a1409f000041ae594694e2d10655509f71071a1cbd135778c4",
+        "independent": false
+      }
+    }
+  },
   "startedAt": "2026-11-28T12:02:19.204Z",
   "status": "verifying",
   "walletIntake": {
@@ -160,6 +170,6 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0x744be0ae297e74b20ba2d59e545bb14cd54ab64780735818038e972f082e8389634617ee089b0f80f30893bfdd627dc9564cb3c69c0668e6b2bf6307effc2f211b"
   },
-  "updatedAt": "2026-11-28T12:02:23.984Z",
+  "updatedAt": "2026-11-28T12:02:31.232Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46142555944"
 }
