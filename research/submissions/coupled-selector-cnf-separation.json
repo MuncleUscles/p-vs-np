@@ -1,0 +1,73 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "research-note",
+  "title": "Exact exponential separation between auxiliary-variable projections and retained-variable CNFs",
+  "claim": "For any k >= 1 and block sizes m_1, ..., m_k >= 0 with M = sum(m_r) retained variables x_{r,i} and k auxiliary selectors z_1, ..., z_k, the (1 + M)-clause coupled selector CNF Phi = (z_1 | ... | z_k) & AND_{r,i} (~z_r | x_{r,i}) projects existentially onto F(x) = OR_{r=1}^k AND_{i=1}^{m_r} x_{r,i}. Every list-CNF over {x_{r,i}} alone pointwise equivalent to F—allowing arbitrary literal signs, widths, repeated literals, duplicates, and tautologies—requires at least prod(m_r) clauses, achieved tightly by the canonical distribution. Splitting the coupling clause with k - 2 Tseitin variables gives an exact 3-CNF projection with (k - 1) + M clauses (k >= 2, width <= 3), yielding an exponential separation (3k - 2 3-clauses vs. 2^k width-k clauses when m_r = 2). This is a nonformal note with reproducible Python checks, not a Lean proof or P-versus-NP separation.",
+  "novelty": "Accepted contribution PR #46 proved a tight mn clause lower bound for eliminating one selector over retained variables and flagged auxiliary variables as an open change of model. This note gives the tight multi-selector counterpart: coupling k selectors in one disjunction turns the cost of eliminating auxiliary variables from additive to multiplicative (prod m_r), proves the fooling-set lower bound for arbitrary signed list-CNFs, quantifies the linear 3-CNF compression, and compares against PR #22 falsifying-row counts and PR #14 resolution refutations.",
+  "prior_art": [
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/46",
+      "relationship": "Direct motivation: proves the tight mn bound for single-selector elimination over retained variables and notes that allowing auxiliary variables changes the question. This note generalizes the fooling-set bound to k coupled selectors and quantifies the auxiliary-variable compression."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/22",
+      "relationship": "Provides the truth-table certificate counting methodology and comparison against PR #19/PR #14; this note computes the falsifying-row count prod(2^{m_r} - 1) (3^k for m_r = 2) on the coupled selector family."
+    },
+    {
+      "reference": "https://github.com/MuncleUscles/p-vs-np/pull/14",
+      "relationship": "Defines the repository's list-resolution checker, contrasted here via a 2k-step refutation of Phi under unit-falsifying assumptions."
+    },
+    {
+      "reference": "https://doi.org/10.1007/978-3-642-81955-1_28",
+      "relationship": "Classical source introducing Tseitin extension variables and showing how auxiliary variables compress propositional derivations and representations."
+    }
+  ],
+  "research_direction": "Representation size of Boolean projections, auxiliary-variable compression, and CNF clause bounds",
+  "provenance": {
+    "mode": "integration",
+    "sources": [
+      {
+        "reference": "https://doi.org/10.1145/321033.321034",
+        "title": "A Computing Procedure for Quantification Theory",
+        "authors": [
+          "Martin Davis",
+          "Hilary Putnam"
+        ],
+        "relationship": "Classical variable-elimination framework underlying selector projection bounds; cited in PR #46 and integrated here for coupled selectors.",
+        "priority_evidence": "Published in Journal of the ACM 7(3), pp. 201-215 (1960)."
+      },
+      {
+        "reference": "https://doi.org/10.1007/978-3-642-81955-1_28",
+        "title": "On the Complexity of Derivation in Propositional Calculus",
+        "authors": [
+          "Grigori S. Tseitin"
+        ],
+        "relationship": "Classical source for auxiliary extension variables in CNF and propositional proof systems; the width-3 splitting of C_0 uses standard Tseitin variables without claiming priority.",
+        "priority_evidence": "Originally 1968 LOMI seminar; English translation in Automation of Reasoning 2, Springer, pp. 466-483 (1983)."
+      },
+      {
+        "reference": "https://doi.org/10.2307/2273702",
+        "title": "The relative efficiency of propositional proof systems",
+        "authors": [
+          "Stephen A. Cook",
+          "Robert A. Reckhow"
+        ],
+        "relationship": "Classical framework separating proof/representation size from soundness; contextualizes the comparison across auxiliary 3-CNF, retained CNF, and row certificates.",
+        "priority_evidence": "Published in Journal of Symbolic Logic 44(1), pp. 36-50 (1979)."
+      }
+    ],
+    "discovery_basis": "Inspected all 4 live ledger records via pnp list and read existing submissions and notes on MuncleUscles/p-vs-np:research (including PR #46, PR #22, PR #19, PR #14), plus verified DOIs for Davis-Putnam (1960), Tseitin (1968/1983), and Cook-Reckhow (1979). This is quantitative integration and extension of repository bounds, not a claim to originate Tseitin compression or DNF-to-CNF blowup."
+  },
+  "evidence": {
+    "kind": "research-note",
+    "artifact_path": "research/notes/coupled-selector-cnf-separation.md",
+    "reproduce": "Run pnp format and pnp check on research/submissions/coupled-selector-cnf-separation.json for schema validation, and execute the standalone Python 3.13.15 script in research/notes/coupled-selector-cnf-separation.md to reproduce all projection and exhaustive minimality checks."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x97f0A5B60D9edC6D3c78f1275B3CE767384a08D3",
+    "contributions": "GitHub contributor Amarudinn (assisted by an AI agent) derived the coupled multi-selector projection proof, the fooling-set lower bound for arbitrary signed list-CNFs, the linear 3-CNF encoding count, and ran the Python 3.13.15 verification script. Prior repository work and classical papers are explicitly cited."
+  },
+  "limitations": "This is a nonformal research note, not a Lean-checked theorem. The prod(m_r) clause lower bound applies to pointwise Boolean equivalence over the retained variables without auxiliary variables; allowing auxiliary variables yields linear size. Finite Python verification covers k = 1..4 (m_r = 2) and exhaustive general-CNF minimality up to M = 4; general parameters rely on the written mathematical proof. No general resolution lower bound, Extended Resolution lower bound, or P-versus-NP claim is made."
+}
