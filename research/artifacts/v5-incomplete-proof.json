@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "definitions": [],
+  "statement": "∀ n : Nat, n + 0 = n",
+  "proof": "by\n  intro n",
+  "dependencies": []
+}

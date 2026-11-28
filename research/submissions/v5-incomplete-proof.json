@@ -1,0 +1,26 @@
+{
+  "schema_version": 3,
+  "problem": "p-vs-np",
+  "kind": "lemma",
+  "title": "Controlled CI rejection of an incomplete Lean proof",
+  "claim": "This fixture presents a familiar equation with an intentionally unfinished proof so the isolated checker can exercise actual rejection.",
+  "novelty": "This is a negative verification test using previously established arithmetic. It makes no claim of novelty, discovery or reward.",
+  "prior_art": [],
+  "research_direction": "Controlled verification and merit review fixture",
+  "provenance": {
+    "mode": "extension",
+    "sources": [],
+    "discovery_basis": "The validation team wrote this fixture to reproduce an unsolved Lean goal. The only mathematical input is a simple Nat equality. No literature or priority search was performed."
+  },
+  "evidence": {
+    "kind": "formal",
+    "artifact_path": "research/artifacts/v5-incomplete-proof.json",
+    "reproduce": "Run the trusted open research verifier on this exact controlled fixture."
+  },
+  "dependencies": [],
+  "attribution": {
+    "wallet": "0x24cE571092c1Cb9921E3c1de72a5E4597f606799",
+    "contributions": "Prepared by the project validation team under shared pilot control. The signing wallet identifies this controlled test submission."
+  },
+  "limitations": "The submitted tactic introduces the binder and deliberately leaves the equality goal unanswered. Expect zero contributions and zero points."
+}
