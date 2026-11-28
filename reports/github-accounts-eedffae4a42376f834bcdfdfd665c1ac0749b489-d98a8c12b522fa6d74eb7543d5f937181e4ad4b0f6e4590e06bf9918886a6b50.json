@@ -17,8 +17,9 @@
         "method": "refresh_username",
         "argsSha256": "5fa32b3420d150edc6b56965875ecda39224b3b23923bae8b87f7774c66747d7",
         "independent": true
-      }
+      },
+      "hash": "0x38cc6d5967e89c26d64412e733ab8333d4d2b3dbe78fd57a4c05bba1b6958f35"
     }
   },
-  "updatedAt": "2026-11-28T17:27:57.089Z"
+  "updatedAt": "2026-11-28T17:28:00.459Z"
 }
