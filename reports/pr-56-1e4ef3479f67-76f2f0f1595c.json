@@ -64116,7 +64116,7 @@
     }
   },
   "startedAt": "2026-11-28T12:02:19.204Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0x97f0A5B60D9edC6D3c78f1275B3CE767384a08D3",
@@ -64243,15 +64243,15 @@
     "verifier": "0x9686A4F167600c764C4af3c0c58536f9B7fB8F90",
     "signature": "0x744be0ae297e74b20ba2d59e545bb14cd54ab64780735818038e972f082e8389634617ee089b0f80f30893bfdd627dc9564cb3c69c0668e6b2bf6307effc2f211b"
   },
-  "updatedAt": "2026-11-28T12:09:22.769Z",
+  "updatedAt": "2026-11-28T12:09:26.925Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46142555944",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795867752,
     "digest": "a47abb8750d644f59fb65dd4f66a35d97f132afea67b4ea6f3663bebadb5a6ba",
     "evidence": {
       "artifact_hash": "e1a97931b8c9ec1af7e326999b778a1d040a5a1b625cb2024c24655b69563b96",
@@ -64326,8 +64326,19 @@
       "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "300",
+      "evidence_refs": [
+        "pr-56-1e4ef3479f67-76f2f0f1595c",
+        "pr-46-10e59ea1b1c0-f145d5cf6a1d"
+      ],
+      "novelty": 1,
+      "reason": "This is a nonformal research note. It generalizes the single-selector mn clause bound of PR #46 to k coupled selectors with the coupling clause (z_1|...|z_k). It makes three claims: (1) the exact projection onto F = OR_r AND_i x_{r,i}; (2) a tight prod(m_r) clause lower bound for any signed list-CNF over the retained variables alone; (3) a Tseitin splitting into a width-3 CNF with (k-1)+M clauses.\n\nI checked the proofs. The projection argument is correct. The fooling-set argument is correct: the all-but-one-false assignments alpha^(s) each falsify F, so each needs a falsified clause. If one clause were shared by s≠t, some variable v in a differing block would be absent from that clause. Flipping v would make F true while the clause stays false, a contradiction. The Tseitin chain is the standard construction and is correctly counted.\n\nThe mathematics is a modest, fairly routine extension of PR #46. F is a DNF with disjoint terms, and the prod(m_r) CNF size is the classical DNF-to-CNF blowup with a standard fooling-set proof. The Tseitin compression is textbook, and the note says so honestly. The Python checks cover only small cases and add little beyond the written proof. The note makes no P versus NP claim and states its limitations accurately.\n\nThe incremental value is small but genuine: a clean tight multiplicative bound for the repository's list-CNF model, plus an explicit auxiliary-variable separation. It is not a lower bound against general circuits or proof systems, so its relevance to P vs NP is indirect. Credit is modest, within the initial note ceiling. Novelty is limited to the generalization over PR #46, and the textbook parts earn at most integration credit.",
+      "reusability": 1,
+      "significance": 1
+    }
   },
   "reviewLinkHash": "0x91b12a3ffdff75ea50f36370b7789020ab21f0b49b66637625375fe95c9f1f28"
 }
