@@ -55845,7 +55845,7 @@
   },
   "blockedConsensus": false,
   "error": "Missing or invalid parameters.\nDouble check you have provided the correct parameters.\n\nDetails: execution failed\nVersion: viem@2.45.1",
-  "updatedAt": "2026-11-28T17:09:28.009Z",
+  "updatedAt": "2026-11-28T17:09:49.163Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168683872",
   "record": {
     "adjudication_finished_round": 0,
@@ -55974,6 +55974,17 @@
       "at": "2026-11-28T08:33:06.221Z",
       "finalizedCheck": {
         "id": 140921512938,
+        "head": "8e94de7183c89c86b3e8c858da11817e1443af48",
+        "receiptHash": "0x92e066c03bad17a6dcd987a8b20dbc7fcd2e16cb7f850d492ee0c0a85654c923"
+      },
+      "recordStatus": "credited"
+    },
+    {
+      "stage": "post-finalization",
+      "message": "Missing or invalid parameters.\nDouble check you have provided the correct parameters.\n\nDetails: execution failed\nVersion: viem@2.45.1",
+      "at": "2026-11-28T17:09:49.163Z",
+      "finalizedCheck": {
+        "id": 141052719967,
         "head": "8e94de7183c89c86b3e8c858da11817e1443af48",
         "receiptHash": "0x92e066c03bad17a6dcd987a8b20dbc7fcd2e16cb7f850d492ee0c0a85654c923"
       },
