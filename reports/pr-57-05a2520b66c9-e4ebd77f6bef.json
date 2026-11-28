@@ -98006,7 +98006,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T17:24:20.042Z",
+  "updatedAt": "2026-11-28T17:24:24.528Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168740720",
   "record": {
     "adjudication_finished_round": 0,
@@ -98014,7 +98014,7 @@
     "award_budget": "500",
     "challenge_reviews": [],
     "challenges": [],
-    "credited_points": "400",
+    "credited_points": "500",
     "deadline": 1795886441,
     "digest": "a5df0642a0cc9be4d6c10fa8841c1716d833eab382a8934b603d9da8948896b0",
     "evidence": {
@@ -98081,8 +98081,8 @@
     "impact_reserve": "100",
     "initial_paid": "400",
     "merge_commit": "a5553868e9059dc8c7cdcc226b211b24bb686913",
-    "reserve_returned": "0",
-    "reserve_settled": false,
+    "reserve_returned": "100",
+    "reserve_settled": true,
     "round": 0,
     "status": "credited",
     "verdict": {
