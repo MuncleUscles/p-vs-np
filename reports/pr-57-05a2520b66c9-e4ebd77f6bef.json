@@ -92788,7 +92788,7 @@
     }
   },
   "startedAt": "2026-11-28T17:12:40.539Z",
-  "status": "submitted",
+  "status": "provisional",
   "walletIntake": {
     "contract": "0x6A95Cf564efc95c77981976bC274F826e7b8B2CB",
     "wallet": "0x10Ed833630413e6cC0000D3C5573C9a9C57B5b7e",
@@ -93044,15 +93044,15 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T17:17:20.370Z",
+  "updatedAt": "2026-11-28T17:17:26.018Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168740720",
   "record": {
-    "adjudication_finished_round": -1,
-    "adjudication_started_round": -1,
+    "adjudication_finished_round": 0,
+    "adjudication_started_round": 0,
     "challenge_reviews": [],
     "challenges": [],
     "credited_points": "0",
-    "deadline": 0,
+    "deadline": 1795886441,
     "digest": "a5df0642a0cc9be4d6c10fa8841c1716d833eab382a8934b603d9da8948896b0",
     "evidence": {
       "artifact_hash": "79f832c3f46eb5a079838a4e42401817d8cea8a4352788d09789d80b8d1d4b7e",
@@ -93116,8 +93116,20 @@
       "worker_commit": "93c7d3fce28163b281a33fcdfeab00aed06c46f4"
     },
     "round": 0,
-    "status": "submitted",
-    "verdict": null
+    "status": "provisional",
+    "verdict": {
+      "accept": true,
+      "award": "500",
+      "evidence_refs": [
+        "pr-57-05a2520b66c9-e4ebd77f6bef",
+        "pr-46-10e59ea1b1c0-f145d5cf6a1d",
+        "pr-56-1e4ef3479f67-76f2f0f1595c"
+      ],
+      "novelty": 2,
+      "reason": "The submission formalizes a general subcube fooling-set lemma for CNF and DNF size, with two concrete instances (parity and block families). The mathematics is entirely classical (acknowledged by the contributor), so no discovery credit is due. However, the work is non-trivial in its formalization and packaging: (1) the general fooling-set statement over arbitrary variable types cleanly abstracts the specific injectivity argument in PR #46, making it reusable for other functions; (2) the DNF dual is new to this ledger; (3) the parity CNF/DNF lower bounds (2^n) and the tight CNF upper bound via the canonical excluding-clause construction are new to this ledger; (4) the block lower bound prod(m_r) upgrades PR #56's nonformal note to a kernel-verified theorem. The Lean source is well-structured with clean definitions (Lits, Holds, AllHold, Between), correct key lemmas (not_holds_between, allHold_between), and a properly constructed fooling set for parity (pt, pt_sep). The tightness result (parity_cnf_tight) is a nice addition showing the bound is sharp. Limitations are honestly stated: depth-2 only, no auxiliary variables, no P vs NP separation. The contribution is useful formal infrastructure for depth-2 lower bounds, with moderate incremental value to the repository. The generalization from PR #46's specific selector structure to the abstract Between/fooling-set condition is a genuine reusability improvement, not mere repackaging. The parity instance is the most substantively new component.",
+      "reusability": 2,
+      "significance": 1
+    }
   },
   "reviewLinkHash": "0xb123c4e04d2d3d7df9c7d0d4b8413f18a841980656092ff29df32f5c606e5683"
 }
