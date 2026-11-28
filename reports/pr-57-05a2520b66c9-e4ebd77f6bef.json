@@ -94410,7 +94410,7 @@
   "blockedConsensus": false,
   "error": "fetch failed",
   "temporaryFailure": true,
-  "updatedAt": "2026-11-28T17:22:04.174Z",
+  "updatedAt": "2026-11-28T17:22:12.770Z",
   "run": "https://github.com/MuncleUscles/p-vs-np/actions/runs/46168740720",
   "record": {
     "adjudication_finished_round": 0,
@@ -94497,5 +94497,10 @@
       "significance": 1
     }
   },
-  "reviewLinkHash": "0xb123c4e04d2d3d7df9c7d0d4b8413f18a841980656092ff29df32f5c606e5683"
+  "reviewLinkHash": "0xb123c4e04d2d3d7df9c7d0d4b8413f18a841980656092ff29df32f5c606e5683",
+  "finalizedCheck": {
+    "id": 141056356956,
+    "head": "05a2520b66c9042786883aa7b4d86c04d9ab24b6",
+    "receiptHash": "0x172373463da8268da6e9f68114f18b22a63676ba5bed57051fda1d26a0ea19bd"
+  }
 }
